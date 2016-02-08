@@ -1,14 +1,37 @@
+"use strict";
+
 var express = require("express");
 var app = express();
 var fs = require("fs");
 var entities = new (require('html-entities').AllHtmlEntities)();
 
 var h = require("./public/helpers.js");
-var rx = {
-  code: /<#((.|[\n\r])*?)#>/g,
-  blank: /<\?((.|[\n\r])*?)\?>/g,
-  mark: /<\*((.|[\n\r])*?)\*>/g
-}
+
+var rx = (function(){
+  var replacers = {};
+  var patterns = [
+    ["code", "#", "", ""],
+    ["blank", "?", '<span class="blank">', '</span>'],
+    ["mark", "*", "<mark>", "</mark>"]
+  ]
+  patterns.forEach(function(pattern){
+    var mark = pattern[1];
+    var regex = new RegExp("<\\" + mark + "((.|[\\n\\r])+?)\\" + mark + ">", "mg");
+    replacers[pattern[0]] = function(string){
+      return string.replace(regex, function(match, innerGroup){
+        return pattern[2] + entities.encode(innerGroup) + pattern[3];
+      });
+    }
+  });
+  replacers.replaceAll = function(string){
+    var type;
+    for(type in replacers){
+      if(type !== "replaceAll") string = replacers[type](string);
+    }
+    return string;
+  }
+  return replacers;
+}());
 
 app.use("/public", express.static(__dirname + "/public"));
 
@@ -18,14 +41,7 @@ app.get("/", function(req, res){
 
 app.get("/index.html", function(req, res){
   fs.readFile("./public/index.html", "utf8", function(err, html){
-    html = html.replace(rx.code, function(match, p1){
-      return entities.encode(p1);
-    }).replace(rx.blank, function(match, p1){
-      return "<span class='blank'>" + entities.encode(p1) + "</span>";
-    }).replace(rx.mark, function(match, p1){
-      return "<mark>" + entities.encode(p1) + "</mark>";
-    });
-    res.send(html);
+    res.send(rx.replaceAll(html));
   });
 });
 
