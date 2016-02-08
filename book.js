@@ -6,7 +6,8 @@ var entities = new (require('html-entities').AllHtmlEntities)();
 var h = require("./public/helpers.js");
 var rx = {
   code: /<#((.|[\n\r])*?)#>/g,
-  blank: /<\?((.|[\n\r])*?)\?>/g
+  blank: /<\?((.|[\n\r])*?)\?>/g,
+  mark: /<\*((.|[\n\r])*?)\*>/g
 }
 
 app.use("/public", express.static(__dirname + "/public"));
@@ -21,6 +22,8 @@ app.get("/index.html", function(req, res){
       return entities.encode(p1);
     }).replace(rx.blank, function(match, p1){
       return "<span class='blank'>" + entities.encode(p1) + "</span>";
+    }).replace(rx.mark, function(match, p1){
+      return "<mark>" + entities.encode(p1) + "</mark>";
     });
     res.send(html);
   });
