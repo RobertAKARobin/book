@@ -29,3 +29,7 @@ h1{
 pre{
   font-family:"Pointfree", monospace;
 }
+.blank{
+  color:#fff;
+  border-bottom:1px solid #000;
+}
