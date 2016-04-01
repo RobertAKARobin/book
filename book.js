@@ -4,8 +4,8 @@ var express = require("express");
 var app = express();
 var fs = require("fs");
 var entities = new (require('html-entities').AllHtmlEntities)();
+var h = require("helpers-js");
 
-var h = require("./public/helpers.js");
 
 var rx = (function(){
   var replacers = {};
@@ -32,6 +32,9 @@ var rx = (function(){
   }
   return replacers;
 }());
+fs.readFile("./node_modules/helpers-js/helpers.js", "utf8", function(a, data){
+  fs.writeFile("./public/helpers.js", data);
+});
 
 app.use("/public", express.static(__dirname + "/public"));
 

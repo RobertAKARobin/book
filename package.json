@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.13.4",
+    "helpers-js": "github:robertakarobin/helpers-js",
     "html-entities": "^1.2.0"
   }
 }
