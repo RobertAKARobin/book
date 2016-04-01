@@ -31,5 +31,10 @@ pre{
 }
 .blank{
   color:#fff;
-  border-bottom:1px solid #000;
+  border-bottom:2px solid #000;
+}
+mark{
+  border:2px solid #000;
+  border-radius:5px;
+  background-color:inherit;
 }
