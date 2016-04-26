@@ -28,4 +28,30 @@ window.onload = function(){
     });
   });
   
+  h.for_each(document.querySelectorAll("[data-md]"), function(codeBlock){
+    var raw = codeBlock.textContent.split(/[\n\r]/);
+    var blocks = [
+      [/^#{1}[^#]\s*(.*)$/g,  "h1"],
+      [/^#{2}[^#]\s*(.*)$/g,  "h2"],
+      [/^#{3}[^#]\s*(.*)$/g,  "h3"],
+      [/^#{4}[^#]\s*(.*)$/g,  "h4"],
+      [/^\>\s*(.*)/g,         "blockquote"],
+      [/^(.*)$/g,             "p"]
+    ];
+    codeBlock.innerHTML = "";
+    h.for_each(raw, function(line){
+      var next = false;
+      if(line.trim() === "") return;
+      h.for_each(blocks, function(match){
+        var el  = match[1];
+        line = line.replace(match[0], function(match, inner){
+          next = true;
+          return "<" + el + ">" + inner + "</" + el + ">";
+        });
+        if(next) return "break";
+      });
+      codeBlock.innerHTML += line;
+    });
+  });
+  
 }
