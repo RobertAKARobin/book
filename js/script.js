@@ -38,6 +38,12 @@ window.onload = function(){
       [/^\>\s*(.*)/g,         "blockquote"],
       [/^(.*)$/g,             "p"]
     ];
+    var inlines = [
+      [/`(.*)?`/g,          "code"],
+      [/\*\*(.*)?\*\*/g,    "strong"],
+      [/\*(.*)?\*/g,        "em"],
+      [/\\\\(.*)?\\\\/g,     "q"]
+    ];
     codeBlock.innerHTML = "";
     h.for_each(raw, function(line){
       var next = false;
@@ -49,6 +55,12 @@ window.onload = function(){
           return "<" + el + ">" + inner + "</" + el + ">";
         });
         if(next) return "break";
+      });
+      h.for_each(inlines, function(match){
+        var el  = match[1];
+        line = line.replace(match[0], function(match, inner){
+          return "<" + el + ">" + inner + "</" + el + ">";
+        });
       });
       codeBlock.innerHTML += line;
     });
