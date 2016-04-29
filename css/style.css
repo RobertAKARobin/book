@@ -29,9 +29,16 @@ h1{
 pre{
   font-family:"Pointfree", monospace;
 }
-.blank{
+b, i{
   color:#fff;
   border-bottom:2px solid #000;
+}
+i{
+  display:block;
+  width:100%;
+}
+i:after{
+  content:" ";
 }
 mark{
   border:2px solid #000;

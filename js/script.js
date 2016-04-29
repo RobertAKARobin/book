@@ -4,27 +4,39 @@ window.onload = function(){
   
   h.for_each(document.querySelectorAll("[data-code]"), function(codeBlock){
     var childNodes = codeBlock.cloneNode(true).childNodes;
+    var splitter   = [];
+    var matchers   = [];
+    var delimeters = [
+      ["___",     "i"],
+      ["__",      "b"],
+      ["\\*\\*",  "mark"]
+    ];
+    h.for_each(delimeters, function(delimeter){
+      var chars = delimeter[0], tag = delimeter[1];
+      splitter.push(chars + ".*?" + chars);
+      matchers.push([RegExp(chars + "(.*?)" + chars, "gm"), tag]);
+    });
+    splitter = RegExp("(" + splitter.join("|") + ")", "gm");
     codeBlock.innerHTML = "";
     h.for_each(childNodes, function(node){
-      var el = {};
-      if(node.nodeType === 8){
-        switch(node.textContent.substring(0,1)){
-          case "_":
-            el = document.createElement("B");
-            el.textContent = node.textContent.substring(1);
-            break;
-          case "*":
-            el = document.createElement("MARK");
-            el.textContent = node.textContent.substring(1);
-            break;
-          default:
-            el = document.createElement("CODE");
-            el.textContent = node.textContent;
-        }
+      if(node.nodeType !== 8){
+        codeBlock.appendChild(node.cloneNode(true));
       }else{
-        el = node.cloneNode(true);
+        h.for_each(node.textContent.split(splitter), function(chunk){
+          var el = document.createElement("SPAN");
+          h.for_each(matchers, function(pair){
+            if(pair[0].test(chunk)){
+              el = document.createElement(pair[1]);
+              chunk = chunk.replace(pair[0], function(outer, inner){
+                return inner;
+              });
+              return "break";
+            }
+          });
+          el.textContent = chunk;
+          codeBlock.appendChild(el);
+        });
       }
-      codeBlock.appendChild(el);
     });
   });
   
