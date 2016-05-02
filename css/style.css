@@ -1,65 +1,74 @@
-*{
-  margin:0;
-  border:0;
-  padding:0;
-  font-size:inherit;
-  font-family:inherit;
-  font-weight:inherit;
-  font-style:inherit;
-  border-collapse:collapse;
-  text-decoration:inherit;
-  color:inherit;
-  list-style:none;
-}
-*:focus{
-  outline:none;
+* {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  font-size: inherit;
+  font-family: inherit;
+  font-weight: inherit;
+  font-style: inherit;
+  border-collapse: collapse;
+  text-decoration: inherit;
+  color: inherit;
+  list-style: none;
 }
 
-body{
-  font-size:18px;
-  font-family:"News706", Impact, sans-serif;
+*:focus {
+  outline: none;
 }
-h1, h2, h3, h4, h5, h6{
-  font-family:"PF Din Text Comp Pro", Georgia, serif;
-  text-transform:uppercase;
+
+body {
+  font-size: 18px;
+  font-family: "News706", Impact, sans-serif;
 }
-h1{
-  font-size:36px;
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "PF Din Text Comp Pro", Georgia, serif;
+  text-transform: uppercase;
 }
-pre{
-  font-family:"Pointfree", monospace;
+
+h1 {
+  font-size: 36px;
 }
-strong{
-  font-weight:bold;
+
+pre {
+  font-family: "Pointfree", monospace;
 }
-em{
-  font-style:italic;
+
+strong {
+  font-weight: bold;
 }
-blockquote:before,
-q:before{
-  content:"\0201c";
+
+em {
+  font-style: italic;
 }
-blockquote:after,
-q:after{
-  content:"\0201d";
+
+blockquote:before, q:before {
+  content: "\0201c";
 }
-code{
-  font-family:monospace;
-  background-color:#ddd;
+blockquote:after, q:after {
+  content: "\0201d";
 }
-b, i{
-  color:#fff;
-  border-bottom:2px solid #000;
+
+code {
+  font-family: monospace;
+  background-color: #ddd;
 }
-i{
-  display:block;
-  width:100%;
+
+b, i {
+  color: #fff;
+  border-bottom: 2px solid #000;
 }
-i:after{
-  content:" ";
+
+i {
+  display: block;
+  width: 100%;
 }
-mark{
-  border:2px solid #000;
-  border-radius:5px;
-  background-color:inherit;
+i:after {
+  content: " ";
+}
+
+mark {
+  border: 2px solid #000;
+  border-radius: 5px;
+  background-color: inherit;
 }
