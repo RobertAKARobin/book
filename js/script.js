@@ -1,83 +1,81 @@
 "use strict";
 
+function Replacer(options){
+  var instance = this;
+  instance.matchers = Replacer.entityMatchers.slice();
+  if(options.block) h.for_each(options.block, function(tag, delimeter){
+    instance.matchers.push([
+      RegExp("(?:^|\\n|\\r)" + delimeter + " *(.*?)" + "(?:\\n|\\r|$)", "g"),
+      function(outer, inner){
+        return("\n\r<" + tag + ">" + inner + "</" + tag + ">\n\r");
+      }
+    ]);
+  });
+  if(options.inline) h.for_each(options.inline, function(tag, delimeter){
+    instance.matchers.push([
+      RegExp(delimeter + "(.*?)" + delimeter, "g"),
+      function(outer, inner){
+        return("<" + tag + ">" + inner + "</" + tag + ">");
+      }
+    ]);
+  });
+}
+Replacer.entityMatchers = (function(){
+  var entities = {
+    "<": "&lt;",
+    ">": "&gt;"
+  }
+  return h.collect(entities, function(entity, character){
+    return [RegExp(character, "g"), entity]
+  });
+})();
+Replacer.prototype.replace = function(container){
+  var instance = this;
+  var childNodes = container.cloneNode(true).childNodes;
+  container.innerHTML = "";
+  h.for_each(childNodes, function(node){
+    var html = node.textContent.replace(/(^[\n\r])|(\s*$)/g, "");
+    if(node.nodeType != 8){
+      html = node.outerHTML;
+    }else{
+      h.for_each(instance.matchers, function(pair){
+        html = html.replace(pair[0], pair[1]);
+      });
+    }
+    container.innerHTML += html;
+  });
+}
+
 window.onload = function(){
   
-  h.for_each(document.querySelectorAll("[data-code]"), function(codeBlock){
-    var childNodes = codeBlock.cloneNode(true).childNodes;
-    var splitter   = [];
-    var matchers   = [];
-    var delimeters = [
-      ["___",     "i"],
-      ["__",      "b"],
-      ["\\*\\*",  "mark"]
-    ];
-    h.for_each(delimeters, function(delimeter){
-      var chars = delimeter[0], tag = delimeter[1];
-      splitter.push(chars + ".*?" + chars);
-      matchers.push([RegExp(chars + "(.*?)" + chars, "gm"), tag]);
-    });
-    splitter = RegExp("(" + splitter.join("|") + ")", "gm");
-    codeBlock.innerHTML = "";
-    h.for_each(childNodes, function(node){
-      if(node.nodeType !== 8){
-        codeBlock.appendChild(node.cloneNode(true));
-      }else{
-        h.for_each(node.textContent
-          .replace(/^[\n\r]/, "").replace(/[\n\r]\ +$/, "")
-          .split(splitter), function(chunk){
-          var el = document.createElement("SPAN");
-          h.for_each(matchers, function(pair){
-            if(pair[0].test(chunk)){
-              el = document.createElement(pair[1]);
-              chunk = chunk.replace(pair[0], function(outer, inner){
-                return inner;
-              });
-              return "break";
-            }
-          });
-          el.textContent = chunk;
-          codeBlock.appendChild(el);
-        });
-      }
-    });
+  var codeReplacer = new Replacer({
+    inline: {
+      "___":      "i",
+      "__":       "b",
+      "\\*\\*":   "mark"
+    }
   });
-  
-  h.for_each(document.querySelectorAll("[data-md]"), function(codeBlock){
-    var raw = codeBlock.textContent.split(/[\n\r]/);
-    var blocks = [
-      [/^#{1}[^#]\s*(.*)$/g,  "h1"],
-      [/^#{2}[^#]\s*(.*)$/g,  "h2"],
-      [/^#{3}[^#]\s*(.*)$/g,  "h3"],
-      [/^#{4}[^#]\s*(.*)$/g,  "h4"],
-      [/^\>\s*(.*)/g,         "blockquote"],
-      [/^(.*)$/g,             "p"]
-    ];
-    var inlines = [
-      [/`(.*)?`/g,          "code"],
-      [/\*\*(.*)?\*\*/g,    "strong"],
-      [/\*(.*)?\*/g,        "em"],
-      [/\\\\(.*)?\\\\/g,     "q"]
-    ];
-    codeBlock.innerHTML = "";
-    h.for_each(raw, function(line){
-      var next = false;
-      if(line.trim() === "") return;
-      h.for_each(blocks, function(match){
-        var el  = match[1];
-        line = line.replace(match[0], function(match, inner){
-          next = true;
-          return "<" + el + ">" + inner + "</" + el + ">";
-        });
-        if(next) return "break";
-      });
-      h.for_each(inlines, function(match){
-        var el  = match[1];
-        line = line.replace(match[0], function(match, inner){
-          return "<" + el + ">" + inner + "</" + el + ">";
-        });
-      });
-      codeBlock.innerHTML += line;
-    });
+  var mdReplacer = new Replacer({
+    inline: {
+      "`":        "code",
+      "\\*\\*":   "strong",
+      "\\*":      "em",
+      "\\\\\\\\": "q"
+    },
+    block: {
+      "#{4}":     "h4",
+      "#{3}":     "h3",
+      "#{2}":     "h2",
+      "#{1}":     "h1",
+      "=":        "blockquote",
+      " +": "p"
+    }
   });
-  
+
+  h.for_each(document.querySelectorAll("[data-code]"), function(node){
+    codeReplacer.replace(node);
+  });
+  h.for_each(document.querySelectorAll("[data-md]"), function(node){
+    mdReplacer.replace(node);
+  });
 }
