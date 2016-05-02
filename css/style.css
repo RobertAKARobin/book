@@ -33,15 +33,6 @@ body {
   width: 100vw;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: "PF Din Text Comp Pro", Georgia, serif;
-  text-transform: uppercase;
-}
-
-pre {
-  font-family: "Andale Mono";
-}
-
 strong {
   font-weight: bold;
 }
@@ -57,8 +48,17 @@ blockquote:after, q:after {
   content: "\0201d";
 }
 
+code, [data-code] {
+  white-space: pre-wrap;
+  word-break: break-all;
+  font-family: "Andale Mono";
+}
+
+[data-code] {
+  margin: 1em auto;
+}
+
 code {
-  font-family: monospace;
   background-color: #ddd;
 }
 
@@ -125,4 +125,6 @@ body {
 #main > div h1 {
   font-size: 2em;
   line-height: 2em;
+  font-family: "PF Din Text Comp Pro", Georgia, serif;
+  text-transform: uppercase;
 }
