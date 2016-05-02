@@ -15,16 +15,23 @@
   outline:none;
 }
 
-body{
+html{
+  overflow-y:scroll;
+  overflow-x:hidden;
+  width:100%;
+}
+html, body{
+  position:relative;
+  min-height:100vh;
   font-size:18px;
   font-family:"News706", Impact, sans-serif;
+}
+body{
+  width:100vw;
 }
 h1, h2, h3, h4, h5, h6{
   font-family:"PF Din Text Comp Pro", Georgia, serif;
   text-transform:uppercase;
-}
-h1{
-  font-size:36px;
 }
 pre{
   font-family:"Pointfree", monospace;
@@ -60,6 +67,57 @@ i{
 }
 mark{
   border:2px solid #000;
-  border-radius:5px;
+  border-radius:.5em;
   background-color:inherit;
+}
+
+
+body{
+  font-size:0;
+  text-align:center;
+}
+
+$page-x: 85;
+$page-y: 110;
+$aspect: ($page-x / $page-y);
+@mixin size-from-width($vw){
+  $percent:   ($vw / 100);
+  width:      ($vw);
+  height:     ($vw / $aspect);
+  padding:    (2 * $percent);
+  font-size:  (3 * $percent);
+}
+@function n-pages-wide($n){
+  @return "#{$page-x * $n}/#{$page-y}";
+}
+
+#main > div{
+  display:inline-block;
+  vertical-align:top;
+  box-sizing:border-box;
+  outline:1px solid #ccc;
+  text-align:left;
+  
+  @include size-from-width(100vw);
+  
+  @media  (max-width:800px),
+          (max-height: 500px){
+    @include size-from-width(100vw);
+  }
+  
+  @media  (min-width:800px),
+          (min-aspect-ratio: n-pages-wide(3)){
+    @include size-from-width(50vw);
+  }
+  
+  @media  (min-height: 500px) and
+          (min-aspect-ratio: n-pages-wide(2)) and
+          (max-aspect-ratio: n-pages-wide(3)){
+    @include size-from-width((100vh * $aspect));
+  }
+  
+  h1{
+    font-size:2em;
+    line-height:2em;
+  }
 }
