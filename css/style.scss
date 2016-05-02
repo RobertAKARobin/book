@@ -34,7 +34,8 @@ h1, h2, h3, h4, h5, h6{
   text-transform:uppercase;
 }
 pre{
-  font-family:"Pointfree", monospace;
+  // font-family:"Pointfree", monospace;
+  font-family:"Andale Mono";
 }
 strong{
   font-weight:bold;
@@ -116,6 +117,7 @@ $aspect: ($page-x / $page-y);
     @include size-from-width((100vh * $aspect));
   }
   
+  line-height:1.6em;
   h1{
     font-size:2em;
     line-height:2em;

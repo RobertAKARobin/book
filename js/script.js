@@ -22,7 +22,9 @@ window.onload = function(){
       if(node.nodeType !== 8){
         codeBlock.appendChild(node.cloneNode(true));
       }else{
-        h.for_each(node.textContent.split(splitter), function(chunk){
+        h.for_each(node.textContent
+          .replace(/^[\n\r]/, "").replace(/[\n\r]\ +$/, "")
+          .split(splitter), function(chunk){
           var el = document.createElement("SPAN");
           h.for_each(matchers, function(pair){
             if(pair[0].test(chunk)){

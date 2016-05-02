@@ -39,7 +39,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 pre {
-  font-family: "Pointfree", monospace;
+  font-family: "Andale Mono";
 }
 
 strong {
@@ -96,6 +96,7 @@ body {
   height: 129.41176vw;
   padding: 2vw;
   font-size: 3vw;
+  line-height: 1.6em;
 }
 @media (max-width: 800px), (max-height: 500px) {
   #main > div {
