@@ -9,7 +9,6 @@
   border-collapse: collapse;
   text-decoration: inherit;
   color: inherit;
-  list-style: none;
 }
 
 *:focus {
@@ -39,6 +38,13 @@ strong {
 
 em {
   font-style: italic;
+}
+
+ul li {
+  list-style-type: disc;
+}
+ol li {
+  list-style-type: decimal;
 }
 
 blockquote:before, q:before {

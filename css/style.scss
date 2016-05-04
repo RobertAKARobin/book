@@ -9,7 +9,6 @@
   border-collapse:collapse;
   text-decoration:inherit;
   color:inherit;
-  list-style:none;
 }
 *:focus{
   outline:none;
@@ -34,6 +33,14 @@ strong{
 }
 em{
   font-style:italic;
+}
+li{
+  ul &{
+    list-style-type:disc;
+  }
+  ol &{
+    list-style-type:decimal;
+  }
 }
 blockquote, q{
   &:before{

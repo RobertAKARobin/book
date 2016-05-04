@@ -49,7 +49,7 @@ Replacer.prototype.replaceNode = function(node){
 }
 Replacer.prototype.replaceText = function(text){
   var instance  = this;
-  instance.skipSingleLines = false;
+  instance.line = {};
   var output    = h.collect(
     text.split(/[\n\r]/g),
     instance.replaceLine.bind(instance)
@@ -103,29 +103,46 @@ Replacer.prototype.matchers = {
     ["''''",  "blockquote"],
     [0, 0, /```/,     function newCodeBlock(){
       var instance = this;
-      if(instance.isCodeBlock){
-        instance.isCodeBlock  = false;
+      if(instance.line.codeBlock){
+        instance.line.codeBlock  = false;
         return "</pre>";
       }else{
-        instance.isCodeBlock  = true;
+        instance.line.codeBlock  = true;
         return "<pre data-code>";
       }
     }],
-    [0, 0, /^ *-/,    function listItem(){
-      
-    }],
-    [0, 0, /^ *1\./,  function orderedList(){
-      
-    }],
-    [0, 0, /^(.*?)$/, function fallback(outer, inner){
+    [" *-", 0, 0,     function listItem(nil, output){
       var instance = this;
-      if(instance.isCodeBlock){
-        return instance.replaceEntities(inner);
-      }else if(inner.trim() === ""){
-        return "";
-      }else{
-        return Replacer.tag.call("p", null, inner);
+      output = Replacer.tag.call("li", null, output);
+      if(!instance.line.listType){
+        instance.line.listType = "ul";
+        output = "<" + instance.line.listType + ">" + output;
       }
+      return output;
+    }],
+    [" *[0-9]\.",0,0, function orderedList(nil, output){
+      var instance = this;
+      output = Replacer.tag.call("li", null, output);
+      if(!instance.line.listType){
+        instance.line.listType = "ol";
+        output = "<" + instance.line.listType + ">" + output;
+      }
+      return output;
+    }],
+    [0, 0, /^(.*?)$/, function fallback(nil, output){
+      var instance = this;
+      if(instance.line.codeBlock){
+        output = instance.replaceEntities(output);
+      }else if(output.trim() === ""){
+        output = "";
+      }else{
+        output = Replacer.tag.call("p", null, output);
+      }
+      if(instance.line.listType){
+        output = "</" + instance.line.listType + ">" + output;
+        instance.line.listType = false;
+      }
+      return output;
     }]
   ]
 }
