@@ -36,18 +36,30 @@ Replacer.prototype.replaceText = function(text){
     text.split(/[\n\r]/g),
     instance.replaceLine.bind(instance)
   );
-  return output.join("\n\r");
+  return output.join("\n");
 }
 Replacer.prototype.replaceLine = function(line){
   var instance  = this;
   var output    = line;
+  if(line === "```"){
+    if(instance.isCodeBlock){
+      instance.isCodeBlock  = false;
+      return "</pre>";
+    }else{
+      instance.isCodeBlock  = true;
+      return "<pre data-code>";
+    }
+  }
+  if(line.trim() === ""){
+    return null;
+  }
   h.for_each(instance.matchers.entities, function(matcher){
     matcher[2]  = (matcher[2] || RegExp(matcher[0], "g"));
     output      = output.replace(matcher[2], matcher[1]);
   });
-  h.for_each(instance.matchers.singleline, function(matcher){
+  if(!instance.isCodeBlock) h.for_each(instance.matchers.singleline, function(matcher){
     var original= output;
-    matcher[2]  = (matcher[2] || RegExp("^" + matcher[0] + "\\s*(.*)", "g"));
+    matcher[2]  = (matcher[2] || RegExp("^" + matcher[0] + " *(.*)", "g"));
     matcher[3]  = (matcher[3] || Replacer.tag.bind(matcher[1]));
     output      = output.replace(matcher[2], matcher[3]);
     if(original !== output) return "break";
