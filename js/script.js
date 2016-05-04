@@ -15,7 +15,7 @@ Replacer.prototype.setMatchers = function(){
   });
   h.for_each(instance.matchers.inline, function(matcher){
     matcher[2]  = (matcher[2] || RegExp(matcher[0] + "(.*?)" + matcher[0], "g"));
-    matcher[3]  = (matcher[3] || Replacer.tag.bind(matcher[1]));
+    matcher[3]  = (matcher[3] ? matcher[3].bind(instance) : Replacer.tag.bind(matcher[1]));
   });
   h.for_each(instance.matchers.singleline, function(matcher){
     matcher[2]  = (matcher[2] || RegExp("^" + matcher[0] + " *(.*)", "g"));
@@ -59,9 +59,6 @@ Replacer.prototype.replaceText = function(text){
 Replacer.prototype.replaceLine = function(line){
   var instance  = this;
   var output    = line;
-  h.for_each(instance.matchers.entities, function(matcher){
-    output      = output.replace(matcher[2], matcher[1]);
-  });
   h.for_each(instance.matchers.singleline, function(matcher){
     var original= output;
     output      = output.replace(matcher[2], matcher[3]);
@@ -69,6 +66,13 @@ Replacer.prototype.replaceLine = function(line){
   });
   h.for_each(instance.matchers.inline, function(matcher){
     output      = output.replace(matcher[2], matcher[3]);
+  });
+  return output;
+}
+Replacer.prototype.replaceEntities = function(output){
+  var instance = this;
+  h.for_each(instance.matchers.entities, function(matcher){
+    output = output.replace(matcher[2], matcher[1]);
   });
   return output;
 }
@@ -81,11 +85,15 @@ Replacer.prototype.matchers = {
   inline: [
     ["_{3}",  "i"],
     ["_{2}",  "b"],
-    ["`{1}",  "code"],
     ["\\*{2}","strong"],
     ["\\*{1}","em"],
     ["'{2}",  "q"],
-    ["~{2}",  "mark"]
+    ["~{2}",  "mark"],
+    ["`{1}",  0, 0,   function inlineCode(outer, inner){
+      var instance  = this;
+      var output    = instance.replaceEntities(inner);
+      return Replacer.tag.call("code", null, output);
+    }],
   ],
   singleline: [
     ["#{4}",  "h4"],
@@ -109,9 +117,15 @@ Replacer.prototype.matchers = {
     [0, 0, /^ *1\./,  function orderedList(){
       
     }],
-    [0, 0, /^(.*?)$/, function defaultLine(outer, inner){
-      if(inner.trim() === "") return "";
-      else return Replacer.tag.call("p", null, inner);
+    [0, 0, /^(.*?)$/, function fallback(outer, inner){
+      var instance = this;
+      if(instance.isCodeBlock){
+        return instance.replaceEntities(inner);
+      }else if(inner.trim() === ""){
+        return "";
+      }else{
+        return Replacer.tag.call("p", null, inner);
+      }
     }]
   ]
 }
