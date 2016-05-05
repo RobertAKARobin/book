@@ -40,10 +40,14 @@ em {
   font-style: italic;
 }
 
-ul li {
+ul, ol {
+  padding-left: 20px;
+}
+
+ul > li {
   list-style-type: disc;
 }
-ol li {
+ol > li {
   list-style-type: decimal;
 }
 

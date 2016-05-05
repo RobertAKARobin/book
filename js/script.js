@@ -101,6 +101,20 @@ Replacer.prototype.matchers = {
     ["#{2}",  "h2"],
     ["#{1}",  "h1"],
     ["''''",  "blockquote"],
+    ["\\|", 0, 0,     function preserveHTML(nil, output){
+      return output;
+    }],
+    [" *-(=|#)\/",0,0,function endList(nil, listType){
+      var listType = ({"#": "ol", "=": "ul"})[listType];
+      return "</li></" + listType + ">";
+    }],
+    [" *-(=|#)",0,0,  function newList(nil, listType, output){
+      var listType = ({"#": "ol", "=": "ul"})[listType];
+      return "<" + listType + "><li>" + output;
+    }],
+    [" *-", 0, 0,     function listItem(nil, output){
+      return "</li><li>" + output;
+    }],
     [0, 0, /```/,     function newCodeBlock(){
       var instance = this;
       if(instance.line.codeBlock){
@@ -111,24 +125,6 @@ Replacer.prototype.matchers = {
         return "<pre data-code>";
       }
     }],
-    [" *-", 0, 0,     function listItem(nil, output){
-      var instance = this;
-      output = Replacer.tag.call("li", null, output);
-      if(!instance.line.listType){
-        instance.line.listType = "ul";
-        output = "<" + instance.line.listType + ">" + output;
-      }
-      return output;
-    }],
-    [" *[0-9]\.",0,0, function orderedList(nil, output){
-      var instance = this;
-      output = Replacer.tag.call("li", null, output);
-      if(!instance.line.listType){
-        instance.line.listType = "ol";
-        output = "<" + instance.line.listType + ">" + output;
-      }
-      return output;
-    }],
     [0, 0, /^(.*?)$/, function fallback(nil, output){
       var instance = this;
       if(instance.line.codeBlock){
@@ -137,10 +133,6 @@ Replacer.prototype.matchers = {
         output = "";
       }else{
         output = Replacer.tag.call("p", null, output);
-      }
-      if(instance.line.listType){
-        output = "</" + instance.line.listType + ">" + output;
-        instance.line.listType = false;
       }
       return output;
     }]
