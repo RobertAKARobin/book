@@ -7,64 +7,29 @@
   </head>
   <body>
     <div id="main">
-      <div data-md><!--
-        -=This is
-        - An unordered list
-          -=With
-          - Nesting
-          -=/
-        -=/
-
-        -#This one
-        - Is ordered
-          -#And has
-          - Ordered nesting
-          -#/
-        - It also has
-          -=Unordered
-          - Nesting
-          -=/
-        - And it can also have...
-        `<paragraphs>` and stuff
-        nested inside it.
-        - Hot dog!
-        -#/
-      --></div>
-      
       <div data-md>
-        <h1>Markdown</h1>
-        This is a text node.
+        <p>This paragraph is normal. The paragraph after this one is a little different: it has been "styled" to look different from normal paragraphs.</p>
+        <p style="
+          line-height:3em;
+          border:2px dashed black;
+          border-radius:1em;
+          padding:0.5em;
+          text-align:center;
+          font-style:italic;">Complete the code to style this paragraph: fill in the blanks below by drawing a line from each item on the left to its match on the right.</p>
         <!--
-# Headline 1
-## Headline 2
-### Headline 3
-#### Headline 4
-'''' This is a blockquote.
-This is a paragraph. I'm a `code`. I'm a ''quote''.
-I'm `<em>inline code</em>.`
-I'm <span style="color:red">inline HTML</span>.
-I'm **strong**. I'm *emphasized*.
-I made a `<joke>`.
-It has a `<punchline>`.
-
 ```
-<joke>
-  What does a cloud wear on its butt?
-  <punchline>Thunderpants.</punchline>
-  Mark: ~~<body>~~
-  Blank: __<body>__
-  Big blank: ___Big blank line here___
-</joke>
+color: __black__
+line-height: __24px__
+font-size: __12px__
+font-style: __italic__
+text-align: __center__
+border: __2px dashed black__
+border-radius: __12px__
 ```
         -->
       </div>
       
-      <div>
-        <h1>Page 3</h1>
-      </div>
-      
-      <div>
-        <h1>Page 4</h1>
+      <div data-md>
       </div>
     </div>
     <script src="js/helpers.js"></script>

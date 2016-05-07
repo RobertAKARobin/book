@@ -62,11 +62,20 @@ code, [data-code]{
   margin:1em auto;
 }
 code{
-  background-color:#ddd;
+  // background-color:#ddd;
 }
 b, i{
   color:#fff;
   border-bottom:2px solid #000;
+}
+b{
+  padding-left:1em;
+  padding-right:1em;
+}
+b:empty{
+  display:inline-block;
+  width:10em;
+  vertical-align:bottom;
 }
 i{
   display:block;
@@ -80,7 +89,9 @@ mark{
   border-radius:.5em;
   background-color:inherit;
 }
-
+p{
+  margin:1em auto;
+}
 
 body{
   font-size:0;
