@@ -64,24 +64,27 @@ code, [data-code]{
 code{
   // background-color:#ddd;
 }
-b, i{
+b{
   color:#fff;
   border-bottom:2px solid #000;
-}
-b{
   padding-left:1em;
   padding-right:1em;
+  box-sizing:border-box;
 }
 b:empty{
   display:inline-block;
   width:10em;
   vertical-align:bottom;
 }
-i{
+b.line{
   display:block;
   width:100%;
-  &:after{
-    content:" ";
+}
+span.line{
+  display:inline-flex;
+  width:100%;
+  b{
+    flex-grow:1;
   }
 }
 mark{

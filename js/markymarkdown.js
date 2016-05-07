@@ -83,19 +83,24 @@ MarkyMarkdown.prototype.matchers = {
     ["\\>",   "&gt;"]
   ],
   inline: [
-    ["_{3}",  "i"],
+    ["_{3}",  0, 0,   function blankBlock(nil, output){
+      return "<b class='line'>" + output + "</b>";
+    }],
     ["_{2}",  "b"],
     ["\\*{2}","strong"],
     ["\\*{1}","em"],
     ["'{2}",  "q"],
     ["~{2}",  "mark"],
-    ["`{1}",  0, 0,   function inlineCode(outer, inner){
+    ["`{1}",  0, 0,   function inlineCode(nil, output){
       var instance  = this;
       var output    = instance.replaceEntities(inner);
       return MarkyMarkdown.tag.call("code", null, output);
     }],
   ],
   singleline: [
+    [0,0,/^(.*?)_{4}$/,function inline(nil, output){
+      return "<span class='line'><span>" + output + "</span><b></b></span>";
+    }],
     ["#{4}",  "h4"],
     ["#{3}",  "h3"],
     ["#{2}",  "h2"],
