@@ -58,22 +58,23 @@ blockquote:after, q:after {
   content: "\0201d";
 }
 
-code, [data-code] {
-  white-space: pre-wrap;
+[data-code] {
   word-break: break-all;
-  font-family: "Andale Mono";
+  text-align: left;
 }
 
-[data-code] {
-  margin: 1em auto;
+code, [data-code] {
+  white-space: pre-wrap;
+  font-family: "Andale Mono";
 }
 
 b {
   color: #fff;
-  border-bottom: 2px solid #000;
-  padding-left: 1em;
-  padding-right: 1em;
+  border-bottom: 1px solid #000;
   box-sizing: border-box;
+}
+b:after, b:before {
+  content: " ";
 }
 
 b:empty {
@@ -106,8 +107,15 @@ dfn {
   font-weight: bold;
 }
 
-p {
-  margin: 1em auto;
+.wordbank ul {
+  text-align: center;
+  padding-left: 0;
+}
+.wordbank ul li {
+  display: inline-block;
+  margin: 0.5em 2em;
+  border-bottom: 1px dotted #000;
+  padding-left: 0;
 }
 
 body {
@@ -115,20 +123,27 @@ body {
   text-align: center;
 }
 
-#main > div {
+section {
   display: inline-block;
   vertical-align: top;
   box-sizing: border-box;
-  outline: 1px solid #ccc;
   text-align: left;
+  border-style: dotted;
+  border-color: #ddd;
+  border-left-width: 1px;
+  border-right-width: 1px;
+  border-bottom-width: 1px;
   width: 100vw;
   height: 129.41176vw;
   padding: 2vw;
   font-size: 3vw;
   line-height: 1.6em;
 }
+section:nth-child(even) {
+  border-left-width: 0;
+}
 @media (max-width: 800px), (max-height: 500px) {
-  #main > div {
+  section {
     width: 100vw;
     height: 129.41176vw;
     padding: 2vw;
@@ -136,7 +151,7 @@ body {
   }
 }
 @media (min-width: 800px), (min-aspect-ratio: 255 / 110) {
-  #main > div {
+  section {
     width: 50vw;
     height: 64.70588vw;
     padding: 1vw;
@@ -144,16 +159,28 @@ body {
   }
 }
 @media (min-height: 500px) and (min-aspect-ratio: 170 / 110) and (max-aspect-ratio: 255 / 110) {
-  #main > div {
+  section {
     width: 77.27273vh;
     height: 100vh;
     padding: 1.54545vh;
     font-size: 2.31818vh;
   }
 }
-#main > div h1 {
-  font-size: 2em;
-  line-height: 2em;
+section > * {
+  margin-top: 1.5em;
+}
+section > h1 {
+  margin: 0.5em auto;
+}
+section h1 {
+  font-size: 1.5em;
   font-family: "PF Din Text Comp Pro", Georgia, serif;
   text-transform: uppercase;
+}
+section h2 {
+  font-weight: bold;
+  text-align: center;
+}
+section li {
+  padding-left: 1.5em;
 }

@@ -7,32 +7,92 @@
   </head>
   <body>
     <div id="main">
-      <div data-md>
+      <section>
 <!--
-This paragraph is normal. The paragraph after this one is a little different: it has been //styled// to look different from normal paragraphs.
+# Colors in RGB
+
+A computer screen is made of microscopic red, blue, and green lights. The computer sets each light's brightness with a number between 0 (or 000) and 255.
+
+A //pixel// is a tiny square that has one of each of these lights. A bright purple pixel has an //RGB// code of `255 000 255`. This means the pixel's red light is on, green is off, and blue is on.
+
+A dark purple pixel might be `170 000 170`. This means the red and blue lights are dim but not all the way off.
+
+Below are several colors with their RGB codes. Fill in the blanks.
+
+-#`red          255       000       000`
+- `white        255       255       255`
+- `black       _000_     _000_     _000_`
+- `green       _000_      255      _000_`
+- `blue        _000_     _000_     _255_`
+- `turquoise   _000_      255       255`
+- `yellow       255       255       000`
+- `orange       255      _170_      000`
+- `_grey_       170       170       170`
+-#/
+-->
+      </section>
+      
+      <section>
+<!--
+# Colors in Hex
+
+We use the ''decimal'' system to write numbers. This system has 10 digits: 0 through 9.
+
+Computers can save memory by using the //hexadecimal// system, or ''hex''. It uses letters in place of some numbers: `a` for 10, `b` for 11, and so on. It has 16 digits, 0 through `f`.
+
+Most RGB codes are 9 digits long. White is `255 255 255`. In hex white is `ff ff ff`, which is only 6 spaces long. Because it takes up less memory, computers often write colors in hex.
+
+Repeat the exercise from the last page in hexadecimal.
+
+-#`red          ff       00       00`
+- `white        ff       ff       ff`
+- `black       _00_     _00_     _00_`
+- `green       _00_      ff      _00_`
+- `blue        _00_     _00_     _ff_`
+- `turquoise   _00_      ff       ff`
+- `yellow       ff       ff       00`
+- `orange       ff      _aa_      00`
+- `_grey_       aa       aa       aa`
+-#/
+-->
+      </section>
+      
+      <section>
+<!--
+# Styling
+
+This paragraph is normal. The paragraph after this one has been //styled// to look different from normal paragraphs.
 -->
 <p style="
   line-height:3em;
-  border:2px dashed black;
-  border-radius:1em;
-  padding:0.5em;
+  border:2px dotted black;
+  border-radius:50px;
+  padding:0.5em 1em;
   text-align:center;
-  font-style:italic;">Complete the code to style this paragraph: fill in the blanks below by drawing a line from each item on the left to its match on the right.</p>
+  font-style:italic;">The lines below give this paragraph its style. Try to fill in the blanks using the word bank at the bottom of this page.</p>
 <!--
-```
-color: ____
-line-height: ____
-font-size: ____
-font-style: ____
-text-align: ____
-border: ____
-border-radius: ____
-```
+-#`__color:__`
+- `__font-style:__`
+- `__text-align:__`
+- `__font-size:__`
+- `__line-height:__`
+- `__border:__`
+- `__border-radius:__`
+-#/
+
+<div class="wordbank">
+-=`black`
+- `italic`
+- `center`
+- `12px`
+- `24px`
+- `2px dotted black`
+- `50px`
+-=/
+</div>
 -->
-      </div>
+      </section>
       
-      <div data-md>
-      </div>
     </div>
     <script src="js/helpers.js"></script>
     <script src="js/markymarkdown.js"></script>

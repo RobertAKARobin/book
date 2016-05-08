@@ -53,23 +53,26 @@ blockquote, q{
     content:"\0201d";
   }
 }
+[data-code]{
+  word-break:break-all;
+  text-align:left;
+}
 code, [data-code]{
   white-space:pre-wrap;
-  word-break:break-all;
   font-family:"Andale Mono";
-}
-[data-code]{
-  margin:1em auto;
 }
 code{
   // background-color:#ddd;
 }
 b{
   color:#fff;
-  border-bottom:2px solid #000;
-  padding-left:1em;
-  padding-right:1em;
+  border-bottom:1px solid #000;
   box-sizing:border-box;
+  
+  &:after,
+  &:before{
+    content: " ";
+  }
 }
 b:empty{
   display:inline-block;
@@ -96,8 +99,16 @@ dfn{
   border-bottom:1px dotted #000;
   font-weight:bold;
 }
-p{
-  margin:1em auto;
+.wordbank ul{
+  text-align:center;
+  padding-left:0;
+  
+  li{
+    display:inline-block;
+    margin:0.5em 2em;
+    border-bottom:1px dotted #000;
+    padding-left:0;
+  }
 }
 
 body{
@@ -119,12 +130,20 @@ $aspect: ($page-x / $page-y);
   @return "#{$page-x * $n}/#{$page-y}";
 }
 
-#main > div{
+section{
   display:inline-block;
   vertical-align:top;
   box-sizing:border-box;
-  outline:1px solid #ccc;
   text-align:left;
+  border-style:dotted;
+  border-color:#ddd;
+  border-left-width:1px;
+  border-right-width:1px;
+  border-bottom-width:1px;
+  
+  &:nth-child(even){
+    border-left-width:0;
+  }
   
   @include size-from-width(100vw);
   
@@ -145,10 +164,24 @@ $aspect: ($page-x / $page-y);
   }
   
   line-height:1.6em;
+  
+  & > *{
+    margin-top:1.5em;
+  }
+  & > h1{
+    margin:0.5em auto;
+  }
+  
   h1{
-    font-size:2em;
-    line-height:2em;
+    font-size:1.5em;
     font-family:"PF Din Text Comp Pro", Georgia, serif;
     text-transform:uppercase;
+  }
+  h2{
+    font-weight:bold;
+    text-align:center;
+  }
+  li{
+    padding-left:1.5em;
   }
 }

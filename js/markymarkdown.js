@@ -83,25 +83,27 @@ MarkyMarkdown.prototype.matchers = {
     ["\\>",   "&gt;"]
   ],
   inline: [
+    ["`{1}",  0, 0,   function inlineCode(nil, output){
+      var instance  = this;
+      var output    = instance.replaceEntities(output);
+      return MarkyMarkdown.tag.call("code", null, output);
+    }],
     ["_{3}",  0, 0,   function blankBlock(nil, output){
       return "<b class='line'>" + output + "</b>";
     }],
-    ["_{2}",  "b"],
+    ["_{2}",  0, 0,   function blankInlineBlock(nil, output){
+      var out = "<span class='line'><span>" + output + "</span><b></b></span>";
+      console.log(out)
+      return out;
+    }],
+    ["_{1}",  "b"],
     ["\\/{2}","dfn"],
     ["\\*{2}","strong"],
     ["\\*{1}","em"],
     ["'{2}",  "q"],
-    ["~{2}",  "mark"],
-    ["`{1}",  0, 0,   function inlineCode(nil, output){
-      var instance  = this;
-      var output    = instance.replaceEntities(inner);
-      return MarkyMarkdown.tag.call("code", null, output);
-    }],
+    ["~{2}",  "mark"]
   ],
   singleline: [
-    [0,0,/^(.*?)_{4}$/,function inline(nil, output){
-      return "<span class='line'><span>" + output + "</span><b></b></span>";
-    }],
     ["#{4}",  "h4"],
     ["#{3}",  "h3"],
     ["#{2}",  "h2"],
@@ -137,6 +139,8 @@ MarkyMarkdown.prototype.matchers = {
         output = instance.replaceEntities(output);
       }else if(output.trim() === ""){
         output = "";
+      }else if(output.substring(0,1) === "<"){
+        output = output;
       }else{
         output = MarkyMarkdown.tag.call("p", null, output);
       }
