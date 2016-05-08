@@ -13,11 +13,11 @@
 
 A computer screen is made of microscopic red, blue, and green lights. The computer sets each light's brightness with a number between 0 (or 000) and 255.
 
-A //pixel// is a tiny square that has one of each of these lights. A bright purple pixel has an //RGB// code of `255 000 255`. This means the pixel's red light is on, green is off, and blue is on.
+A //pixel// is a tiny square that has one of each of these lights. A bright purple pixel has an //RGB// code of `255000255`, or `255 000 255`, which means the pixel's red light is on, green is off, and blue is on.
 
-A dark purple pixel might be `170 000 170`. This means the red and blue lights are dim but not all the way off.
+`170000170` or `170 000 170` makes a darker purple: the red and blue lights are a little dim.
 
-Below are several colors with their RGB codes. Fill in the blanks.
+Below are some colors with their RGB codes. Fill in the blanks:
 
 -#`red          255       000       000`
 - `white        255       255       255`
@@ -36,13 +36,16 @@ Below are several colors with their RGB codes. Fill in the blanks.
 <!--
 # Colors in Hex
 
-We use the ''decimal'' system to write numbers. This system has 10 digits: 0 through 9.
+We use the ''decimal'' system to write numbers. Computers can save memory by using the //hexadecimal// system, or ''hex''. It uses letters in place of some numbers: `a` for 10, `b` for 11, up to `f` for 15:
 
-Computers can save memory by using the //hexadecimal// system, or ''hex''. It uses letters in place of some numbers: `a` for 10, `b` for 11, and so on. It has 16 digits, 0 through `f`.
+```
+0 1 2..10 11 12 13 14 15 16 17..32 33..160..175..240
+0 1 2..a  b  c  d  e  f  10 11..20 21..a0...af...f0
+```
 
-Most RGB codes are 9 digits long. White is `255 255 255`. In hex white is `ff ff ff`, which is only 6 spaces long. Because it takes up less memory, computers often write colors in hex.
+In decimal white is `255255255`, which is 9 spaces long. In hex white is `ffffff`, which is only 6 spaces long. Because it takes up less space, computers often write colors in hex.
 
-Repeat the exercise from the last page in hexadecimal.
+Do the last page again, this time in hexadecimal:
 
 -#`red          ff       00       00`
 - `white        ff       ff       ff`
@@ -53,6 +56,35 @@ Repeat the exercise from the last page in hexadecimal.
 - `yellow       ff       ff       00`
 - `orange       ff      _aa_      00`
 - `_grey_       aa       aa       aa`
+-#/
+-->
+      </section>
+
+      <section>
+<!--
+# Mixing colors
+
+Knowing how hex works makes it easier to find the perfect color for your website or app.
+
+For example, if you want yellow, but `ffff00` is *too* yellow, you can try `fefe00` instead, or maybe `ffff01`. If that isn't close you can try going darker with `efef00` or fainter with `ffff20`.
+
+One fun thing about this is that you can turn words into colors. Try to match the hex codes below to their colors:
+
+```
+a b c d e f g i l o s z
+            9 1 1 0 5 2
+```
+
+-#`defec8`
+- `c0ffee`
+- `0ff1c3`
+- `bedead`
+- `0lddad`
+- `dadb0d`
+- `b1ade5`
+- `bada55`
+- `be900d`
+- `d0c0de`
 -#/
 -->
       </section>
