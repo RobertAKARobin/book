@@ -87,6 +87,7 @@ MarkyMarkdown.prototype.matchers = {
       return "<b class='line'>" + output + "</b>";
     }],
     ["_{2}",  "b"],
+    ["\\/{2}","dfn"],
     ["\\*{2}","strong"],
     ["\\*{1}","em"],
     ["'{2}",  "q"],

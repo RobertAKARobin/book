@@ -101,6 +101,11 @@ mark {
   background-color: inherit;
 }
 
+dfn {
+  border-bottom: 1px dotted #000;
+  font-weight: bold;
+}
+
 p {
   margin: 1em auto;
 }
