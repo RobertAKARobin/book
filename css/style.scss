@@ -147,6 +147,13 @@ section{
   
   @include size-from-width(100vw);
   
+  @media print{
+    page-break-inside:avoid;
+    page-break-before:always;
+    border-width:0px;
+    padding:0;
+  }
+  
   @media  (max-width:800px),
           (max-height: 500px){
     @include size-from-width(100vw);
