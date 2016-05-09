@@ -13,9 +13,9 @@
 
 A computer screen is made of microscopic red, blue, and green lights. The computer sets each light's brightness with a number between 0 (or 000) and 255.
 
-A //pixel// is a tiny square that has one of each of these lights. A bright purple pixel has an //RGB// code of `255000255`, or `255 000 255`, which means the pixel's red light is on, green is off, and blue is on.
+A //pixel// is a tiny square that has one of each of these lights. A bright purple pixel has an //RGB// code of `255 000 255` which means the pixel's red light is on, green is off, and blue is on.
 
-`170000170` or `170 000 170` makes a darker purple: the red and blue lights are a little dim.
+`170 000 170` makes a darker purple: the red and blue lights are a little dim, and green is still off.
 
 Below are some colors with their RGB codes. Fill in the blanks:
 
@@ -36,12 +36,34 @@ Below are some colors with their RGB codes. Fill in the blanks:
 <!--
 # Colors in Hex
 
-We use the ''decimal'' system to write numbers. Computers can save memory by using the //hexadecimal// system, or ''hex''. It uses letters in place of some numbers: `a` for 10, `b` for 11, up to `f` for 15:
+We use the ''decimal'' system to write numbers. Computers can save memory by using the //hexadecimal// system, or ''hex''. It uses letters in place of some numbers: `a` for 10, `b` for 11, up to `f` for 15.
 
+<aside>
 ```
-0 1 2..10 11 12 13 14 15 16 17..32 33..160..175..240
-0 1 2..a  b  c  d  e  f  10 11..20 21..a0...af...f0
+Dec   Hex
+000...00
+001...01
+002...02
+009...09
+010...0a
+011...0b
+012...0c
+013...0d
+014...0e
+015...0f
+016...10
+017...11
+032...20
+033...21
+160...a0
+161...a1
+175...af
+240...f0
+255...ff
 ```
+</aside>
+
+Take a look at the chart on the right:
 
 In decimal white is `255255255`, which is 9 spaces long. In hex white is `ffffff`, which is only 6 spaces long. Because it takes up less space, computers often write colors in hex.
 

@@ -192,3 +192,10 @@ section h2 {
 section li {
   padding-left: 1.5em;
 }
+section aside {
+  display: block;
+  float: right;
+  padding-left: 1em;
+  margin-left: 1em;
+  border-left: 1px solid #000;
+}
