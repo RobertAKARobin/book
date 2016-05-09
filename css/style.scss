@@ -73,15 +73,18 @@ b{
   &:before{
     content: " ";
   }
-}
-b:empty{
-  display:inline-block;
-  width:10em;
-  vertical-align:bottom;
-}
-b.line{
-  display:block;
-  width:100%;
+  &:empty{
+    display:inline-block;
+    width:10em;
+    vertical-align:bottom;
+  }
+  &.line{
+    display:block;
+    width:100%;
+  }
+  td &:only-child{
+    display:block;
+  }
 }
 span.line{
   display:inline-flex;
@@ -173,7 +176,7 @@ section{
   line-height:1.6em;
   
   & > *{
-    margin-top:1.5em;
+    margin:1.5em auto 0 auto;
   }
   & > h1{
     margin:0.5em auto;
@@ -198,4 +201,29 @@ section{
     margin-left:1em;
     border-left:1px solid #000;
   }
+  table, tr, td{
+    box-sizing:border-box;
+  }
+  table{
+    counter-reset: tablerows;
+    
+    tr{
+      counter-increment: tablerows;
+    }
+    td{
+      position:relative;
+      vertical-align:top;
+      padding:0 1em;
+    }
+    td:nth-child(1):before{
+      content: counter(tablerows) ".";
+    }
+    b:before,
+    b:after{
+      content: "";
+    }
+  }
+}
+.foo{
+  color:red;
 }

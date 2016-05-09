@@ -4,6 +4,9 @@
     <title>Title</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="css/style.css" />
+    <script src="js/helpers.js"></script>
+    <script src="js/markymarkdown.js"></script>
+    <script>var MD = new MarkyMarkdown();</script>
   </head>
   <body>
     <div id="main">
@@ -18,18 +21,26 @@ A //pixel// is a tiny square that has one of each of these lights. A bright purp
 `170 000 170` makes a darker purple: the red and blue lights are a little dim, and green is still off.
 
 Below are some colors with their RGB codes. Fill in the blanks:
-
--#`red          255       000       000`
-- `white        255       255       255`
-- `black       _000_     _000_     _000_`
-- `green       _000_      255      _000_`
-- `blue        _000_     _000_     _255_`
-- `turquoise   _000_      255       255`
-- `yellow       255       255       000`
-- `orange       255      _170_      000`
-- `_grey_       170       170       170`
--#/
 -->
+<table>
+<script>
+var rowString = "\
+red         255     000     000\n\
+white       255     255     255\n\
+black       _000_   _000_   _000_\n\
+green       _000_   255     _000_\n\
+blue        _000_   255     255\n\
+turquoise   _000_   255     255\n\
+yellow      255     255     000\n\
+orange      255     _170_   000\n\
+_grey_      170     170     170";
+var tbody = MD.stringToTbody(rowString);
+MarkyMarkdown.for_cells_at(tbody.children, [2,3,4], function(cell){
+  cell.setAttribute("data-code", true);
+});
+document.write(tbody.outerHTML);
+</script>
+</table>
       </section>
       
       <section>
@@ -68,18 +79,27 @@ Take a look at the chart on the right:
 In decimal white is `255255255`, which is 9 spaces long. In hex white is `ffffff`, which is only 6 spaces long. Because it takes up less space, computers often write colors in hex.
 
 Do the last page again, this time in hexadecimal:
-
--#`red          ff       00       00`
-- `white        ff       ff       ff`
-- `black       _00_     _00_     _00_`
-- `green       _00_      ff      _00_`
-- `blue        _00_     _00_     _ff_`
-- `turquoise   _00_      ff       ff`
-- `yellow       ff       ff       00`
-- `orange       ff      _aa_      00`
-- `_grey_       aa       aa       aa`
--#/
 -->
+
+<table>
+<script>
+var rowString = "\
+red          ff       00       00\n\
+white        ff       ff       ff\n\
+black       _00_     _00_    _00_\n\
+green       _00_      ff     _00_\n\
+blue        _00_     _00_    _ff_\n\
+turquoise   _00_      ff       ff\n\
+yellow       ff       ff       00\n\
+orange       ff      _aa_      00\n\
+_grey_       aa       aa       aa";
+var tbody = MD.stringToTbody(rowString);
+MarkyMarkdown.for_cells_at(tbody.children, [2,3,4], function(cell){
+  cell.setAttribute("data-code", true);
+});
+document.write(tbody.outerHTML);
+</script>
+</table>
       </section>
 
       <section>
@@ -92,22 +112,17 @@ For example, if you want yellow, but `ffff00` is *too* yellow, you can try `fefe
 
 One fun thing about this is that you can turn words into colors. Try to match the hex codes below to their colors:
 
-```
-a b c d e f g i l o s z
-            9 1 1 0 5 2
-```
-
--#`defec8`
-- `c0ffee`
-- `0ff1c3`
-- `bedead`
-- `0lddad`
-- `dadb0d`
-- `b1ade5`
-- `bada55`
-- `be900d`
-- `d0c0de`
--#/
+-=Defec8
+- Coffee:
+- Office:
+- Old dad:
+- Decode:
+- Fedora:
+- Bieber:
+- Bad cat:
+- Ballet:
+- Doodle:
+-=/
 -->
       </section>
       
@@ -148,8 +163,6 @@ This paragraph is normal. The paragraph after this one has been //styled// to lo
       </section>
       
     </div>
-    <script src="js/helpers.js"></script>
-    <script src="js/markymarkdown.js"></script>
     <script src="js/script.js"></script>
   </body>
 </html>

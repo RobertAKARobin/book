@@ -76,16 +76,17 @@ b {
 b:after, b:before {
   content: " ";
 }
-
 b:empty {
   display: inline-block;
   width: 10em;
   vertical-align: bottom;
 }
-
 b.line {
   display: block;
   width: 100%;
+}
+td b:only-child {
+  display: block;
 }
 
 span.line {
@@ -175,7 +176,7 @@ section:nth-child(even) {
   }
 }
 section > * {
-  margin-top: 1.5em;
+  margin: 1.5em auto 0 auto;
 }
 section > h1 {
   margin: 0.5em auto;
@@ -198,4 +199,29 @@ section aside {
   padding-left: 1em;
   margin-left: 1em;
   border-left: 1px solid #000;
+}
+section table, section tr, section td {
+  box-sizing: border-box;
+}
+section table {
+  counter-reset: tablerows;
+}
+section table tr {
+  counter-increment: tablerows;
+}
+section table td {
+  position: relative;
+  vertical-align: top;
+  padding: 0 1em;
+}
+section table td:nth-child(1):before {
+  content: counter(tablerows) ".";
+}
+section table b:before,
+section table b:after {
+  content: "";
+}
+
+.foo {
+  color: red;
 }

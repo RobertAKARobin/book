@@ -8,6 +8,15 @@ MarkyMarkdown.tag = function(outer, inner, tag){
   var tag = (this || tag);
   return("<" + tag + ">" + inner + "</" + tag + ">");
 }
+MarkyMarkdown.for_cells_at = function(rows, indexes, doWhat){
+  h.for_each(rows, function(row){
+    h.for_each(row.children, function(td, index){
+      if([2, 3, 4].includes(index)){
+        td.setAttribute("data-code", true);
+      }
+    });
+  })
+}
 MarkyMarkdown.prototype.setMatchers = function(){
   var instance  = this;
   h.for_each(instance.matchers.entities, function(matcher){
@@ -58,23 +67,46 @@ MarkyMarkdown.prototype.replaceText = function(text){
 }
 MarkyMarkdown.prototype.replaceLine = function(line){
   var instance  = this;
-  var output    = line;
+  var output    = line.toString();
   h.for_each(instance.matchers.singleline, function(matcher){
     var original= output;
     output      = output.replace(matcher[2], matcher[3]);
     if(original !== output) return "break";
   });
+  output        = instance.replaceInline(output);
+  return output;
+}
+MarkyMarkdown.prototype.replaceInline = function(line){
+  var instance  = this;
+  var output    = line.toString();
   h.for_each(instance.matchers.inline, function(matcher){
     output      = output.replace(matcher[2], matcher[3]);
   });
   return output;
 }
 MarkyMarkdown.prototype.replaceEntities = function(output){
-  var instance = this;
+  var instance  = this;
   h.for_each(instance.matchers.entities, function(matcher){
-    output = output.replace(matcher[2], matcher[1]);
+    output      = output.replace(matcher[2], matcher[1]);
   });
   return output;
+}
+MarkyMarkdown.prototype.stringToTbody = function(string){
+  var tbody  = document.createElement("TBODY");
+  var output = "<tbody>";
+  h.for_each(string.split(/[\n\r]/g), function(row){
+    output   += "<tr><td></td>";
+    h.for_each(row.split(/ +/g), function(cell){
+      output += "<td>" + MD.replaceInline(cell) + "</td>";
+    });
+    output   += "</tr>";
+  });
+  tbody.innerHTML = output;
+  return tbody;
+}
+MarkyMarkdown.prototype.listTypes = {
+  "#": "ol",
+  "=": "ul"
 }
 MarkyMarkdown.prototype.matchers = {
   entities: [
@@ -92,9 +124,7 @@ MarkyMarkdown.prototype.matchers = {
       return "<b class='line'>" + output + "</b>";
     }],
     ["_{2}",  0, 0,   function blankInlineBlock(nil, output){
-      var out = "<span class='line'><span>" + output + "</span><b></b></span>";
-      console.log(out)
-      return out;
+      return "<span class='line'><span>" + output + "</span><b></b></span>";
     }],
     ["_{1}",  "b"],
     ["\\/{2}","dfn"],
@@ -113,15 +143,27 @@ MarkyMarkdown.prototype.matchers = {
       return output;
     }],
     [" *-(=|#)\/",0,0,function endList(nil, listType){
-      var listType = ({"#": "ol", "=": "ul"})[listType];
-      return "</li></" + listType + ">";
+      var instance = this;
+      return "</li></" + instance.listTypes[listType] + ">";
     }],
     [" *-(=|#)",0,0,  function newList(nil, listType, output){
-      var listType = ({"#": "ol", "=": "ul"})[listType];
-      return "<" + listType + "><li>" + output;
+      var instance = this;
+      return "<" + instance.listTypes[listType] + "><li>" + output;
     }],
     [" *-", 0, 0,     function listItem(nil, output){
       return "</li><li>" + output;
+    }],
+    [0,0,/\/{2}={1} *(.*?)/,function newTable(nil, output){
+      return "<table><tr><td></td><td>";
+    }],
+    [0,0,/\/{1}={2} *(.*?)/,function tableRow(nil, output){
+      return "</td></tr><tr><td></td><td>" + output;
+    }],
+    [0,0,/={3} *(.*?)/,function tableCell(nil, output){
+      return "</td><td>" + output;
+    }],
+    [0,0,/={1}\/{2}/,    function tableEnd(){
+      return "</td></tr></table>";
     }],
     [0, 0, /```/,     function newCodeBlock(){
       var instance = this;
