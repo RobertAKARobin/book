@@ -21,26 +21,19 @@ A //pixel// is a tiny square that has one of each of these lights. A bright purp
 `170 000 170` makes a darker purple: the red and blue lights are a little dim, and green is still off.
 
 Below are some colors with their RGB codes. Fill in the blanks:
--->
-<table>
-<script>
-var rowString = "\
-red         255     000     000\n\
-white       255     255     255\n\
-black       _000_   _000_   _000_\n\
-green       _000_   255     _000_\n\
-blue        _000_   255     255\n\
-turquoise   _000_   255     255\n\
-yellow      255     255     000\n\
-orange      255     _170_   000\n\
-_grey_      170     170     170";
-var tbody = MD.stringToTbody(rowString);
-MarkyMarkdown.for_cells_at(tbody.children, [2,3,4], function(cell){
-  cell.setAttribute("data-code", true);
-});
-document.write(tbody.outerHTML);
-</script>
+
+<table data-code-cols="2 3 4">
+|red         |255     |000     |000
+|white       |255     |255     |255
+|black       |_000_   |_000_   |_000_
+|green       |_000_   |255     |_000_
+|blue        |_000_   |255     |255
+|turquoise   |_000_   |255     |255
+|yellow      |255     |255     |000
+|orange      |255     |_170_   |000
+|_grey_      |170     |170     |170
 </table>
+-->
       </section>
       
       <section>
@@ -79,27 +72,19 @@ Take a look at the chart on the right:
 In decimal white is `255255255`, which is 9 spaces long. In hex white is `ffffff`, which is only 6 spaces long. Because it takes up less space, computers often write colors in hex.
 
 Do the last page again, this time in hexadecimal:
--->
 
-<table>
-<script>
-var rowString = "\
-red          ff       00       00\n\
-white        ff       ff       ff\n\
-black       _00_     _00_    _00_\n\
-green       _00_      ff     _00_\n\
-blue        _00_     _00_    _ff_\n\
-turquoise   _00_      ff       ff\n\
-yellow       ff       ff       00\n\
-orange       ff      _aa_      00\n\
-_grey_       aa       aa       aa";
-var tbody = MD.stringToTbody(rowString);
-MarkyMarkdown.for_cells_at(tbody.children, [2,3,4], function(cell){
-  cell.setAttribute("data-code", true);
-});
-document.write(tbody.outerHTML);
-</script>
+<table data-code-cols="2 3 4">
+|red         | ff      | 00      | 00
+|white       | ff      | ff      | ff
+|black       |_00_     |_00_     |_00_
+|green       |_00_     | ff      |_00_
+|blue        |_00_     |_00_     |_ff_
+|turquoise   |_00_     | ff      | ff
+|yellow      | ff      | ff      | 00
+|orange      | ff      |_aa_     | 00
+|_grey_      | aa      | aa      | aa
 </table>
+-->
       </section>
 
       <section>

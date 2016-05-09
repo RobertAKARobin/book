@@ -8,15 +8,6 @@ MarkyMarkdown.tag = function(outer, inner, tag){
   var tag = (this || tag);
   return("<" + tag + ">" + inner + "</" + tag + ">");
 }
-MarkyMarkdown.for_cells_at = function(rows, indexes, doWhat){
-  h.for_each(rows, function(row){
-    h.for_each(row.children, function(td, index){
-      if([2, 3, 4].includes(index)){
-        td.setAttribute("data-code", true);
-      }
-    });
-  })
-}
 MarkyMarkdown.prototype.setMatchers = function(){
   var instance  = this;
   h.for_each(instance.matchers.entities, function(matcher){
@@ -139,9 +130,6 @@ MarkyMarkdown.prototype.matchers = {
     ["#{2}",  "h2"],
     ["#{1}",  "h1"],
     ["''''",  "blockquote"],
-    ["\\|", 0, 0,     function preserveHTML(nil, output){
-      return output;
-    }],
     [" *-(=|#)\/",0,0,function endList(nil, listType){
       var instance = this;
       return "</li></" + instance.listTypes[listType] + ">";
@@ -162,8 +150,15 @@ MarkyMarkdown.prototype.matchers = {
     [0,0,/={3} *(.*?)/,function tableCell(nil, output){
       return "</td><td>" + output;
     }],
-    [0,0,/={1}\/{2}/,    function tableEnd(){
+    [0,0,/={1}\/{2}/, function tableEnd(){
       return "</td></tr></table>";
+    }],
+    ["\\|",     0, 0,  function dataTableRow(nil, row){
+      var line  = "<td></td>";
+      h.for_each(row.split(/ *\| */g), function(cell){
+        line    += "<td>" + cell + "</td>";
+      });
+      return "<tr>" + line + "</tr>";
     }],
     [0, 0, /```/,     function newCodeBlock(){
       var instance = this;
