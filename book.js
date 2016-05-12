@@ -5,10 +5,11 @@ var h     = require("./js/helpers.js");
 
 (function loadPages(){
   
+  var matchers  = require("./js/markymarkdown.js");
   var filenames = require("./pages/_index");
   h.for_each(filenames, function(filename, i){
     var file  = read("./pages/" + filename + ".md");
-    
+
   });
   
 })();
