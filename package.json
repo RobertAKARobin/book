@@ -1,0 +1,19 @@
+{
+  "name": "book",
+  "version": "1.0.0",
+  "description": "",
+  "main": "book.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RobertAKARobin/book.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RobertAKARobin/book/issues"
+  },
+  "homepage": "https://github.com/RobertAKARobin/book#readme"
+}
