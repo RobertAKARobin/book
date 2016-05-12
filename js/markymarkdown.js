@@ -41,28 +41,20 @@ module.exports= (function(){
       [" *-", 0, 0,     function listItem(nil, output){
         return "</li><li>" + output;
       }],
-      [0,0,/\/{2}={1} *(.*?)/,function newTable(nil, output){
-        return "<table><tr><td></td><td>";
-      }],
-      [0,0,/\/{1}={2} *(.*?)/,function tableRow(nil, output){
-        return "</td></tr><tr><td></td><td>" + output;
-      }],
-      [0,0,/={3} *(.*?)/,function tableCell(nil, output){
-        return "</td><td>" + output;
-      }],
-      [0,0,/={1}\/{2}/, function tableEnd(){
-        return "</td></tr></table>";
-      }],
-      ["\\|",     0, 0,  function dataTableRow(nil, row){
+      ["\\|",     0, 0, function dataTableRow(nil, row){
         var line  = "<td></td>";
         h.for_each(row.split(/ *\| */g), function(cell){
           line    += "<td>" + cell + "</td>";
         });
         return "<tr>" + line + "</tr>";
       }],
-      [0, 0, /```/,      function newCodeBlock(){
-        flag.insideCodeBlock = !(flag.insideCodeBlock);
-        return (flag.insideCodeBlock ? "</pre>" : "<pre data-code>");
+      ["```", 0, 0,     function newCodeBlock(){
+        flag.insideCodeBlock = true;
+        return "<pre data-code>";
+      }],
+      ["``\\/",0, 0,    function endCodeBlock(){
+        flag.insideCodeBlock = false;
+        return "</pre>";
       }],
       [0, 0, /^(.*?)$/, function fallback(nil, output){
         if(flag.insideCodeBlock){
@@ -79,15 +71,26 @@ module.exports= (function(){
     ]
   }
   
-  h.for_each(matchers.inline, function(matcher){
-    matcher[2]  = (matcher[2] || RegExp(matcher[0] + "(.*?)" + matcher[0], "g"));
-    matcher[3]  = (matcher[3] ? matcher[3] : h.tag.bind(matcher[1]));
+  var output = {
+    inline:     [],
+    singleline: []
+  }
+  
+  h.for_each(matchers.inline, function(matcher, index){
+    output.inline.push(setReplacer(matcher, RegExp(matcher[0] + "(.*?)" + matcher[0], "g")));
   });
-  h.for_each(matchers.singleline, function(matcher){
-    matcher[2]  = (matcher[2] || RegExp("^" + matcher[0] + " *(.*)", "g"));
-    matcher[3]  = (matcher[3] ? matcher[3] : h.tag.bind(matcher[1]));
+  h.for_each(matchers.singleline, function(matcher, index){
+    output.singleline.push(setReplacer(matcher, RegExp("^" + matcher[0] + " *(.*)", "g")));
   });
   
-  return matchers;
+  function setReplacer(matcher, regex){
+    var regex     = (matcher[2] || regex);
+    var replacer  = (matcher[3] ? matcher[3] : h.tag.bind(matcher[1]));
+    return function(input){
+      return input.replace(regex, replacer);
+    }
+  }
+  
+  return output;
   
 })();

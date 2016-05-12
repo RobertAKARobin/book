@@ -24,7 +24,7 @@ Dec   Hex
 175...Af
 240...F0
 255...FF
-```
+``/
 </aside>
 
 Take a look at the chart on the right:
