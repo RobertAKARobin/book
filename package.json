@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/RobertAKARobin/book/issues"
   },
-  "homepage": "https://github.com/RobertAKARobin/book#readme"
+  "homepage": "https://github.com/RobertAKARobin/book#readme",
+  "dependencies": {
+    "js-beautify": "^1.6.2"
+  }
 }

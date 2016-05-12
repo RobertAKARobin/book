@@ -1,6 +1,7 @@
 "use strict";
 
 var fs    = require("fs");
+var beaut = require("js-beautify");
 var h     = require("./js/helpers.js");
 var pages = [];
 
@@ -31,7 +32,10 @@ var pages = [];
   
   var index     = read("layout.html").split("{{{yield}}}");
   var output    = index[0] + "<section>" + pages.join("</section><section>") + "</section>" + index[1];
-  write("index.html", output);
+  write("index.html", beaut.html(output, {
+    indent_size: 2,
+    end_with_newline: true
+  }));
   
 })();
 

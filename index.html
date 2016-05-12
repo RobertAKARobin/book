@@ -1,40 +1,98 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Title</title>
-    <meta charset="utf-8" />
-    <link rel="stylesheet" href="css/style.css" />
-  </head>
-  <body>
-    <!-- This HTML is valid, but ugly. That's because it's automatically generated so that I can write faster.-->
-    <div id="main">
-      <section><h1>Colors in RGB</h1>
 
-<p>A computer screen is made of microscopic red, blue, and green lights. The computer sets each light's brightness with a number between 0 (or 000) and 255.</p>
+<head>
+  <title>Title</title>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
 
-<p>A <dfn>pixel</dfn> is a tiny square that has one of each of these lights. A bright purple pixel has an <dfn>RGB</dfn> code of <code>255 000 255</code> which means the pixel's red light is on, green is off, and blue is on.</p>
+<body>
+  <div id="main">
+    <section>
+      <h1>Colors in RGB</h1>
 
-<p><code>170 000 170</code> makes a darker purple: the red and blue lights are a little dim, and green is still off.</p>
+      <p>A computer screen is made of microscopic red, blue, and green lights. The computer sets each light's brightness with a number between 0 (or 000) and 255.</p>
 
-<p>Below are some colors with their RGB codes. Fill in the blanks:</p>
+      <p>A <dfn>pixel</dfn> is a tiny square that has one of each of these lights. A bright purple pixel has an <dfn>RGB</dfn> code of <code>255 000 255</code> which means the pixel's red light is on, green is off, and blue is on.</p>
 
-<table data-code-cols="2 3 4">
-<tr><td></td><td>red</td><td>255</td><td>000</td><td>000</td></tr>
-<tr><td></td><td>white</td><td>255</td><td>255</td><td>255</td></tr>
-<tr><td></td><td>black</td><td><b>000</b></td><td><b>000</b></td><td><b>000</b></td></tr>
-<tr><td></td><td>green</td><td><b>000</b></td><td>255</td><td><b>000</b></td></tr>
-<tr><td></td><td>blue</td><td><b>000</b></td><td>255</td><td>255</td></tr>
-<tr><td></td><td>turquoise</td><td><b>000</b></td><td>255</td><td>255</td></tr>
-<tr><td></td><td>yellow</td><td>255</td><td>255</td><td>000</td></tr>
-<tr><td></td><td>orange</td><td>255</td><td><b>170</b></td><td>000</td></tr>
-<tr><td></td><td><b>grey</b></td><td>170</td><td>170</td><td>170</td></tr>
-</table>
-</section><section><h1>Colors in Hex</h1>
+      <p><code>170 000 170</code> makes a darker purple: the red and blue lights are a little dim, and green is still off.</p>
 
-<p>We use the <q>decimal</q> system to write numbers. Computers can save memory by using the <dfn>hexadecimal</dfn> system, or <q>hex</q>. It uses letters in place of some numbers: <code>A</code> for 10, <code>B</code> for 11, up to <code>F</code> for 15.</p>
+      <p>Below are some colors with their RGB codes. Fill in the blanks:</p>
 
-<aside>
-<pre data-code>
+      <table data-code-cols="2 3 4">
+        <tr>
+          <td></td>
+          <td>red</td>
+          <td>255</td>
+          <td>000</td>
+          <td>000</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>white</td>
+          <td>255</td>
+          <td>255</td>
+          <td>255</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>black</td>
+          <td><b>000</b></td>
+          <td><b>000</b></td>
+          <td><b>000</b></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>green</td>
+          <td><b>000</b></td>
+          <td>255</td>
+          <td><b>000</b></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>blue</td>
+          <td><b>000</b></td>
+          <td>255</td>
+          <td>255</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>turquoise</td>
+          <td><b>000</b></td>
+          <td>255</td>
+          <td>255</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>yellow</td>
+          <td>255</td>
+          <td>255</td>
+          <td>000</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>orange</td>
+          <td>255</td>
+          <td><b>170</b></td>
+          <td>000</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><b>grey</b></td>
+          <td>170</td>
+          <td>170</td>
+          <td>170</td>
+        </tr>
+      </table>
+    </section>
+    <section>
+      <h1>Colors in Hex</h1>
+
+      <p>We use the <q>decimal</q> system to write numbers. Computers can save memory by using the <dfn>hexadecimal</dfn> system, or <q>hex</q>. It uses letters in place of some numbers: <code>A</code> for 10, <code>B</code> for 11, up to <code>F</code>        for 15.</p>
+
+      <aside>
+        <pre data-code>
 Dec   Hex
 000...00
 001...01
@@ -56,86 +114,272 @@ Dec   Hex
 240...F0
 255...FF
 </pre>
-</aside>
+      </aside>
 
-<p>Take a look at the chart on the right:</p>
+      <p>Take a look at the chart on the right:</p>
 
-<p>In decimal white is <code>255255255</code>, which is 9 spaces long. In hex white is <code>ffffff</code>, which is only 6 spaces long. Because it takes up less space, computers often write colors in hex.</p>
+      <p>In decimal white is <code>255255255</code>, which is 9 spaces long. In hex white is <code>ffffff</code>, which is only 6 spaces long. Because it takes up less space, computers often write colors in hex.</p>
 
-<p>Do the last page again, this time in hexadecimal:</p>
+      <p>Do the last page again, this time in hexadecimal:</p>
 
-<table data-code-cols="2 3 4">
-<tr><td></td><td>red</td><td>FF</td><td>00</td><td>00</td></tr>
-<tr><td></td><td>white</td><td>FF</td><td>FF</td><td>FF</td></tr>
-<tr><td></td><td>black</td><td><b>00</b></td><td><b>00</b></td><td><b>00</b></td></tr>
-<tr><td></td><td>green</td><td><b>00</b></td><td>FF</td><td><b>00</b></td></tr>
-<tr><td></td><td>blue</td><td><b>00</b></td><td><b>00</b></td><td><b>FF</b></td></tr>
-<tr><td></td><td>turquoise</td><td><b>00</b></td><td>FF</td><td>FF</td></tr>
-<tr><td></td><td>yellow</td><td>FF</td><td>FF</td><td>00</td></tr>
-<tr><td></td><td>orange</td><td>FF</td><td><b>AA</b></td><td>00</td></tr>
-<tr><td></td><td><b>grey</b></td><td>AA</td><td>AA</td><td>AA</td></tr>
-</table></section><section><h1>Mixing Colors</h1>
+      <table data-code-cols="2 3 4">
+        <tr>
+          <td></td>
+          <td>red</td>
+          <td>FF</td>
+          <td>00</td>
+          <td>00</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>white</td>
+          <td>FF</td>
+          <td>FF</td>
+          <td>FF</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>black</td>
+          <td><b>00</b></td>
+          <td><b>00</b></td>
+          <td><b>00</b></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>green</td>
+          <td><b>00</b></td>
+          <td>FF</td>
+          <td><b>00</b></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>blue</td>
+          <td><b>00</b></td>
+          <td><b>00</b></td>
+          <td><b>FF</b></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>turquoise</td>
+          <td><b>00</b></td>
+          <td>FF</td>
+          <td>FF</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>yellow</td>
+          <td>FF</td>
+          <td>FF</td>
+          <td>00</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>orange</td>
+          <td>FF</td>
+          <td><b>AA</b></td>
+          <td>00</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><b>grey</b></td>
+          <td>AA</td>
+          <td>AA</td>
+          <td>AA</td>
+        </tr>
+      </table>
+    </section>
+    <section>
+      <h1>Mixing Colors</h1>
 
-<p>Knowing how hex works makes it easier to find the perfect color for your website or app.</p>
+      <p>Knowing how hex works makes it easier to find the perfect color for your website or app.</p>
 
-<p>If you want yellow, but <code>ffff00</code> is <em>too</em> yellow, you can try <code>fefe00</code> because you know <code>e</code> is one less than <code>f</code>, or you can go the other direction with <code>ffff01</code>.</p>
+      <p>If you want yellow, but <code>ffff00</code> is <em>too</em> yellow, you can try <code>fefe00</code> because you know <code>e</code> is one less than <code>f</code>, or you can go the other direction with <code>ffff01</code>.</p>
 
-<p>Complete the equations below:</p>
+      <p>Complete the equations below:</p>
 
-<table data-code-cols="1 2 3 4">
-<tr><td></td><td>AAAA00</td><td>+ 1 blue</td><td>=</td><td>AAAA01</td></tr>
-<tr><td></td><td>AAAA00</td><td>+ 1 red</td><td>=</td><td>ABAA00</td></tr>
-<tr><td></td><td>AAAA00</td><td>+ 16 red</td><td>=</td><td>BAAA00</td></tr>
-<tr><td></td><td>AAAA00</td><td>- 1 green</td><td>=</td><td>AAA900</td></tr>
-<tr><td></td><td>AAAA00</td><td>- 16 green</td><td>=</td><td>AA9A00</td></tr>
-<tr><td></td><td>AAAA00</td><td>- 17 green</td><td>=</td><td><b>AA9A00</b></td></tr>
-<tr><td></td><td>ABCDEF</td><td>+ 1 green</td><td>=</td><td><b>ABCEEF</b></td></tr>
-<tr><td></td><td>ABCDEF</td><td><b>- 16 red</b></td><td>=</td><td>9BCDEF</td></tr>
-<tr><td></td><td><b>CBCDEF</b></td><td>+ 32 red</td><td>=</td><td>ABCDEF</td></tr>
-<tr><td></td><td>B3A000</td><td>- 1 green</td><td>=</td><td><b>B39F00</b></td></tr>
-</table></section><section><h1>Hex Words</h1>
+      <table data-code-cols="1 2 3 4">
+        <tr>
+          <td></td>
+          <td>AAAA00</td>
+          <td>+ 1 blue</td>
+          <td>=</td>
+          <td>AAAA01</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>AAAA00</td>
+          <td>+ 1 red</td>
+          <td>=</td>
+          <td>ABAA00</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>AAAA00</td>
+          <td>+ 16 red</td>
+          <td>=</td>
+          <td>BAAA00</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>AAAA00</td>
+          <td>- 1 green</td>
+          <td>=</td>
+          <td>AAA900</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>AAAA00</td>
+          <td>- 16 green</td>
+          <td>=</td>
+          <td>AA9A00</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>AAAA00</td>
+          <td>- 17 green</td>
+          <td>=</td>
+          <td><b>AA9A00</b></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>ABCDEF</td>
+          <td>+ 1 green</td>
+          <td>=</td>
+          <td><b>ABCEEF</b></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>ABCDEF</td>
+          <td><b>- 16 red</b></td>
+          <td>=</td>
+          <td>9BCDEF</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><b>CBCDEF</b></td>
+          <td>+ 32 red</td>
+          <td>=</td>
+          <td>ABCDEF</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>B3A000</td>
+          <td>- 1 green</td>
+          <td>=</td>
+          <td><b>B39F00</b></td>
+        </tr>
+      </table>
+    </section>
+    <section>
+      <h1>Hex Words</h1>
 
-<p>One nice thing about hex is that you can turn words into colors. </p>
+      <p>One nice thing about hex is that you can turn words into colors. </p>
 
-<p>Fill in the blanks below:</p>
+      <p>Fill in the blanks below:</p>
 
-<table data-code-cols="2">
-<tr><td></td><td>Coffee</td><td><b>c0ffee</b></td><td>Pale blue</td></tr>
-<tr><td></td><td><b>Office</b></td><td>0ff1ce</td><td>Blue-green</td></tr>
-<tr><td></td><td>Old dad</td><td><b>01ddad</b></td><td>Green-blue</td></tr>
-<tr><td></td><td><b>Decode</b></td><td>dec0de</td><td>Pastel pink</td></tr>
-<tr><td></td><td>Doodle</td><td><b>d00d1e</b></td><td>Red</td></tr>
-<tr><td></td><td>Fedora</td><td>fed02a</td><td><b>Yellow</b></td></tr>
-<tr><td></td><td>Bad cat</td><td>badca7</td><td><b>Pastel green</b></td></tr>
-<tr><td></td><td><b>Ballet</b></td><td>ba11e7</td><td><b>Purple</b></td></tr>
-<tr><td></td><td>Bieber</td><td><b>b1ebe2</b></td><td><b>Blue-green</b></td></tr>
-</table></section><section><h1>Styling</h1>
+      <table data-code-cols="2">
+        <tr>
+          <td></td>
+          <td>Coffee</td>
+          <td><b>c0ffee</b></td>
+          <td>Pale blue</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><b>Office</b></td>
+          <td>0ff1ce</td>
+          <td>Blue-green</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>Old dad</td>
+          <td><b>01ddad</b></td>
+          <td>Green-blue</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><b>Decode</b></td>
+          <td>dec0de</td>
+          <td>Pastel pink</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>Doodle</td>
+          <td><b>d00d1e</b></td>
+          <td>Red</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>Fedora</td>
+          <td>fed02a</td>
+          <td><b>Yellow</b></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>Bad cat</td>
+          <td>badca7</td>
+          <td><b>Pastel green</b></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><b>Ballet</b></td>
+          <td>ba11e7</td>
+          <td><b>Purple</b></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>Bieber</td>
+          <td><b>b1ebe2</b></td>
+          <td><b>Blue-green</b></td>
+        </tr>
+      </table>
+    </section>
+    <section>
+      <h1>Styling</h1>
 
-<p>This paragraph is normal. The paragraph after this one has been <dfn>styled</dfn> to look different from normal paragraphs.</p>
+      <p>This paragraph is normal. The paragraph after this one has been <dfn>styled</dfn> to look different from normal paragraphs.</p>
 
-<p style="line-height:3em; border:2px dotted black; border-radius:50px; padding:0.5em 1em; text-align:center; font-style:italic;">The lines below give this paragraph its style. Try to fill in the blanks using the word bank at the bottom of this page.</p>
+      <p style="line-height:3em; border:2px dotted black; border-radius:50px; padding:0.5em 1em; text-align:center; font-style:italic;">The lines below give this paragraph its style. Try to fill in the blanks using the word bank at the bottom of this page.</p>
 
-<ol><li><code><span class='line'><span>color:</span><b></b></span></code>
-</li><li><code><span class='line'><span>font-style:</span><b></b></span></code>
-</li><li><code><span class='line'><span>text-align:</span><b></b></span></code>
-</li><li><code><span class='line'><span>font-size:</span><b></b></span></code>
-</li><li><code><span class='line'><span>line-height:</span><b></b></span></code>
-</li><li><code><span class='line'><span>border:</span><b></b></span></code>
-</li><li><code><span class='line'><span>border-radius:</span><b></b></span></code>
-</li></ol>
+      <ol>
+        <li><code><span class='line'><span>color:</span><b></b></span></code>
+        </li>
+        <li><code><span class='line'><span>font-style:</span><b></b></span></code>
+        </li>
+        <li><code><span class='line'><span>text-align:</span><b></b></span></code>
+        </li>
+        <li><code><span class='line'><span>font-size:</span><b></b></span></code>
+        </li>
+        <li><code><span class='line'><span>line-height:</span><b></b></span></code>
+        </li>
+        <li><code><span class='line'><span>border:</span><b></b></span></code>
+        </li>
+        <li><code><span class='line'><span>border-radius:</span><b></b></span></code>
+        </li>
+      </ol>
 
-<div class="wordbank">
-<ul><li><code>#000000</code>
-</li><li><code>italic</code>
-</li><li><code>center</code>
-</li><li><code>12px</code>
-</li><li><code>24px</code>
-</li><li><code>2px dotted #000000</code>
-</li><li><code>50px</code>
-</li></ul>
-</div></section>
-    </div>
-    <script src="js/helpers.js"></script>
-    <script src="js/script.js"></script>
-  </body>
+      <div class="wordbank">
+        <ul>
+          <li><code>#000000</code>
+          </li>
+          <li><code>italic</code>
+          </li>
+          <li><code>center</code>
+          </li>
+          <li><code>12px</code>
+          </li>
+          <li><code>24px</code>
+          </li>
+          <li><code>2px dotted #000000</code>
+          </li>
+          <li><code>50px</code>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </div>
+  <script src="js/helpers.js"></script>
+  <script src="js/script.js"></script>
+</body>
+
 </html>
