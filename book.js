@@ -9,7 +9,7 @@ var pages = [];
   var matchers  = require("./js/markymarkdown.js");
   var filenames = require("./pages/_index");
   h.for_each(filenames, function(filename, i){
-    var file    = read("./pages/" + filename + ".md");
+    var file    = read("./pages/" + filename + ".html");
     var content = [];
     h.for_each(file.split(/[\n\r]/g), function(line){
       h.for_each(matchers.singleline, function(matcher){
