@@ -85,9 +85,6 @@ b.line {
   display: block;
   width: 100%;
 }
-td b:only-child {
-  display: block;
-}
 
 span.line {
   display: inline-flex;
