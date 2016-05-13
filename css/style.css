@@ -69,17 +69,17 @@ code, [data-code] {
 }
 
 b {
+  display: inline-block;
   color: #fff;
   border-bottom: 1px solid #000;
   box-sizing: border-box;
+  vertical-align: top;
 }
 b:after, b:before {
   content: " ";
 }
 b:empty {
-  display: inline-block;
   width: 10em;
-  vertical-align: bottom;
 }
 b.line {
   display: block;

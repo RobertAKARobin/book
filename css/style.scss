@@ -65,18 +65,18 @@ code{
   // background-color:#ddd;
 }
 b{
+  display:inline-block;
   color:#fff;
   border-bottom:1px solid #000;
   box-sizing:border-box;
+  vertical-align:top;
   
   &:after,
   &:before{
     content: " ";
   }
   &:empty{
-    display:inline-block;
     width:10em;
-    vertical-align:bottom;
   }
   &.line{
     display:block;
