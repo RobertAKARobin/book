@@ -131,46 +131,10 @@ section {
   border-left-width: 1px;
   border-right-width: 1px;
   border-bottom-width: 1px;
-  width: 100vw;
-  height: 129.41176vw;
-  padding: 2vw;
-  font-size: 3vw;
   line-height: 1.6em;
 }
 section:nth-child(even) {
   border-left-width: 0;
-}
-@media print {
-  section {
-    page-break-inside: avoid;
-    page-break-before: always;
-    border-width: 0px;
-    padding: 0;
-  }
-}
-@media (max-width: 800px), (max-height: 500px) {
-  section {
-    width: 100vw;
-    height: 129.41176vw;
-    padding: 2vw;
-    font-size: 3vw;
-  }
-}
-@media (min-width: 800px), (min-aspect-ratio: 255 / 110) {
-  section {
-    width: 50vw;
-    height: 64.70588vw;
-    padding: 1vw;
-    font-size: 1.5vw;
-  }
-}
-@media (min-height: 500px) and (min-aspect-ratio: 170 / 110) and (max-aspect-ratio: 255 / 110) {
-  section {
-    width: 77.27273vh;
-    height: 100vh;
-    padding: 1.54545vh;
-    font-size: 2.31818vh;
-  }
 }
 section > * {
   margin: 1.5em auto 0 auto;
@@ -219,6 +183,54 @@ section table b:after {
   content: "";
 }
 
-.foo {
-  color: red;
+section {
+  width: 100vw;
+  height: 129.41176vw;
+  padding: 2vw;
+  font-size: 3vw;
+}
+
+@media print {
+  section {
+    page-break-inside: avoid;
+    page-break-before: always;
+    border-width: 0px;
+    padding: 0;
+  }
+}
+@media screen {
+  body {
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
+@media screen and (max-width: 800px), screen and (max-height: 500px) {
+  section {
+    width: 100vw;
+    height: 129.41176vw;
+    padding: 2vw;
+    font-size: 3vw;
+    width: 100%;
+    border-right-width: 0px;
+  }
+}
+@media screen and (min-width: 800px), screen and (min-aspect-ratio: 255 / 110) {
+  section {
+    width: 50vw;
+    height: 64.70588vw;
+    padding: 1vw;
+    font-size: 1.5vw;
+    width: 50%;
+  }
+}
+@media screen and (min-height: 500px) and (min-aspect-ratio: 170 / 110) and (max-aspect-ratio: 255 / 110) {
+  section {
+    width: 77.27273vh;
+    height: 100vh;
+    padding: 1.54545vh;
+    font-size: 2.31818vh;
+  }
+  section:nth-child(even) {
+    border-right-width: 1px;
+  }
 }

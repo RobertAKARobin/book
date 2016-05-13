@@ -116,20 +116,6 @@ body{
   text-align:center;
 }
 
-$page-x: 85;
-$page-y: 110;
-$aspect: ($page-x / $page-y);
-@mixin size-from-width($vw){
-  $percent:   ($vw / 100);
-  width:      ($vw);
-  height:     ($vw / $aspect);
-  padding:    (2 * $percent);
-  font-size:  (3 * $percent);
-}
-@function n-pages-wide($n){
-  @return "#{$page-x * $n}/#{$page-y}";
-}
-
 section{
   display:inline-block;
   vertical-align:top;
@@ -143,31 +129,6 @@ section{
   
   &:nth-child(even){
     border-left-width:0;
-  }
-  
-  @include size-from-width(100vw);
-  
-  @media print{
-    page-break-inside:avoid;
-    page-break-before:always;
-    border-width:0px;
-    padding:0;
-  }
-  
-  @media  (max-width:800px),
-          (max-height: 500px){
-    @include size-from-width(100vw);
-  }
-  
-  @media  (min-width:800px),
-          (min-aspect-ratio: n-pages-wide(3)){
-    @include size-from-width(50vw);
-  }
-  
-  @media  (min-height: 500px) and
-          (min-aspect-ratio: n-pages-wide(2)) and
-          (max-aspect-ratio: n-pages-wide(3)){
-    @include size-from-width((100vh * $aspect));
   }
   
   line-height:1.6em;
@@ -221,6 +182,60 @@ section{
     }
   }
 }
-.foo{
-  color:red;
+
+$page-x: 85;
+$page-y: 110;
+$aspect: ($page-x / $page-y);
+@mixin size-from-width($vw){
+  $percent:   ($vw / 100);
+  width:      ($vw);
+  height:     ($vw / $aspect);
+  padding:    (2 * $percent);
+  font-size:  (3 * $percent);
+}
+@function n-pages-wide($n){
+  @return "#{$page-x * $n}/#{$page-y}";
+}
+
+section{
+  @include size-from-width(100vw);
+}
+@media print{
+  section{
+    page-break-inside:avoid;
+    page-break-before:always;
+    border-width:0px;
+    padding:0;
+  }
+}
+@media screen{
+  body{
+    width:100%;
+    box-sizing:border-box;
+  }
+}
+@media  screen and (max-width:800px),
+        screen and (max-height: 500px){
+  section{
+    @include size-from-width(100vw);
+    width:100%;
+    border-right-width:0px;
+  }
+}
+@media  screen and (min-width:800px),
+        screen and (min-aspect-ratio: n-pages-wide(3)){
+  section{
+    @include size-from-width(50vw);
+    width:50%;
+  }
+}
+@media  screen and (min-height: 500px) and
+        (min-aspect-ratio: n-pages-wide(2)) and
+        (max-aspect-ratio: n-pages-wide(3)){
+  section{
+    @include size-from-width((100vh * $aspect));
+    &:nth-child(even){
+      border-right-width:1px;
+    }
+  }
 }
