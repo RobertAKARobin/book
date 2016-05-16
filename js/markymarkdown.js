@@ -41,10 +41,22 @@ module.exports= (function(){
       [" *-",,,       function listItem(nil, output){
         return "</li><li>" + output;
       }],
-      ["\\|",,,       function dataTableRow(nil, row){
-        var line  = "<td></td>";
-        h.for_each(row.split(/ *\| */g), function(cell){
-          line    += "<td>" + cell + "</td>";
+      ["\\|\\\\",,,   function newTable(nil, cols){
+        flag.cols = cols.split("|");
+        return "<table>";
+      }],
+      ["\\|\\/",,,    function endTable(){
+        flag.cols = null;
+        return "</table>";
+      }],
+      ["\\|",,,       function tableRow(nil, row){
+        var line = "";
+        h.for_each(row.split(/ *\| */g), function(cell, index){
+          var classAttr = "";
+          if(flag.cols && flag.cols[index] && flag.cols[index].trim()){
+            classAttr = " class=\"" + flag.cols[index].trim() + "\" ";
+          }
+          line    += "<td" + classAttr + ">" + cell + "</td>";
         });
         return "<tr>" + line + "</tr>";
       }],

@@ -58,12 +58,12 @@ blockquote:after, q:after {
   content: "\0201d";
 }
 
-[data-code] {
+[data-code], .code {
   word-break: break-all;
   text-align: left;
 }
 
-code, [data-code] {
+[data-code], .code, code {
   white-space: pre-wrap;
   font-family: "Andale Mono";
 }
@@ -165,21 +165,27 @@ section table, section tr, section td {
   box-sizing: border-box;
 }
 section table {
-  counter-reset: tablerows;
+  counter-reset: count-num count-alpha;
 }
-section table tr {
-  counter-increment: tablerows;
+section table .count {
+  padding: 0 0.5em;
+}
+section table .count.num {
+  counter-increment: count-num;
+}
+section table .count.num:before {
+  content: counter(count-num) ".";
+}
+section table .count.alpha {
+  counter-increment: count-alpha;
+}
+section table .count.alpha:before {
+  content: counter(count-alpha,lower-alpha) ".";
 }
 section table td {
   position: relative;
   vertical-align: top;
   padding: 0 1em;
-}
-section table td:nth-child(1) {
-  padding: 0;
-}
-section table td:nth-child(1):before {
-  content: counter(tablerows) ".";
 }
 section table b:before,
 section table b:after {
