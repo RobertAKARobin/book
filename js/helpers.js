@@ -73,7 +73,11 @@ var h = (function(){
     var output = [];
     if(!collection) return;
     if(has_html_children(collection)) collection = collection.children;
-    for_each(collection, function(){
+    if(is_a(callback, Array)){
+      for_each(callback, function(index){
+        output.push(collection[index]);
+      });
+    }else for_each(collection, function(){
       output.push(callback.apply(null, arguments));
     });
     return output;
@@ -100,6 +104,10 @@ var h = (function(){
     else if(typeof input == "string") input = input.split("");
     if(!(input instanceof Array) && !is_html_collection(input)){
       keys = Object.keys(input);
+      if(keys.length === 0){
+        input = [input];
+        keys  = [0];
+      }
     }
     l = (keys || input).length;
     if(whenAsyncDone){
