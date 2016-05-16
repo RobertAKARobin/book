@@ -10,13 +10,13 @@ module.exports= (function(){
   }
   var matchers  = {
     inline: [
-      ["`{1}",  0, 0,   function inlineCode(nil, output){
+      ["`{1}",,,      function inlineCode(nil, output){
         return h.tag("code", h.replaceEntities(output));
       }],
-      ["_{3}",  0, 0,   function blankBlock(nil, output){
+      ["_{3}",,,      function blankBlock(nil, output){
         return "<b class='line'>" + output + "</b>";
       }],
-      ["_{2}",  0, 0,   function blankInlineBlock(nil, output){
+      ["_{2}",,,      function blankInlineBlock(nil, output){
         return "<span class='line'><span>" + output + "</span><b></b></span>";
       }],
       ["_{1}",  "b"],
@@ -32,31 +32,31 @@ module.exports= (function(){
       ["#{2}",  "h2"],
       ["#{1}",  "h1"],
       ["''''",  "blockquote"],
-      [" *-(=|#)\/",0,0,function endList(nil, listType){
+      [" *-(=|#)\/",,,function endList(nil, listType){
         return "</li></" + listTypes[listType] + ">";
       }],
-      [" *-(=|#)",0,0,  function newList(nil, listType, output){
+      [" *-(=|#)",,,  function newList(nil, listType, output){
         return "<" + listTypes[listType] + "><li>" + output;
       }],
-      [" *-", 0, 0,     function listItem(nil, output){
+      [" *-",,,       function listItem(nil, output){
         return "</li><li>" + output;
       }],
-      ["\\|",     0, 0, function dataTableRow(nil, row){
+      ["\\|",,,       function dataTableRow(nil, row){
         var line  = "<td></td>";
         h.for_each(row.split(/ *\| */g), function(cell){
           line    += "<td>" + cell + "</td>";
         });
         return "<tr>" + line + "</tr>";
       }],
-      ["```", 0, 0,     function newCodeBlock(){
+      ["```",,,       function newCodeBlock(){
         flag.insideCodeBlock = true;
         return "<pre data-code>";
       }],
-      ["``\\/",0, 0,    function endCodeBlock(){
+      ["``\\/",,,     function endCodeBlock(){
         flag.insideCodeBlock = false;
         return "</pre>";
       }],
-      [0, 0, /^(.*?)$/, function fallback(nil, output){
+      [,, /^(.*?)$/,  function fallback(nil, output){
         if(flag.insideCodeBlock){
           output = h.replaceEntities(output);
         }else if(output.trim() === ""){
