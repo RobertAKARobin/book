@@ -65,15 +65,14 @@ b{
   display:inline-block;
   color:#fff;
   border-bottom:1px solid #000;
-  box-sizing:border-box;
-  vertical-align:top;
+  vertical-align:baseline;
   
-  &:after,
-  &:before{
-    content: " ";
-  }
   &:empty{
     width:10em;
+    &:before,
+    &:after{
+      content: " ";
+    }
   }
   &.line{
     display:block;
@@ -181,10 +180,6 @@ section{
       position:relative;
       vertical-align:top;
       padding:0 1em;
-    }
-    b:before,
-    b:after{
-      content: "";
     }
   }
 }

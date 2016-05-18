@@ -13,11 +13,12 @@ module.exports= (function(){
       ["`{1}",,,      function inlineCode(nil, output){
         return h.tag("code", h.replaceEntities(output));
       }],
-      ["_{3}",,,      function blankBlock(nil, output){
-        return "<b class='line'>" + output + "</b>";
+      ["_{3}",,,      function blankInlineBlock(nil, output){
+        var output = output.split(/ *%% */);
+        return "<span class='line'><span>" + output[0] + "</span><b>" + output[1] + "</b></span>";
       }],
-      ["_{2}",,,      function blankInlineBlock(nil, output){
-        return "<span class='line'><span>" + output + "</span><b></b></span>";
+      ["_{2}",,,      function blankBlock(nil, output){
+        return "<b class='line'>" + output + "</b>";
       }],
       ["_{1}",  "b"],
       ["\\/{2}","dfn"],

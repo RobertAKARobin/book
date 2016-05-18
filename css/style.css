@@ -72,14 +72,13 @@ b {
   display: inline-block;
   color: #fff;
   border-bottom: 1px solid #000;
-  box-sizing: border-box;
-  vertical-align: top;
-}
-b:after, b:before {
-  content: " ";
+  vertical-align: baseline;
 }
 b:empty {
   width: 10em;
+}
+b:empty:before, b:empty:after {
+  content: " ";
 }
 b.line {
   display: block;
@@ -186,10 +185,6 @@ section table td {
   position: relative;
   vertical-align: top;
   padding: 0 1em;
-}
-section table b:before,
-section table b:after {
-  content: "";
 }
 
 section {
