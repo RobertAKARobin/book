@@ -162,9 +162,15 @@ section{
   }
   table{
     counter-reset: count-num count-alpha;
+    width:100%;
+    
+    &.inline{
+      width:auto;
+    }
     
     .count{
       padding:0 0.5em;
+      text-align:left;
       &.num{
         counter-increment: count-num;
         &:before{

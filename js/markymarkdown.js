@@ -44,11 +44,11 @@ module.exports= (function(){
       }],
       ["\\|\\\\",,,   function newTable(nil, cols){
         flag.cols = cols.split("|");
-        return "<table>";
+        return "";
       }],
       ["\\|\\/",,,    function endTable(){
         flag.cols = null;
-        return "</table>";
+        return "";
       }],
       ["\\|",,,       function tableRow(nil, row){
         var line = "";

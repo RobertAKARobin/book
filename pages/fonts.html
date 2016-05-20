@@ -2,6 +2,7 @@
 
 There are 5 //families// of fonts. Every font is in one of those families. Match each clue to its family.
 
+<table>
 |\count num||count alpha|
 ||<a style="font-family: 'Courier New'">All letters are one space wide</a>    ||monospace
 ||<a style="font-family: 'Times New Roman'">Dutch for ''short line''</a>      ||serif
@@ -9,15 +10,19 @@ There are 5 //families// of fonts. Every font is in one of those families. Match
 ||<a style="font-family: 'Comic Sans MS'">Fonts that look like handwriting</a>||cursive
 ||<a style="font-family: Papyrus">Used mostly for logos and graphics</a>      ||fantasy
 |/
+</table>
 
-In CSS, you pick a font using the `font-family` property:
+In CSS, you pick a font using the `font-family` property. For example:
 
--#`font-family: "Times New Roman", Times, serif;`
-- `font-family: cursive;`
-- `font-family: "Courier New", monospace;`
--#/
+<table>
+|\count num|code
+||font-family: "Times New Roman", Times, serif;
+||font-family: cursive;
+||font-family: "Courier New", monospace;
+|/
+</table>
 
-If the first font in `font-family` isn't on your computer, your computer tries the next one.
+If the first font in `font-family` isn't installed on your computer, your computer tries the next one.
 
 A font name that contains a _space_ must be inside `"quotes"`.
 

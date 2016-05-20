@@ -167,9 +167,14 @@ section table, section tr, section td {
 }
 section table {
   counter-reset: count-num count-alpha;
+  width: 100%;
+}
+section table.inline {
+  width: auto;
 }
 section table .count {
   padding: 0 0.5em;
+  text-align: left;
 }
 section table .count.num {
   counter-increment: count-num;
