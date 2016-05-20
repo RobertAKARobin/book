@@ -22,6 +22,7 @@ var h = (function(){
     is_a,
     is_html_collection,
     load_static,
+    pad,
     query_stringify,
     replaceEntities,
     select,
@@ -128,8 +129,10 @@ var h = (function(){
     else return (is_a(input, HTMLElement));
   }
   function is_a(input, prototype){
-    if(typeof prototype !== "undefined") return(input instanceof prototype);
-    else return false;
+    var result = false;
+    if(typeof prototype !== "undefined") result = (input instanceof prototype);
+    if(!result) result = (typeof input === (prototype.name || "").toLowerCase())
+    return result;
   }
   function is_html_collection(input){
     if(!publics.is_browser) return false;
@@ -151,6 +154,12 @@ var h = (function(){
       else if(path.indexOf(".css") > -1) style_load(path);
       if(onProgress) onProgress(total, index + 1);
     });
+  }
+  function pad(input, width, char, fromRight){
+    var input = input.toString();
+    var padding = new Array(Math.max(width - input.length + 1)).join(char || " ");
+    if(fromRight) return padding + input;
+    else return input + padding;
   }
   function replaceEntities(output){
     h.for_each(HTMLentities, function(matcher){
@@ -187,7 +196,12 @@ var h = (function(){
   function tag(){
     var tag     = (this && this !== h) ? this : arguments[0];
     var content = arguments[1];
-    return "<" + tag + ">" + content + "</" + tag + ">";
+    var attrs;
+    if(h.is_a(tag, Array)){
+      attrs     = tag[1];
+      tag       = tag[0];
+    }
+    return "<" + tag + (attrs ? " " + attrs : "") + ">" + content + "</" + tag + ">";
   }
   function try_json(string){
     string = string.trim();

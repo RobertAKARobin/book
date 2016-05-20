@@ -63,17 +63,23 @@ module.exports= (function(){
         });
         return "<tr>" + line + "</tr>";
       }],
-      ["```",,,       function newCodeBlock(){
+      ["```(#?)",,,       function newCodeBlock(nil, isNumbered){
         flag.insideCodeBlock = true;
+        if(isNumbered) flag.lineNumber = 1;
         return "<pre data-code>";
       }],
       ["``\\/",,,     function endCodeBlock(){
         flag.insideCodeBlock = false;
+        flag.lineNumber = 0;
         return "</pre>";
       }],
       [,, /^(.*?)$/,  function fallback(nil, output){
         if(flag.insideCodeBlock){
           output = h.replaceEntities(output);
+          if(flag.lineNumber){
+            output = h.pad(flag.lineNumber, 3, ".") + "  " + output;
+            flag.lineNumber += 1;
+          }
         }else if(output.trim() === ""){
           output = "";
         }else if(output.substring(0,1) === "<"){
