@@ -87,9 +87,11 @@ span.line{
   }
 }
 mark{
-  border:2px solid #000;
-  border-radius:.5em;
+  border:1px solid #000;
+  border-radius:0.5em;
   background-color:inherit;
+  padding:0 0.5em;
+  margin:0 2px;
 }
 dfn{
   border-bottom:1px dotted #000;

@@ -1,22 +1,29 @@
 # Fonts
 
-There are 5 //families// of fonts. Every font is in one of those families:
+There are 5 //families// of fonts. Every font is in one of those families. Match each clue to its family.
+
+|\count num||count alpha|
+||<a style="font-family: 'Courier New'">All letters are one space wide</a>    ||monospace
+||<a style="font-family: 'Times New Roman'">Dutch for ''short line''</a>      ||serif
+||<a style="font-family: Helvetica">Begins with French for ''without''</a>    ||sans-serif
+||<a style="font-family: 'Comic Sans MS'">Fonts that look like handwriting</a>||cursive
+||<a style="font-family: Papyrus">Used mostly for logos and graphics</a>      ||fantasy
+|/
+
+In CSS, you pick a font using the `font-family` property:
+
+-#`font-family: "Times New Roman", Times, serif;`
+- `font-family: cursive;`
+- `font-family: "Courier New", monospace;`
+-#/
+
+If the first font in `font-family` isn't on your computer, your computer tries the next one.
+
+A font name that contains a _space_ must be inside `"quotes"`.
 
 <div class="wordbank">
--=Serif
-- Sans-serif
-- Monospace
-- Cursive
-- Fantasy
+-=space
+- semicolon
+- number
 -=/
 </div>
-
-<p style="font-family:'Comic Sans MS'">This paragraph uses a font that is in the _cursive_ font family. Usually we use this word to mean ''fancy handwriting'', but it really just means ''handwriting.''</p>
-
-`Most fonts have letters that are different widths. The letters in the _monospace_ font family are all one space wide. It's great for code.`
-
-//Serif// comes from a Dutch word meaning ''line''. //Sans// is a French word meaning ''without.'' If you keep that in mind and look closely at these letters, you can tell this paragraph is in the _serif_ family...
-
-<p style="font-family:'Helvetica'">...and this paragraph is in the _sans-serif_ family.</p>
-
-<p style="font-family:'Papyrus'">Web designers use serif and sans-serif fonts for almost everything because they are easy to read. They use fonts like this _fantasy_ font only for logos and graphics.</p>

@@ -79,7 +79,7 @@
         </tr>
         <tr>
           <td class="count num"></td>
-          <td><b>grey</b></td>
+          <td><b class='line'>grey</b></td>
           <td class="code">170</td>
           <td class="code">170</td>
           <td class="code">170</td>
@@ -181,7 +181,7 @@ Dec   Hex
         </tr>
         <tr>
           <td class="count num"></td>
-          <td><b>grey</b></td>
+          <td><b class='line'>grey</b></td>
           <td class="code">AA</td>
           <td class="code">AA</td>
           <td class="code">AA</td>
@@ -413,21 +413,21 @@ Dec   Hex
 
       <div class="wordbank">
         <ul>
-          <li><code>#000000</code>
+          <li><code>#000000;</code>
           </li>
-          <li><code>italic</code>
+          <li><code>italic;</code>
           </li>
-          <li><code>center</code>
+          <li><code>center;</code>
           </li>
-          <li><code>12pt</code>
+          <li><code>12pt;</code>
           </li>
-          <li><code>24pt</code>
+          <li><code>24pt;</code>
           </li>
-          <li><code>2px dotted #000000</code>
+          <li><code>2px dotted #000000;</code>
           </li>
-          <li><code>50px</code>
+          <li><code>50px;</code>
           </li>
-          <li><code>#FFFFFF</code>
+          <li><code>#FFFFFF;</code>
           </li>
         </ul>
       </div>
@@ -437,135 +437,153 @@ Dec   Hex
 
       <p>Websites are <q>styled</q> in a coding language called <dfn>CSS</dfn>.</p>
 
-      <p>You change how the website looks by changing a CSS <dfn>property</dfn>. There are over 500 CSS properties. Each has a number of possible <dfn>values</dfn>. A property and its value together are called a <dfn>declaration</dfn>.</p>
+      <p>You change how the website looks by changing a CSS <dfn>property</dfn>. There are over 500 CSS properties. Each has a <dfn>value</dfn>. A property and its value together are a <dfn>declaration</dfn>.</p>
 
-      <p>Match the value on the right to its property on the left.</p>
+      <p>Match the property on the left to its value on the right.</p>
 
       <table>
         <tr>
           <td class="count num"></td>
-          <td class="code">background-image: url(<b>a</b>)</td>
+          <td class="code">background-image:</td>
           <td class="count alpha"></td>
-          <td class="code">stars.jpg</td>
+          <td class="code">url(stars.jpg);</td>
         </tr>
         <tr>
           <td class="count num"></td>
           <td class="code">height:</td>
           <td class="count alpha"></td>
-          <td class="code">400px</td>
+          <td class="code">400px;</td>
         </tr>
         <tr>
           <td class="count num"></td>
           <td class="code">border-color:</td>
           <td class="count alpha"></td>
-          <td class="code">FF9900</td>
+          <td class="code">#FF9900;</td>
         </tr>
         <tr>
           <td class="count num"></td>
-          <td class="code">transform: rotate(<b>a</b>)</td>
+          <td class="code">transform:</td>
           <td class="count alpha"></td>
-          <td class="code">30deg</td>
+          <td class="code">rotate(30deg);</td>
         </tr>
         <tr>
           <td class="count num"></td>
           <td class="code">text-underline-position:</td>
           <td class="count alpha"></td>
-          <td class="code">under</td>
+          <td class="code">under;</td>
         </tr>
         <tr>
           <td class="count num"></td>
           <td class="code">visibility:</td>
           <td class="count alpha"></td>
-          <td class="code">hidden</td>
-        </tr>
-        <tr>
-          <td class="count num"></td>
-          <td class="code">font-family:</td>
-          <td class="count alpha"></td>
-          <td class="code">Times</td>
+          <td class="code">hidden;</td>
         </tr>
         <tr>
           <td class="count num"></td>
           <td class="code">font-weight:</td>
           <td class="count alpha"></td>
-          <td class="code">bold</td>
+          <td class="code">bold;</td>
         </tr>
       </table>
 
-      <ol>
-        <li>Every <b>property</b> has a colon (:) after it.
-        </li>
-        <li>Every <b>declaration</b> ends with a semicolon (<code>;</code>).
-        </li>
-        <li><q>px</q> stands for <b>pixel</b>.
-        </li>
-      </ol>
+      <p>Fill in the blanks:</p>
 
-      <div class="wordbank">
-        <ul>
-          <li>property
-          </li>
-          <li>pixel
-          </li>
-          <li>declaration
-          </li>
-        </ul>
-      </div>
+      <table>
+        <tr>
+          <td class="count num"></td>
+          <td>Every <b>property</b> has a <mark>:</mark> after it.</td>
+          <td class="count alpha"></td>
+          <td>property</td>
+        </tr>
+        <tr>
+          <td class="count num"></td>
+          <td>Every <b>declaration</b> ends with a <mark>;</mark>.</td>
+          <td class="count alpha"></td>
+          <td>pixel</td>
+        </tr>
+        <tr>
+          <td class="count num"></td>
+          <td><q>px</q> stands for <b>pixel</b>.</td>
+          <td class="count alpha"></td>
+          <td>delcaration</td>
+        </tr>
+        <tr>
+          <td class="count num"></td>
+          <td>The <mark>:</mark> symbol is called a <b>colon</b>.</td>
+          <td class="count alpha"></td>
+          <td><q>colon</q></td>
+        </tr>
+        <tr>
+          <td class="count num"></td>
+          <td>The <mark>;</mark> symbol is called a <b>semicolon</b>.</td>
+          <td class="count alpha"></td>
+          <td><q>semicolon</q></td>
+        </tr>
+      </table>
     </section>
     <section>
       <h1>Fonts</h1>
 
-      <p>There are 5 <dfn>families</dfn> of fonts. Every font is in one of those families:</p>
+      <p>There are 5 <dfn>families</dfn> of fonts. Every font is in one of those families. Match each clue to its family.</p>
 
-      <div class="wordbank">
-        <ul>
-          <li>Serif
-          </li>
-          <li>Sans-serif
-          </li>
-          <li>Monospace
-          </li>
-          <li>Cursive
-          </li>
-          <li>Fantasy
-          </li>
-        </ul>
-      </div>
+      <table>
+        <tr>
+          <td class="count num"></td>
+          <td><a style="font-family: 'Courier New'">All letters are one space wide</a></td>
+          <td class="count alpha"></td>
+          <td>monospace</td>
+        </tr>
+        <tr>
+          <td class="count num"></td>
+          <td><a style="font-family: 'Times New Roman'">Dutch for <q>short line</q></a></td>
+          <td class="count alpha"></td>
+          <td>serif</td>
+        </tr>
+        <tr>
+          <td class="count num"></td>
+          <td><a style="font-family: Helvetica">Begins with French for <q>without</q></a></td>
+          <td class="count alpha"></td>
+          <td>sans-serif</td>
+        </tr>
+        <tr>
+          <td class="count num"></td>
+          <td><a style="font-family: 'Comic Sans MS'">Fonts that look like handwriting</a></td>
+          <td class="count alpha"></td>
+          <td>cursive</td>
+        </tr>
+        <tr>
+          <td class="count num"></td>
+          <td><a style="font-family: Papyrus">Used mostly for logos and graphics</a></td>
+          <td class="count alpha"></td>
+          <td>fantasy</td>
+        </tr>
+      </table>
 
-      <p style="font-family:'Comic Sans MS'">This paragraph uses a font that is in the <b>cursive</b> font family. Usually we use this word to mean <q>fancy handwriting</q>, but it really just means <q>handwriting.</q></p>
-
-      <p><code>Most fonts have letters that are different widths. The letters in the <b>monospace</b> font family are all one space wide. It's great for code.</code></p>
-
-      <p><dfn>Serif</dfn> comes from a Dutch word meaning <q>line</q>. <dfn>Sans</dfn> is a French word meaning <q>without.</q> If you keep that in mind and look closely at these letters, you can tell this paragraph is in the <b>serif</b> family...</p>
-
-      <p style="font-family:'Helvetica'">...and this paragraph is in the <b>sans-serif</b> family.</p>
-
-      <p style="font-family:'Papyrus'">Web designers use serif and sans-serif fonts for almost everything because they are easy to read. They use fonts like this <b>fantasy</b> font only for logos and graphics.</p>
-    </section>
-    <section>
-      <h1>Fonts and CSS</h1>
-
-      <p>In CSS, you pick a font using the <code>font-family</code> property. Here are some different examples:</p>
+      <p>In CSS, you pick a font using the <code>font-family</code> property:</p>
 
       <ol>
         <li><code>font-family: "Times New Roman", Times, serif;</code>
         </li>
         <li><code>font-family: cursive;</code>
         </li>
-        <li><code>font-family: Pointfree, "Courier New", monospace;</code>
-        </li>
-        <li><code>font-family: Arial, sans-serif;</code>
+        <li><code>font-family: "Courier New", monospace;</code>
         </li>
       </ol>
 
-      <ol>
-        <li>If a computer doesn't have the first font in <code>font-family</code> installed, it uses the next font.
-        </li>
-        <li>Font names with spaces must be inside quotes.
-        </li>
-        <li>
-        </li>
-      </ol>
+      <p>If the first font in <code>font-family</code> isn't on your computer, your computer tries the next one.</p>
+
+      <p>A font name that contains a <b>space</b> must be inside <code>"quotes"</code>.</p>
+
+      <div class="wordbank">
+        <ul>
+          <li>space
+          </li>
+          <li>semicolon
+          </li>
+          <li>number
+          </li>
+        </ul>
+      </div>
     </section>
   </div>
   <!-- <script src="js/helpers.js"></script>
