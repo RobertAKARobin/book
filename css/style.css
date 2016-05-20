@@ -110,13 +110,15 @@ dfn {
   font-weight: bold;
 }
 
-.wordbank ul, .wordbank ol {
+.wordbank {
   text-align: center;
+}
+.wordbank ul, .wordbank ol {
   padding-left: 0;
 }
 .wordbank li {
   display: inline-block;
-  margin: 0.5em 2em;
+  margin: 0.2em 2em;
   border-bottom: 1px dotted #000;
   padding-left: 0;
 }
@@ -150,8 +152,8 @@ section {
 section:nth-child(even) {
   border-left-width: 0;
 }
-section > * {
-  margin: 1.5em auto 0 auto;
+section p, section table, section ol, section ul, section aside {
+  margin: 1.5em auto 0em auto;
 }
 section > h1 {
   margin: 0.5em auto;
@@ -174,6 +176,10 @@ section aside {
   padding-left: 1em;
   margin-left: 1em;
   border-left: 1px solid #000;
+}
+section hr {
+  display: block;
+  clear: both;
 }
 section table, section tr, section td {
   box-sizing: border-box;

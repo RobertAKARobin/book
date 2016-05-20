@@ -1,0 +1,39 @@
+# Selectors
+
+Every CSS rule starts with a //selector//. It tells the computer which parts of a website it should ''select'' to use with that CSS rule.
+
+<aside>
+```
+p, code, img{
+  width: 400px;
+}
+``/
+</aside>
+
+The selector here is `p, code, img`. It means, ''Every paragraph, code snippet, and image should follow this rule.''
+
+<aside>
+```
+p code img{
+  width: 400px;
+}
+``/
+</aside>
+
+Without commas the meaning is totally different. It means, ''Every image that's in a code snippet that's in a paragraph.''
+
+
+<div class="wordbank">
+  _4_ selects every button in every form.
+  
+-#`button, form`
+- `form, button`
+- `button form`
+- `form button`
+-#/
+</div>
+
+-#Every button in every paragraph in every form. ___%%`form p button`___
+- Every button, every paragraph, and every form. ___%%`button, p, form`___
+- Every button and every form. ___%%`button, form`___
+-#/

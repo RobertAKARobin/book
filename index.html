@@ -594,9 +594,10 @@ Dec   Hex
 
       <p>If a font in <code>font-family</code> isn't installed on your computer, your computer tries the next one. If instead of a font it's a family, like <code>cursive</code>, your computer uses any font in that family.</p>
 
-      <p>A font name that contains a <b class='inline'>1</b> must be inside <code>"quotes"</code>.</p>
 
       <div class="wordbank">
+        <p>A font name that contains a <b class='inline'>1</b> must be inside <code>"quotes"</code>.</p>
+
         <ol>
           <li>space
           </li>
@@ -638,6 +639,56 @@ Dec   Hex
         <li>monospaced
         </li>
         <li>sans-serif
+        </li>
+      </ol>
+    </section>
+    <section>
+      <h1>Selectors</h1>
+
+      <p>Every CSS rule starts with a <dfn>selector</dfn>. It tells the computer which parts of a website it should <q>select</q> to use with that CSS rule.</p>
+
+      <aside>
+        <pre data-code>
+p, code, img{
+  width: 400px;
+}
+</pre>
+      </aside>
+
+      <p>The selector here is <code>p, code, img</code>. It means, <q>Every paragraph, code snippet, and image should follow this rule.</q></p>
+
+      <aside>
+        <pre data-code>
+p code img{
+  width: 400px;
+}
+</pre>
+      </aside>
+
+      <p>Without commas the meaning is totally different. It means, <q>Every image that's in a code snippet that's in a paragraph.</q></p>
+
+
+      <div class="wordbank">
+        <p> <b class='inline'>4</b> selects every button in every form.</p>
+
+        <ol>
+          <li><code>button, form</code>
+          </li>
+          <li><code>form, button</code>
+          </li>
+          <li><code>button form</code>
+          </li>
+          <li><code>form button</code>
+          </li>
+        </ol>
+      </div>
+
+      <ol>
+        <li>Every button in every paragraph in every form. <span class='line'><span></span><b><code>form p button</code></b></span>
+        </li>
+        <li>Every button, every paragraph, and every form. <span class='line'><span></span><b><code>button, p, form</code></b></span>
+        </li>
+        <li>Every button and every form. <span class='line'><span></span><b><code>button, form</code></b></span>
         </li>
       </ol>
     </section>

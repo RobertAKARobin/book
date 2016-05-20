@@ -102,14 +102,15 @@ dfn{
   font-weight:bold;
 }
 .wordbank{
+  text-align:center;
+  
   ul, ol{
-    text-align:center;
     padding-left:0;
   }
   
   li{
     display:inline-block;
-    margin:0.5em 2em;
+    margin:0.2em 2em;
     border-bottom:1px dotted #000;
     padding-left:0;
   }
@@ -148,8 +149,8 @@ section{
   
   line-height:1.6em;
   
-  & > *{
-    margin:1.5em auto 0 auto;
+  p, table, ol, ul, aside{
+    margin:1.5em auto 0em auto;
   }
   & > h1{
     margin:0.5em auto;
@@ -173,6 +174,10 @@ section{
     padding-left:1em;
     margin-left:1em;
     border-left:1px solid #000;
+  }
+  hr{
+    display:block;
+    clear:both;
   }
   table, tr, td{
     box-sizing:border-box;
