@@ -84,6 +84,10 @@ b.line {
   display: block;
   width: 100%;
 }
+b.inline {
+  text-align: center;
+  width: 3em;
+}
 
 span.line {
   display: inline-flex;
@@ -106,15 +110,24 @@ dfn {
   font-weight: bold;
 }
 
-.wordbank ul {
+.wordbank ul, .wordbank ol {
   text-align: center;
   padding-left: 0;
 }
-.wordbank ul li {
+.wordbank li {
   display: inline-block;
   margin: 0.5em 2em;
   border-bottom: 1px dotted #000;
   padding-left: 0;
+}
+.wordbank ol {
+  counter-reset: count-num;
+}
+.wordbank ol li {
+  counter-increment: count-num;
+}
+.wordbank ol li:before {
+  content: counter(count-num) ". ";
 }
 
 body {

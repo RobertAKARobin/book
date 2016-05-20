@@ -78,6 +78,10 @@ b{
     display:block;
     width:100%;
   }
+  &.inline{
+    text-align:center;
+    width:3em;
+  }
 }
 span.line{
   display:inline-flex;
@@ -97,15 +101,28 @@ dfn{
   border-bottom:1px dotted #000;
   font-weight:bold;
 }
-.wordbank ul{
-  text-align:center;
-  padding-left:0;
+.wordbank{
+  ul, ol{
+    text-align:center;
+    padding-left:0;
+  }
   
   li{
     display:inline-block;
     margin:0.5em 2em;
     border-bottom:1px dotted #000;
     padding-left:0;
+  }
+  
+  ol{
+    counter-reset: count-num;
+    
+    li{
+      counter-increment: count-num;
+      &:before{
+        content: counter(count-num) ". ";
+      }
+    }
   }
 }
 
