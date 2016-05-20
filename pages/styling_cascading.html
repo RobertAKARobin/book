@@ -1,0 +1,32 @@
+# ''Cascading Stylesheets''
+
+...is what ''CSS'' stands for. ''Cascading'' means three things:
+
+-#If a website has two stylesheets, it uses both of them.
+- If a website has two CSS rules for paragraphs, it uses both rules.
+- ...**but** if there are two `font-family` declarations for paragraphs, the website will use the second declaration.
+-#/
+
+```#
+p{
+  background-color: #000000;
+  color: #FFFF00;
+}
+code, p{
+  background-color: #00FF00;
+}
+code{
+  background-color: #000000;
+  background-color: #0000FF;
+}
+``/
+
+<div class="wordbank">
+Paragraphs will have _green_ backgrounds,<br > and code snippets will have _blue_ backgrounds.
+
+-=red
+- blue
+- yellow
+- green
+-=/
+</div>

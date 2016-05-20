@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>Title</title>
+  <title>Robin's Web Dev Book</title>
   <meta charset="utf-8" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
@@ -691,6 +691,49 @@ p code img{
         <li>Every button and every form. <span class='line'><span></span><b><code>button, form</code></b></span>
         </li>
       </ol>
+    </section>
+    <section>
+      <h1><q>Cascading Stylesheets</q></h1>
+
+      <p>...is what <q>CSS</q> stands for. <q>Cascading</q> means three things:</p>
+
+      <ol>
+        <li>If a website has two stylesheets, it uses both of them.
+        </li>
+        <li>If a website has two CSS rules for paragraphs, it uses both rules.
+        </li>
+        <li>...<strong>but</strong> if there are two <code>font-family</code> declarations for paragraphs, the website will use the second declaration.
+        </li>
+      </ol>
+
+      <pre data-code>
+1..  p{
+2..    background-color: #000000;
+3..    color: #FFFF00;
+4..  }
+5..  code, p{
+6..    background-color: #00FF00;
+7..  }
+8..  code{
+9..    background-color: #000000;
+10.    background-color: #0000FF;
+11.  }
+</pre>
+
+      <div class="wordbank">
+        <p>Paragraphs will have <b class=' '>green</b> backgrounds,<br> and code snippets will have <b class=' '>blue</b> backgrounds.</p>
+
+        <ul>
+          <li>red
+          </li>
+          <li>blue
+          </li>
+          <li>yellow
+          </li>
+          <li>green
+          </li>
+        </ul>
+      </div>
     </section>
   </div>
   <!-- <script src="js/helpers.js"></script>

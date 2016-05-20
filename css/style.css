@@ -152,7 +152,7 @@ section {
 section:nth-child(even) {
   border-left-width: 0;
 }
-section p, section table, section ol, section ul, section aside {
+section p, section table, section ol, section ul, section aside, section > pre {
   margin: 1.5em auto 0em auto;
 }
 section > h1 {

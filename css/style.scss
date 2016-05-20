@@ -149,7 +149,8 @@ section{
   
   line-height:1.6em;
   
-  p, table, ol, ul, aside{
+  p, table, ol, ul, aside,
+  & > pre{
     margin:1.5em auto 0em auto;
   }
   & > h1{
