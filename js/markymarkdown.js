@@ -15,7 +15,7 @@ module.exports= (function(){
       }],
       ["_{3}",,,      function blankFlex(nil, output){
         var output = output.split(/ *%% */);
-        return "<span class='line'><span>" + output[0] + "</span><b>" + output[1] + "</b></span>";
+        return "<span class='line'><span>" + output[0] + "</span><b class='line'>" + output[1] + "</b></span>";
       }],
       ["_{2}",,,      function blankBlock(nil, output){
         return "<b class='line'>" + output + "</b>";

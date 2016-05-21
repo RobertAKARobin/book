@@ -71,14 +71,12 @@ blockquote:after, q:after {
 b {
   display: inline-block;
   color: #fff;
+  line-height: 1em;
+  height: 1em;
   border-bottom: 1px solid #000;
-  vertical-align: baseline;
-}
-b:empty {
-  width: 10em;
-}
-b:empty:before, b:empty:after {
-  content: " ";
+  vertical-align: middle;
+  white-space: nowrap;
+  overflow: hidden;
 }
 b.line {
   display: block;
@@ -88,13 +86,24 @@ b.inline {
   text-align: center;
   width: 3em;
 }
+b.tainted {
+  color: #000;
+}
+b[contenteditable] {
+  border-color: #f60;
+  border-style: dashed;
+}
+b.correct {
+  color: #f60;
+}
 
 span.line {
   display: inline-flex;
   width: 100%;
 }
-span.line b {
+span.line b.line {
   flex-grow: 1;
+  width: auto;
 }
 
 mark {
