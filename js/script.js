@@ -2,60 +2,33 @@
 
 window.onload = function(){
 
-  (function addInputSwapper(){
-    var answer    = "";
-    var target    = {};
-
-    h.for_each(h.el("b"), function(el, index){
-      el.addEventListener("click", focus);
-      el.addEventListener("focus", makeEditable);
-      el.addEventListener("blur", makeUneditable);
-      el.setAttribute("tabindex", index + 1);
-    });
-    document.addEventListener("keyup", checkAnswer);
-
-    function focus(evt){
-      var el          = this;
-      el.focus();
+  (function addAnswerChecker(){
+    var el, input, answer;
+    var blanks    = document.querySelectorAll("b");
+    var i,      l = blanks.length;
+    for(i = 0; i < l; i++){
+      el          = blanks[i];
+      el.setAttribute("data-width", el.clientWidth);
     }
-
-    function makeEditable(evt){
-      var el          = this;
-      if(!el.hasAttribute("answer")) firstEverEdit(el);
-      target.el       = el;
-      target.answer   = el.getAttribute("answer");
-      if(el.textContent.trim().length < 1){
-        el.textContent= "";
+    for(i = 0; i < l; i++){
+      el          = blanks[i];
+      input       = document.createElement("INPUT");
+      answer      = el.textContent.toLowerCase().trim();
+      input.type  = "text";
+      input.setAttribute("data-answer", answer);
+      input.className = el.className;
+      input.addEventListener("input", checkAnswer);
+      if(!el.classList.contains("flex")){
+        input.style.width = el.getAttribute("data-width") + "px";
       }
-      el.setAttribute("contenteditable", true);
+      el.parentElement.replaceChild(input, el);
     }
-
-    function firstEverEdit(el){
-      el.classList.add("tainted");
-      el.setAttribute("answer", el.textContent);
-      if(!el.classList.contains("line")){
-        el.style.width  = el.offsetWidth + "px";
-      }
-      el.textContent  = "";
-    }
-
     function checkAnswer(evt){
-      var el      = target.el;
-      if(!el) return;
-      if(el.textContent === target.answer){
-        el.classList.add("correct");
-      }else{
-        el.classList.remove("correct");
-      }
-    }
-
-    function makeUneditable(evt){
       var el      = this;
-      target      = {};
-      el.removeAttribute("contenteditable");
-      if(el.textContent.length < 1){
-        el.textContent = "\xa0";
-      }
+      var answer  = el.getAttribute("data-answer");
+      var input   = el.value.toLowerCase().trim();
+      if(input == answer) el.classList.add("correct");
+      else el.classList.remove("correct");
     }
   })();
 

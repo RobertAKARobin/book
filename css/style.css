@@ -69,41 +69,34 @@ blockquote:after, q:after {
 }
 
 b {
-  display: inline-block;
   color: #fff;
-  line-height: 1em;
-  height: 1em;
+}
+
+b, input[data-answer] {
+  display: inline-block;
   border-bottom: 1px solid #000;
-  vertical-align: middle;
   white-space: nowrap;
   overflow: hidden;
 }
-b.line {
+b.line, input[data-answer].line {
   display: block;
   width: 100%;
 }
-b.inline {
+b.inline, input[data-answer].inline {
   text-align: center;
   width: 3em;
 }
-b.tainted {
-  color: #000;
+b.flex, input[data-answer].flex {
+  flex-grow: 1;
+  width: auto;
 }
-b[contenteditable] {
-  border-color: #f60;
-  border-style: dashed;
-}
-b.correct {
+b.correct, input[data-answer].correct {
   color: #f60;
 }
 
 span.line {
   display: inline-flex;
   width: 100%;
-}
-span.line b.line {
-  flex-grow: 1;
-  width: auto;
 }
 
 mark {

@@ -62,12 +62,11 @@ blockquote, q{
   font-family:"Andale Mono";
 }
 b{
-  display:inline-block;
   color:#fff;
-  line-height:1em;
-  height:1em;
+}
+b, input[data-answer]{
+  display:inline-block;
   border-bottom:1px solid #000;
-  vertical-align:middle;
   white-space:nowrap;
   overflow:hidden;
 
@@ -79,12 +78,9 @@ b{
     text-align:center;
     width:3em;
   }
-  &.tainted{
-    color:#000;
-  }
-  &[contenteditable]{
-    border-color:#f60;
-    border-style:dashed;
+  &.flex{
+    flex-grow:1;
+    width:auto;
   }
   &.correct{
     color:#f60;
@@ -93,10 +89,6 @@ b{
 span.line{
   display:inline-flex;
   width:100%;
-  b.line{
-    flex-grow:1;
-    width:auto;
-  }
 }
 mark{
   border:1px solid #000;
