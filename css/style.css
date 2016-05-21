@@ -72,6 +72,10 @@ b {
   color: #fff;
 }
 
+input[data-answer] {
+  font-family: Pointfree;
+}
+
 b, input[data-answer] {
   display: inline-block;
   border-bottom: 1px solid #000;
