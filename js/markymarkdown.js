@@ -26,6 +26,7 @@ module.exports= (function(){
       ["_{1}",,,      function blankInline(nil, output){
         return "<b class=\"" + (output.length < 2 ? "inline" : " ") + "\">" + output + "</b>";
       }],
+      [,,    / -- /g, " &mdash; "],
       ["\\/{2}","dfn"],
       ["\\*{2}","strong"],
       ["\\*{1}","em"],
