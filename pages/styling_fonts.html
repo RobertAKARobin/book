@@ -5,14 +5,14 @@ There are 5 //families// of fonts. Every font is in one of those families. Match
 <table>
 |\count num||count alpha|
 ||<a style="font-family: 'Courier New'">All letters are one space wide</a>    ||monospace
-||<a style="font-family: 'Times New Roman'">Dutch for ''short line''</a>      ||serif
-||<a style="font-family: Helvetica">Begins with French for ''without''</a>    ||sans-serif
+||<a style="font-family: 'Times New Roman'">Dutch for ''a short line''</a>      ||serif
+||<a style="font-family: Helvetica">Begins with French word for ''without''</a>    ||sans-serif
 ||<a style="font-family: 'Comic Sans MS'">Looks like handwriting</a>||cursive
 ||<a style="font-family: Papyrus">Used mostly for logos and graphics</a>      ||fantasy
 |/
 </table>
 
-In CSS, you pick a font using the `font-family` property. For example:
+In CSS, you pick a font using the `font-family` property. `font-family`'s value is a list of fonts. For example:
 
 <table>
 |\count num|code
@@ -22,11 +22,11 @@ In CSS, you pick a font using the `font-family` property. For example:
 |/
 </table>
 
-If a font in `font-family` isn't installed on your computer, your computer tries the next one. If instead of a font it's a family, like `cursive`, your computer uses any font in that family.
+If a font in `font-family` isn't installed on your computer, your computer tries the next one in the list. If instead of a font it's a family, like `cursive`, your computer uses any font in that family.
 
 
 <div class="wordbank">
-A font name that contains a _space_ must be inside `"quotes"`.
+A font name that contains a _space_ must be inside "quotes".
 
 -=space
 - semicolon

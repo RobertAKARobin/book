@@ -4,7 +4,7 @@
 
 -#If a website has two stylesheets, it uses both of them.
 - If a website has two CSS rules for paragraphs, it uses both rules.
-- ...**but** if there are two `font-family` declarations for paragraphs, the website will use the second declaration.
+- ...**but** if both rules have a `font-family`, the website will ignore the first `font-family` and use the second one instead.
 -#/
 
 ```#
@@ -22,7 +22,7 @@ code{
 ``/
 
 <div class="wordbank">
-Paragraphs will have _green_ backgrounds,<br > and code snippets will have _blue_ backgrounds.
+This code means paragraphs will have _green_ backgrounds,<br > and code snippets will have _blue_ backgrounds.
 
 -=red
 - blue

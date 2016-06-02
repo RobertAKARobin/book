@@ -12,11 +12,13 @@
     <section>
       <h1>Colors in RGB</h1>
 
-      <p>A computer screen is made of microscopic red, blue, and green lights. The computer sets each light's brightness with a number between 0 (or 000) and 255.</p>
+      <p>A computer screen is made of <dfn>pixels</dfn>. A pixel is a tiny square made of three lights: one red, one blue, and one green.</p>
 
-      <p>A <dfn>pixel</dfn> is a tiny square that has one of each of these lights. A bright purple pixel has an <dfn>RGB</dfn> code of <code>255 000 255</code> which means the pixel's red light is on, green is off, and blue is on.</p>
+      <p>Each light has a number from 255 (which means the light is all the way on) to 0 (all the way off).</p>
 
-      <p><code>170 000 170</code> makes a darker purple: the red and blue lights are a little dim, and green is still off.</p>
+      <p>A bright purple pixel has an <dfn>RGB</dfn> code of <code>255 000 255</code>: the pixel's <strong>R</strong>ed light is on, <strong>G</strong>reen is off, and <strong>B</strong>lue is on.</p>
+
+      <p><code>170 000 170</code> makes a darker purple: the red and blue lights are a little dim, and green is off.</p>
 
       <p>Below are some colors with their RGB codes. Fill in the blanks:</p>
 
@@ -118,11 +120,11 @@ Dec   Hex
 </pre>
       </aside>
 
-      <p>Take a look at the chart on the right:</p>
+      <p>Take a look at the chart on the right.</p>
 
-      <p>In decimal white is <code>255255255</code>, which is 9 spaces long. In hex white is <code>ffffff</code>, which is only 6 spaces long. Because it takes up less space, computers often write colors in hex.</p>
+      <p>In decimal white is <code>255255255</code>, which is 9 numbers long. In hex white is <code>ffffff</code>, which is 6 numbers long. Because it takes up less space, computers often write colors in hex.</p>
 
-      <p>Do the last page again, this time in hexadecimal:</p>
+      <p>Do the last page again, this time in hex:</p>
 
       <table class="inline">
 
@@ -197,8 +199,7 @@ Dec   Hex
 
       <p>Knowing how hex works makes it easier to find the perfect color for your website or app.</p>
 
-      <p>If you want yellow, but <code>ffff00</code> is <em>too</em> yellow, you can giving it 1 more brightness of red with <code>ffff01</code>. You can also make it 1 less brightness of green with <code>fffe00</code>, or 16 less brightness of green with
-        <code>ffef00</code>.</p>
+      <p>If you want yellow, but <code>ffff00</code> is <em>too</em> yellow, you can give it 1 level more red with <code>ffff01</code>. You can also make it 1 level less green with <code>fffe00</code>, or 16 levels less green with <code>ffef00</code>.</p>
 
       <p>Complete the equations below:</p>
 
@@ -396,9 +397,9 @@ Dec   Hex
     <section>
       <h1>Styling</h1>
 
-      <p>This paragraph is normal. The paragraph after this one has been <dfn>styled</dfn> to look different from normal paragraphs.</p>
+      <p>This is a normal paragraph. The paragraph after this one has been <dfn>styled</dfn> to look different from normal paragraphs.</p>
 
-      <p style="line-height:3em; border:2px dotted black; padding:0.5em 1em; text-align:center; font-style:italic;">The lines below give this paragraph its style. Try to fill in the blanks using the word bank at the bottom of this page.</p>
+      <p style="line-height:3em; border:2px dotted black; padding:0.5em 1em; text-align:center; font-style:italic;">The lines below give this paragraph its style. Fill in the blanks using the word bank at the bottom of this page.</p>
 
       <ol>
         <li><code><span class="line"><span>color:</span><b class="flex">#000000;</b></span></code>
@@ -443,7 +444,7 @@ Dec   Hex
 
       <p>You change how the website looks by changing a CSS <dfn>property</dfn>. There are over 500 CSS properties. Each has a <dfn>value</dfn>. A property and its value together are a <dfn>declaration</dfn>.</p>
 
-      <p>Match the property on the left to its value on the right.</p>
+      <p>Match the properties and values to make declarations:</p>
 
       <table>
 
@@ -539,13 +540,13 @@ Dec   Hex
         </tr>
         <tr>
           <td class="count num"></td>
-          <td><a style="font-family: 'Times New Roman'">Dutch for <q>short line</q></a></td>
+          <td><a style="font-family: 'Times New Roman'">Dutch for <q>a short line</q></a></td>
           <td class="count alpha"></td>
           <td>serif</td>
         </tr>
         <tr>
           <td class="count num"></td>
-          <td><a style="font-family: Helvetica">Begins with French for <q>without</q></a></td>
+          <td><a style="font-family: Helvetica">Begins with French word for <q>without</q></a></td>
           <td class="count alpha"></td>
           <td>sans-serif</td>
         </tr>
@@ -564,7 +565,7 @@ Dec   Hex
 
       </table>
 
-      <p>In CSS, you pick a font using the <code>font-family</code> property. For example:</p>
+      <p>In CSS, you pick a font using the <code>font-family</code> property. <code>font-family</code>'s value is a list of fonts. For example:</p>
 
       <table>
 
@@ -583,11 +584,11 @@ Dec   Hex
 
       </table>
 
-      <p>If a font in <code>font-family</code> isn't installed on your computer, your computer tries the next one. If instead of a font it's a family, like <code>cursive</code>, your computer uses any font in that family.</p>
+      <p>If a font in <code>font-family</code> isn't installed on your computer, your computer tries the next one in the list. If instead of a font it's a family, like <code>cursive</code>, your computer uses any font in that family.</p>
 
 
       <div class="wordbank">
-        <p>A font name that contains a <b class=" ">space</b> must be inside <code>"quotes"</code>.</p>
+        <p>A font name that contains a <b class=" ">space</b> must be inside "quotes".</p>
 
         <ul>
           <li>space
@@ -620,7 +621,7 @@ Dec   Hex
       <p>Each of the chunks in <code>{braces}</code> is a <dfn>rule</dfn>. The <q><code>p</code></q> rule changes all the paragraphs on the website. The <q><code>p, code</code></q> rule changes all the paragraphs <em>and</em> code snippets. Rules add on
         to each other.</p>
 
-      <p>This stylesheet changes the fonts of all the code snippets to be: <b class="line">black, 18 pixels tall, and monospaced</b></p>
+      <p>The font of every code snippet will be: <b class="line">black, 18 pixels tall, and monospaced</b></p>
 
       <ol>
         <li>black, 18 pixels tall, and monospaced
@@ -646,7 +647,7 @@ p, code, img{
 </pre>
       </aside>
 
-      <p>The selector here is <code>p, code, img</code>. It means, <q>Every paragraph, code snippet, and image should follow this rule.</q></p>
+      <p>This CSS rule says, <q>Every paragraph, every code snippet, and every image should be 400 pixels wide.</q></p>
 
       <aside>
         <pre data-code>
@@ -656,32 +657,31 @@ p code img{
 </pre>
       </aside>
 
-      <p>Without commas the meaning is totally different. It means, <q>Every image that's in a code snippet that's in a paragraph.</q></p>
+      <p>This CSS rule &mdash; without commas &mdash; says, <q>Every image that's in a code snippet that's in a paragraph should be 400 pixels wide.</q></p>
 
+      <ol>
+        <li>Fill in the selector for, <q>Every button that's in a form.</q> <span class="line"><span></span><b class="flex"><code>form button</code></b></span>
+        </li>
+        <li>Every button in every paragraph in every form. <span class="line"><span></span><b class="flex"><code>form p button</code></b></span>
+        </li>
+        <li>Every button, every paragraph, and every form. <span class="line"><span></span><b class="flex"><code>form, p, button</code></b></span>
+        </li>
+        <li>Every button and every form. <span class="line"><span></span><b class="flex"><code>form, button</code></b></span>
+        </li>
+      </ol>
 
       <div class="wordbank">
-        <p> <b class=" ">form button</b> selects every button in every form.</p>
-
         <ul>
-          <li><code>button, form</code>
+          <li><code>form button</code>
+          </li>
+          <li><code>form p button</code>
+          </li>
+          <li><code>form, p, button</code>
           </li>
           <li><code>form, button</code>
           </li>
-          <li><code>button form</code>
-          </li>
-          <li><code>form button</code>
-          </li>
         </ul>
       </div>
-
-      <ol>
-        <li>Every button in every paragraph in every form. <span class="line"><span></span><b class="flex"><code>form p button</code></b></span>
-        </li>
-        <li>Every button, every paragraph, and every form. <span class="line"><span></span><b class="flex"><code>button, p, form</code></b></span>
-        </li>
-        <li>Every button and every form. <span class="line"><span></span><b class="flex"><code>button, form</code></b></span>
-        </li>
-      </ol>
     </section>
     <section>
       <h1><q>Cascading Stylesheets</q></h1>
@@ -693,7 +693,7 @@ p code img{
         </li>
         <li>If a website has two CSS rules for paragraphs, it uses both rules.
         </li>
-        <li>...<strong>but</strong> if there are two <code>font-family</code> declarations for paragraphs, the website will use the second declaration.
+        <li>...<strong>but</strong> if both rules have a <code>font-family</code>, the website will ignore the first <code>font-family</code> and use the second one instead.
         </li>
       </ol>
 
@@ -712,7 +712,7 @@ p code img{
 </pre>
 
       <div class="wordbank">
-        <p>Paragraphs will have <b class=" ">green</b> backgrounds,<br> and code snippets will have <b class=" ">blue</b> backgrounds.</p>
+        <p>This code means paragraphs will have <b class=" ">green</b> backgrounds,<br> and code snippets will have <b class=" ">blue</b> backgrounds.</p>
 
         <ul>
           <li>red

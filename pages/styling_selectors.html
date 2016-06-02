@@ -10,7 +10,7 @@ p, code, img{
 ``/
 </aside>
 
-The selector here is `p, code, img`. It means, ''Every paragraph, code snippet, and image should follow this rule.''
+This CSS rule says, ''Every paragraph, every code snippet, and every image should be 400 pixels wide.''
 
 <aside>
 ```
@@ -20,20 +20,18 @@ p code img{
 ``/
 </aside>
 
-Without commas the meaning is totally different. It means, ''Every image that's in a code snippet that's in a paragraph.''
+This CSS rule &mdash; without commas &mdash; says, ''Every image that's in a code snippet that's in a paragraph should be 400 pixels wide.''
 
+-#Fill in the selector for, ''Every button that's in a form.'' ___%%`form button`%%___
+- Every button in every paragraph in every form. ___%%`form p button`___
+- Every button, every paragraph, and every form. ___%%`form, p, button`___
+- Every button and every form. ___%%`form, button`___
+-#/
 
 <div class="wordbank">
-  _form button_ selects every button in every form.
-  
--=`button, form`
+-=`form button`
+- `form p button`
+- `form, p, button`
 - `form, button`
-- `button form`
-- `form button`
 -=/
 </div>
-
--#Every button in every paragraph in every form. ___%%`form p button`___
-- Every button, every paragraph, and every form. ___%%`button, p, form`___
-- Every button and every form. ___%%`button, form`___
--#/
