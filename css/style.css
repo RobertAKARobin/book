@@ -59,7 +59,6 @@ blockquote:after, q:after {
 }
 
 [data-code], .code {
-  word-break: break-all;
   text-align: left;
 }
 

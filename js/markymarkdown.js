@@ -16,9 +16,12 @@ module.exports= (function(){
       ["`{1}",,,      function inlineCode(nil, output){
         return h.tag("code", h.replaceEntities(output));
       }],
-      ["_{3}",,,      function blankFlex(nil, output){
-        var output = output.split(/ *%% */);
-        return "<span class=\"line\"><span>" + output[0] + "</span><b class=\"flex\">" + output[1] + "</b></span>";
+      [,,/^(.*)_{3}(.*)_{3}(.*)$/, function blankFlex(nil, openText, blankText, closeText){
+        var output = "";
+        if(openText.trim()) output += "<span>" + openText + "</span>";
+        output += "<b class=\"flex\">" + blankText + "</b>";
+        if(closeText.trim()) output += "<span>" + closeText + "</span>";
+        return "<span class=\"line\">" + output + "</span>";
       }],
       ["_{2}",,,      function blankBlock(nil, output){
         return "<b class=\"line\">" + output + "</b>";
@@ -27,6 +30,8 @@ module.exports= (function(){
         return "<b class=\"" + (output.length < 2 ? "inline" : " ") + "\">" + output + "</b>";
       }],
       [,,    / -- /g, " &mdash; "],
+      [,,    /''\\/g, "&ldquo;"],
+      [,,    /''\//g, "&rdquo;"],
       ["\\/{2}","dfn"],
       ["\\*{2}","strong"],
       ["\\*{1}","em"],
@@ -76,6 +81,9 @@ module.exports= (function(){
         flag.insideCodeBlock = false;
         flag.lineNumber = 0;
         return "</pre>";
+      }],
+      [">>",,,        function noFormatting(nil, output){
+        return output;
       }],
       [,, /^(.*?)$/,  function fallback(nil, output){
         if(flag.insideCodeBlock){
