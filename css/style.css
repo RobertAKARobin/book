@@ -74,6 +74,9 @@ b {
 input[data-answer] {
   font-family: Pointfree;
 }
+input[data-answer]:focus {
+  background-color: #ffb;
+}
 
 b, input[data-answer] {
   display: inline-block;
@@ -94,7 +97,7 @@ b.flex, input[data-answer].flex {
   width: auto;
 }
 b.correct, input[data-answer].correct {
-  color: #f60;
+  color: #6c0;
 }
 
 span.line {

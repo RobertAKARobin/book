@@ -66,6 +66,10 @@ b{
 }
 input[data-answer]{
   font-family:Pointfree;
+  
+  &:focus{
+    background-color:#ffb;
+  }
 }
 b, input[data-answer]{
   display:inline-block;
@@ -86,7 +90,7 @@ b, input[data-answer]{
     width:auto;
   }
   &.correct{
-    color:#f60;
+    color:#6c0;
   }
 }
 span.line{
