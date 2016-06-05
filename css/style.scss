@@ -23,7 +23,7 @@ html, body{
   position:relative;
   min-height:100vh;
   font-size:18px;
-  font-family:"News706", Impact, sans-serif;
+  font-family:"News706", "Georgia", sans-serif;
 }
 body{
   width:100vw;
@@ -86,6 +86,7 @@ b, input[data-answer]{
   &.flex{
     flex-grow:1;
     width:auto;
+    margin-left:0.5em;
   }
   &.correct{
     color:#6c0;
@@ -133,11 +134,10 @@ dfn{
 }
 
 body{
-  font-size:0;
   text-align:center;
 }
 
-section{
+.section{
   display:inline-block;
   vertical-align:top;
   box-sizing:border-box;
@@ -154,7 +154,7 @@ section{
   
   line-height:1.6em;
   
-  p, table, ol, ul, aside,
+  p, table, ol, ul, .aside,
   & > pre{
     margin:1.5em auto 0em auto;
   }
@@ -164,7 +164,7 @@ section{
   
   h1{
     font-size:1.5em;
-    font-family:"PF Din Text Comp Pro", Georgia, serif;
+    font-family:"PF Din Text Comp Pro", Impact, serif;
     text-transform:uppercase;
   }
   h2{
@@ -174,7 +174,7 @@ section{
   li{
     padding-left:0.5em;
   }
-  aside{
+  .aside{
     display:block;
     float:right;
     padding-left:1em;
@@ -234,11 +234,12 @@ $aspect: ($page-x / $page-y);
 //   @return "#{$page-x * $n}/#{$page-y}";
 // }
 
-section{
+.section{
+  width: 90%;
   @include size-from-width(100vw);
 }
 @media print{
-  section{
+  .section{
     page-break-inside:avoid;
     page-break-before:always;
     border-width:0px;
@@ -258,18 +259,18 @@ section{
   }
 }
 @media  screen and (max-width:800px){
-  section{
+  .section{
     @include size-from-width(100vw);
     width:100%;
     border-right-width:0px;
   }
 }
 @media  screen and (min-width:800px){
-  section{
+  .section{
     @include size-from-width(50vw);
     width:50%;
   }
-  section:nth-child(even){
+  .section:nth-child(even){
     border-right-width:0px;
   }
 }

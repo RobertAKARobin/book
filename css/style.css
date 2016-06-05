@@ -25,7 +25,7 @@ html, body {
   position: relative;
   min-height: 100vh;
   font-size: 18px;
-  font-family: "News706", Impact, sans-serif;
+  font-family: "News706", "Georgia", sans-serif;
 }
 
 body {
@@ -92,6 +92,7 @@ b.inline, input[data-answer].inline {
 b.flex, input[data-answer].flex {
   flex-grow: 1;
   width: auto;
+  margin-left: 0.5em;
 }
 b.correct, input[data-answer].correct {
   color: #6c0;
@@ -138,11 +139,10 @@ dfn {
 }
 
 body {
-  font-size: 0;
   text-align: center;
 }
 
-section {
+.section {
   display: inline-block;
   vertical-align: top;
   box-sizing: border-box;
@@ -154,71 +154,72 @@ section {
   border-bottom-width: 1px;
   line-height: 1.6em;
 }
-section:nth-child(even) {
+.section:nth-child(even) {
   border-left-width: 0;
 }
-section p, section table, section ol, section ul, section aside, section > pre {
+.section p, .section table, .section ol, .section ul, .section .aside, .section > pre {
   margin: 1.5em auto 0em auto;
 }
-section > h1 {
+.section > h1 {
   margin: 0.5em auto;
 }
-section h1 {
+.section h1 {
   font-size: 1.5em;
-  font-family: "PF Din Text Comp Pro", Georgia, serif;
+  font-family: "PF Din Text Comp Pro", Impact, serif;
   text-transform: uppercase;
 }
-section h2 {
+.section h2 {
   font-weight: bold;
   text-align: center;
 }
-section li {
+.section li {
   padding-left: 0.5em;
 }
-section aside {
+.section .aside {
   display: block;
   float: right;
   padding-left: 1em;
   margin-left: 1em;
   border-left: 1px solid #000;
 }
-section hr {
+.section hr {
   display: block;
   clear: both;
 }
-section table, section tr, section td {
+.section table, .section tr, .section td {
   box-sizing: border-box;
 }
-section table {
+.section table {
   counter-reset: count-num count-alpha;
   width: 100%;
 }
-section table.inline {
+.section table.inline {
   width: auto;
 }
-section table .count {
+.section table .count {
   padding: 0 0.5em;
   text-align: left;
 }
-section table .count.num {
+.section table .count.num {
   counter-increment: count-num;
 }
-section table .count.num:before {
+.section table .count.num:before {
   content: counter(count-num) ".";
 }
-section table .count.alpha {
+.section table .count.alpha {
   counter-increment: count-alpha;
 }
-section table .count.alpha:before {
+.section table .count.alpha:before {
   content: counter(count-alpha,lower-alpha) ".";
 }
-section table td {
+.section table td {
   position: relative;
   vertical-align: top;
   padding: 0 1em;
 }
 
-section {
+.section {
+  width: 90%;
   width: 100vw;
   height: 129.41176vw;
   padding: 2vw;
@@ -226,7 +227,7 @@ section {
 }
 
 @media print {
-  section {
+  .section {
     page-break-inside: avoid;
     page-break-before: always;
     border-width: 0px;
@@ -247,7 +248,7 @@ section {
   }
 }
 @media screen and (max-width: 800px) {
-  section {
+  .section {
     width: 100vw;
     height: 129.41176vw;
     padding: 2vw;
@@ -257,7 +258,7 @@ section {
   }
 }
 @media screen and (min-width: 800px) {
-  section {
+  .section {
     width: 50vw;
     height: 64.70588vw;
     padding: 1vw;
@@ -265,7 +266,7 @@ section {
     width: 50%;
   }
 
-  section:nth-child(even) {
+  .section:nth-child(even) {
     border-right-width: 0px;
   }
 }

@@ -31,7 +31,7 @@ var pages = [];
 (function insertPages(){
   
   var index     = read("layout.html").split("{{{yield}}}");
-  var output    = index[0] + "<section>" + pages.join("</section><section>") + "</section>" + index[1];
+  var output    = index[0] + "<div class=\"section\">" + pages.join("</div><div class=\"section\">") + "</div>" + index[1];
   write("index.html", beaut.html(output, {
     indent_size: 2,
     end_with_newline: true
