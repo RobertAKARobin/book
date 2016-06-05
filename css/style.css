@@ -238,8 +238,15 @@ section {
     width: 100%;
     box-sizing: border-box;
   }
+
+  #main {
+    display: flex;
+    display: -webkit-flex;
+    flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+  }
 }
-@media screen and (max-width: 800px), screen and (max-height: 500px) {
+@media screen and (max-width: 800px) {
   section {
     width: 100vw;
     height: 129.41176vw;
@@ -249,7 +256,7 @@ section {
     border-right-width: 0px;
   }
 }
-@media screen and (min-width: 800px), screen and (min-aspect-ratio: 255 / 110) {
+@media screen and (min-width: 800px) {
   section {
     width: 50vw;
     height: 64.70588vw;
@@ -257,15 +264,8 @@ section {
     font-size: 1.5vw;
     width: 50%;
   }
-}
-@media screen and (min-height: 500px) and (min-aspect-ratio: 170 / 110) and (max-aspect-ratio: 255 / 110) {
-  section {
-    width: 77.27273vh;
-    height: 100vh;
-    padding: 1.54545vh;
-    font-size: 2.31818vh;
-  }
+
   section:nth-child(even) {
-    border-right-width: 1px;
+    border-right-width: 0px;
   }
 }

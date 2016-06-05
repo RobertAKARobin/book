@@ -230,9 +230,9 @@ $aspect: ($page-x / $page-y);
   padding:    (2 * $percent);
   font-size:  (3 * $percent);
 }
-@function n-pages-wide($n){
-  @return "#{$page-x * $n}/#{$page-y}";
-}
+// @function n-pages-wide($n){
+//   @return "#{$page-x * $n}/#{$page-y}";
+// }
 
 section{
   @include size-from-width(100vw);
@@ -250,29 +250,26 @@ section{
     width:100%;
     box-sizing:border-box;
   }
+  #main{
+    display:flex;
+    display:-webkit-flex;
+    flex-wrap:wrap;
+    -webkit-flex-wrap:wrap;
+  }
 }
-@media  screen and (max-width:800px),
-        screen and (max-height: 500px){
+@media  screen and (max-width:800px){
   section{
     @include size-from-width(100vw);
     width:100%;
     border-right-width:0px;
   }
 }
-@media  screen and (min-width:800px),
-        screen and (min-aspect-ratio: n-pages-wide(3)){
+@media  screen and (min-width:800px){
   section{
     @include size-from-width(50vw);
     width:50%;
   }
-}
-@media  screen and (min-height: 500px) and
-        (min-aspect-ratio: n-pages-wide(2)) and
-        (max-aspect-ratio: n-pages-wide(3)){
-  section{
-    @include size-from-width((100vh * $aspect));
-    &:nth-child(even){
-      border-right-width:1px;
-    }
+  section:nth-child(even){
+    border-right-width:0px;
   }
 }
