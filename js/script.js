@@ -8,7 +8,7 @@ window.onload = function(){
     var i,      l = blanks.length;
     for(i = 0; i < l; i++){
       el          = blanks[i];
-      el.setAttribute("data-width", el.clientWidth);
+      el.setAttribute("data-width", el.clientWidth + 1);
     }
     for(i = 0; i < l; i++){
       el          = blanks[i];

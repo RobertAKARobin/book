@@ -65,8 +65,6 @@ b{
   color:#fff;
 }
 input[data-answer]{
-  font-family:Pointfree;
-  
   &:focus{
     background-color:#ffb;
   }
@@ -75,7 +73,7 @@ b, input[data-answer]{
   display:inline-block;
   border-bottom:1px solid #000;
   white-space:nowrap;
-  overflow:hidden;
+  font-family:"Pointfree";
 
   &.line{
     display:block;

@@ -8,9 +8,6 @@ module.exports= (function(){
     "#": "ol",
     "=": "ul"
   }
-  var inputTag  = function(answer, attrs){
-    return "<input " + (attrs ? attrs + " " : "") + "data-answer=\"" + answer + "\" />";
-  }
   var matchers  = {
     inline: [
       ["`{1}",,,      function inlineCode(nil, output){
