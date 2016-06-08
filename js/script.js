@@ -25,7 +25,6 @@ window.onload = function(){
       });
     }else guesses = {};
     countNumberCorrect();
-    elScore.style.display = "block";
     elTotal.innerHTML = inputs.length;
 
     function convertBlanksToInputs(){

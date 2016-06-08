@@ -97,22 +97,14 @@ input[data-answer]:focus {
   background-color: #ffb;
 }
 input[data-answer].correct {
+  border: 1px solid transparent;
   animation: flash-correct 0.7s forwards;
 }
 
-@keyframes flash-correct {
-  from {
-    background-color: #fff;
-    color: #fff;
-  }
-  to {
-    background-color: #dfd;
-    color: #000;
-  }
-}
 b, input[data-answer] {
   display: inline-block;
-  border-bottom: 1px solid #000;
+  border: 1px dotted #000;
+  border-radius: 5px;
   white-space: nowrap;
   font-family: Pointfree, cursive;
 }
@@ -128,6 +120,11 @@ b.flex, input[data-answer].flex {
   flex-grow: 1;
   width: auto;
   margin-left: 0.5em;
+  border-width: 0 0 1px 0;
+  border-radius: 0;
+}
+b.flex:only-child, input[data-answer].flex:only-child {
+  margin-left: 0;
 }
 
 span.line {
@@ -313,14 +310,6 @@ body {
   opacity: 0.01;
 }
 
-@keyframes flip {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
 .section {
   width: 90%;
   width: 100vw;
@@ -371,5 +360,23 @@ body {
 
   .section:nth-child(even) {
     border-right-width: 0px;
+  }
+}
+@keyframes flash-correct {
+  from {
+    background-color: #fff;
+    color: #fff;
+  }
+  to {
+    background-color: #dfd;
+    color: #000;
+  }
+}
+@keyframes flip {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
   }
 }
