@@ -8,7 +8,7 @@
 </head>
 
 <body>
-  <div id="score" style="display:none;">
+  <div id="score">
     <div>Score: <span id="correct">0</span> / <span id="total">0</span></div>
     <input type="checkbox" id="remember" /><label for="remember">Remember answers</label>
     <button id="clear">Clear answers</button>
@@ -53,44 +53,44 @@
         <tr>
           <td class="count num"></td>
           <td>green</td>
-          <td class="code"><b class=" ">000</b></td>
-          <td class="code">255</td>
-          <td class="code"><b class=" ">000</b></td>
+          <td class="code">000</td>
+          <td class="code"><b class=" ">255</b></td>
+          <td class="code">000</td>
         </tr>
         <tr>
           <td class="count num"></td>
           <td>blue</td>
           <td class="code"><b class=" ">000</b></td>
-          <td class="code">255</td>
+          <td class="code"><b class=" ">000</b></td>
           <td class="code">255</td>
         </tr>
         <tr>
           <td class="count num"></td>
-          <td>turquoise</td>
-          <td class="code"><b class=" ">000</b></td>
-          <td class="code">255</td>
-          <td class="code">255</td>
+          <td>teal</td>
+          <td class="code">000</td>
+          <td class="code"><b class=" ">255</b></td>
+          <td class="code"><b class=" ">255</b></td>
         </tr>
         <tr>
           <td class="count num"></td>
           <td>yellow</td>
-          <td class="code">255</td>
+          <td class="code"><b class=" ">255</b></td>
           <td class="code">255</td>
           <td class="code">000</td>
         </tr>
         <tr>
           <td class="count num"></td>
           <td>orange</td>
-          <td class="code">255</td>
-          <td class="code"><b class=" ">170</b></td>
+          <td class="code"><b class=" ">255</b></td>
+          <td class="code">170</td>
           <td class="code">000</td>
         </tr>
         <tr>
           <td class="count num"></td>
-          <td><b class="line">grey</b></td>
+          <td>grey</td>
           <td class="code">170</td>
-          <td class="code">170</td>
-          <td class="code">170</td>
+          <td class="code"><b class=" ">170</b></td>
+          <td class="code"><b class=" ">170</b></td>
         </tr>
 
       </table>
@@ -157,8 +157,8 @@ Dec   Hex
         <tr>
           <td class="count num"></td>
           <td>green</td>
-          <td class="code"><b class=" ">00</b></td>
-          <td class="code">FF</td>
+          <td class="code">00</td>
+          <td class="code"><b class=" ">FF</b></td>
           <td class="code"><b class=" ">00</b></td>
         </tr>
         <tr>
@@ -166,35 +166,35 @@ Dec   Hex
           <td>blue</td>
           <td class="code"><b class=" ">00</b></td>
           <td class="code"><b class=" ">00</b></td>
+          <td class="code">FF</td>
+        </tr>
+        <tr>
+          <td class="count num"></td>
+          <td>teal</td>
+          <td class="code">00</td>
+          <td class="code"><b class=" ">FF</b></td>
           <td class="code"><b class=" ">FF</b></td>
         </tr>
         <tr>
           <td class="count num"></td>
-          <td>turquoise</td>
-          <td class="code"><b class=" ">00</b></td>
-          <td class="code">FF</td>
-          <td class="code">FF</td>
-        </tr>
-        <tr>
-          <td class="count num"></td>
           <td>yellow</td>
-          <td class="code">FF</td>
+          <td class="code"><b class=" ">FF</b></td>
           <td class="code">FF</td>
           <td class="code">00</td>
         </tr>
         <tr>
           <td class="count num"></td>
           <td>orange</td>
-          <td class="code">FF</td>
-          <td class="code"><b class=" ">AA</b></td>
+          <td class="code"><b class=" ">FF</b></td>
+          <td class="code">AA</td>
           <td class="code">00</td>
         </tr>
         <tr>
           <td class="count num"></td>
-          <td><b class="line">grey</b></td>
+          <td>grey</td>
           <td class="code">AA</td>
-          <td class="code">AA</td>
-          <td class="code">AA</td>
+          <td class="code"><b class=" ">AA</b></td>
+          <td class="code"><b class=" ">AA</b></td>
         </tr>
 
       </table>
@@ -208,7 +208,7 @@ Dec   Hex
 
       <p>Complete the equations below:</p>
 
-      <table>
+      <table class="inline">
 
         <tr>
           <td class="count num"></td>
@@ -240,7 +240,7 @@ Dec   Hex
         <tr>
           <td class="count num"></td>
           <td class="code">BBAA00</td>
-          <td class="code">-</td>
+          <td class="code">&mdash;</td>
           <td><b class="line">1</b></td>
           <td>green</td>
           <td>=</td>
@@ -249,7 +249,7 @@ Dec   Hex
         <tr>
           <td class="count num"></td>
           <td class="code">BBAA00</td>
-          <td class="code">-</td>
+          <td class="code">&mdash;</td>
           <td>16</td>
           <td>green</td>
           <td>=</td>
@@ -258,7 +258,7 @@ Dec   Hex
         <tr>
           <td class="count num"></td>
           <td class="code">BBAA00</td>
-          <td class="code">-</td>
+          <td class="code">&mdash;</td>
           <td><b class="line">17</b></td>
           <td>green</td>
           <td>=</td>
@@ -276,7 +276,7 @@ Dec   Hex
         <tr>
           <td class="count num"></td>
           <td class="code">ABCDEF</td>
-          <td class="code"><b class="line">-</b></td>
+          <td class="code">&mdash;</td>
           <td><b class="line">16</b></td>
           <td><b class="line">red</b></td>
           <td>=</td>
@@ -285,7 +285,7 @@ Dec   Hex
         <tr>
           <td class="count num"></td>
           <td class="code"><b class=" ">CBCDEF</b></td>
-          <td class="code">+</td>
+          <td class="code">&mdash;</td>
           <td>32</td>
           <td>red</td>
           <td>=</td>
@@ -294,7 +294,7 @@ Dec   Hex
         <tr>
           <td class="count num"></td>
           <td class="code">B3A000</td>
-          <td class="code">-</td>
+          <td class="code">&mdash;</td>
           <td>1</td>
           <td>green</td>
           <td>=</td>
