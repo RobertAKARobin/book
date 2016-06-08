@@ -6,7 +6,7 @@ var h     = require("./js/helpers.js");
 var pages = [];
 
 (function loadPages(){
-  
+
   var matchers  = require("./js/markymarkdown.js");
   var filenames = require("./pages/_index");
   h.for_each(filenames, function(filename, i){
@@ -25,18 +25,18 @@ var pages = [];
     });
     pages.push(content.join("\n"));
   });
-  
+
 })();
 
 (function insertPages(){
-  
+
   var index     = read("layout.html").split("{{{yield}}}");
   var output    = index[0] + "<div class=\"section\">" + pages.join("</div><div class=\"section\">") + "</div>" + index[1];
   write("index.html", beaut.html(output, {
     indent_size: 2,
     end_with_newline: true
   }));
-  
+
 })();
 
 function read(filename){

@@ -114,19 +114,19 @@ module.exports= (function(){
       }]
     ]
   }
-  
+
   var output = {
     inline:     [],
     singleline: []
   }
-  
+
   h.for_each(matchers.inline, function(matcher, index){
     output.inline.push(setReplacer(matcher, RegExp(matcher[0] + "(.*?)" + matcher[0], "g")));
   });
   h.for_each(matchers.singleline, function(matcher, index){
     output.singleline.push(setReplacer(matcher, RegExp("^" + matcher[0] + " *(.*)", "g")));
   });
-  
+
   function setReplacer(matcher, regex){
     var regex     = (matcher[2] || regex);
     var replacer  = (matcher[3] ? matcher[3] : h.tag.bind(matcher[1]));
@@ -134,7 +134,7 @@ module.exports= (function(){
       return input.replace(regex, replacer);
     }
   }
-  
+
   return output;
-  
+
 })();

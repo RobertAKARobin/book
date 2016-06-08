@@ -60,7 +60,7 @@ blockquote, q{
 [data-code], .code, code{
   white-space:pre-wrap;
   font-family:"Andale Mono";
-  
+
   .HTMLCodeBlock &{
     font-weight:normal;
     font-style:normal;
@@ -148,21 +148,21 @@ dfn{
 }
 .wordbank{
   text-align:center;
-  
+
   ul, ol{
     padding-left:0;
   }
-  
+
   li{
     display:inline-block;
     margin:0.2em 2em;
     border-bottom:1px dotted #000;
     padding-left:0;
   }
-  
+
   ol{
     counter-reset: count-num;
-    
+
     li{
       counter-increment: count-num;
       &:before{
@@ -186,13 +186,13 @@ body{
   border-left-width:1px;
   border-right-width:1px;
   border-bottom-width:1px;
-  
+
   &:nth-child(even){
     border-left-width:0;
   }
-  
+
   line-height:1.6em;
-  
+
   p, table, ol, ul, .aside,
   & > pre{
     margin:1.5em auto 0em auto;
@@ -200,7 +200,7 @@ body{
   & > h1{
     margin:0.5em auto;
   }
-  
+
   h1{
     font-size:1.5em;
     font-family:"PF Din Text Comp Pro", Impact, serif;
@@ -230,11 +230,11 @@ body{
   table{
     counter-reset: count-num count-alpha;
     width:100%;
-    
+
     &.inline{
       width:auto;
     }
-    
+
     .count{
       padding:0 0.5em;
       text-align:left;
