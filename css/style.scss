@@ -1,3 +1,18 @@
+$fontText: "News706", "Georgia", serif;
+$fontCode: "Andale Mono", monospace;
+$fontHand: "Pointfree", cursive;
+$fontHeader: "PF Din Text Comp Pro", Impact, sans-serif;
+
+@mixin hidden{
+  position:absolute;
+  top:0;
+  left:0;
+  width:1px;
+  height:1px;
+  overflow:hidden;
+  opacity:0.01;
+}
+
 *{
   margin:0;
   border:0;
@@ -23,7 +38,7 @@ html, body{
   position:relative;
   min-height:100vh;
   font-size:18px;
-  font-family:"News706", "Georgia", sans-serif;
+  font-family:#{$fontText};
 }
 body{
   width:100vw;
@@ -59,7 +74,7 @@ blockquote, q{
 }
 [data-code], .code, code{
   white-space:pre-wrap;
-  font-family:"Andale Mono";
+  font-family: #{$fontCode};
 
   .HTMLCodeBlock &{
     font-weight:normal;
@@ -115,7 +130,7 @@ b, input[data-answer]{
   display:inline-block;
   border-bottom:1px solid #000;
   white-space:nowrap;
-  font-family:"Pointfree";
+  font-family: #{$fontHand};
 
   &.line{
     display:block;
@@ -203,7 +218,7 @@ body{
 
   h1{
     font-size:1.5em;
-    font-family:"PF Din Text Comp Pro", Impact, serif;
+    font-family:#{$fontHeader};
     text-transform:uppercase;
   }
   h2{
@@ -256,6 +271,80 @@ body{
       vertical-align:top;
       padding:0 1em;
     }
+  }
+}
+
+#score{
+  position:fixed;
+  top:0;
+  right:0;
+  background-color:#dfd;
+  border-bottom-left-radius:10px;
+  overflow:hidden;
+  box-shadow: 5px -5px 10px 0px #cec inset,
+              0px 0px 10px 0px #000;
+  transition:opacity 0.3s;
+  z-index:9999;
+  opacity:0.95;
+
+  @media print{
+    display:none;
+  }
+
+  &:hover,
+  &:active,
+  &:focus{
+    opacity:1;
+  }
+
+  #correct{
+    position:relative;
+    display:inline-block;
+    transition:color 0.3s;
+  }
+  &.active #correct{
+    color:#000;
+    animation: flip 0.5s forwards;
+  }
+
+  & > *{
+    display:block;
+    width:100%;
+    background-color:transparent;
+    font-size:12px;
+    line-height:12px;
+    padding:5px 10px;
+    border-bottom:1px solid rgba(100, 155, 100, 0.3);
+    box-sizing:border-box;
+    color:#8a8;
+    text-shadow:0px 0px 2px #bdb;
+  }
+
+  label, button{
+    cursor:pointer;
+    transition: background-color 0.2s;
+
+    &:hover{
+      background-color:rgba(255,255,255,0.4);
+    }
+  }
+  label:active,
+  button:active,
+  input:checked + label{
+    background-color:rgba(000,100,000,0.2);
+  }
+
+  & > input[type="checkbox"]{
+    @include hidden;
+  }
+}
+
+@keyframes flip{
+  from{
+    transform:rotate(0deg);
+  }
+  to{
+    transform:rotate(360deg);
   }
 }
 
