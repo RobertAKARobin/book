@@ -66,6 +66,28 @@ blockquote:after, q:after {
   white-space: pre-wrap;
   font-family: "Andale Mono";
 }
+.HTMLCodeBlock [data-code], .HTMLCodeBlock .code, .HTMLCodeBlock code {
+  font-weight: normal;
+  font-style: normal;
+  font-size: 1rem;
+  text-transform: none;
+}
+
+.HTMLCodeBlock q:before, .HTMLCodeBlock q:after {
+  content: "";
+}
+.HTMLCodeBlock q span:before {
+  content: "\0201c";
+}
+.HTMLCodeBlock q span:after {
+  content: "\0201d";
+}
+.HTMLCodeBlock dfn {
+  border-bottom: 0;
+}
+.HTMLCodeBlock dfn span {
+  border-bottom: 1px dotted #000;
+}
 
 b {
   color: #fff;

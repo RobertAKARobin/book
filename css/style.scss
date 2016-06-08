@@ -60,6 +60,35 @@ blockquote, q{
 [data-code], .code, code{
   white-space:pre-wrap;
   font-family:"Andale Mono";
+  
+  .HTMLCodeBlock &{
+    font-weight:normal;
+    font-style:normal;
+    font-size:1rem;
+    text-transform:none;
+  }
+}
+.HTMLCodeBlock{
+  q{
+    &:before,
+    &:after{
+      content:"";
+    }
+    span{
+      &:before{
+        content:"\0201c";
+      }
+      &:after{
+        content:"\0201d";
+      }
+    }
+  }
+  dfn{
+    border-bottom:0;
+    span{
+      border-bottom:1px dotted #000;
+    }
+  }
 }
 b{
   color:#fff;

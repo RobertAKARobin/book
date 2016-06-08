@@ -69,7 +69,7 @@ module.exports= (function(){
         });
         return "<tr>" + line + "</tr>";
       }],
-      ["```(#?)",,,       function newCodeBlock(nil, isNumbered){
+      ["```(#?)",,,   function newCodeBlock(nil, isNumbered){
         flag.insideCodeBlock = true;
         if(isNumbered) flag.lineNumber = 1;
         return "<pre data-code>";
@@ -78,6 +78,14 @@ module.exports= (function(){
         flag.insideCodeBlock = false;
         flag.lineNumber = 0;
         return "</pre>";
+      }],
+      [">><<",,,      function newHTMLCodeBlock(nil, output){
+        flag.insideHTMLCodeBlock = true;
+        return "<div class='HTMLCodeBlock'>";
+      }],
+      [">><\/",,,     function endHTMLCodeBlock(nil, output){
+        flag.insideHTMLCodeBlock = false;
+        return "</div>";
       }],
       [">>",,,        function noFormatting(nil, output){
         return output;
@@ -89,6 +97,12 @@ module.exports= (function(){
             output = h.pad(flag.lineNumber, 3, ".") + "  " + output;
             flag.lineNumber += 1;
           }
+        }else if(flag.insideHTMLCodeBlock){
+          output = output.replace(/<.*?>/g, function(tag){
+            var code = h.tag("code", h.replaceEntities(tag));
+            if(tag.trim()[1] === "/") return "</span>" + code + tag;
+            else return tag + code + "<span>";
+          });
         }else if(output.trim() === ""){
           output = "";
         }else if(output.substring(0,1) === "<"){
