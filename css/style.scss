@@ -97,6 +97,19 @@ input[data-answer]{
   &:focus{
     background-color:#ffb;
   }
+  &.correct{
+    animation: flash-correct 0.7s forwards;
+  }
+}
+@keyframes flash-correct{
+  from{
+    background-color:#fff;
+    color:#fff;
+  }
+  to{
+    background-color:#dfd;
+    color:#000;
+  }
 }
 b, input[data-answer]{
   display:inline-block;
@@ -116,9 +129,6 @@ b, input[data-answer]{
     flex-grow:1;
     width:auto;
     margin-left:0.5em;
-  }
-  &.correct{
-    color:#6c0;
   }
 }
 span.line{

@@ -96,7 +96,20 @@ b {
 input[data-answer]:focus {
   background-color: #ffb;
 }
+input[data-answer].correct {
+  animation: flash-correct 0.7s forwards;
+}
 
+@keyframes flash-correct {
+  from {
+    background-color: #fff;
+    color: #fff;
+  }
+  to {
+    background-color: #dfd;
+    color: #000;
+  }
+}
 b, input[data-answer] {
   display: inline-block;
   border-bottom: 1px solid #000;
@@ -115,9 +128,6 @@ b.flex, input[data-answer].flex {
   flex-grow: 1;
   width: auto;
   margin-left: 0.5em;
-}
-b.correct, input[data-answer].correct {
-  color: #6c0;
 }
 
 span.line {
