@@ -25,7 +25,7 @@ html, body {
   position: relative;
   min-height: 100vh;
   font-size: 18px;
-  font-family: News706, Georgia, serif;
+  font-family: "News706", "Georgia", serif;
 }
 
 body {
@@ -64,7 +64,7 @@ blockquote:after, q:after {
 
 [data-code], .code, code {
   white-space: pre-wrap;
-  font-family: Andale Mono, monospace;
+  font-family: "Andale Mono", monospace;
 }
 .HTMLCodeBlock [data-code], .HTMLCodeBlock .code, .HTMLCodeBlock code {
   font-weight: normal;
@@ -89,10 +89,17 @@ blockquote:after, q:after {
   border-bottom: 1px dotted #000;
 }
 
-b {
-  color: #fff;
+input[data-answer] {
+  display: inline-block;
+  border: 1px dotted #000;
+  border-radius: 5px;
+  white-space: nowrap;
+  font-family: "Pointfree", cursive;
+  width: 6em;
 }
-
+td input[data-answer]:only-child {
+  width: 100%;
+}
 input[data-answer]:focus {
   background-color: #ffb;
 }
@@ -100,30 +107,22 @@ input[data-answer].correct {
   border: 1px solid transparent;
   animation: flash-correct 0.7s forwards;
 }
-
-b, input[data-answer] {
-  display: inline-block;
-  border: 1px dotted #000;
-  border-radius: 5px;
-  white-space: nowrap;
-  font-family: Pointfree, cursive;
-}
-b.line, input[data-answer].line {
+input[data-answer].line {
   display: block;
   width: 100%;
 }
-b.inline, input[data-answer].inline {
+input[data-answer].inline {
   text-align: center;
   width: 3em;
 }
-b.flex, input[data-answer].flex {
+input[data-answer].flex {
   flex-grow: 1;
   width: auto;
   margin-left: 0.5em;
   border-width: 0 0 1px 0;
   border-radius: 0;
 }
-b.flex:only-child, input[data-answer].flex:only-child {
+input[data-answer].flex:only-child {
   margin-left: 0;
 }
 
@@ -194,7 +193,7 @@ body {
 }
 .section h1 {
   font-size: 1.5em;
-  font-family: PF Din Text Comp Pro, Impact, sans-serif;
+  font-family: "PF Din Text Comp Pro", Impact, sans-serif;
   text-transform: uppercase;
 }
 .section h2 {
@@ -217,6 +216,7 @@ body {
 }
 .section table, .section tr, .section td {
   box-sizing: border-box;
+  position: relative;
 }
 .section table {
   counter-reset: count-num count-alpha;
@@ -280,13 +280,12 @@ body {
   display: block;
   width: 100%;
   background-color: transparent;
-  font-size: 12px;
-  line-height: 12px;
+  font-size: 18px;
+  line-height: 18px;
   padding: 5px 10px;
   border-bottom: 1px solid rgba(100, 155, 100, 0.3);
   box-sizing: border-box;
   color: #8a8;
-  text-shadow: 0px 0px 2px #bdb;
 }
 #score label, #score button {
   cursor: pointer;

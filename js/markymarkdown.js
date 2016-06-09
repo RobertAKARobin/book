@@ -16,16 +16,19 @@ module.exports= (function(){
       [,,/^(.*)_{3}(.*)_{3}(.*)$/, function blankFlex(nil, openText, blankText, closeText){
         var output = "";
         if(openText.trim())  output += h.tag("span", openText);
-        output += h.tag(["b", "class=\"flex\""], blankText);
+        output += h.tag(["input", {class: "flex", "data-answer": blankText}]);
         if(closeText.trim()) output += h.tag("span", closeText);
-        return h.tag(["span", "class=\"line\""], output);
+        return h.tag(["span", {class: "line"}], output);
       }],
       ["_{2}",,,      function blankBlock(nil, output){
-        return h.tag(["b", "class=\"line\""], output);
+        return h.tag(["input", {class: "line", "data-answer": output}]);
       }],
       ["_{1}",,,      function blankInline(nil, output){
-        var cssClass = (output.length < 2 ? "inline" : " ");
-        return h.tag(["b", "class=\"" + cssClass + "\""], output);
+        var attributes = {"data-answer": output};
+        if(output.length < 2){
+          attributes.class = "inline";
+        }
+        return h.tag(["input", attributes]);
       }],
       [,,    / -- /g, " &mdash; "],
       [,,    /''\\/g, "&ldquo;"],
@@ -64,9 +67,9 @@ module.exports= (function(){
         h.for_each(row.split(/ *\| */g), function(cell, index){
           var classAttr = "";
           if(flag.cols && flag.cols[index] && flag.cols[index].trim()){
-            classAttr = " class=\"" + flag.cols[index].trim() + "\" ";
+            classAttr = {class: flag.cols[index].trim()};
           }
-          line    += h.tag(["td", classAttr], cell);
+          line += h.tag(["td", classAttr], cell);
         });
         return h.tag("tr", line);
       }],

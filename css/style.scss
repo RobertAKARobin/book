@@ -38,7 +38,7 @@ html, body{
   position:relative;
   min-height:100vh;
   font-size:18px;
-  font-family:#{$fontText};
+  font-family:$fontText;
 }
 body{
   width:100vw;
@@ -74,7 +74,7 @@ blockquote, q{
 }
 [data-code], .code, code{
   white-space:pre-wrap;
-  font-family: #{$fontCode};
+  font-family: $fontCode;
 
   .HTMLCodeBlock &{
     font-weight:normal;
@@ -105,10 +105,18 @@ blockquote, q{
     }
   }
 }
-b{
-  color:#fff;
-}
+
 input[data-answer]{
+  display:inline-block;
+  border:1px dotted #000;
+  border-radius:5px;
+  white-space:nowrap;
+  font-family: $fontHand;
+  width:6em;
+
+  td &:only-child{
+    width:100%;
+  }
   &:focus{
     background-color:#ffb;
   }
@@ -116,15 +124,6 @@ input[data-answer]{
     border:1px solid transparent;
     animation: flash-correct 0.7s forwards;
   }
-}
-
-b, input[data-answer]{
-  display:inline-block;
-  border:1px dotted #000;
-  border-radius:5px;
-  white-space:nowrap;
-  font-family: #{$fontHand};
-
   &.line{
     display:block;
     width:100%;
@@ -217,7 +216,7 @@ body{
 
   h1{
     font-size:1.5em;
-    font-family:#{$fontHeader};
+    font-family:$fontHeader;
     text-transform:uppercase;
   }
   h2{
@@ -240,6 +239,7 @@ body{
   }
   table, tr, td{
     box-sizing:border-box;
+    position:relative;
   }
   table{
     counter-reset: count-num count-alpha;
@@ -310,13 +310,13 @@ body{
     display:block;
     width:100%;
     background-color:transparent;
-    font-size:12px;
-    line-height:12px;
+    font-size:18px;
+    line-height:18px;
     padding:5px 10px;
     border-bottom:1px solid rgba(100, 155, 100, 0.3);
     box-sizing:border-box;
     color:#8a8;
-    text-shadow:0px 0px 2px #bdb;
+    // text-shadow:0px 0px 2px #bdb;
   }
 
   label, button{

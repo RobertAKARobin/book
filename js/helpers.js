@@ -43,7 +43,7 @@ var h = (function(){
     var typeOut = (options.typeOut  || "json").toLowerCase();
     var data    = (options.data     || "");
     request.open(method, url, true);
-    for_each(options.headers, function(header, value){
+    h.for_each(options.headers, function(header, value){
       request.setRequestHeader(header, value);
     });
     request.setRequestHeader("Content-Type", "application/" + typeIn);
@@ -75,10 +75,10 @@ var h = (function(){
     if(!collection) return;
     if(has_html_children(collection)) collection = collection.children;
     if(is_a(callback, Array)){
-      for_each(callback, function(index){
+      h.for_each(callback, function(index){
         output.push(collection[index]);
       });
-    }else for_each(collection, function(){
+    }else h.for_each(collection, function(){
       output.push(callback.apply(null, arguments));
     });
     return output;
@@ -94,7 +94,7 @@ var h = (function(){
     return (out.length === 1 ? out[0] : out);
   }
   function extend(target, input){
-    for_each(input, function(value, key){
+    h.for_each(input, function(value, key){
       target[key] = value;
     });
   }
@@ -140,7 +140,7 @@ var h = (function(){
   }
   function query_stringify(input){
     var output = [];
-    for_each(input, function(param, key){
+    h.for_each(input, function(param, key){
       output.push([key, encodeURIComponent(param)].join("="));
     });
     return output.join("&");
@@ -149,7 +149,7 @@ var h = (function(){
     var total;
     if(!is_a(input, Array)) input = [input];
     total = input.length;
-    for_each(input, function(path, index){
+    h.for_each(input, function(path, index){
       if(path.indexOf(".js") > -1) script_load(path);
       else if(path.indexOf(".css") > -1) style_load(path);
       if(onProgress) onProgress(total, index + 1);
@@ -169,7 +169,7 @@ var h = (function(){
   }
   function select(input, callback){
     var output = [];
-    for_each(input, function(item){
+    h.for_each(input, function(item){
       if(callback(item)) output.push(item);
     });
     return output;
@@ -188,7 +188,7 @@ var h = (function(){
       if(!data[name]) data[name] = [];
       if(isValid) data[name].push(el.value);
     });
-    if(flatten) for_each(data, function(value, key){
+    if(flatten) h.for_each(data, function(value, key){
       if(value instanceof Array && value.length == 1) data[key] = value[0];
     });
     return data;
@@ -196,12 +196,22 @@ var h = (function(){
   function tag(){
     var tag     = (this && this !== h) ? this : arguments[0];
     var content = arguments[1];
-    var attrs;
+    var attrs, attrsArray = [];
+    var output;
     if(h.is_a(tag, Array)){
       attrs     = tag[1];
       tag       = tag[0];
     }
-    return "<" + tag + (attrs ? " " + attrs : "") + ">" + content + "</" + tag + ">";
+    if(attrs && h.is_a(attrs, Object)){
+      h.for_each(attrs, function(val, attr){
+        attrsArray.push(attr + "=\"" + val + "\"");
+      });
+      attrs = attrsArray.join(" ");
+    }
+    output = "<" + tag + (attrs ? " " + attrs : "");
+    if(tag === "input") output += " value=\"" + (content || "") + "\" />";
+    else output += ">" + content + "</" + tag + ">";
+    return output;
   }
   function try_json(string){
     string = string.trim();
