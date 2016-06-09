@@ -15,16 +15,17 @@ module.exports= (function(){
       }],
       [,,/^(.*)_{3}(.*)_{3}(.*)$/, function blankFlex(nil, openText, blankText, closeText){
         var output = "";
-        if(openText.trim()) output += "<span>" + openText + "</span>";
-        output += "<b class=\"flex\">" + blankText + "</b>";
-        if(closeText.trim()) output += "<span>" + closeText + "</span>";
-        return "<span class=\"line\">" + output + "</span>";
+        if(openText.trim())  output += h.tag("span", openText);
+        output += h.tag(["b", "class=\"flex\""], blankText);
+        if(closeText.trim()) output += h.tag("span", closeText);
+        return h.tag(["span", "class=\"line\""], output);
       }],
       ["_{2}",,,      function blankBlock(nil, output){
-        return "<b class=\"line\">" + output + "</b>";
+        return h.tag(["b", "class=\"line\""], output);
       }],
       ["_{1}",,,      function blankInline(nil, output){
-        return "<b class=\"" + (output.length < 2 ? "inline" : " ") + "\">" + output + "</b>";
+        var cssClass = (output.length < 2 ? "inline" : " ");
+        return h.tag(["b", "class=\"" + cssClass + "\""], output);
       }],
       [,,    / -- /g, " &mdash; "],
       [,,    /''\\/g, "&ldquo;"],
@@ -65,9 +66,9 @@ module.exports= (function(){
           if(flag.cols && flag.cols[index] && flag.cols[index].trim()){
             classAttr = " class=\"" + flag.cols[index].trim() + "\" ";
           }
-          line    += "<td" + classAttr + ">" + cell + "</td>";
+          line    += h.tag(["td", classAttr], cell);
         });
-        return "<tr>" + line + "</tr>";
+        return h.tag("tr", line);
       }],
       ["```(#?)",,,   function newCodeBlock(nil, isNumbered){
         flag.insideCodeBlock = true;
