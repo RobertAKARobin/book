@@ -32,16 +32,15 @@ $fontHeader: "PF Din Text Comp Pro", Impact, sans-serif;
 html{
   overflow-y:scroll;
   overflow-x:hidden;
-  width:100%;
 }
 html, body{
   position:relative;
   min-height:100vh;
   font-size:18px;
   font-family:$fontText;
+  width:100%;
 }
 body{
-  width:100vw;
 }
 strong{
   font-weight:bold;
@@ -194,16 +193,6 @@ body{
   vertical-align:top;
   box-sizing:border-box;
   text-align:left;
-  border-style:dotted;
-  border-color:#ddd;
-  border-left-width:1px;
-  border-right-width:1px;
-  border-bottom-width:1px;
-
-  &:nth-child(even){
-    border-left-width:0;
-  }
-
   line-height:1.6em;
 
   p, table, ol, ul, .aside,
@@ -340,56 +329,71 @@ body{
 
 $page-x: 85;
 $page-y: 110;
+$min-width: 401px;
+$max-width: 800px;
 $aspect: ($page-x / $page-y);
-@mixin size-from-width($vw){
-  $percent:   ($vw / 100);
-  width:      ($vw);
-  height:     ($vw / $aspect);
-  padding:    (2 * $percent);
-  font-size:  (3 * $percent);
+@function width-from-height($height){
+  @return ($aspect * $height);
 }
-// @function n-pages-wide($n){
-//   @return "#{$page-x * $n}/#{$page-y}";
-// }
+@function height-from-width($width){
+  @return ($width / $aspect);
+}
+$max-height: height-from-width($max-width);
+$min-height: height-from-width($min-width);
+@mixin size-from-height($height){
+  height: $height;
+  width: width-from-height($height);
+  font-size: (3/100) * width-from-height($height);
+}
+@mixin size-from-width($width){
+  height: height-from-width($width);
+  width: $width;
+  font-size: (3/100) * $width;
+}
 
-.section{
-  width: 90%;
-  @include size-from-width(100vw);
+#main{
+  font-size:0;
+  margin:0 auto;
 }
-@media print{
-  .section{
+.section{
+  display:block;
+  margin: 2em auto;
+  padding:1em;
+  width:90%;
+  border:1px dotted #fff;
+  border-bottom-color:#ddd;
+  box-sizing:border-box;
+  font-size:18px;
+  clear:both;
+  overflow:visible;
+
+  @media print{
+    font-size: (3/100) * 100vw;
     page-break-inside:avoid;
     page-break-before:always;
     border-width:0px;
     padding:0;
   }
-}
-@media screen{
-  body{
-    width:100%;
-    box-sizing:border-box;
-  }
-  #main{
-    display:flex;
-    display:-webkit-flex;
-    flex-wrap:wrap;
-    -webkit-flex-wrap:wrap;
-  }
-}
-@media  screen and (max-width:800px){
-  .section{
-    @include size-from-width(100vw);
-    width:100%;
-    border-right-width:0px;
-  }
-}
-@media  screen and (min-width:800px){
-  .section{
-    @include size-from-width(50vw);
-    width:50%;
-  }
-  .section:nth-child(even){
-    border-right-width:0px;
+  @media screen{
+    display:inline-block;
+    padding:1em;
+    margin:0;
+
+    @media (max-aspect-ratio: $page-x "/" $page-y){
+      @include size-from-width(98vw);
+    }
+    @media (min-aspect-ratio: $page-x "/" $page-y){
+      border-right-color:#ddd;
+      @include size-from-height(100vh);
+      @media (max-height: $min-height){
+        @include size-from-width(100vw);
+      }
+    }
+    @media (min-aspect-ratio: ($page-x * 2) "/" $page-y){
+      @media (max-height: $min-height){
+        @include size-from-height($min-height);
+      }
+    }
   }
 }
 

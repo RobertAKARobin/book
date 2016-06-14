@@ -18,7 +18,6 @@
 html {
   overflow-y: scroll;
   overflow-x: hidden;
-  width: 100%;
 }
 
 html, body {
@@ -26,10 +25,7 @@ html, body {
   min-height: 100vh;
   font-size: 18px;
   font-family: "News706", "Georgia", serif;
-}
-
-body {
-  width: 100vw;
+  width: 100%;
 }
 
 strong {
@@ -175,15 +171,7 @@ body {
   vertical-align: top;
   box-sizing: border-box;
   text-align: left;
-  border-style: dotted;
-  border-color: #ddd;
-  border-left-width: 1px;
-  border-right-width: 1px;
-  border-bottom-width: 1px;
   line-height: 1.6em;
-}
-.section:nth-child(even) {
-  border-left-width: 0;
 }
 .section p, .section table, .section ol, .section ul, .section .aside, .section > pre {
   margin: 1.5em auto 0em auto;
@@ -309,16 +297,26 @@ body {
   opacity: 0.01;
 }
 
-.section {
-  width: 90%;
-  width: 100vw;
-  height: 129.41176vw;
-  padding: 2vw;
-  font-size: 3vw;
+#main {
+  font-size: 0;
+  margin: 0 auto;
 }
 
+.section {
+  display: block;
+  margin: 2em auto;
+  padding: 1em;
+  width: 90%;
+  border: 1px dotted #fff;
+  border-bottom-color: #ddd;
+  box-sizing: border-box;
+  font-size: 18px;
+  clear: both;
+  overflow: visible;
+}
 @media print {
   .section {
+    font-size: 3vw;
     page-break-inside: avoid;
     page-break-before: always;
     border-width: 0px;
@@ -326,41 +324,43 @@ body {
   }
 }
 @media screen {
-  body {
-    width: 100%;
-    box-sizing: border-box;
-  }
-
-  #main {
-    display: flex;
-    display: -webkit-flex;
-    flex-wrap: wrap;
-    -webkit-flex-wrap: wrap;
+  .section {
+    display: inline-block;
+    padding: 1em;
+    margin: 0;
   }
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-aspect-ratio: 85 / 110) {
   .section {
-    width: 100vw;
+    height: 126.82353vw;
+    width: 98vw;
+    font-size: 2.94vw;
+  }
+}
+@media screen and (min-aspect-ratio: 85 / 110) {
+  .section {
+    border-right-color: #ddd;
+    height: 100vh;
+    width: 77.27273vh;
+    font-size: 2.31818vh;
+  }
+}
+@media screen and (min-aspect-ratio: 85 / 110) and (max-height: 518.94118px) {
+  .section {
     height: 129.41176vw;
-    padding: 2vw;
+    width: 100vw;
     font-size: 3vw;
-    width: 100%;
-    border-right-width: 0px;
   }
 }
-@media screen and (min-width: 800px) {
-  .section {
-    width: 50vw;
-    height: 64.70588vw;
-    padding: 1vw;
-    font-size: 1.5vw;
-    width: 50%;
-  }
 
-  .section:nth-child(even) {
-    border-right-width: 0px;
+@media screen and (min-aspect-ratio: 170 / 110) and (max-height: 518.94118px) {
+  .section {
+    height: 518.94118px;
+    width: 401px;
+    font-size: 12.03px;
   }
 }
+
 @keyframes flash-correct {
   from {
     background-color: #fff;
