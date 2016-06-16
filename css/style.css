@@ -113,7 +113,6 @@ input[data-answer].inline {
 }
 input[data-answer].flex {
   flex-grow: 1;
-  width: auto;
   margin-left: 0.5em;
   border-width: 0 0 1px 0;
   border-radius: 0;
