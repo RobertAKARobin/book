@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Robin's Web Dev Book</title>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <div id="score">
+    <div>Score: <span id="correct">0</span> / <span id="total">0</span></div>
+    <button id="clear">Clear answers</button>
+  </div>
+  <div id="main">
+    <div class="section">
+      <h1>Mixing Colors</h1>
+
+      <p>Knowing how hex works makes it easier to find the perfect color for your website or app.</p>
+
+      <p>If you want yellow, but <code>ffff00</code> is <em>too</em> yellow, you can give it 1 level more red with <code>ffff01</code>. You can also make it 1 level less green with <code>fffe00</code>, or 16 levels less green with <code>ffef00</code>.</p>
+
+      <p>Complete the equations below:</p>
+
+      <table class="inline">
+
+        <tr>
+          <td class="count num"></td>
+          <td class="code">FFFF00</td>
+          <td class="code">+</td>
+          <td>1</td>
+          <td>blue</td>
+          <td>=</td>
+          <td class="code">FFFF01</td>
+        </tr>
+        <tr>
+          <td class="count num"></td>
+          <td class="code">232323</td>
+          <td class="code">+</td>
+          <td>1</td>
+          <td>red</td>
+          <td>=</td>
+          <td class="code">242323</td>
+        </tr>
+        <tr>
+          <td class="count num"></td>
+          <td class="code">EE99CC</td>
+          <td class="code">+</td>
+          <td>16</td>
+          <td>red</td>
+          <td>=</td>
+          <td class="code">FE99CC</td>
+        </tr>
+        <tr>
+          <td class="count num"></td>
+          <td class="code">BBAA00</td>
+          <td class="code">&mdash;</td>
+          <td><input class="line" data-answer="1" value="" /></td>
+          <td>green</td>
+          <td>=</td>
+          <td class="code">BBA900</td>
+        </tr>
+        <tr>
+          <td class="count num"></td>
+          <td class="code">BBAA00</td>
+          <td class="code">&mdash;</td>
+          <td>16</td>
+          <td>green</td>
+          <td>=</td>
+          <td class="code"><input data-answer="BB9A00" value="" /></td>
+        </tr>
+        <tr>
+          <td class="count num"></td>
+          <td class="code">BBAA00</td>
+          <td class="code">&mdash;</td>
+          <td><input class="line" data-answer="17" value="" /></td>
+          <td>green</td>
+          <td>=</td>
+          <td class="code">BB9900</td>
+        </tr>
+        <tr>
+          <td class="count num"></td>
+          <td class="code">ABCDEF</td>
+          <td class="code">+</td>
+          <td>1</td>
+          <td>green</td>
+          <td>=</td>
+          <td class="code"><input data-answer="ABCEEF" value="" /></td>
+        </tr>
+        <tr>
+          <td class="count num"></td>
+          <td class="code">ABCDEF</td>
+          <td class="code">&mdash;</td>
+          <td><input class="line" data-answer="16" value="" /></td>
+          <td><input class="line" data-answer="red" value="" /></td>
+          <td>=</td>
+          <td class="code">9BCDEF</td>
+        </tr>
+        <tr>
+          <td class="count num"></td>
+          <td class="code"><input data-answer="CBCDEF" value="" /></td>
+          <td class="code">&mdash;</td>
+          <td>32</td>
+          <td>red</td>
+          <td>=</td>
+          <td class="code">ABCDEF</td>
+        </tr>
+        <tr>
+          <td class="count num"></td>
+          <td class="code">B3A000</td>
+          <td class="code">&mdash;</td>
+          <td>1</td>
+          <td>green</td>
+          <td>=</td>
+          <td class="code"><input data-answer="B39F00" value="" /></td>
+        </tr>
+        <tr>
+          <td class="count num"></td>
+          <td class="code">299FF9</td>
+          <td class="code">+</td>
+          <td>1</td>
+          <td>blue</td>
+          <td>=</td>
+          <td class="code"><input data-answer="299FFA" value="" /></td>
+        </tr>
+
+      </table>
+    </div>
+  </div>
+  <script src="js/script.js"></script>
+</body>
+
+</html>

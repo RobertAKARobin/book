@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Robin's Web Dev Book</title>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <div id="score">
+    <div>Score: <span id="correct">0</span> / <span id="total">0</span></div>
+    <button id="clear">Clear answers</button>
+  </div>
+  <div id="main">
+    <div class="section">
+      <div class='HTMLCodeBlock'>
+        <h1><code>&lt;h1&gt;</code><span>Introducing HTML</span><code>&lt;/h1&gt;</code></h1>
+
+        <p><code>&lt;p&gt;</code><span>Every webpage is written in HTML. The <em><code>&lt;em&gt;</code><span>M</span><code>&lt;/em&gt;</code></em> stands for <dfn><code>&lt;dfn&gt;</code><span>markup</span><code>&lt;/dfn&gt;</code></dfn>.</span><code>&lt;/p&gt;</code></p>
+
+        <p><code>&lt;p&gt;</code><span>A school teacher <em><code>&lt;em&gt;</code><span>marks up</span><code>&lt;/em&gt;</code></em> your homework. They use a red pen to mark notes on what you wrote, like <q><code>&lt;q&gt;</code><span>This part is really good,</span><code>&lt;/q&gt;</code></q>          or <q><code>&lt;q&gt;</code><span>This part should be longer</span><code>&lt;/q&gt;</code></q>.</span><code>&lt;/p&gt;</code></p>
+
+        <p><code>&lt;p&gt;</code><span>Writing HTML is also marking notes on something you write. The notes tell computers the purpose of each piece of text.</span><code>&lt;/p&gt;</code></p>
+      </div>
+
+      <ol>
+        <li>
+          <span class="line"><span><code>&lt;p&gt;</code> says, &ldquo;This is a </span><input class="flex" data-answer="paragraph" value="" /><span>.&rdquo;</span></span>
+        </li>
+        <li>
+          <span class="line"><span><code>&lt;em&gt;</code> says, &ldquo;This is </span><input class="flex" data-answer="emphasized" value="" /><span>.&rdquo;</span></span>
+        </li>
+        <li>
+          <span class="line"><span><code>&lt;dfn&gt;</code> says, &ldquo;This is a </span><input class="flex" data-answer="definition" value="" /><span>.&rdquo;</span></span>
+        </li>
+        <li>
+          <span class="line"><span><code>&lt;q&gt;</code> says, &ldquo;This is a </span><input class="flex" data-answer="quote" value="" /><span>.&rdquo;</span></span>
+        </li>
+        <li>
+          <span class="line"><span>The <q>h</q> in <code>&lt;h1&gt;</code> means, &ldquo;This is a </span><input class="flex" data-answer="headline" value="" /><span>.&rdquo;</span></span>
+        </li>
+      </ol>
+
+      <div class="wordbank">
+        <ul>
+          <li>paragraph
+          </li>
+          <li>emphasized
+          </li>
+          <li>definition
+          </li>
+          <li>quote
+          </li>
+          <li>headline
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <script src="js/script.js"></script>
+</body>
+
+</html>

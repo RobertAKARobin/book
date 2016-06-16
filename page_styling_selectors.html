@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Robin's Web Dev Book</title>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <div id="score">
+    <div>Score: <span id="correct">0</span> / <span id="total">0</span></div>
+    <button id="clear">Clear answers</button>
+  </div>
+  <div id="main">
+    <div class="section">
+      <h1>Selectors</h1>
+
+      <p>Every CSS rule starts with a <dfn>selector</dfn>. It tells the computer which parts of a website it should <q>select</q> to use with that CSS rule.</p>
+
+      <div class="aside">
+        <pre data-code>
+p, code, img{
+  width: 400px;
+}
+</pre>
+      </div>
+
+      <p>This CSS rule says, <q>Every paragraph, every code snippet, and every image should be 400 pixels wide.</q></p>
+
+      <div class="aside">
+        <pre data-code>
+p code img{
+  width: 400px;
+}
+</pre>
+      </div>
+
+      <p>This CSS rule &mdash; without commas &mdash; says, <q>Every image that's in a code snippet that's in a paragraph should be 400 pixels wide.</q></p>
+
+      <ol>
+        <li>Fill in the selector for, <q>Every button that's in a form.</q>
+          <span class="line"><input class="flex" data-answer="form button" value="" /></span>
+        </li>
+        <li>Every button in every paragraph in every form.
+          <span class="line"><input class="flex" data-answer="form p button" value="" /></span>
+        </li>
+        <li>Every button, every paragraph, and every form.
+          <span class="line"><input class="flex" data-answer="form, p, button" value="" /></span>
+        </li>
+        <li>Every button and every form.
+          <span class="line"><input class="flex" data-answer="form, button" value="" /></span>
+        </li>
+      </ol>
+
+      <div class="wordbank">
+        <ul>
+          <li><code>form button</code>
+          </li>
+          <li><code>form p button</code>
+          </li>
+          <li><code>form, p, button</code>
+          </li>
+          <li><code>form, button</code>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <script src="js/script.js"></script>
+</body>
+
+</html>

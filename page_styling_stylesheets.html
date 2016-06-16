@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Robin's Web Dev Book</title>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <div id="score">
+    <div>Score: <span id="correct">0</span> / <span id="total">0</span></div>
+    <button id="clear">Clear answers</button>
+  </div>
+  <div id="main">
+    <div class="section">
+      <h1>Stylesheets</h1>
+
+      <p>All of a website's CSS is usually kept in a file called a <dfn>stylesheet</dfn>:</p>
+
+      <pre data-code>
+1..  p, code{
+2..    color: #000000;
+3..    font-size: 18px;
+4..  }
+5..  p{
+6..    font-family: sans-serif;
+7..  }
+8..  code{
+9..    font-family: monospace;
+10.  }
+</pre>
+
+      <p>Each of the chunks in <code>{braces}</code> is a <dfn>rule</dfn>. The <q><code>p</code></q> rule changes all the paragraphs on the website. The <q><code>p, code</code></q> rule changes all the paragraphs <em>and</em> code snippets. Rules add on
+        to each other.</p>
+
+      <p>The font of every code snippet will be: <input class="line" data-answer="black, 18 pixels tall, and monospaced" value="" /></p>
+
+      <ol>
+        <li>black, 18 pixels tall, and monospaced
+        </li>
+        <li>black, 18 pixels tall, and sans-serif
+        </li>
+        <li>monospaced
+        </li>
+        <li>sans-serif
+        </li>
+      </ol>
+    </div>
+  </div>
+  <script src="js/script.js"></script>
+</body>
+
+</html>

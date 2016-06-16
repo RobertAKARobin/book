@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Robin's Web Dev Book</title>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <div id="score">
+    <div>Score: <span id="correct">0</span> / <span id="total">0</span></div>
+    <button id="clear">Clear answers</button>
+  </div>
+  <div id="main">
+    <div class="section">
+      <h1>Styling</h1>
+
+      <p>This is a normal paragraph. The paragraph after this one has been <dfn>styled</dfn> to look different from normal paragraphs.</p>
+
+      <p style="line-height:3em; border:2px dotted black; padding:0.5em 1em; text-align:center; font-style:italic;">The lines below give this paragraph its style. Fill in the blanks using the word bank at the bottom of this page.</p>
+
+      <ol>
+        <li>
+          <span class="line"><span><code>color:</code> </span><input class="flex" data-answer="#000000;" value="" /></span>
+        </li>
+        <li>
+          <span class="line"><span><code>font-style:</code> </span><input class="flex" data-answer="italic;" value="" /></span>
+        </li>
+        <li>
+          <span class="line"><span><code>text-align:</code> </span><input class="flex" data-answer="center;" value="" /></span>
+        </li>
+        <li>
+          <span class="line"><span><code>font-size:</code> </span><input class="flex" data-answer="12px;" value="" /></span>
+        </li>
+        <li>
+          <span class="line"><span><code>line-height:</code> </span><input class="flex" data-answer="24px;" value="" /></span>
+        </li>
+        <li>
+          <span class="line"><span><code>border:</code> </span><input class="flex" data-answer="2px dotted #000000;" value="" /></span>
+        </li>
+        <li>
+          <span class="line"><span><code>background-color:</code> </span><input class="flex" data-answer="#FFFFFF;" value="" /></span>
+        </li>
+      </ol>
+
+      <div class="wordbank">
+        <ul>
+          <li><code>#000000;</code>
+          </li>
+          <li><code>italic;</code>
+          </li>
+          <li><code>center;</code>
+          </li>
+          <li><code>12px;</code>
+          </li>
+          <li><code>24px;</code>
+          </li>
+          <li><code>2px dotted #000000;</code>
+          </li>
+          <li><code>#FFFFFF;</code>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <script src="js/script.js"></script>
+</body>
+
+</html>
