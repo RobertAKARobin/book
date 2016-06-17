@@ -10,13 +10,20 @@ var div   = {
 }
 var pages = [];
 var matchers  = require("./js/markymarkdown.js");
-var filenames = require("./pages/_index");
+var filenames = [];
 
-h.for_each(filenames, function(filename, i){
-  var file    = read("./pages/" + filename + ".html");
+read("./pages/_index.csv").split(/[\n\r]/).forEach(function(line, i){
+  var data;
+  if(!line || line == "") return;
+  data = line.split(/ *# */)
+  filenames.push({path: data[0], title: data[1] });
+});
+
+filenames.forEach(function(filename, i){
+  var file    = read("./pages/" + filename.path + ".html");
   var content = [];
   var contentString = "";
-  h.for_each(file.split(/[\n\r]/g), function(line){
+  file.split(/[\n\r]/g).forEach(function(line){
     h.for_each(matchers.singleline, function(matcher){
       var raw = line;
       line    = matcher(line);
