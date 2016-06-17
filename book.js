@@ -29,7 +29,7 @@ h.for_each(filenames, function(filename, i){
   });
   contentString = content.join("\n");
   pages.push(contentString);
-  writePage("page_" + filename + ".html", contentString);
+  // writePage("page_" + filename + ".html", contentString);
 });
 
 writePage("index.html", pages.join(div.close + div.open));
