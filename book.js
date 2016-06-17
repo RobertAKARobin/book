@@ -2,7 +2,6 @@
 
 var fs    = require("fs");
 var beaut = require("js-beautify");
-var h     = require("./js/helpers.js");
 var layout= read("layouts/main.html").split("{{{yield}}}");
 var pages = [];
 var matchers  = require("./js/markymarkdown.js");
@@ -20,12 +19,12 @@ filenames.forEach(function(filename, i){
   var content = [];
   var contentString = "";
   file.split(/[\n\r]/g).forEach(function(line){
-    h.for_each(matchers.singleline, function(matcher){
+    try{matchers.singleline.forEach(function(matcher){
       var raw = line;
       line    = matcher(line);
-      if(line !== raw) return "break";
-    });
-    h.for_each(matchers.inline, function(matcher){
+      if(line !== raw) throw "This is a cheat to let me 'break' the loop.";
+    })}catch(e){};
+    matchers.inline.forEach(function(matcher){
       line    = matcher(line);
     });
     content.push(line);
