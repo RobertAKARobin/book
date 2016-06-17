@@ -166,7 +166,6 @@ body {
 }
 
 .section {
-  display: inline-block;
   vertical-align: top;
   box-sizing: border-box;
   text-align: left;
@@ -306,20 +305,22 @@ body {
   margin: 2em auto;
   padding: 1em;
   width: 90%;
-  border: 1px dotted #fff;
+  border: 1px dotted transparent;
+  border-right-color: #ddd;
   border-bottom-color: #ddd;
   box-sizing: border-box;
-  font-size: 18px;
+  font-size: 1rem;
   clear: both;
   overflow: visible;
 }
 @media print {
   .section {
-    font-size: 3vw;
     page-break-inside: avoid;
     page-break-before: always;
     border-width: 0px;
     padding: 0;
+    margin: 0;
+    width: 100%;
   }
 }
 @media screen {
@@ -329,37 +330,52 @@ body {
     margin: 0;
   }
 }
+
+@media print {
+  html, body {
+    font-size: 24px;
+  }
+}
 @media screen and (max-aspect-ratio: 85 / 110) {
+  html, body {
+    font-size: 2.94vw;
+  }
+
   .section {
     height: 126.82353vw;
     width: 98vw;
-    font-size: 2.94vw;
   }
 }
 @media screen and (min-aspect-ratio: 85 / 110) {
+  html, body {
+    font-size: 2.31818vh;
+  }
+
   .section {
-    border-right-color: #ddd;
     height: 100vh;
     width: 77.27273vh;
-    font-size: 2.31818vh;
   }
 }
 @media screen and (min-aspect-ratio: 85 / 110) and (max-height: 518.94118px) {
+  html, body {
+    font-size: 3vw;
+  }
+
   .section {
     height: 129.41176vw;
     width: 100vw;
-    font-size: 3vw;
   }
 }
-
 @media screen and (min-aspect-ratio: 170 / 110) and (max-height: 518.94118px) {
+  html, body {
+    font-size: 12.03px;
+  }
+
   .section {
     height: 518.94118px;
     width: 401px;
-    font-size: 12.03px;
   }
 }
-
 @keyframes flash-correct {
   from {
     background-color: #fff;

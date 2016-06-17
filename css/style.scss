@@ -188,7 +188,6 @@ body{
 }
 
 .section{
-  display:inline-block;
   vertical-align:top;
   box-sizing:border-box;
   text-align:left;
@@ -328,27 +327,19 @@ body{
 
 $page-x: 85;
 $page-y: 110;
-$min-width: 401px;
-$max-width: 800px;
 $aspect: ($page-x / $page-y);
-@function width-from-height($height){
-  @return ($aspect * $height);
-}
-@function height-from-width($width){
-  @return ($width / $aspect);
-}
-$max-height: height-from-width($max-width);
-$min-height: height-from-width($min-width);
-@mixin size-from-height($height){
-  height: $height;
-  width: width-from-height($height);
-  font-size: (3/100) * width-from-height($height);
-}
+$min-width: 401px;
+$min-height: ($min-width / $aspect);
 @mixin size-from-width($width){
-  height: height-from-width($width);
-  width: $width;
-  font-size: (3/100) * $width;
+  html, body{
+    font-size: (3/100) * $width;
+  }
+  .section{
+    height: ($width / $aspect);
+    width: $width;
+  }
 }
+
 
 #main{
   font-size:0;
@@ -359,40 +350,45 @@ $min-height: height-from-width($min-width);
   margin: 2em auto;
   padding:1em;
   width:90%;
-  border:1px dotted #fff;
+  border:1px dotted transparent;
+  border-right-color:#ddd;
   border-bottom-color:#ddd;
   box-sizing:border-box;
-  font-size:18px;
+  font-size:1rem;
   clear:both;
   overflow:visible;
 
   @media print{
-    font-size: (3/100) * 100vw;
     page-break-inside:avoid;
     page-break-before:always;
     border-width:0px;
     padding:0;
+    margin:0;
+    width:100%;
   }
   @media screen{
     display:inline-block;
     padding:1em;
     margin:0;
-
-    @media (max-aspect-ratio: $page-x "/" $page-y){
-      @include size-from-width(98vw);
-    }
-    @media (min-aspect-ratio: $page-x "/" $page-y){
-      border-right-color:#ddd;
-      @include size-from-height(100vh);
-      @media (max-height: $min-height){
-        @include size-from-width(100vw);
-      }
-    }
-    @media (min-aspect-ratio: ($page-x * 2) "/" $page-y){
-      @media (max-height: $min-height){
-        @include size-from-height($min-height);
-      }
-    }
+  }
+}
+@media print{
+  html, body{
+    font-size:24px;
+  }
+}
+@media screen{
+  @media (max-aspect-ratio: $page-x "/" $page-y){
+    @include size-from-width(98vw);
+  }
+  @media (min-aspect-ratio: $page-x "/" $page-y){
+    @include size-from-width(100vh * $aspect);
+  }
+  @media (min-aspect-ratio: $page-x "/" $page-y) and (max-height: $min-height){
+    @include size-from-width(100vw);
+  }
+  @media (min-aspect-ratio: ($page-x * 2) "/" $page-y) and (max-height: $min-height){
+    @include size-from-width($min-height * $aspect);
   }
 }
 
