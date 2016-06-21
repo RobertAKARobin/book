@@ -313,6 +313,9 @@ body {
   clear: both;
   overflow: visible;
 }
+#base[targeting] .section:not(:target) {
+  display: none;
+}
 @media print {
   .section {
     page-break-inside: avoid;

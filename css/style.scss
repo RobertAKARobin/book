@@ -358,6 +358,10 @@ $min-height: ($min-width / $aspect);
   clear:both;
   overflow:visible;
 
+  #base[targeting] &:not(:target){
+    display:none;
+  }
+
   @media print{
     page-break-inside:avoid;
     page-break-before:always;
