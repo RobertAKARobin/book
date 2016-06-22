@@ -2,35 +2,35 @@
 
 window.onload = function(){
 
-  (function addSectionToggle(){
-    var headers = document.querySelectorAll("h1 a");
-    var header, headerNum = 0, headersLength = headers.length;
-    var base = document.getElementById("base");
-    if(checkIDExists(location.hash)) doTarget(location.hash);
-    while(headerNum < headersLength){
-      header = headers[headerNum];
-      header.addEventListener("click", clickHandler);
-      headerNum += 1;
-    }
-    function clickHandler(event){
-      var header = this;
-      var target = header.getAttribute("href");
-      event.preventDefault();
-      if(location.hash === target) unTarget();
-      else doTarget(target);
-    }
-    function unTarget(){
-      base.removeAttribute("targeting");
-      location.hash = "";
-    }
-    function doTarget(target){
-      base.setAttribute("targeting", true);
-      location.hash = target;
-    }
-    function checkIDExists(target){
-      return document.getElementById((target || "").substring(1));
-    }
-  })();
+  // (function addSectionToggle(){
+  //   var headers = document.querySelectorAll("h1 a");
+  //   var header, headerNum = 0, headersLength = headers.length;
+  //   var base = document.getElementById("base");
+  //   if(checkIDExists(location.hash)) doTarget(location.hash);
+  //   while(headerNum < headersLength){
+  //     header = headers[headerNum];
+  //     header.addEventListener("click", clickHandler);
+  //     headerNum += 1;
+  //   }
+  //   function clickHandler(event){
+  //     var header = this;
+  //     var target = header.getAttribute("href");
+  //     event.preventDefault();
+  //     if(location.hash === target) unTarget();
+  //     else doTarget(target);
+  //   }
+  //   function unTarget(){
+  //     base.removeAttribute("targeting");
+  //     location.hash = "";
+  //   }
+  //   function doTarget(target){
+  //     base.setAttribute("targeting", true);
+  //     location.hash = target;
+  //   }
+  //   function checkIDExists(target){
+  //     return document.getElementById((target || "").substring(1));
+  //   }
+  // })();
 
   (function addAnswerChecker(){
     var elScore   = document.getElementById("score");

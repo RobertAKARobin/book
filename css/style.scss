@@ -325,14 +325,14 @@ body{
   }
 }
 
-$page-x: 85;
-$page-y: 110;
+$page-x: 55;
+$page-y: 85;
 $aspect: ($page-x / $page-y);
 $min-width: 401px;
 $min-height: ($min-width / $aspect);
 @mixin size-from-width($width){
   html, body{
-    font-size: (3/100) * $width;
+    font-size: (4/100) * $width;
   }
   .section{
     height: ($width / $aspect);

@@ -1,11 +1,12 @@
 "use strict";
 
-var fs    = require("fs");
-var beaut = require("js-beautify");
-var layout= read("layouts/main.html").split("{{{yield}}}");
-var pages = [];
+var fs        = require("fs");
+var beaut     = require("js-beautify");
 var matchers  = require("./js/markymarkdown.js");
+
+var layout    = read("layouts/main.html").split("{{{yield}}}");
 var filenames = [];
+var book      = "";
 
 read("./pages/_index.csv").split(/[\n\r]/).forEach(function(line, i){
   var data;
@@ -15,9 +16,8 @@ read("./pages/_index.csv").split(/[\n\r]/).forEach(function(line, i){
 });
 
 filenames.forEach(function(filename, i){
-  var file    = read("./pages/" + filename.id + ".html");
-  var content = [];
-  var contentString = "";
+  var file = read("./pages/" + filename.id + ".html");
+  var page = "";
   file.split(/[\n\r]/g).forEach(function(line){
     try{matchers.singleline.forEach(function(matcher){
       var raw = line;
@@ -27,17 +27,17 @@ filenames.forEach(function(filename, i){
     matchers.inline.forEach(function(matcher){
       line    = matcher(line);
     });
-    content.push(line);
+    page += line + "\n";
   });
-  contentString = content.join("\n");
-  contentString = "<div id=\"" + filename.id + "\" class=\"section\">" + contentString + "</div>";
-  contentString = contentString.replace("{{title}}", function(){
+  page = page.replace("{{title}}", function(){
     return "<a href=\"#" + filename.id + "\">" + filename.title + "</a>";
   });
-  pages.push(contentString);
+  book += "<div id=\"" + filename.id + "\" class=\"section\">";
+  book += page.split("=====").join("</div><div class=\"section\">");
+  book += "</div>";
 });
 
-writePage("index.html", pages.join("\n"));
+writePage("index.html", book);
 
 function read(filename){
   return fs.readFileSync(filename, "utf8");

@@ -18,11 +18,29 @@
 
       <p>A computer screen is made of <dfn>pixels</dfn>. A pixel is a tiny square made of three lights: one red, one blue, and one green.</p>
 
+      <p>Each pixel has an <dfn>RGB</dfn> code that says what color it should be.</p>
+
+      <p>What do you think <q>RGB</q> stands for?</p>
+
+      <ul>
+        <li>Red, Green, Blue
+        </li>
+        <li>Riemannian Gradient Base
+        </li>
+        <li>Ronald Gregory Brown, the inventor of the modern computer screen
+        </li>
+        <li>Really Good Bacon
+        </li>
+      </ul>
+
       <p>Each light has a number from 255 (which means the light is all the way on) to 0 (all the way off).</p>
 
       <p>A bright purple pixel has an <dfn>RGB</dfn> code of <code>255 000 255</code>: the pixel's <strong>R</strong>ed light is on, <strong>G</strong>reen is off, and <strong>B</strong>lue is on.</p>
 
       <p><code>170 000 170</code> makes a darker purple: the red and blue lights are a little dim, and green is off.</p>
+
+    </div>
+    <div class="section">
 
       <p>Below are some colors with their RGB codes. Fill in the blanks:</p>
 
@@ -93,40 +111,102 @@
         </tr>
 
       </table>
+
     </div>
     <div id="colors_in_hex" class="section">
       <h1><a href="#colors_in_hex">Colors in Hex</a></h1>
 
-      <p>We use the <q>decimal</q> system to write numbers. Computers can save memory by using the <dfn>hexadecimal</dfn> system, or <q>hex</q>. It uses letters in place of some numbers: <code>A</code> for 10, <code>B</code> for 11, up to <code>F</code>        for 15.</p>
+      <p>We use the <q>decimal</q> system to write numbers. Computers can save memory by using the <dfn>hexadecimal</dfn> system, or <q>hex</q>. It uses letters in place of some numbers.</p>
 
-      <div class="aside">
-        <pre data-code>
-Dec   Hex
-000...00
-001...01
-002...02
-009...09
-010...0A
-011...0B
-012...0C
-013...0D
-014...0E
-015...0F
-016...10
-017...11
-032...20
-033...21
-160...A0
-161...A1
-175...Af
-240...F0
-255...FF
-</pre>
-      </div>
+      <table>
 
-      <p>Take a look at the chart on the right.</p>
+        <tr>
+          <td>0</td>
+          <td class="code">00</td>
+          <td>10</td>
+          <td class="code">0A</td>
+          <td>26</td>
+          <td class="code">1A</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td class="code">01</td>
+          <td>11</td>
+          <td class="code">0B</td>
+          <td>31</td>
+          <td class="code">1F</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td class="code">02</td>
+          <td>12</td>
+          <td class="code">0C</td>
+          <td>32</td>
+          <td class="code">20</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td class="code">03</td>
+          <td>13</td>
+          <td class="code">0D</td>
+          <td>33</td>
+          <td class="code">21</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td class="code">04</td>
+          <td>14</td>
+          <td class="code">0E</td>
+          <td>160</td>
+          <td class="code">A0</td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td class="code">05</td>
+          <td>15</td>
+          <td class="code">0F</td>
+          <td>161</td>
+          <td class="code">A1</td>
+        </tr>
+        <tr>
+          <td>6</td>
+          <td class="code">06</td>
+          <td>16</td>
+          <td class="code">10</td>
+          <td>175</td>
+          <td class="code">AF</td>
+        </tr>
+        <tr>
+          <td>7</td>
+          <td class="code">07</td>
+          <td>17</td>
+          <td class="code">11</td>
+          <td>176</td>
+          <td class="code">B0</td>
+        </tr>
+        <tr>
+          <td>8</td>
+          <td class="code">08</td>
+          <td>18</td>
+          <td class="code">12</td>
+          <td>240</td>
+          <td class="code">F0</td>
+        </tr>
+        <tr>
+          <td>9</td>
+          <td class="code">09</td>
+          <td>25</td>
+          <td class="code">19</td>
+          <td>255</td>
+          <td class="code">FF</td>
+        </tr>
+
+      </table>
 
       <p>In decimal white is <code>255255255</code>, which is 9 numbers long. In hex white is <code>ffffff</code>, which is 6 numbers long. Because it takes up less space, computers often write colors in hex.</p>
+
+    </div>
+    <div class="section">
 
       <p>Do the last page again, this time in hex:</p>
 
@@ -197,6 +277,7 @@ Dec   Hex
         </tr>
 
       </table>
+
     </div>
     <div id="colors_mixing" class="section">
       <h1><a href="#colors_mixing">Mixing Colors</a></h1>
@@ -204,6 +285,9 @@ Dec   Hex
       <p>Knowing how hex works makes it easier to find the perfect color for your website or app.</p>
 
       <p>If you want yellow, but <code>ffff00</code> is <em>too</em> yellow, you can give it 1 level more red with <code>ffff01</code>. You can also make it 1 level less green with <code>fffe00</code>, or 16 levels less green with <code>ffef00</code>.</p>
+
+    </div>
+    <div class="section">
 
       <p>Complete the equations below:</p>
 
@@ -310,11 +394,15 @@ Dec   Hex
         </tr>
 
       </table>
+
     </div>
     <div id="colors_words" class="section">
       <h1><a href="#colors_words">Hex Words</a></h1>
 
       <p>One nice thing about hex is that you can turn words into colors.</p>
+
+    </div>
+    <div class="section">
 
       <p>Fill in the blanks below. Use the word bank for the color descriptions.</p>
 
@@ -397,13 +485,15 @@ Dec   Hex
           </li>
         </ul>
       </div>
+
     </div>
     <div id="styling_intro" class="section">
       <h1><a href="#styling_intro">Styling</a></h1>
 
-      <p>This is a normal paragraph. The paragraph after this one has been <dfn>styled</dfn> to look different from normal paragraphs.</p>
+      <p style="line-height:3em; border:2px dotted black; padding:0.5em 1em; text-align:center; font-style:italic;">This paragraph has been <dfn>styled</dfn> to look different from the other paragraphs in this book.</p>
 
-      <p style="line-height:3em; border:2px dotted black; padding:0.5em 1em; text-align:center; font-style:italic;">The lines below give this paragraph its style. Fill in the blanks using the word bank at the bottom of this page.</p>
+    </div>
+    <div class="section">
 
       <ol>
         <li>
@@ -447,6 +537,7 @@ Dec   Hex
           </li>
         </ul>
       </div>
+
     </div>
     <div id="styling_css" class="section">
       <h1><a href="#styling_css">CSS</a></h1>
@@ -504,6 +595,9 @@ Dec   Hex
 
       </table>
 
+    </div>
+    <div class="section">
+
       <p>Fill in the blanks:</p>
 
       <table>
@@ -535,6 +629,7 @@ Dec   Hex
         </tr>
 
       </table>
+
     </div>
     <div id="styling_fonts" class="section">
       <h1><a href="#styling_fonts">Fonts</a></h1>
@@ -576,6 +671,9 @@ Dec   Hex
 
       </table>
 
+    </div>
+    <div class="section">
+
       <p>In CSS, you pick a font using the <code>font-family</code> property. <code>font-family</code>'s value is a list of fonts. For example:</p>
 
       <table>
@@ -610,6 +708,7 @@ Dec   Hex
           </li>
         </ul>
       </div>
+
     </div>
     <div id="styling_stylesheets" class="section">
       <h1><a href="#styling_stylesheets">Stylesheets</a></h1>
@@ -632,6 +731,9 @@ Dec   Hex
       <p>Each of the chunks in <code>{braces}</code> is a <dfn>rule</dfn>. The <q><code>p</code></q> rule changes all the paragraphs on the website. The <q><code>p, code</code></q> rule changes all the paragraphs <em>and</em> code snippets. Rules add on
         to each other.</p>
 
+    </div>
+    <div class="section">
+
       <p>The font of every code snippet will be: <input class="line" data-answer="black, 18 pixels tall, and monospaced" value="" /></p>
 
       <ol>
@@ -644,6 +746,7 @@ Dec   Hex
         <li>sans-serif
         </li>
       </ol>
+
     </div>
     <div id="styling_selectors" class="section">
       <h1><a href="#styling_selectors">Selectors</a></h1>
@@ -669,6 +772,9 @@ p code img{
       </div>
 
       <p>This CSS rule &mdash; without commas &mdash; says, <q>Every image that's in a code snippet that's in a paragraph should be 400 pixels wide.</q></p>
+
+    </div>
+    <div class="section">
 
       <ol>
         <li>Fill in the selector for, <q>Every button that's in a form.</q>
@@ -697,6 +803,7 @@ p code img{
           </li>
         </ul>
       </div>
+
     </div>
     <div id="styling_cascading" class="section">
       <h1><q><a href="#styling_cascading">Cascading Stylesheets</a></q></h1>
@@ -711,6 +818,9 @@ p code img{
         <li>...<strong>but</strong> if both rules have a <code>font-family</code>, the website will ignore the first <code>font-family</code> and use the second one instead.
         </li>
       </ol>
+
+    </div>
+    <div class="section">
 
       <pre data-code>
 1..  p{
@@ -740,6 +850,7 @@ p code img{
           </li>
         </ul>
       </div>
+
     </div>
     <div id="html_intro" class="section">
       <div class='HTMLCodeBlock'>
@@ -784,6 +895,7 @@ p code img{
           </li>
         </ul>
       </div>
+
     </div>
   </div>
   <script src="js/script.js"></script>

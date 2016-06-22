@@ -339,43 +339,43 @@ body {
     font-size: 24px;
   }
 }
-@media screen and (max-aspect-ratio: 85 / 110) {
+@media screen and (max-aspect-ratio: 55 / 85) {
   html, body {
-    font-size: 2.94vw;
+    font-size: 3.92vw;
   }
 
   .section {
-    height: 126.82353vw;
+    height: 151.45455vw;
     width: 98vw;
   }
 }
-@media screen and (min-aspect-ratio: 85 / 110) {
+@media screen and (min-aspect-ratio: 55 / 85) {
   html, body {
-    font-size: 2.31818vh;
+    font-size: 2.58824vh;
   }
 
   .section {
     height: 100vh;
-    width: 77.27273vh;
+    width: 64.70588vh;
   }
 }
-@media screen and (min-aspect-ratio: 85 / 110) and (max-height: 518.94118px) {
+@media screen and (min-aspect-ratio: 55 / 85) and (max-height: 619.72727px) {
   html, body {
-    font-size: 3vw;
+    font-size: 4vw;
   }
 
   .section {
-    height: 129.41176vw;
+    height: 154.54545vw;
     width: 100vw;
   }
 }
-@media screen and (min-aspect-ratio: 170 / 110) and (max-height: 518.94118px) {
+@media screen and (min-aspect-ratio: 110 / 85) and (max-height: 619.72727px) {
   html, body {
-    font-size: 12.03px;
+    font-size: 16.04px;
   }
 
   .section {
-    height: 518.94118px;
+    height: 619.72727px;
     width: 401px;
   }
 }
