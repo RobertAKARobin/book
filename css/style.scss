@@ -40,13 +40,47 @@ html, body{
   font-family:$fontText;
   width:100%;
 }
-body{
+
+a, label, button{
+  cursor:pointer;
 }
 strong{
   font-weight:bold;
 }
 em{
   font-style:italic;
+}
+mark{
+  border:1px solid #000;
+  border-radius:0.5em;
+  background-color:inherit;
+  padding:0 0.5em;
+  margin:0 2px;
+}
+dfn{
+  border-bottom:1px dotted #000;
+  font-weight:bold;
+}
+
+h1{
+  font-size:1.5em;
+  font-family:$fontHeader;
+  text-transform:uppercase;
+}
+h2{
+  font-weight:bold;
+  text-align:center;
+}
+
+label{
+  display:block;
+}
+.aside{
+  display:block;
+  float:right;
+  padding-left:1em;
+  margin-left:1em;
+  border-left:1px solid #000;
 }
 ul, ol{
   padding-left:20px;
@@ -158,34 +192,19 @@ span.line{
   display:inline-flex;
   width:100%;
 }
-mark{
-  border:1px solid #000;
-  border-radius:0.5em;
-  background-color:inherit;
-  padding:0 0.5em;
-  margin:0 2px;
-}
-dfn{
-  border-bottom:1px dotted #000;
-  font-weight:bold;
-}
 .wordbank{
   text-align:center;
-
   ul, ol{
     padding-left:0;
   }
-
   li{
     display:inline-block;
     margin:0.2em 2em;
     border-bottom:1px dotted #000;
     padding-left:0;
   }
-
   ol{
     counter-reset: count-num;
-
     li{
       counter-increment: count-num;
       &:before{
@@ -212,33 +231,8 @@ body{
   & > h1{
     margin:0.5em auto;
   }
-
-  h1{
-    font-size:1.5em;
-    font-family:$fontHeader;
-    text-transform:uppercase;
-  }
-  h2{
-    font-weight:bold;
-    text-align:center;
-  }
-  label{
-    cursor:pointer;
-    display:block;
-  }
   li{
     padding-left:0.5em;
-  }
-  .aside{
-    display:block;
-    float:right;
-    padding-left:1em;
-    margin-left:1em;
-    border-left:1px solid #000;
-  }
-  hr{
-    display:block;
-    clear:both;
   }
   table, tr, td{
     box-sizing:border-box;
@@ -308,7 +302,6 @@ body{
     color:#000;
     animation: flip 0.5s forwards;
   }
-
   & > *{
     display:block;
     width:100%;
@@ -319,11 +312,8 @@ body{
     border-bottom:1px solid rgba(100, 155, 100, 0.3);
     box-sizing:border-box;
     color:#8a8;
-    // text-shadow:0px 0px 2px #bdb;
   }
-
   label, button{
-    cursor:pointer;
     transition: background-color 0.2s;
 
     &:hover{
@@ -335,7 +325,6 @@ body{
   input:checked + label{
     background-color:rgba(000,100,000,0.2);
   }
-
   & > input[type="checkbox"]{
     @include hidden;
   }

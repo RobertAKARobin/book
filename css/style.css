@@ -28,12 +28,52 @@ html, body {
   width: 100%;
 }
 
+a, label, button {
+  cursor: pointer;
+}
+
 strong {
   font-weight: bold;
 }
 
 em {
   font-style: italic;
+}
+
+mark {
+  border: 1px solid #000;
+  border-radius: 0.5em;
+  background-color: inherit;
+  padding: 0 0.5em;
+  margin: 0 2px;
+}
+
+dfn {
+  border-bottom: 1px dotted #000;
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 1.5em;
+  font-family: "Impact", sans-serif;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-weight: bold;
+  text-align: center;
+}
+
+label {
+  display: block;
+}
+
+.aside {
+  display: block;
+  float: right;
+  padding-left: 1em;
+  margin-left: 1em;
+  border-left: 1px solid #000;
 }
 
 ul, ol {
@@ -138,19 +178,6 @@ span.line {
   width: 100%;
 }
 
-mark {
-  border: 1px solid #000;
-  border-radius: 0.5em;
-  background-color: inherit;
-  padding: 0 0.5em;
-  margin: 0 2px;
-}
-
-dfn {
-  border-bottom: 1px dotted #000;
-  font-weight: bold;
-}
-
 .wordbank {
   text-align: center;
 }
@@ -189,32 +216,8 @@ body {
 .section > h1 {
   margin: 0.5em auto;
 }
-.section h1 {
-  font-size: 1.5em;
-  font-family: "Impact", sans-serif;
-  text-transform: uppercase;
-}
-.section h2 {
-  font-weight: bold;
-  text-align: center;
-}
-.section label {
-  cursor: pointer;
-  display: block;
-}
 .section li {
   padding-left: 0.5em;
-}
-.section .aside {
-  display: block;
-  float: right;
-  padding-left: 1em;
-  margin-left: 1em;
-  border-left: 1px solid #000;
-}
-.section hr {
-  display: block;
-  clear: both;
 }
 .section table, .section tr, .section td {
   box-sizing: border-box;
@@ -290,7 +293,6 @@ body {
   color: #8a8;
 }
 #score label, #score button {
-  cursor: pointer;
   transition: background-color 0.2s;
 }
 #score label:hover, #score button:hover {
