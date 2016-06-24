@@ -45,6 +45,16 @@ module.exports= (function(){
       ["#{2}",  "h2"],
       ["#{1}",  "h1"],
       ["''''",  "blockquote"],
+      [,,/\[(.)\](.*)/,function checkbox(nil, isAnswer, label){
+        var out = "";
+        var inputAttr = {class: "checkbox"};
+        if(isAnswer.trim()) inputAttr["data-answer"] = "x";
+        out += "<label>";
+        out += h.tag(["input", inputAttr]);
+        out += h.tag("span", label.trim());
+        out += "</label>";
+        return out;
+      }],
       [" *-(=|#)\/",,,function endList(nil, listType){
         return "</li></" + listTypes[listType] + ">";
       }],

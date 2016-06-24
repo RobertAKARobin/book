@@ -85,7 +85,7 @@ blockquote:after, q:after {
   border-bottom: 1px dotted #000;
 }
 
-input[data-answer] {
+input[type=text] {
   display: inline-block;
   border: 1px dotted #000;
   border-radius: 5px;
@@ -93,31 +93,43 @@ input[data-answer] {
   font-family: "Comic Sans MS", cursive;
   width: 6em;
 }
-td input[data-answer]:only-child {
+td input[type=text]:only-child {
   width: 100%;
 }
-input[data-answer]:focus {
+input[type=text]:focus {
   background-color: #ffb;
 }
-input[data-answer].correct {
+input[type=text].checkbox {
+  float: left;
+  border-radius: 0;
+  border: 1px solid black !important;
+  width: 1em;
+  height: 1em;
+  text-align: center;
+}
+input[type=text].checkbox + span {
+  display: block;
+  padding-left: 2em;
+}
+input[type=text].correct {
   border: 1px solid transparent;
   animation: flash-correct 0.7s forwards;
 }
-input[data-answer].line {
+input[type=text].line {
   display: block;
   width: 100%;
 }
-input[data-answer].inline {
+input[type=text].inline {
   text-align: center;
   width: 3em;
 }
-input[data-answer].flex {
+input[type=text].flex {
   flex-grow: 1;
   margin-left: 0.5em;
   border-width: 0 0 1px 0;
   border-radius: 0;
 }
-input[data-answer].flex:only-child {
+input[type=text].flex:only-child {
   margin-left: 0;
 }
 
@@ -185,6 +197,10 @@ body {
 .section h2 {
   font-weight: bold;
   text-align: center;
+}
+.section label {
+  cursor: pointer;
+  display: block;
 }
 .section li {
   padding-left: 0.5em;

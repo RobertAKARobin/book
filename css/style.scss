@@ -105,7 +105,7 @@ blockquote, q{
   }
 }
 
-input[data-answer]{
+input[type=text]{
   display:inline-block;
   border:1px dotted #000;
   border-radius:5px;
@@ -118,6 +118,18 @@ input[data-answer]{
   }
   &:focus{
     background-color:#ffb;
+  }
+  &.checkbox{
+    float:left;
+    border-radius:0;
+    border:1px solid black !important;
+    width:1em;
+    height:1em;
+    text-align:center;
+    & + span{
+      display:block;
+      padding-left:2em;
+    }
   }
   &.correct{
     border:1px solid transparent;
@@ -209,6 +221,10 @@ body{
   h2{
     font-weight:bold;
     text-align:center;
+  }
+  label{
+    cursor:pointer;
+    display:block;
   }
   li{
     padding-left:0.5em;
