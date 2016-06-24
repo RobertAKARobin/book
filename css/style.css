@@ -68,14 +68,6 @@ label {
   display: block;
 }
 
-.aside {
-  display: block;
-  float: right;
-  padding-left: 1em;
-  margin-left: 1em;
-  border-left: 1px solid #000;
-}
-
 ul, ol {
   padding-left: 20px;
 }
@@ -204,54 +196,6 @@ body {
   text-align: center;
 }
 
-.section {
-  vertical-align: top;
-  box-sizing: border-box;
-  text-align: left;
-  line-height: 1.6em;
-}
-.section p, .section table, .section ol, .section ul, .section .aside, .section > pre {
-  margin: 1.5em auto 0em auto;
-}
-.section > h1 {
-  margin: 0.5em auto;
-}
-.section li {
-  padding-left: 0.5em;
-}
-.section table, .section tr, .section td {
-  box-sizing: border-box;
-  position: relative;
-}
-.section table {
-  counter-reset: count-num count-alpha;
-  width: 100%;
-}
-.section table.inline {
-  width: auto;
-}
-.section table .count {
-  padding: 0 0.5em;
-  text-align: left;
-}
-.section table .count.num {
-  counter-increment: count-num;
-}
-.section table .count.num:before {
-  content: counter(count-num) ".";
-}
-.section table .count.alpha {
-  counter-increment: count-alpha;
-}
-.section table .count.alpha:before {
-  content: counter(count-alpha,lower-alpha) ".";
-}
-.section table td {
-  position: relative;
-  vertical-align: top;
-  padding: 0 1em;
-}
-
 #score {
   position: fixed;
   top: 0;
@@ -318,7 +262,7 @@ body {
   margin: 0 auto;
 }
 
-.section {
+.page {
   display: block;
   margin: 2em auto;
   padding: 1em;
@@ -328,26 +272,87 @@ body {
   border-bottom-color: #ddd;
   box-sizing: border-box;
   font-size: 1rem;
+  line-height: 1.6em;
+  text-align: left;
+  vertical-align: top;
   clear: both;
   overflow: visible;
+  position: relative;
 }
-#base[targeting] .section:not(:target) {
-  display: none;
+.page .footer {
+  box-sizing: border-box;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 0 1em;
+}
+.page .footer p {
+  text-align: center;
+  font-style: italic;
+}
+.page .footer .aside {
+  float: left;
+}
+.page:nth-child(even) .aside {
+  float: right;
+}
+.page .main h1, .page .main p, .page .main table, .page .main ol, .page .main ul, .page .main .aside, .page .main > pre {
+  margin-bottom: 1em;
+}
+.page .main h1 {
+  line-height: 1em;
+  text-align: center;
+}
+.page .main li {
+  padding-left: 0.5em;
+}
+.page table, .page tr, .page td {
+  box-sizing: border-box;
+  position: relative;
+}
+.page table {
+  counter-reset: count-num count-alpha;
+  width: 100%;
+}
+.page table.inline {
+  width: auto;
+}
+.page table .count {
+  padding: 0 0.5em;
+  text-align: left;
+}
+.page table .count.num {
+  counter-increment: count-num;
+}
+.page table .count.num:before {
+  content: counter(count-num) ".";
+}
+.page table .count.alpha {
+  counter-increment: count-alpha;
+}
+.page table .count.alpha:before {
+  content: counter(count-alpha,lower-alpha) ".";
+}
+.page table td {
+  position: relative;
+  vertical-align: top;
+  padding: 0 1em;
 }
 @media print {
-  .section {
+  .page {
     page-break-inside: avoid;
     page-break-before: always;
     border-width: 0px;
     padding: 0;
     margin: 0;
     width: 100%;
+    height: 100vh;
   }
 }
 @media screen {
-  .section {
+  .page {
     display: inline-block;
-    padding: 1em;
     margin: 0;
   }
 }
@@ -362,7 +367,7 @@ body {
     font-size: 3.92vw;
   }
 
-  .section {
+  .page {
     height: 151.45455vw;
     width: 98vw;
   }
@@ -372,7 +377,7 @@ body {
     font-size: 2.58824vh;
   }
 
-  .section {
+  .page {
     height: 100vh;
     width: 64.70588vh;
   }
@@ -382,7 +387,7 @@ body {
     font-size: 4vw;
   }
 
-  .section {
+  .page {
     height: 154.54545vw;
     width: 100vw;
   }
@@ -392,7 +397,7 @@ body {
     font-size: 16.04px;
   }
 
-  .section {
+  .page {
     height: 619.72727px;
     width: 401px;
   }

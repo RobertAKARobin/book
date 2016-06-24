@@ -1,0 +1,137 @@
+# RGB
+
+A computer screen is made of //pixels//. A pixel is a tiny square made of three lights: one red, one blue, and one green.
+
+Each pixel has an //RGB// code that says what color it should be.
+
+What do you think ''RGB'' stands for?
+
+[x] Red, Green, Blue
+[ ] Riemannian Gradient Base
+[ ] Ronald Gregory Brown, the inventor of the modern computer screen
+[ ] Really Good Bacon
+
+=====
+
+Each light has a number from 255 (which means the light is all the way on) to 0 (all the way off).
+
+A bright purple pixel has an //RGB// code of `255 000 255`: the pixel's **R**ed light is on, **G**reen is off, and **B**lue is on.
+
+`170 000 170` makes a darker purple: the red and blue lights are a little dim, and green is off.
+
+=====
+
+Below are some colors with their RGB codes. Fill in the blanks:
+
+<table class="inline">
+|\count num|  |code    |code    |code
+||red         |255     |000     |000
+||white       |255     |255     |255
+||black       |_000_   |_000_   |_000_
+||green       |000     |_255_   |000
+||blue        |_000_   |_000_   |255
+||teal        |000     |_255_   |_255_
+||yellow      |_255_   |255     |000
+||orange      |_255_   |170     |000
+||grey        |170     |_170_   |_170_
+|/
+</table>
+
+=====
+
+# Hex
+
+We use the ''decimal'' system to write numbers. Computers can save memory by using the //hexadecimal// system, or ''hex''. It uses letters in place of some numbers.
+
+<table>
+|\  | code |    | code |     | code
+| 0 | 00   | 10 | 0A   | 26  | 1A
+| 1 | 01   | 11 | 0B   | 31  | 1F
+| 2 | 02   | 12 | 0C   | 32  | 20
+| 3 | 03   | 13 | 0D   | 33  | 21
+| 4 | 04   | 14 | 0E   | 160 | A0
+| 5 | 05   | 15 | 0F   | 161 | A1
+| 6 | 06   | 16 | 10   | 175 | AF
+| 7 | 07   | 17 | 11   | 176 | B0
+| 8 | 08   | 18 | 12   | 240 | F0
+| 9 | 09   | 25 | 19   | 255 | FF
+|/
+</table>
+
+In decimal white is `255255255`, which is 9 numbers long. In hex white is `ffffff`, which is 6 numbers long. Because it takes up less space, computers often write colors in hex.
+
+=====
+
+Do the last page again, this time in hex:
+
+<table class="inline">
+|\count num|  |code     |code     |code
+||red         | FF      | 00      | 00
+||white       | FF      | FF      | FF
+||black       |_00_     |_00_     |_00_
+||green       | 00      |_FF_     |_00_
+||blue        |_00_     |_00_     | FF
+||teal        | 00      |_FF_     |_FF_
+||yellow      |_FF_     | FF      | 00
+||orange      |_FF_     | AA      | 00
+||grey        | AA      |_AA_     |_AA_
+|/
+</table>
+
+=====
+
+One nice thing about hex is that you can turn words into colors.
+
+Fill in the blanks below. Use the word bank for the color descriptions.
+
+<table>
+|\count num||code|
+||__Office__ |0ff1ce   |Blue-green
+||Old dad    |_01ddad_ |Green-blue
+||__Decode__ |dec0de   |__Pastel pink__
+||Coffee     |_c0ffee_ |__Pale blue__
+||Doodle     |_d00d1e_ |__Red__
+||Fedora     |fed02a   |__Yellow__
+||Bad cat    |badca7   |__Pastel green__
+||__Ballet__ |ba11e7   |__Purple__
+||Bieber     |_b1ebe2_ |__Blue-green__
+|/
+</table>
+
+<div class="wordbank">
+-=Pastel green
+- Purple
+- Blue-green
+- Yellow
+- Red
+- Pastel pink
+- Pale blue
+- Pastel green
+-=/
+</div>
+
+=====
+
+Knowing how hex works makes it easier to find the perfect color for your website or app.
+
+If you want yellow, but `ffff00` is *too* yellow, you can give it 1 level more red with `ffff01`. You can also make it 1 level less green with `fffe00`, or 16 levels less green with `ffef00`.
+
+=====
+
+Complete the equations below:
+
+<table class="inline">
+|\count num|code|code||        |  |code
+||FFFF00   | +       | 1    | blue   |= |FFFF01
+||232323   | +       | 1    | red    |= |242323
+||EE99CC   | +       | 16   | red    |= |FE99CC
+||BBAA00   | &mdash; |__1__ | green  |= |BBA900
+||BBAA00   | &mdash; | 16   | green  |= |_BB9A00_
+||BBAA00   | &mdash; |__17__| green  |= |BB9900
+||ABCDEF   | +       | 1    | green  |= |_ABCEEF_
+||ABCDEF   | &mdash; |__16__|__red__ |= |9BCDEF
+||_CBCDEF_ | &mdash; | 32   | red    |= |ABCDEF
+||B3A000   | &mdash; | 1    | green  |= |_B39F00_
+||299FF9   | +       | 1    | blue   |= |_299FFA_
+|/
+</table>

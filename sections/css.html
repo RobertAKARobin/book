@@ -1,0 +1,220 @@
+# Styling
+
+<p style="line-height:3em; border:2px dotted black; padding:0.5em 1em; text-align:center; font-style:italic;">This paragraph has been //styled// to look different from the other paragraphs in this book.</p>
+
+=====
+
+-#
+>>`color:` ___#000000;___
+-
+>>`font-style:` ___italic;___
+-
+>>`text-align:` ___center;___
+-
+>>`font-size:` ___12px;___
+-
+>>`line-height:` ___24px;___
+-
+>>`border:` ___2px dotted #000000;___
+-
+>>`background-color:` ___#FFFFFF;___
+-#/
+
+<div class="wordbank">
+-=`#000000;`
+- `italic;`
+- `center;`
+- `12px;`
+- `24px;`
+- `2px dotted #000000;`
+- `#FFFFFF;`
+-=/
+</div>
+
+=====
+
+# CSS
+
+Websites are ''styled'' in a coding language called //CSS//.
+
+You change how the website looks by changing a CSS //property//. There are over 500 CSS properties. Each has a //value//. A property and its value together are a //declaration//.
+
+Match the properties and values to make declarations:
+
+<table>
+|\count num|code|count alpha|code
+||background-image:        ||url(stars.jpg);
+||height:                  ||400px;
+||border-color:            ||#FF9900;
+||transform:               ||rotate(30deg);
+||text-underline-position: ||under;
+||visibility:              ||hidden;
+||font-weight:             ||bold;
+|/
+</table>
+
+=====
+
+Fill in the blanks:
+
+<table>
+|\count num||
+||Every _property_ has a ~~:~~ after it.    |property
+||Every _declaration_ ends with a ~~;~~.    |pixel
+||''px'' stands for _pixel_.                |delcaration
+||The ~~:~~ symbol is called a _colon_.     |colon
+||The ~~;~~ symbol is called a _semicolon_. |semicolon
+|/
+</table>
+
+=====
+
+# Fonts
+
+There are 5 //families// of fonts. Every font is in one of those families. Match each clue to its family.
+
+<table>
+|\count num||count alpha|
+||<a style="font-family: 'Courier New'">All letters are one space wide</a>    ||monospace
+||<a style="font-family: 'Times New Roman'">Dutch for ''a short line''</a>      ||serif
+||<a style="font-family: Helvetica">Begins with French word for ''without''</a>    ||sans-serif
+||<a style="font-family: 'Comic Sans MS'">Looks like handwriting</a>||cursive
+||<a style="font-family: Papyrus">Used mostly for logos and graphics</a>      ||fantasy
+|/
+</table>
+
+=====
+
+In CSS, you pick a font using the `font-family` property. `font-family`'s value is a list of fonts. For example:
+
+<table>
+|\count num|code
+||font-family: "Times New Roman", Times, serif;
+||font-family: cursive;
+||font-family: "Courier New", monospace;
+|/
+</table>
+
+If a font in `font-family` isn't installed on your computer, your computer tries the next one in the list. If instead of a font it's a family, like `cursive`, your computer uses any font in that family.
+
+
+<div class="wordbank">
+A font name that contains a _space_ must be inside "quotes".
+
+-=space
+- semicolon
+- number
+-=/
+</div>
+
+=====
+
+# Selectors
+
+Every CSS rule starts with a //selector//. It tells the computer which parts of a website it should ''select'' to use with that CSS rule.
+
+<div class="aside">
+```
+p, code, img{
+  width: 400px;
+}
+``/
+</div>
+
+This CSS rule says, ''Every paragraph, every code snippet, and every image should be 400 pixels wide.''
+
+<div class="aside">
+```
+p code img{
+  width: 400px;
+}
+``/
+</div>
+
+This CSS rule -- without commas -- says, ''Every image that's in a code snippet that's in a paragraph should be 400 pixels wide.''
+
+=====
+
+-#Fill in the selector for, ''Every button that's in a form.''
+>>___form button___
+- Every button in every paragraph in every form.
+>>___form p button___
+- Every button, every paragraph, and every form.
+>>___form, p, button___
+- Every button and every form.
+>>___form, button___
+-#/
+
+<div class="wordbank">
+-=`form button`
+- `form p button`
+- `form, p, button`
+- `form, button`
+-=/
+</div>
+
+=====
+
+# Stylesheets
+
+All of a website's CSS is usually kept in a file called a //stylesheet//:
+
+```#
+p, code{
+  color: #000000;
+  font-size: 18px;
+}
+p{
+  font-family: sans-serif;
+}
+code{
+  font-family: monospace;
+}
+``/
+
+Each of the chunks in `{braces}` is a //rule//. The ''`p`'' rule changes all the paragraphs on the website. The ''`p, code`'' rule changes all the paragraphs *and* code snippets. Rules add on to each other.
+
+=====
+
+The font of every code snippet will be: __black, 18 pixels tall, and monospaced__
+
+-#black, 18 pixels tall, and monospaced
+- black, 18 pixels tall, and sans-serif
+- monospaced
+- sans-serif
+-#/
+
+=====
+
+The ''C'' in ''CSS'' stands for ''cascading''. This means three things:
+
+-#If a website has two stylesheets, it uses both of them.
+- If a website has two CSS rules for paragraphs, it uses both rules.
+- ...**but** if both rules have a `font-family`, the website will ignore the first `font-family` and use the second one instead.
+-#/
+
+=====
+
+```#
+p{
+  background-color: #000000;
+  color: #FFFF00;
+}
+code, p{
+  background-color: #00FF00;
+}
+code{
+  background-color: #000000;
+  background-color: #0000FF;
+}
+``/
+
+<div class="wordbank">
+This code means paragraphs will have _green_ backgrounds,<br > and code snippets will have _blue_ backgrounds.
+
+-=red
+- blue
+- yellow
+- green
+-=/
+</div>
