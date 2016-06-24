@@ -202,6 +202,7 @@ var h = (function(){
       attrs     = tag[1];
       tag       = tag[0];
     }
+    if(tag === "input") attrs.type = (attrs.type || "text");
     if(attrs && h.is_a(attrs, Object)){
       h.for_each(attrs, function(val, attr){
         attrsArray.push(attr + "=\"" + val + "\"");
