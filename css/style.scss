@@ -1,4 +1,4 @@
-$fontText: "Palatino", serif;
+$fontText: "Gill Sans", serif;
 $fontCode: "Courier New", monospace;
 $fontHand: "Comic Sans MS", cursive;
 $fontHeader: "Impact", sans-serif;
@@ -39,6 +39,7 @@ html, body{
   font-size:18px;
   font-family:$fontText;
   width:100%;
+  text-align:center;
 }
 
 a, label, button{
@@ -63,15 +64,20 @@ dfn{
 }
 
 h1{
-  font-size:1.5em;
-  font-family:$fontHeader;
+  font-weight:bold;
   text-transform:uppercase;
 }
 h2{
-  font-weight:bold;
+  font-style:italic;
+  &:before{
+    content: "\25b8";
+    padding-right:0.5em;
+    font-style:normal;
+  }
+}
+figure{
   text-align:center;
 }
-
 label{
   display:block;
 }
@@ -101,10 +107,10 @@ blockquote, q{
 [data-code], .code, code{
   white-space:pre-wrap;
   font-family: $fontCode;
+  font-style:normal;
 
   .HTMLCodeBlock &{
     font-weight:normal;
-    font-style:normal;
     font-size:1rem;
     text-transform:none;
   }
@@ -134,8 +140,7 @@ blockquote, q{
 
 input[type=text]{
   display:inline-block;
-  border:1px dotted #000;
-  border-radius:5px;
+  border-bottom:1px dotted #000;
   white-space:nowrap;
   font-family: $fontHand;
   width:6em;
@@ -148,8 +153,7 @@ input[type=text]{
   }
   &.checkbox{
     float:left;
-    border-radius:0;
-    border:1px solid black !important;
+    border:1px solid #000;
     width:1em;
     height:1em;
     text-align:center;
@@ -159,7 +163,6 @@ input[type=text]{
     }
   }
   &.correct{
-    border:1px solid transparent;
     animation: flash-correct 0.7s forwards;
   }
   &.line{
@@ -192,9 +195,9 @@ span.line{
   }
   li{
     display:inline-block;
-    margin:0.2em 2em;
+    margin:0 0.5em;
     border-bottom:1px dotted #000;
-    padding-left:0;
+    padding-right:0.5em;
   }
   ol{
     counter-reset: count-num;
@@ -205,10 +208,6 @@ span.line{
       }
     }
   }
-}
-
-body{
-  text-align:center;
 }
 
 #score{
@@ -296,6 +295,7 @@ $min-height: ($min-width / $aspect);
   margin: 2em auto;
   padding:1em;
   width:90%;
+  background-color:#fff;
   border:1px dotted transparent;
   border-right-color:#ddd;
   border-bottom-color:#ddd;
@@ -330,20 +330,15 @@ $min-height: ($min-width / $aspect);
   }
 
   .main{
-    h1, p, table, ol, ul, .aside,
+    h1, h2, p, table, ol, ul, .aside, fieldset,
     & > pre{
       margin-bottom:1em;
     }
-    h1{
-      line-height:1em;
-      text-align:center;
-      // border-bottom:1px solid #000;
-    }
-    li{
-      padding-left:0.5em;
-    }
   }
 
+  li{
+    padding-left:0.5em;
+  }
   table, tr, td{
     box-sizing:border-box;
     position:relative;
@@ -354,6 +349,8 @@ $min-height: ($min-width / $aspect);
 
     &.inline{
       width:auto;
+      margin-left:auto;
+      margin-right:auto;
     }
 
     .count{
@@ -375,7 +372,8 @@ $min-height: ($min-width / $aspect);
     td{
       position:relative;
       vertical-align:top;
-      padding:0 1em;
+      padding:0 0.5em;
+      white-space:nowrap;
     }
   }
 
@@ -399,6 +397,17 @@ $min-height: ($min-width / $aspect);
   }
 }
 @media screen{
+  #background{
+    position:fixed;
+    top:0;
+    left:0;
+    height:100vh;
+    width:100%;
+    z-index:-1;
+    background-color:#666;
+    box-shadow:0 0 100px 0 #555 inset;
+  }
+
   @media (max-aspect-ratio: $page-x "/" $page-y){
     @include size-from-width(98vw);
   }

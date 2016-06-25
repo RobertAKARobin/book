@@ -1,32 +1,79 @@
 # RGB
 
-A computer screen is made of //pixels//. A pixel is a tiny square made of three lights: one red, one blue, and one green.
+A computer screen is made of //pixels//. A pixel is a tiny square made of three really tiny, lights: one red, one blue, and one green.
 
-Each pixel has an //RGB// code that says what color it should be.
+These are the three ''primary colors'' for computer and TV screens. You probably learned the primary colors are red, blue, and *yellow*. Screen light is different from normal light.
 
-What do you think ''RGB'' stands for?
+## How do you think you would make these colors on a computer screen?
 
-[x] Red, Green, Blue
+<table>
+|\count num|
+||purple|=|red  |+|_blue_
+||teal  |=|blue |+|_green_
+||yellow|=|green|+|_red_
+|/
+</table>
+
+=====
+
+Each pixel has an //RGB// code that says what color it should make. RGB codes are made of 3 numbers.
+
+The RGB code for *purple* is:
+
+<figure>
+`255 000 255`
+</figure>
+
+## What do you think ''RGB'' stands for?
+
+<fieldset>
 [ ] Riemannian Gradient Base
-[ ] Ronald Gregory Brown, the inventor of the modern computer screen
+[ ] The initials of the computer screen's inventor
+[x] Red, Green, Blue
 [ ] Really Good Bacon
+</fieldset>
+
+## What do the code's 3 numbers represent?
+
+[ ] How much memory it takes to make the color
+[ ] The temperature of the pixel
+[ ] The letters of the alphabet in the color's name
+[x] The brightness of each of the pixel's 3 lights
 
 =====
 
-Each light has a number from 255 (which means the light is all the way on) to 0 (all the way off).
+Here are some more RGB codes:
 
-A bright purple pixel has an //RGB// code of `255 000 255`: the pixel's **R**ed light is on, **G**reen is off, and **B**lue is on.
+<table class="inline">
+|\         |code    |code    |code
+|red       |255     |000     |000
+|white     |255     |255     |255
+|dark green|000     |170     |000
+|/
+</table>
 
-`170 000 170` makes a darker purple: the red and blue lights are a little dim, and green is off.
+## If the first number in a pixel's RGB code is `255`, it means the pixel's red light is...
+
+<fieldset>
+[x] All the way on
+[ ] A little dim
+[ ] All the way off
+</fieldset>
+
+## If the last number in a pixel's RGB code is `000`, it means the pixel's blue light is...
+
+<fieldset>
+[ ] All the way on
+[ ] A little dim
+[x] All the way off
+</fieldset>
 
 =====
 
-Below are some colors with their RGB codes. Fill in the blanks:
+Fill in the blanks to complete all the RGB codes:
 
 <table class="inline">
 |\count num|  |code    |code    |code
-||red         |255     |000     |000
-||white       |255     |255     |255
 ||black       |_000_   |_000_   |_000_
 ||green       |000     |_255_   |000
 ||blue        |_000_   |_000_   |255
@@ -34,6 +81,7 @@ Below are some colors with their RGB codes. Fill in the blanks:
 ||yellow      |_255_   |255     |000
 ||orange      |_255_   |170     |000
 ||grey        |170     |_170_   |_170_
+||pink        |255     |000     |_170_
 |/
 </table>
 
@@ -41,7 +89,51 @@ Below are some colors with their RGB codes. Fill in the blanks:
 
 # Hex
 
-We use the ''decimal'' system to write numbers. Computers can save memory by using the //hexadecimal// system, or ''hex''. It uses letters in place of some numbers.
+RGB codes are made of //decimal// numbers. Computers often use //hexadecimal// numbers to write color codes instead.
+
+## The ''dec'' in ''decimal'' means ''ten''. The ''hex'' in ''hexadecimal'' and the ''hex'' in ''hexagon'' both mean:
+
+<fieldset>
+[x] six
+[ ] circle
+[ ] eight
+[ ] blue
+</fieldset>
+
+## Since ''hexadecimal'' contains ''hex'' plus ''dec'', it probably means:
+
+<fieldset>
+[ ] seven
+[x] sixteen
+[ ] sixty-one
+[ ] blue
+</fieldset>
+
+=====
+
+Here are some more RGB codes and their matching hex codes:
+
+<table class="inline">
+|\
+|          |RGB          |Hex
+|red       |`255 000 000`|`FF 00 00`
+|white     |`255 255 255`|`FF FF FF`
+|dark green|`000 170 000`|`00 AA 00`
+|/
+</table>
+
+## Computer programmers like to use hex codes instead of RGB codes. This is because...
+
+<fieldset>
+[ ] Programmers are weird
+[ ] Old keyboards didn't have number keys
+[ ] Some languages don't use decimal numbers
+[x] Hex codes are shorter, and so use less memory
+</fieldset>
+
+=====
+
+Here are a bunch of decimal numbers and their matching hex numbers:
 
 <table>
 |\  | code |    | code |     | code
@@ -58,16 +150,19 @@ We use the ''decimal'' system to write numbers. Computers can save memory by usi
 |/
 </table>
 
-In decimal white is `255255255`, which is 9 numbers long. In hex white is `ffffff`, which is 6 numbers long. Because it takes up less space, computers often write colors in hex.
+## Which one of the following is **not** true?
+
+[ ] The decimal system has 10 digits: 0 to 9
+[ ] The hexadecimal system has 16 digits: 0 to F
+[ ] `20` in hex is the same as `(16 x 2)`
+[x] Hex numbers are easier for humans to calculate
 
 =====
 
-Do the last page again, this time in hex:
+Fill in the blanks to complete all the hex codes:
 
-<table class="inline">
+<table>
 |\count num|  |code     |code     |code
-||red         | FF      | 00      | 00
-||white       | FF      | FF      | FF
 ||black       |_00_     |_00_     |_00_
 ||green       | 00      |_FF_     |_00_
 ||blue        |_00_     |_00_     | FF
@@ -75,12 +170,42 @@ Do the last page again, this time in hex:
 ||yellow      |_FF_     | FF      | 00
 ||orange      |_FF_     | AA      | 00
 ||grey        | AA      |_AA_     |_AA_
+||pink        | FF      | 00      |_AA_
 |/
 </table>
 
 =====
 
-One nice thing about hex is that you can turn words into colors.
+Knowing how hex works makes it easier to find the perfect color for your website or app.
+
+If you want yellow, but `FFFF00` is *too* yellow, you can give it one level more red with `FFFF01`.
+
+<table class="inline">
+|\code |       |  |     | |code
+|FFFF00|+      |1 |red  |=|FFFF01
+|FFFF00|&ndash;|1 |green|=|FFFE00
+|FFFF00|&ndash;|16|green|=|FFEF00
+|/
+</table>
+
+Complete the equations below:
+
+<table>
+|\count num|code||code|         |      |
+||BBA900  |=|BBAA00   | &ndash; |__1__ | green
+||_BB9A00_|=|BBAA00   | &ndash; | 16   | green
+||BB9900  |=|BBAA00   | &ndash; |__17__| green
+||_ABCEEF_|=|ABCDEF   | +       | 1    | green
+||9BCDEF  |=|ABCDEF   | &ndash; |__16__|__red__
+||ABCDEF  |=|_CBCDEF_ | &ndash; | 32   | red
+||_B39F00_|=|B3A000   | &ndash; | 1    | green
+||_299FFA_|=|299FF9   | +       | 1    | blue
+|/
+</table>
+
+=====
+
+One neat thing about hex is that you can make colors from words.
 
 Fill in the blanks below. Use the word bank for the color descriptions.
 
@@ -109,29 +234,3 @@ Fill in the blanks below. Use the word bank for the color descriptions.
 - Pastel green
 -=/
 </div>
-
-=====
-
-Knowing how hex works makes it easier to find the perfect color for your website or app.
-
-If you want yellow, but `ffff00` is *too* yellow, you can give it 1 level more red with `ffff01`. You can also make it 1 level less green with `fffe00`, or 16 levels less green with `ffef00`.
-
-=====
-
-Complete the equations below:
-
-<table class="inline">
-|\count num|code|code||        |  |code
-||FFFF00   | +       | 1    | blue   |= |FFFF01
-||232323   | +       | 1    | red    |= |242323
-||EE99CC   | +       | 16   | red    |= |FE99CC
-||BBAA00   | &mdash; |__1__ | green  |= |BBA900
-||BBAA00   | &mdash; | 16   | green  |= |_BB9A00_
-||BBAA00   | &mdash; |__17__| green  |= |BB9900
-||ABCDEF   | +       | 1    | green  |= |_ABCEEF_
-||ABCDEF   | &mdash; |__16__|__red__ |= |9BCDEF
-||_CBCDEF_ | &mdash; | 32   | red    |= |ABCDEF
-||B3A000   | &mdash; | 1    | green  |= |_B39F00_
-||299FF9   | +       | 1    | blue   |= |_299FFA_
-|/
-</table>

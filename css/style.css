@@ -24,8 +24,9 @@ html, body {
   position: relative;
   min-height: 100vh;
   font-size: 18px;
-  font-family: "Palatino", serif;
+  font-family: "Gill Sans", serif;
   width: 100%;
+  text-align: center;
 }
 
 a, label, button {
@@ -54,13 +55,20 @@ dfn {
 }
 
 h1 {
-  font-size: 1.5em;
-  font-family: "Impact", sans-serif;
+  font-weight: bold;
   text-transform: uppercase;
 }
 
 h2 {
-  font-weight: bold;
+  font-style: italic;
+}
+h2:before {
+  content: "\25b8";
+  padding-right: 0.5em;
+  font-style: normal;
+}
+
+figure {
   text-align: center;
 }
 
@@ -93,10 +101,10 @@ blockquote:after, q:after {
 [data-code], .code, code {
   white-space: pre-wrap;
   font-family: "Courier New", monospace;
+  font-style: normal;
 }
 .HTMLCodeBlock [data-code], .HTMLCodeBlock .code, .HTMLCodeBlock code {
   font-weight: normal;
-  font-style: normal;
   font-size: 1rem;
   text-transform: none;
 }
@@ -119,8 +127,7 @@ blockquote:after, q:after {
 
 input[type=text] {
   display: inline-block;
-  border: 1px dotted #000;
-  border-radius: 5px;
+  border-bottom: 1px dotted #000;
   white-space: nowrap;
   font-family: "Comic Sans MS", cursive;
   width: 6em;
@@ -133,8 +140,7 @@ input[type=text]:focus {
 }
 input[type=text].checkbox {
   float: left;
-  border-radius: 0;
-  border: 1px solid black !important;
+  border: 1px solid #000;
   width: 1em;
   height: 1em;
   text-align: center;
@@ -144,7 +150,6 @@ input[type=text].checkbox + span {
   padding-left: 2em;
 }
 input[type=text].correct {
-  border: 1px solid transparent;
   animation: flash-correct 0.7s forwards;
 }
 input[type=text].line {
@@ -178,9 +183,9 @@ span.line {
 }
 .wordbank li {
   display: inline-block;
-  margin: 0.2em 2em;
+  margin: 0 0.5em;
   border-bottom: 1px dotted #000;
-  padding-left: 0;
+  padding-right: 0.5em;
 }
 .wordbank ol {
   counter-reset: count-num;
@@ -190,10 +195,6 @@ span.line {
 }
 .wordbank ol li:before {
   content: counter(count-num) ". ";
-}
-
-body {
-  text-align: center;
 }
 
 #score {
@@ -267,6 +268,7 @@ body {
   margin: 2em auto;
   padding: 1em;
   width: 90%;
+  background-color: #fff;
   border: 1px dotted transparent;
   border-right-color: #ddd;
   border-bottom-color: #ddd;
@@ -297,14 +299,10 @@ body {
 .page:nth-child(even) .aside {
   float: right;
 }
-.page .main h1, .page .main p, .page .main table, .page .main ol, .page .main ul, .page .main .aside, .page .main > pre {
+.page .main h1, .page .main h2, .page .main p, .page .main table, .page .main ol, .page .main ul, .page .main .aside, .page .main fieldset, .page .main > pre {
   margin-bottom: 1em;
 }
-.page .main h1 {
-  line-height: 1em;
-  text-align: center;
-}
-.page .main li {
+.page li {
   padding-left: 0.5em;
 }
 .page table, .page tr, .page td {
@@ -317,6 +315,8 @@ body {
 }
 .page table.inline {
   width: auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 .page table .count {
   padding: 0 0.5em;
@@ -337,7 +337,8 @@ body {
 .page table td {
   position: relative;
   vertical-align: top;
-  padding: 0 1em;
+  padding: 0 0.5em;
+  white-space: nowrap;
 }
 @media print {
   .page {
@@ -360,6 +361,18 @@ body {
 @media print {
   html, body {
     font-size: 24px;
+  }
+}
+@media screen {
+  #background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    z-index: -1;
+    background-color: #666;
+    box-shadow: 0 0 100px 0 #555 inset;
   }
 }
 @media screen and (max-aspect-ratio: 55 / 85) {
