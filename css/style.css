@@ -33,6 +33,10 @@ html, body {
   margin: 0 auto;
 }
 
+hr {
+  display: none;
+}
+
 .page {
   display: block;
   margin: 2em auto;
@@ -40,6 +44,7 @@ html, body {
   width: 90%;
   height: 100%;
   border: 1px dotted transparent;
+  border-bottom-color: #ddd;
   box-sizing: border-box;
   font-size: 18px;
   font-size: 1rem;
@@ -65,7 +70,7 @@ html, body {
 .page .footer .aside {
   float: left;
 }
-.page:nth-child(even) .aside {
+.page:nth-of-type(even) .aside {
   float: right;
 }
 
@@ -82,11 +87,14 @@ html, body {
     padding: 0;
     width: 50%;
   }
-  .page:nth-child(odd) {
+  .page:nth-of-type(odd) {
     padding-right: .4in;
   }
-  .page:nth-child(even) {
+  .page:nth-of-type(even) {
     padding-left: .4in;
+  }
+  .page .footer {
+    padding: 0;
   }
 }
 @media screen {
@@ -94,8 +102,10 @@ html, body {
     display: inline-block;
     margin: 0;
     background-color: #fff;
-    border-right-color: #ddd;
-    border-bottom-color: #ddd;
+  }
+
+  hr:nth-of-type(even) {
+    display: block;
   }
 }
 @media screen and (max-aspect-ratio: 55 / 85) {
@@ -118,7 +128,7 @@ html, body {
     width: 64.70588vh;
   }
 }
-@media screen and (min-aspect-ratio: 55 / 85) and (max-height: 619.72727px) {
+@media screen and (min-aspect-ratio: 55 / 85) and (max-height: 496.09091px) {
   html, body {
     font-size: 4vw;
   }
@@ -128,14 +138,14 @@ html, body {
     width: 100vw;
   }
 }
-@media screen and (min-aspect-ratio: 110 / 85) and (max-height: 619.72727px) {
+@media screen and (min-aspect-ratio: 110 / 85) and (max-height: 496.09091px) {
   html, body {
-    font-size: 16.04px;
+    font-size: 12.84px;
   }
 
   .page {
-    height: 619.72727px;
-    width: 401px;
+    height: 496.09091px;
+    width: 321px;
   }
 }
 html, body {

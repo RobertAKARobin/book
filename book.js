@@ -24,6 +24,7 @@ require("./sections/_index").forEach(function(section){
       return viewVars[varName];
     });
     book += page;
+    book += "<hr />";
   });
 });
 
