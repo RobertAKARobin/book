@@ -54,3 +54,29 @@
     background-color:rgba(000,100,000,0.2);
   }
 }
+@media screen{
+  .correct{
+    background-color:#dfd;
+    animation: flash-correct 0.7s forwards;
+  }
+}
+
+@keyframes flash-correct{
+  from{
+    background-color:#fff;
+    color:#fff;
+  }
+  to{
+    background-color:#dfd;
+    color:#000;
+  }
+}
+
+@keyframes flip{
+  from{
+    transform:rotate(0deg);
+  }
+  to{
+    transform:rotate(360deg);
+  }
+}

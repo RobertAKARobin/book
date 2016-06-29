@@ -40,9 +40,6 @@ html, body {
   width: 90%;
   height: 100%;
   border: 1px dotted transparent;
-  background-color: #fff;
-  border-right-color: #ddd;
-  border-bottom-color: #ddd;
   box-sizing: border-box;
   font-size: 18px;
   font-size: 1rem;
@@ -78,19 +75,27 @@ html, body {
   }
 
   .page {
+    display: inline-block;
     page-break-inside: avoid;
-    page-break-before: always;
-    border-width: 0px;
-    padding: 0;
     margin: 0;
-    width: 100%;
-    height: 100vh;
+    border: 0;
+    padding: 0;
+    width: 50%;
+  }
+  .page:nth-child(odd) {
+    padding-right: .4in;
+  }
+  .page:nth-child(even) {
+    padding-left: .4in;
   }
 }
 @media screen {
   .page {
     display: inline-block;
     margin: 0;
+    background-color: #fff;
+    border-right-color: #ddd;
+    border-bottom-color: #ddd;
   }
 }
 @media screen and (max-aspect-ratio: 55 / 85) {
@@ -298,10 +303,6 @@ input[type=text].checkbox + span {
   display: block;
   padding-left: 2em;
 }
-input[type=text].correct {
-  background-color: #dfd;
-  animation: flash-correct 0.7s forwards;
-}
 input[type=text].line {
   display: block;
   width: 100%;
@@ -356,25 +357,7 @@ span.line {
     width: 100%;
     z-index: -1;
     background-color: #666;
-    box-shadow: 0 0 100px 0 #555 inset;
-  }
-}
-@keyframes flash-correct {
-  from {
-    background-color: #fff;
-    color: #fff;
-  }
-  to {
-    background-color: #dfd;
-    color: #000;
-  }
-}
-@keyframes flip {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+    background-image: linear-gradient(#667, #445);
   }
 }
 #score {
@@ -427,4 +410,29 @@ span.line {
 #score button:active,
 #score input:checked + label {
   background-color: rgba(0, 100, 0, 0.2);
+}
+
+@media screen {
+  .correct {
+    background-color: #dfd;
+    animation: flash-correct 0.7s forwards;
+  }
+}
+@keyframes flash-correct {
+  from {
+    background-color: #fff;
+    color: #fff;
+  }
+  to {
+    background-color: #dfd;
+    color: #000;
+  }
+}
+@keyframes flip {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
