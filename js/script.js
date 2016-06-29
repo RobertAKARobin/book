@@ -1,73 +1,70 @@
 "use strict";
 
-window.onload = function(){
-
+$(document).ready(function(){
+  var fak = 0;
   (function addAnswerChecker(){
-    var elScore   = document.getElementById("score");
-    var elCorrect = document.getElementById("correct");
-    var elTotal   = document.getElementById("total");
-    var elClear   = document.getElementById("clear");
-    var inputs    = html_array("input");
-    var guesses   = JSON.parse(localStorage.getItem("guesses") || "{}");
+    var $score   = $("#score");
+    var $correct = $("#correct");
+    var $total   = $("#total");
+    var $clear   = $("#clear");
+    var $inputs  = $("input");
+    var guesses  = JSON.parse(localStorage.getItem("guesses") || "{}");
 
-    inputs.forEach(function(input, i){
-      input.setAttribute("value", guesses[i] || "");
-      input.setAttribute("data-qnum", i);
-      if(input.classList.contains("checkbox")){
-        input.addEventListener("click", toggleCheckbox);
-      }else{
-        input.addEventListener("input", checkAnswer);
-      }
-      checkAnswer.call(input);
-    })
+    $inputs.each(function(index, input){
+      var $input = $(input);
+      var guess  = (guesses[index] || "");
+      $input.val(guess);
+      if($input.hasClass("checkbox")) $input.on("click", toggleCheckbox);
+      else $input.on("keyup", checkAnswer);
+      checkAnswer.call($input);
+    });
     countNumberCorrect();
-    elTotal.innerHTML = html_array("input[data-answer]").length;
-    elClear.addEventListener("click", clearAnswers);
+    $total.html($("input[data-answer]").length);
+    $clear.on("click", clearAnswers);
 
     function toggleCheckbox(event){
-      var input = this;
-      if(input.getAttribute("value") == "x") input.setAttribute("value", "");
-      else input.setAttribute("value", "x");
-      input.blur();
-      checkAnswer.call(input, event);
+      var $input = $(this);
+      $input.val( $input.val() === "x" ? "" : "x");
+      $input.blur();
+      checkAnswer.call($input, event);
     }
 
     function checkAnswer(event){
-      var input   = this;
-      var answer  = input.getAttribute("data-answer");
-      var guess   = input.value;
-      var index   = inputs.indexOf(input);
-      guesses[index] = guess;
+      var $input  = $(this);
+      var answer  = $input.attr("data-answer");
+      var guess   = $input.val();
+      var index   = $inputs.index($input);
+      guesses[index] = (guess || "");
       if(guess && answer && standardize(guess) == standardize(answer)){
-        input.classList.add("correct");
+        $input.addClass("correct");
         countNumberCorrect();
         scoreVisualFeedback();
-      }else if(input.classList.contains("correct")){
-        input.classList.remove("correct");
+      }else if($input.hasClass("correct")){
+        $input.removeClass("correct");
         countNumberCorrect();
       }
       saveProgress();
     }
 
     function scoreVisualFeedback(){
-      elScore.classList.add("active");
+      $score.addClass("active");
       setTimeout(function(){
-        elScore.classList.remove("active");
+        $score.removeClass("active");
       }, 500);
     }
 
     function clearAnswers(){
       guesses = {};
-      inputs.forEach(function(input){
-        input.value = "";
-        input.classList.remove("correct");
+      $inputs.each(function(index, input){
+        var $input = $(input);
+        $input.val("").removeClass("correct");
       });
       countNumberCorrect();
       saveProgress();
     }
 
     function countNumberCorrect(){
-      elCorrect.innerHTML = document.querySelectorAll(".correct").length;
+      $correct.html($(".correct").length);
     }
 
     function saveProgress(){
@@ -76,17 +73,8 @@ window.onload = function(){
 
   })();
 
-  function html_array(selector){
-    var els     = document.querySelectorAll(selector);
-    var output  = [];
-    Object.keys(els).forEach(function(key){
-      output.push(els[key]);
-    });
-    return output;
-  }
-
   function standardize(input){
-    return input.toString().toLowerCase().trim();
+    return $.trim(input.toLowerCase());
   }
 
-}
+});
