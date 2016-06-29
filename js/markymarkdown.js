@@ -86,16 +86,16 @@ module.exports= (function(){
       ["```(#?)",,,   function newCodeBlock(nil, isNumbered){
         flag.insideCodeBlock = true;
         if(isNumbered) flag.lineNumber = 1;
-        return "<pre data-code>";
+        return "<pre><code>";
       }],
       ["``\\/",,,     function endCodeBlock(){
         flag.insideCodeBlock = false;
         flag.lineNumber = 0;
-        return "</pre>";
+        return "</code></pre>";
       }],
       [">><<",,,      function newHTMLCodeBlock(nil, output){
         flag.insideHTMLCodeBlock = true;
-        return "<div class='HTMLCodeBlock'>";
+        return "<div class=\"HTMLCodeBlock\">";
       }],
       [">><\/",,,     function endHTMLCodeBlock(nil, output){
         flag.insideHTMLCodeBlock = false;

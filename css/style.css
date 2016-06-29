@@ -22,10 +22,119 @@ html {
 
 html, body {
   position: relative;
-  min-height: 100vh;
-  font-size: 18px;
-  font-family: "Gill Sans", serif;
+  height: 100%;
   width: 100%;
+  font-size: 18px;
+}
+
+#main {
+  font-size: 0;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.page {
+  display: block;
+  margin: 2em auto;
+  padding: 1em;
+  width: 90%;
+  height: 100%;
+  border: 1px dotted transparent;
+  background-color: #fff;
+  border-right-color: #ddd;
+  border-bottom-color: #ddd;
+  box-sizing: border-box;
+  font-size: 18px;
+  font-size: 1rem;
+  line-height: 1.6em;
+  text-align: left;
+  vertical-align: top;
+  clear: both;
+  overflow: visible;
+  position: relative;
+}
+.page .footer {
+  box-sizing: border-box;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 0 1em;
+}
+.page .footer p {
+  text-align: center;
+  font-style: italic;
+}
+.page .footer .aside {
+  float: left;
+}
+.page:nth-child(even) .aside {
+  float: right;
+}
+
+@media print {
+  html, body {
+    font-size: 24px;
+  }
+
+  .page {
+    page-break-inside: avoid;
+    page-break-before: always;
+    border-width: 0px;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100vh;
+  }
+}
+@media screen {
+  .page {
+    display: inline-block;
+    margin: 0;
+  }
+}
+@media screen and (max-aspect-ratio: 55 / 85) {
+  html, body {
+    font-size: 3.92vw;
+  }
+
+  .page {
+    height: 151.45455vw;
+    width: 98vw;
+  }
+}
+@media screen and (min-aspect-ratio: 55 / 85) {
+  html, body {
+    font-size: 2.58824vh;
+  }
+
+  .page {
+    height: 100vh;
+    width: 64.70588vh;
+  }
+}
+@media screen and (min-aspect-ratio: 55 / 85) and (max-height: 619.72727px) {
+  html, body {
+    font-size: 4vw;
+  }
+
+  .page {
+    height: 154.54545vw;
+    width: 100vw;
+  }
+}
+@media screen and (min-aspect-ratio: 110 / 85) and (max-height: 619.72727px) {
+  html, body {
+    font-size: 16.04px;
+  }
+
+  .page {
+    height: 619.72727px;
+    width: 401px;
+  }
+}
+html, body {
+  font-family: "Gill Sans", serif;
   text-align: center;
 }
 
@@ -52,6 +161,14 @@ mark {
 dfn {
   border-bottom: 1px dotted #000;
   font-weight: bold;
+}
+
+code, .code {
+  word-break: break-all;
+  text-align: left;
+  white-space: pre-wrap;
+  font-family: "Courier New", monospace;
+  font-style: normal;
 }
 
 h1 {
@@ -94,21 +211,11 @@ blockquote:after, q:after {
   content: "\0201d";
 }
 
-[data-code], .code {
-  text-align: left;
-}
-
-[data-code], .code, code {
-  white-space: pre-wrap;
-  font-family: "Courier New", monospace;
-  font-style: normal;
-}
-.HTMLCodeBlock [data-code], .HTMLCodeBlock .code, .HTMLCodeBlock code {
+.HTMLCodeBlock code, .HTMLCodeBlock .code {
   font-weight: normal;
   font-size: 1rem;
   text-transform: none;
 }
-
 .HTMLCodeBlock q:before, .HTMLCodeBlock q:after {
   content: "";
 }
@@ -123,6 +230,48 @@ blockquote:after, q:after {
 }
 .HTMLCodeBlock dfn span {
   border-bottom: 1px dotted #000;
+}
+
+.page .main h1, .page .main h2, .page .main p, .page .main table, .page .main ol, .page .main ul, .page .main .aside, .page .main fieldset, .page .main > pre {
+  margin-bottom: 1em;
+}
+.page li {
+  padding-left: 0.5em;
+}
+.page table, .page tr, .page td {
+  box-sizing: border-box;
+  position: relative;
+}
+.page table {
+  counter-reset: count-num count-alpha;
+  width: 100%;
+}
+.page table.inline {
+  width: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+.page table .count {
+  padding: 0 0.5em;
+  text-align: left;
+}
+.page table .count.num {
+  counter-increment: count-num;
+}
+.page table .count.num:before {
+  content: counter(count-num) ".";
+}
+.page table .count.alpha {
+  counter-increment: count-alpha;
+}
+.page table .count.alpha:before {
+  content: counter(count-alpha,lower-alpha) ".";
+}
+.page table td {
+  position: relative;
+  vertical-align: top;
+  padding: 0 0.5em;
+  white-space: nowrap;
 }
 
 input[type=text] {
@@ -198,6 +347,36 @@ span.line {
   content: counter(count-num) ". ";
 }
 
+@media screen {
+  #background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    z-index: -1;
+    background-color: #666;
+    box-shadow: 0 0 100px 0 #555 inset;
+  }
+}
+@keyframes flash-correct {
+  from {
+    background-color: #fff;
+    color: #fff;
+  }
+  to {
+    background-color: #dfd;
+    color: #000;
+  }
+}
+@keyframes flip {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
 #score {
   position: fixed;
   top: 0;
@@ -248,189 +427,4 @@ span.line {
 #score button:active,
 #score input:checked + label {
   background-color: rgba(0, 100, 0, 0.2);
-}
-#score > input[type="checkbox"] {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  opacity: 0.01;
-}
-
-#main {
-  font-size: 0;
-  margin: 0 auto;
-}
-
-.page {
-  display: block;
-  margin: 2em auto;
-  padding: 1em;
-  width: 90%;
-  background-color: #fff;
-  border: 1px dotted transparent;
-  border-right-color: #ddd;
-  border-bottom-color: #ddd;
-  box-sizing: border-box;
-  font-size: 18px;
-  line-height: 1.6em;
-  text-align: left;
-  vertical-align: top;
-  clear: both;
-  overflow: visible;
-  position: relative;
-}
-.page .footer {
-  box-sizing: border-box;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  padding: 0 1em;
-}
-.page .footer p {
-  text-align: center;
-  font-style: italic;
-}
-.page .footer .aside {
-  float: left;
-}
-.page:nth-child(even) .aside {
-  float: right;
-}
-.page .main h1, .page .main h2, .page .main p, .page .main table, .page .main ol, .page .main ul, .page .main .aside, .page .main fieldset, .page .main > pre {
-  margin-bottom: 1em;
-}
-.page li {
-  padding-left: 0.5em;
-}
-.page table, .page tr, .page td {
-  box-sizing: border-box;
-  position: relative;
-}
-.page table {
-  counter-reset: count-num count-alpha;
-  width: 100%;
-}
-.page table.inline {
-  width: auto;
-  margin-left: auto;
-  margin-right: auto;
-}
-.page table .count {
-  padding: 0 0.5em;
-  text-align: left;
-}
-.page table .count.num {
-  counter-increment: count-num;
-}
-.page table .count.num:before {
-  content: counter(count-num) ".";
-}
-.page table .count.alpha {
-  counter-increment: count-alpha;
-}
-.page table .count.alpha:before {
-  content: counter(count-alpha,lower-alpha) ".";
-}
-.page table td {
-  position: relative;
-  vertical-align: top;
-  padding: 0 0.5em;
-  white-space: nowrap;
-}
-@media print {
-  .page {
-    page-break-inside: avoid;
-    page-break-before: always;
-    border-width: 0px;
-    padding: 0;
-    margin: 0;
-    width: 100%;
-    height: 100vh;
-  }
-}
-@media screen {
-  .page {
-    display: inline-block;
-    margin: 0;
-  }
-}
-
-@media print {
-  html, body {
-    font-size: 24px;
-  }
-}
-@media screen {
-  #background {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: 100%;
-    z-index: -1;
-    background-color: #666;
-    box-shadow: 0 0 100px 0 #555 inset;
-  }
-}
-@media screen and (max-aspect-ratio: 55 / 85) {
-  html, body {
-    font-size: 3.92vw;
-  }
-
-  .page {
-    height: 151.45455vw;
-    width: 98vw;
-  }
-}
-@media screen and (min-aspect-ratio: 55 / 85) {
-  html, body {
-    font-size: 2.58824vh;
-  }
-
-  .page {
-    height: 100vh;
-    width: 64.70588vh;
-  }
-}
-@media screen and (min-aspect-ratio: 55 / 85) and (max-height: 619.72727px) {
-  html, body {
-    font-size: 4vw;
-  }
-
-  .page {
-    height: 154.54545vw;
-    width: 100vw;
-  }
-}
-@media screen and (min-aspect-ratio: 110 / 85) and (max-height: 619.72727px) {
-  html, body {
-    font-size: 16.04px;
-  }
-
-  .page {
-    height: 619.72727px;
-    width: 401px;
-  }
-}
-@keyframes flash-correct {
-  from {
-    background-color: #fff;
-    color: #fff;
-  }
-  to {
-    background-color: #dfd;
-    color: #000;
-  }
-}
-@keyframes flip {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }

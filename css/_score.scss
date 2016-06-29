@@ -1,0 +1,56 @@
+#score{
+  position:fixed;
+  top:0;
+  right:0;
+  background-color:#dfd;
+  border-bottom-left-radius:10px;
+  overflow:hidden;
+  box-shadow: 5px -5px 10px 0px #cec inset,
+              0px 0px 10px 0px #000;
+  transition:opacity 0.3s;
+  z-index:9999;
+  opacity:0.95;
+
+  @media print{
+    display:none;
+  }
+
+  &:hover,
+  &:active,
+  &:focus{
+    opacity:1;
+  }
+
+  #correct{
+    position:relative;
+    display:inline-block;
+    transition:color 0.3s;
+  }
+  &.active #correct{
+    color:#000;
+    animation: flip 0.5s forwards;
+  }
+  & > *{
+    display:block;
+    width:100%;
+    background-color:transparent;
+    font-size:18px;
+    line-height:18px;
+    padding:5px 10px;
+    border-bottom:1px solid rgba(100, 155, 100, 0.3);
+    box-sizing:border-box;
+    color:#8a8;
+  }
+  label, button{
+    transition: background-color 0.2s;
+
+    &:hover{
+      background-color:rgba(255,255,255,0.4);
+    }
+  }
+  label:active,
+  button:active,
+  input:checked + label{
+    background-color:rgba(000,100,000,0.2);
+  }
+}

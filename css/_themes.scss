@@ -1,0 +1,262 @@
+$fontText: "Gill Sans", serif;
+$fontCode: "Courier New", monospace;
+$fontHand: "Comic Sans MS", cursive;
+$fontHeader: "Impact", sans-serif;
+
+html, body{
+  font-family:$fontText;
+  text-align:center;
+}
+
+a, label, button{
+  cursor:pointer;
+}
+
+
+strong{
+  font-weight:bold;
+}
+em{
+  font-style:italic;
+}
+mark{
+  border:1px solid #000;
+  border-radius:0.5em;
+  background-color:inherit;
+  padding:0 0.5em;
+  margin:0 2px;
+}
+dfn{
+  border-bottom:1px dotted #000;
+  font-weight:bold;
+}
+code, .code{
+  word-break:break-all;
+  text-align:left;
+  white-space:pre-wrap;
+  font-family: $fontCode;
+  font-style:normal;
+}
+
+
+h1{
+  font-weight:bold;
+  text-transform:uppercase;
+}
+h2{
+  font-style:italic;
+  &:before{
+    content: "\25b8";
+    padding-right:0.5em;
+    font-style:normal;
+  }
+}
+
+
+figure{
+  text-align:center;
+}
+label{
+  display:block;
+}
+ul, ol{
+  padding-left:20px;
+}
+li{
+  ul > &{
+    list-style-type:disc;
+  }
+  ol > &{
+    list-style-type:decimal;
+  }
+}
+blockquote, q{
+  &:before{
+    content:"\0201c";
+  }
+  &:after{
+    content:"\0201d";
+  }
+}
+
+
+.HTMLCodeBlock{
+  code, .code{
+    font-weight:normal;
+    font-size:1rem;
+    text-transform:none;
+  }
+  q{
+    &:before,
+    &:after{
+      content:"";
+    }
+    span:before{
+      content:"\0201c";
+    }
+    span:after{
+      content:"\0201d";
+    }
+  }
+  dfn{
+    border-bottom:0;
+    span{
+      border-bottom:1px dotted #000;
+    }
+  }
+}
+
+.page{
+  .main{
+    h1, h2, p, table, ol, ul, .aside, fieldset,
+    & > pre{
+      margin-bottom:1em;
+    }
+  }
+  li{
+    padding-left:0.5em;
+  }
+  table, tr, td{
+    box-sizing:border-box;
+    position:relative;
+  }
+  table{
+    counter-reset: count-num count-alpha;
+    width:100%;
+
+    &.inline{
+      width:auto;
+      margin-left:auto;
+      margin-right:auto;
+    }
+
+    .count{
+      padding:0 0.5em;
+      text-align:left;
+      &.num{
+        counter-increment: count-num;
+        &:before{
+          content: counter(count-num) ".";
+        }
+      }
+      &.alpha{
+        counter-increment: count-alpha;
+        &:before{
+          content: counter(count-alpha, lower-alpha) ".";
+        }
+      }
+    }
+    td{
+      position:relative;
+      vertical-align:top;
+      padding:0 0.5em;
+      white-space:nowrap;
+    }
+  }
+}
+
+input[type=text]{
+  display:inline-block;
+  border-bottom:1px dotted #000;
+  white-space:nowrap;
+  font-family: $fontHand;
+  width:6em;
+
+  td &:only-child{
+    width:100%;
+  }
+  &:focus{
+    background-color:#ffb;
+  }
+  &.checkbox{
+    float:left;
+    border:1px solid #000;
+    width:1em;
+    height:1em;
+    text-align:center;
+    & + span{
+      display:block;
+      padding-left:2em;
+    }
+  }
+  &.correct{
+    background-color:#dfd;
+    animation: flash-correct 0.7s forwards;
+  }
+  &.line{
+    display:block;
+    width:100%;
+  }
+  &.inline{
+    text-align:center;
+    width:3em;
+  }
+  &.flex{
+    flex-grow:1;
+    margin-left:0.5em;
+    border-width:0 0 1px 0;
+    border-radius:0;
+
+    &:only-child{
+      margin-left:0;
+    }
+  }
+}
+span.line{
+  display:inline-flex;
+  width:100%;
+}
+.wordbank{
+  text-align:center;
+  ul, ol{
+    padding-left:0;
+  }
+  li{
+    display:inline-block;
+    margin:0 0.5em;
+    border-bottom:1px dotted #000;
+    padding-right:0.5em;
+  }
+  ol{
+    counter-reset: count-num;
+    li{
+      counter-increment: count-num;
+      &:before{
+        content: counter(count-num) ". ";
+      }
+    }
+  }
+}
+
+@media screen{
+  #background{
+    position:fixed;
+    top:0;
+    left:0;
+    height:100vh;
+    width:100%;
+    z-index:-1;
+    background-color:#666;
+    box-shadow:0 0 100px 0 #555 inset;
+  }
+}
+
+@keyframes flash-correct{
+  from{
+    background-color:#fff;
+    color:#fff;
+  }
+  to{
+    background-color:#dfd;
+    color:#000;
+  }
+}
+
+@keyframes flip{
+  from{
+    transform:rotate(0deg);
+  }
+  to{
+    transform:rotate(360deg);
+  }
+}

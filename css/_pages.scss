@@ -1,0 +1,106 @@
+html{
+  overflow-y:scroll;
+  overflow-x:hidden;
+}
+html, body{
+  position:relative;
+  height:100%;
+  width:100%;
+  font-size:18px;
+}
+
+$page-x: 55;
+$page-y: 85;
+$aspect: ($page-x / $page-y);
+$min-width: 401px;
+$min-height: ($min-width / $aspect);
+@mixin size-from-width($width){
+  html, body{
+    font-size: (4/100) * $width;
+  }
+  .page{
+    height: ($width / $aspect);
+    width: $width;
+  }
+}
+
+
+#main{
+  font-size:0;
+  height:100%;
+  margin:0 auto;
+}
+.page{
+  display:block;
+  margin: 2em auto;
+  padding:1em;
+  width:90%;
+  height:100%;
+  border:1px dotted transparent;
+  background-color:#fff;
+  border-right-color:#ddd;
+  border-bottom-color:#ddd;
+  box-sizing:border-box;
+  font-size:18px;
+  font-size:1rem;
+  line-height:1.6em;
+  text-align:left;
+  vertical-align:top;
+  clear:both;
+  overflow:visible;
+  position:relative;
+
+  .footer{
+    box-sizing:border-box;
+    position:absolute;
+    bottom:0;
+    left:0;
+    width:100%;
+    padding:0 1em;
+    p{
+      text-align:center;
+      font-style:italic;
+    }
+    .aside{
+      float:left;
+    }
+  }
+  &:nth-child(even){
+    .aside{
+      float:right;
+    }
+  }
+}
+@media print{
+  html, body{
+    font-size:24px;
+  }
+  .page{
+    page-break-inside:avoid;
+    page-break-before:always;
+    border-width:0px;
+    padding:0;
+    margin:0;
+    width:100%;
+    height:100vh;
+  }
+}
+@media screen{
+  .page{
+    display:inline-block;
+    margin:0;
+  }
+
+  @media (max-aspect-ratio: $page-x "/" $page-y){
+    @include size-from-width(98vw);
+  }
+  @media (min-aspect-ratio: $page-x "/" $page-y){
+    @include size-from-width(100vh * $aspect);
+  }
+  @media (min-aspect-ratio: $page-x "/" $page-y) and (max-height: $min-height){
+    @include size-from-width(100vw);
+  }
+  @media (min-aspect-ratio: ($page-x * 2) "/" $page-y) and (max-height: $min-height){
+    @include size-from-width($min-height * $aspect);
+  }
+}
