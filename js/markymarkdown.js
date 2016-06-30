@@ -44,7 +44,6 @@ module.exports= (function(){
       ["#{3}",  "h3"],
       ["#{2}",  "h2"],
       ["#{1}",  "h1"],
-      ["''''",  "blockquote"],
       [,,/\[(.)\](.*)/,function checkbox(nil, isAnswer, label){
         var out = "";
         var inputAttr = {class: "checkbox"};
@@ -101,7 +100,7 @@ module.exports= (function(){
         flag.insideHTMLCodeBlock = false;
         return "</div>";
       }],
-      [">>",,,        function noFormatting(nil, output){
+      [">",,,         function noFormatting(nil, output){
         return output;
       }],
       [,, /^(.*?)$/,  function fallback(nil, output){

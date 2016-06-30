@@ -8,10 +8,6 @@
 </head>
 
 <body>
-  <div id="score">
-    <div>Score: <span id="correct">0</span> / <span id="total">0</span></div>
-    <button id="clear">Clear answers</button>
-  </div>
   <div id="main">
     <div class="page" id="1">
       <div class="main">
@@ -64,9 +60,9 @@
 
         <p>The RGB code for <em>purple</em> is:</p>
 
-        <figure>
+        <div class="fig">
           <p><code>255 000 255</code></p>
-        </figure>
+        </div>
 
         <h2>What do you think <q>RGB</q> stands for?</h2>
 
@@ -1111,6 +1107,10 @@ p code img{
     <hr />
   </div>
   <div id="background"></div>
+  <div id="score">
+    <div>Score: <span id="correct">0</span> / <span id="total">0</span></div>
+    <button id="clear">Clear answers</button>
+  </div>
   <script src="js/jquery.min.js"></script>
   <script src="js/script.js"></script>
 </body>
