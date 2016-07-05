@@ -58,11 +58,36 @@
       <div class="main">
         <p>Each pixel has an <dfn>RGB</dfn> code that says what color it should make. RGB codes are made of 3 numbers.</p>
 
-        <p>The RGB code for <em>purple</em> is:</p>
+        <p>Here are some RGB codes:</p>
 
-        <div class="fig">
-          <p><code>255 000 255</code></p>
-        </div>
+        <table class="inline">
+
+          <tr>
+            <td>red</td>
+            <td class="code">255</td>
+            <td class="code">000</td>
+            <td class="code">000</td>
+          </tr>
+          <tr>
+            <td>purple</td>
+            <td class="code">255</td>
+            <td class="code">000</td>
+            <td class="code">255</td>
+          </tr>
+          <tr>
+            <td>white</td>
+            <td class="code">255</td>
+            <td class="code">255</td>
+            <td class="code">255</td>
+          </tr>
+          <tr>
+            <td>dark green</td>
+            <td class="code">000</td>
+            <td class="code">170</td>
+            <td class="code">000</td>
+          </tr>
+
+        </table>
 
         <h2>What do you think <q>RGB</q> stands for?</h2>
 
@@ -88,31 +113,6 @@
     <hr />
     <div class="page" id="3">
       <div class="main">
-        <p>Here are some more RGB codes:</p>
-
-        <table class="inline">
-
-          <tr>
-            <td>red</td>
-            <td class="code">255</td>
-            <td class="code">000</td>
-            <td class="code">000</td>
-          </tr>
-          <tr>
-            <td>white</td>
-            <td class="code">255</td>
-            <td class="code">255</td>
-            <td class="code">255</td>
-          </tr>
-          <tr>
-            <td>dark green</td>
-            <td class="code">000</td>
-            <td class="code">170</td>
-            <td class="code">000</td>
-          </tr>
-
-        </table>
-
         <h2>If the first number in a pixel's RGB code is <code>255</code>, it means the pixel's red light is...</h2>
 
         <fieldset>
@@ -121,12 +121,20 @@
           <label><input class="checkbox" type="text" value="" /><span>All the way off</span></label>
         </fieldset>
 
-        <h2>If the last number in a pixel's RGB code is <code>000</code>, it means the pixel's blue light is...</h2>
+        <h2>If the second number in a pixel's RGB code is <code>000</code>, it means the pixel's green light is...</h2>
 
         <fieldset>
           <label><input class="checkbox" type="text" value="" /><span>All the way on</span></label>
           <label><input class="checkbox" type="text" value="" /><span>A little dim</span></label>
           <label><input class="checkbox" data-answer="x" type="text" value="" /><span>All the way off</span></label>
+        </fieldset>
+
+        <h2>If the last number in a pixel's RGB code is <code>170</code>, it means the pixel's blue light is...</h2>
+
+        <fieldset>
+          <label><input class="checkbox" type="text" value="" /><span>All the way on</span></label>
+          <label><input class="checkbox" data-answer="x" type="text" value="" /><span>A little dim</span></label>
+          <label><input class="checkbox" type="text" value="" /><span>All the way off</span></label>
         </fieldset>
 
       </div>
@@ -210,7 +218,7 @@
       <div class="main">
         <h1>Hex</h1>
 
-        <p>RGB codes are made of <dfn>decimal</dfn> numbers. Computers often use <dfn>hexadecimal</dfn> numbers to write color codes instead.</p>
+        <p>RGB codes are made of <dfn>decimal</dfn> numbers. To make colors, programmers often use <dfn>hexadecimal</dfn> numbers instead.</p>
 
         <h2>The <q>dec</q> in <q>decimal</q> means <q>ten</q>. The <q>hex</q> in <q>hexadecimal</q> and the <q>hex</q> in <q>hexagon</q> both mean:</h2>
 
@@ -265,7 +273,7 @@
 
         </table>
 
-        <h2>Computer programmers usually like to use hex codes instead of RGB codes. This is because...</h2>
+        <h2>Computer programmers often like to use hex codes instead of RGB codes because...</h2>
 
         <fieldset>
           <label><input class="checkbox" type="text" value="" /><span>Programmers are weird</span></label>

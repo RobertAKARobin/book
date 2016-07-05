@@ -1,7 +1,7 @@
 "use strict";
 
 $(document).ready(function(){
-  var fak = 0;
+
   (function addAnswerChecker(){
     var $score   = $("#score");
     var $correct = $("#correct");
