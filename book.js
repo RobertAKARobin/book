@@ -18,13 +18,14 @@ require("./sections/_index").forEach(function(section){
   viewVars.sectionName = section;
   read("./sections/" + section + ".html").split(/\s*={5}\s*/).forEach(function(page){
     viewVars.pageNum += 1;
+    if(viewVars.pageNum % 2 !== 0) book += "<div class=\"sheet\">";
     page = markyMark(page);
     page = layout.page.replace("{{body}}", page);
     page = page.replace(/\{\{(.*?)}}/g, function(nil, varName){
       return viewVars[varName];
     });
     book += page;
-    book += "<hr />";
+    if(viewVars.pageNum %2 === 0) book += "</div>";
   });
 });
 
