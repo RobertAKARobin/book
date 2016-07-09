@@ -71,10 +71,10 @@ $(document).ready(function(){
       localStorage.setItem("guesses", JSON.stringify(guesses || {}));
     }
 
-  })();
+    function standardize(input){
+      return $.trim(input.toLowerCase());
+    }
 
-  function standardize(input){
-    return $.trim(input.toLowerCase());
-  }
+  })();
 
 });

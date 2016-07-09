@@ -234,6 +234,19 @@ span.line{
     width:100%;
     z-index:-1;
     background-color:#666;
-    background-image:linear-gradient(#667, #445);
+    background-image:linear-gradient(#598, #265);
+
+    &:after{
+      content:" ";
+      display:block;
+      position:absolute;
+      top:calc(50vh - 50px);
+      right:20px;
+      height:1px;
+      width:1px;
+      border-top:50px solid transparent;
+      border-bottom:50px solid transparent;
+      border-left:50px solid rgba(255, 255, 255, 0.2);
+    }
   }
 }
