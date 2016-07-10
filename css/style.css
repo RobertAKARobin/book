@@ -171,7 +171,6 @@ dfn {
 }
 
 code, .code {
-  word-break: break-all;
   text-align: left;
   white-space: pre-wrap;
   font-family: "Courier New", monospace;
@@ -185,11 +184,15 @@ h1 {
 
 h2 {
   font-style: italic;
+  margin-bottom: 0.5em;
 }
 h2:before {
   content: "\25b8";
   padding-right: 0.5em;
   font-style: normal;
+}
+h2:not(:first-child) {
+  margin-top: 1em;
 }
 
 .fig {
@@ -239,7 +242,7 @@ blockquote:after, q:after {
   border-bottom: 1px dotted #000;
 }
 
-.page .main h1, .page .main h2, .page .main p, .page .main table, .page .main ol, .page .main ul, .page .main .aside, .page .main fieldset, .page .main > pre {
+.page .main h1, .page .main p, .page .main table, .page .main ol, .page .main ul, .page .main .aside, .page .main fieldset, .page .main > pre {
   margin-bottom: 1em;
 }
 .page li {
@@ -281,13 +284,16 @@ blockquote:after, q:after {
   white-space: nowrap;
 }
 
-input[type=text] {
+input[type=text],
+b {
   display: inline-block;
   border-bottom: 1px dotted #000;
   white-space: nowrap;
-  font-family: "Comic Sans MS", cursive;
   width: 6em;
+  vertical-align: bottom;
+  font-family: "Comic Sans MS", cursive;
 }
+
 td input[type=text]:only-child {
   width: 100%;
 }

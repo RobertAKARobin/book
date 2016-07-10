@@ -273,12 +273,12 @@
 
           </table>
 
-          <h2>Computer programmers often like to use hex codes instead of RGB codes because...</h2>
+          <h2>Computer programmers may like to use hex codes instead of RGB codes because...</h2>
 
           <fieldset>
             <label><input class="checkbox" type="text" value="" /><span>Programmers are weird</span></label>
             <label><input class="checkbox" type="text" value="" /><span>Old keyboards didn't have number keys</span></label>
-            <label><input class="checkbox" data-answer="x" type="text" value="" /><span>Hex codes are shorter, and so use less memory</span></label>
+            <label><input class="checkbox" data-answer="x" type="text" value="" /><span>Hex codes are always 6 letters long</span></label>
             <label><input class="checkbox" type="text" value="" /><span>Some languages don't have numbers</span></label>
           </fieldset>
 
@@ -1032,8 +1032,9 @@ p code img{
 11.  }
 </code></pre>
 
+          <p>This code means paragraphs will have <input data-answer="green" type="text" value="" /> backgrounds, and code snippets will have <input data-answer="blue" type="text" value="" /> backgrounds.</p>
+
           <div class="wordbank">
-            <p>This code means paragraphs will have <input data-answer="green" type="text" value="" /> backgrounds,<br> and code snippets will have <input data-answer="blue" type="text" value="" /> backgrounds.</p>
 
             <ul>
               <li>red
@@ -1055,15 +1056,7 @@ p code img{
       </div>
       <div class="page" id="22">
         <div class="main">
-          <div class="HTMLCodeBlock">
-            <h1><code>&lt;h1&gt;</code><span>HTML</span><code>&lt;/h1&gt;</code></h1>
 
-            <p><code>&lt;p&gt;</code><span>Every webpage is written in HTML. The <em><code>&lt;em&gt;</code><span>M</span><code>&lt;/em&gt;</code></em> stands for <dfn><code>&lt;dfn&gt;</code><span>markup</span><code>&lt;/dfn&gt;</code></dfn>.</span><code>&lt;/p&gt;</code></p>
-
-            <p><code>&lt;p&gt;</code><span>A school teacher <em><code>&lt;em&gt;</code><span>marks up</span><code>&lt;/em&gt;</code></em> your homework. They use a red pen to mark notes on what you wrote, like <q><code>&lt;q&gt;</code><span>This part is really good,</span><code>&lt;/q&gt;</code></q>              or <q><code>&lt;q&gt;</code><span>This part should be longer</span><code>&lt;/q&gt;</code></q>.</span><code>&lt;/p&gt;</code></p>
-
-            <p><code>&lt;p&gt;</code><span>Writing HTML is also marking notes on something you write. The notes tell computers the purpose of each piece of text.</span><code>&lt;/p&gt;</code></p>
-          </div>
 
         </div>
         <div class="footer">
@@ -1073,6 +1066,30 @@ p code img{
     </div>
     <div class="sheet">
       <div class="page" id="23">
+        <div class="main">
+          <div class="HTMLCodeBlock">
+            <h1><code>&lt;h1&gt;</code><span>HTML</span><code>&lt;/h1&gt;</code></h1>
+
+            <p><code>&lt;p&gt;</code><span>Every webpage is written in HTML. The <em><code>&lt;em&gt;</code><span>M</span><code>&lt;/em&gt;</code></em> stands for <dfn><code>&lt;dfn&gt;</code><span>markup</span><code>&lt;/dfn&gt;</code></dfn>.</span><code>&lt;/p&gt;</code></p>
+
+            <p><code>&lt;p&gt;</code><span>A school teacher will <em><code>&lt;em&gt;</code><span>mark up</span><code>&lt;/em&gt;</code></em> your homework. They use a red pen to mark notes on what you wrote, like <q><code>&lt;q&gt;</code><span>This part is really good,</span><code>&lt;/q&gt;</code></q>              or <q><code>&lt;q&gt;</code><span>This part should be longer</span><code>&lt;/q&gt;</code></q>.</span><code>&lt;/p&gt;</code></p>
+
+            <p><code>&lt;p&gt;</code><span>Writing HTML is also marking notes on something you write. The notes tell computers the purpose of each piece of text.</span><code>&lt;/p&gt;</code></p>
+          </div>
+
+          <h2>What seems to be true about <code>&lt; &gt;</code> and <code>&lt;/ &gt;</code>?</h2>
+
+          <label><input class="checkbox" type="text" value="" /><span>They group words together</span></label>
+          <label><input class="checkbox" type="text" value="" /><span>They contain an abbreviation</span></label>
+          <label><input class="checkbox" type="text" value="" /><span>Every <code>&lt; &gt;</code> has a matching <code>&lt;/ &gt;</code></span></label>
+          <label><input class="checkbox" data-answer="x" type="text" value="" /><span>All of the above</span></label>
+
+        </div>
+        <div class="footer">
+          <a class="aside" href="#23">23</a>
+        </div>
+      </div>
+      <div class="page" id="24">
         <div class="main">
           <ol>
             <li>
@@ -1107,14 +1124,15 @@ p code img{
             </ul>
           </div>
 
-        </div>
-        <div class="footer">
-          <a class="aside" href="#23">23</a>
-        </div>
-      </div>
-      <div class="page" id="24">
-        <div class="main">
+          <pre><code>
+&lt;em&gt;&lt;p&gt;Two&lt;/em&gt; things are wrong with this piece of code.&lt;/p&gt;
+&lt;p&gt;What are they?
+</code></pre>
 
+          <label><input class="checkbox" data-answer="x" type="text" value="" /><span>The <code>&lt;em&gt;</code> starts outside the <code>&lt;p&gt;</code> and ends inside it</span></label>
+          <label><input class="checkbox" type="text" value="" /><span>You can only have one <code>&lt;p&gt;</code> on a webpage</span></label>
+          <label><input class="checkbox" type="text" value="" /><span>Every webpage must have a <code>&lt;h1&gt;&lt;/h1&gt;</code></span></label>
+          <label><input class="checkbox" data-answer="x" type="text" value="" /><span>The second <code>&lt;p&gt;</code> is missing a <code>&lt;/p&gt;</code></span></label>
 
         </div>
         <div class="footer">
@@ -1122,14 +1140,81 @@ p code img{
         </div>
       </div>
     </div>
-  </div>
-  <div id="background"></div>
-  <div id="score">
-    <div>Score: <span id="correct">0</span> / <span id="total">0</span></div>
-    <button id="clear">Clear answers</button>
-  </div>
-  <script src="js/jquery.min.js"></script>
-  <script src="js/script.js"></script>
+    <div class="sheet">
+      <div class="page" id="25">
+        <div class="main">
+          <h2><code>&lt;p&gt;&lt;/p&gt;</code> and <code>&lt;em&gt;&lt;/em&gt;</code> are called...</h2>
+
+          <label><input class="checkbox" data-answer="x" type="text" value="" /><span>Elements: they make up every webpage on the Internet, just as elements like hydrogen and carbon make up everything in the real world.</span></label>
+          <label><input class="checkbox" type="text" value="" /><span>Cookies: there are two pieces with something in the middle, and the inventors of the Internet really liked Oreos.</span></label>
+          <label><input class="checkbox" type="text" value="" /><span>Bytes: <code>&lt; &gt;</code> looks like two mouths that are about to take a <strong>bite</strong> out of something.</span></label>
+
+          <h2><code>&lt;p&gt;</code> and <code>&lt;/p&gt;</code> are called <dfn>tags</dfn> because...</h2>
+
+          <label><input class="checkbox" data-answer="x" type="text" value="" /><span>They're little labels</span></label>
+          <label><input class="checkbox" type="text" value="" /><span>They chase each other around, like in a game of Tag</span></label>
+          <label><input class="checkbox" type="text" value="" /><span><q>TAG</q> stands for <q>Textually-Appropriate Glyph</q></span></label>
+
+        </div>
+        <div class="footer">
+          <a class="aside" href="#25">25</a>
+        </div>
+      </div>
+      <div class="page" id="26">
+        <div class="main">
+          <p>A rule of HTML is that elements have to <q>nest</q>. What does this mean?</p>
+
+          <label><input class="checkbox" type="text" value="" /><span>Like bird nests, elements have to be woven together very carefully.</span></label>
+          <label><input class="checkbox" type="text" value="" /><span><q>Nest</q> is actually just a misspelling of <q>west</q>, which is where Silicon Valley is located in the US.</span></label>
+          <label><input class="checkbox" data-answer="x" type="text" value="" /><span>Each element has to be inside another element.<br/><code>&lt;A&gt;&lt;B&gt;&lt;/A&gt;&lt;/B&gt;</code> is wrong.<br/> <code>&lt;A&gt;&lt;B&gt;&lt;/B&gt;&lt;/A&gt;</code> is right.</span></label>
+
+
+        </div>
+        <div class="footer">
+          <a class="aside" href="#26">26</a>
+        </div>
+      </div>
+    </div>
+    <div class="sheet">
+      <div class="page" id="27">
+        <div class="main">
+          <h2>Servers and clients in <strong>restaurants</strong> are like servers and clients in computing because... (pick one)</h2>
+
+          <label><input class="checkbox" type="text" value="" /><span>...servers work from 9 to 5 and clients tip them.</span></label>
+          <label><input class="checkbox" type="text" value="" /><span>...servers make things out of the ingredients that clients bring them.</span></label>
+          <label><input class="checkbox" data-answer="x" type="text" value="" /><span>...servers take requests from clients and respond to them.</span></label>
+          <label><input class="checkbox" type="text" value="" /><span>...servers tell clients what to do.</span></label>
+
+          <h2>Which <strong>four</strong> of the following are web browsers?</h2>
+          <label><input class="checkbox" data-answer="x" type="text" value="" /><span>Google Chrome</span></label>
+          <label><input class="checkbox" data-answer="x" type="text" value="" /><span>Internet Explorer</span></label>
+          <label><input class="checkbox" type="text" value="" /><span>Microsoft Word</span></label>
+          <label><input class="checkbox" data-answer="x" type="text" value="" /><span>Firefox</span></label>
+          <label><input class="checkbox" type="text" value="" /><span>Adobe DreamWeaver</span></label>
+          <label><input class="checkbox" data-answer="x" type="text" value="" /><span>Safari</span></label>
+          <label><input class="checkbox" type="text" value="" /><span>AOL Instant Messenger</span></label>
+
+          <h2>Foo</h2>
+
+          <label><input class="checkbox" type="text" value="" /><span>Shakespeare writes a script</span></label>
+          <label><input class="checkbox" type="text" value="" /><span>Shakespeare puts the script in a filing cabinet</span></label>
+          <label><input class="checkbox" type="text" value="" /><span>A secretary retrieves the script from the filing cabinet, runs a copy in a photocopier, and puts it back</span></label>
+
+
+        </div>
+        <div class="footer">
+          <a class="aside" href="#27">27</a>
+        </div>
+      </div>
+
+    </div>
+    <div id="background"></div>
+    <div id="score">
+      <div>Score: <span id="correct">0</span> / <span id="total">0</span></div>
+      <button id="clear">Clear answers</button>
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/script.js"></script>
 </body>
 
 </html>

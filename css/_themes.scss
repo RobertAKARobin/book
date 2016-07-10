@@ -31,7 +31,6 @@ dfn{
   font-weight:bold;
 }
 code, .code{
-  word-break:break-all;
   text-align:left;
   white-space:pre-wrap;
   font-family: $fontCode;
@@ -45,10 +44,14 @@ h1{
 }
 h2{
   font-style:italic;
+  margin-bottom:0.5em;
   &:before{
     content: "\25b8";
     padding-right:0.5em;
     font-style:normal;
+  }
+  &:not(:first-child){
+    margin-top:1em;
   }
 }
 
@@ -108,7 +111,7 @@ blockquote, q{
 
 .page{
   .main{
-    h1, h2, p, table, ol, ul, .aside, fieldset,
+    h1, p, table, ol, ul, .aside, fieldset,
     & > pre{
       margin-bottom:1em;
     }
@@ -155,13 +158,16 @@ blockquote, q{
   }
 }
 
-input[type=text]{
+input[type=text],
+b{
   display:inline-block;
   border-bottom:1px dotted #000;
   white-space:nowrap;
-  font-family: $fontHand;
   width:6em;
-
+  vertical-align:bottom;
+  font-family: $fontHand;
+}
+input[type=text]{
   td &:only-child{
     width:100%;
   }
