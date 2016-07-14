@@ -2,34 +2,45 @@
 
 var fs        = require("fs");
 var beaut     = require("js-beautify");
+var sass      = require("node-sass");
 var matchers  = require("./js/markymarkdown.js");
 
-var book      = "";
-var layout    = {
-  main: read("./layouts/main.html"),
-  page: read("./layouts/page.html")
-}
-var viewVars  = {
-  pageNum:      0,
-  sectionName:  null
-}
+(function compileSASS(){
+  write("css/style.css", sass.renderSync({
+    file:         "css/style.scss",
+    outputStyle:  "expanded",
+    sourceMap:    false
+  }).css.toString());
+})();
 
-require("./sections/_index").forEach(function(section){
-  viewVars.sectionName = section;
-  read("./sections/" + section + ".html").split(/\s*={5}\s*/).forEach(function(page){
-    viewVars.pageNum += 1;
-    if(viewVars.pageNum % 2 !== 0) book += "<div class=\"sheet\">";
-    page = markyMark(page);
-    page = layout.page.replace("{{body}}", page);
-    page = page.replace(/\{\{(.*?)}}/g, function(nil, varName){
-      return viewVars[varName];
+(function compileHTML(){
+  var book      = "";
+  var layout    = {
+    main: read("./layouts/main.html"),
+    page: read("./layouts/page.html")
+  }
+  var viewVars  = {
+    pageNum:      0,
+    sectionName:  null
+  }
+
+  require("./sections/_index").forEach(function(section){
+    viewVars.sectionName = section;
+    read("./sections/" + section + ".html").split(/\s*={5}\s*/).forEach(function(page){
+      viewVars.pageNum += 1;
+      if(viewVars.pageNum % 2 !== 0) book += "<div class=\"sheet\">";
+      page = markyMark(page);
+      page = layout.page.replace("{{body}}", page);
+      page = page.replace(/\{\{(.*?)}}/g, function(nil, varName){
+        return viewVars[varName];
+      });
+      book += page;
+      if(viewVars.pageNum %2 === 0) book += "</div>";
     });
-    book += page;
-    if(viewVars.pageNum %2 === 0) book += "</div>";
   });
-});
 
-writePage("index.html", layout.main.replace("{{body}}", book));
+  writePage("index.html", layout.main.replace("{{body}}", book));
+})();
 
 function read(filename){
   return fs.readFileSync(filename, "utf8");
