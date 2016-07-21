@@ -2,7 +2,8 @@ html, body{
   position:relative;
   height:100%;
   width:100%;
-  font-size:18px;
+  font-size:15px;
+  font-weight:lighter;
 }
 
 $page-x: 55;
@@ -10,6 +11,7 @@ $page-y: 85;
 $aspect: ($page-x / $page-y);
 $min-width: 321px;
 $min-height: ($min-width / $aspect);
+$font-ratio: 0.023;
 
 #main{
   font-size:0;
@@ -30,7 +32,6 @@ $min-height: ($min-width / $aspect);
   min-height:$min-height;
   box-sizing:border-box;
   padding:1em;
-  font-size:16px;
   font-size:1rem;
   line-height:1.6em;
   background-color:#fff;
@@ -82,12 +83,6 @@ $min-height: ($min-width / $aspect);
     .footer{
       padding:0;
     }
-    // &:nth-child(odd){
-    //   padding-right:0.4in;
-    // }
-    // &:nth-child(even){
-    //   padding-left:0.4in;
-    // }
   }
 }
 @media screen{
@@ -107,7 +102,7 @@ $min-height: ($min-width / $aspect);
       width:100vh * $aspect;
     }
     html, body{
-      font-size: 0.025 * (100vh);
+      // font-size: $font-ratio * (100vh);
     }
   }
   // Fits less than 2 pages across
@@ -120,7 +115,7 @@ $min-height: ($min-width / $aspect);
       width:50vw;
     }
     html, body{
-      font-size: 0.025 * (50vw / $aspect);
+      // font-size: $font-ratio * (50vw / $aspect);
     }
   }
   // Less than the minimum width of 2 pages, or
@@ -131,7 +126,7 @@ $min-height: ($min-width / $aspect);
       height: $min-height;
     }
     html, body{
-      font-size: 0.025 * ($min-height);
+      // font-size: $font-ratio * ($min-height);
     }
   }
 }

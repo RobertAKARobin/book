@@ -19,7 +19,8 @@ html, body {
   position: relative;
   height: 100%;
   width: 100%;
-  font-size: 18px;
+  font-size: 15px;
+  font-weight: lighter;
 }
 
 #main {
@@ -43,7 +44,6 @@ html, body {
   min-height: 496.09091px;
   box-sizing: border-box;
   padding: 1em;
-  font-size: 16px;
   font-size: 1rem;
   line-height: 1.6em;
   background-color: #fff;
@@ -114,9 +114,6 @@ html, body {
     height: 100%;
     width: 64.70588vh;
   }
-  html, body {
-    font-size: 2.5vh;
-  }
 }
 
 @media screen and (max-aspect-ratio: 110 "/" 85) {
@@ -127,9 +124,6 @@ html, body {
     height: 77.27273vw;
     width: 50vw;
   }
-  html, body {
-    font-size: 1.93182vw;
-  }
 }
 
 @media screen and (max-width: 642px), screen and (max-height: 496.09091px) {
@@ -137,13 +131,10 @@ html, body {
     width: 321px;
     height: 496.09091px;
   }
-  html, body {
-    font-size: 12.40227px;
-  }
 }
 
 html, body {
-  font-family: "Gill Sans", serif;
+  font-family: "Arial", serif;
   text-align: center;
 }
 
@@ -152,7 +143,7 @@ a, label, button {
 }
 
 strong {
-  font-weight: bold;
+  border-bottom: 1px solid #000;
 }
 
 em {
@@ -168,35 +159,31 @@ mark {
 }
 
 dfn {
+  font-weight: lighter;
   border-bottom: 1px dotted #000;
-  font-weight: bold;
 }
 
 code, .code {
   text-align: left;
   white-space: pre-wrap;
-  font-family: "Courier New", monospace;
+  font-family: "Consolas", "Andale Mono", monospace;
   font-style: normal;
+  font-size: 1rem;
 }
 
 h1 {
-  font-weight: bold;
   text-transform: uppercase;
+  font-weight: lighter;
 }
 
 h2 {
   font-style: italic;
-  margin-bottom: 0.5em;
 }
 
 h2:before {
   content: "\25b8";
   padding-right: 0.5em;
   font-style: normal;
-}
-
-h2:not(:first-child) {
-  margin-top: 1em;
 }
 
 .fig {
@@ -219,17 +206,21 @@ ol > li {
   list-style-type: decimal;
 }
 
-blockquote:before, q:before {
+q:before {
   content: "\0201c";
 }
 
-blockquote:after, q:after {
+q:after {
   content: "\0201d";
+}
+
+blockquote {
+  font-style: italic;
+  font-weight: lighter;
 }
 
 .HTMLCodeBlock code, .HTMLCodeBlock .code {
   font-weight: normal;
-  font-size: 1rem;
   text-transform: none;
 }
 
@@ -253,9 +244,13 @@ blockquote:after, q:after {
   border-bottom: 1px dotted #000;
 }
 
-.page .main h1, .page .main p, .page .main table, .page .main ol, .page .main ul, .page .main .aside, .page .main fieldset,
+.page .main h1, .page .main h2, .page .main p, .page .main table, .page .main ol, .page .main ul, .page .main .aside, .page .main fieldset, .page .main blockquote,
 .page .main > pre {
-  margin-bottom: 1em;
+  margin-bottom: 1.6em;
+}
+
+.page .main :last-child {
+  margin-bottom: 0;
 }
 
 .page li {
@@ -263,7 +258,6 @@ blockquote:after, q:after {
 }
 
 .page table, .page tr, .page td {
-  box-sizing: border-box;
   position: relative;
 }
 
@@ -276,6 +270,14 @@ blockquote:after, q:after {
   width: auto;
   margin-left: auto;
   margin-right: auto;
+}
+
+.page table .tdr {
+  text-align: right;
+}
+
+.page table .divide {
+  border-left: 1px solid black;
 }
 
 .page table .count {
@@ -301,7 +303,6 @@ blockquote:after, q:after {
 
 .page table td {
   position: relative;
-  vertical-align: top;
   padding: 0 0.5em;
   white-space: nowrap;
 }
@@ -312,8 +313,12 @@ b {
   border-bottom: 1px dotted #000;
   white-space: nowrap;
   width: 6em;
-  vertical-align: bottom;
+  vertical-align: base-text;
   font-family: "Comic Sans MS", cursive;
+}
+
+input[type=text] {
+  font-style: normal;
 }
 
 td input[type=text]:only-child {
@@ -389,6 +394,11 @@ span.line {
 
 .wordbank ol li:before {
   content: counter(count-num) ". ";
+}
+
+.title {
+  display: block;
+  width: 100%;
 }
 
 @media screen {

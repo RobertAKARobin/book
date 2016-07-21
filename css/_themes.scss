@@ -1,7 +1,6 @@
-$fontText: "Gill Sans", serif;
-$fontCode: "Courier New", monospace;
+$fontText: "Arial", serif;
+$fontCode: "Consolas", "Andale Mono", monospace;
 $fontHand: "Comic Sans MS", cursive;
-$fontHeader: "Impact", sans-serif;
 
 html, body{
   font-family:$fontText;
@@ -14,7 +13,7 @@ a, label, button{
 
 
 strong{
-  font-weight:bold;
+  border-bottom:1px solid #000;
 }
 em{
   font-style:italic;
@@ -27,31 +26,28 @@ mark{
   margin:0 2px;
 }
 dfn{
+  font-weight:lighter;
   border-bottom:1px dotted #000;
-  font-weight:bold;
 }
 code, .code{
   text-align:left;
   white-space:pre-wrap;
   font-family: $fontCode;
   font-style:normal;
+  font-size:1rem;
 }
 
 
 h1{
-  font-weight:bold;
   text-transform:uppercase;
+  font-weight:lighter;
 }
 h2{
   font-style:italic;
-  margin-bottom:0.5em;
   &:before{
     content: "\25b8";
     padding-right:0.5em;
     font-style:normal;
-  }
-  &:not(:first-child){
-    margin-top:1em;
   }
 }
 
@@ -73,7 +69,7 @@ li{
     list-style-type:decimal;
   }
 }
-blockquote, q{
+q{
   &:before{
     content:"\0201c";
   }
@@ -81,12 +77,15 @@ blockquote, q{
     content:"\0201d";
   }
 }
+blockquote{
+  font-style:italic;
+  font-weight:lighter;
+}
 
 
 .HTMLCodeBlock{
   code, .code{
     font-weight:normal;
-    font-size:1rem;
     text-transform:none;
   }
   q{
@@ -111,16 +110,18 @@ blockquote, q{
 
 .page{
   .main{
-    h1, p, table, ol, ul, .aside, fieldset,
+    h1, h2, p, table, ol, ul, .aside, fieldset, blockquote,
     & > pre{
-      margin-bottom:1em;
+      margin-bottom:1.6em;
+    }
+    :last-child{
+      margin-bottom:0;
     }
   }
   li{
     padding-left:0.5em;
   }
   table, tr, td{
-    box-sizing:border-box;
     position:relative;
   }
   table{
@@ -132,7 +133,12 @@ blockquote, q{
       margin-left:auto;
       margin-right:auto;
     }
-
+    .tdr{
+      text-align:right;
+    }
+    .divide{
+      border-left:1px solid black;
+    }
     .count{
       padding:0 0.5em;
       text-align:left;
@@ -151,23 +157,22 @@ blockquote, q{
     }
     td{
       position:relative;
-      vertical-align:top;
       padding:0 0.5em;
       white-space:nowrap;
     }
   }
 }
-
 input[type=text],
 b{
   display:inline-block;
   border-bottom:1px dotted #000;
   white-space:nowrap;
   width:6em;
-  vertical-align:bottom;
+  vertical-align:base-text;
   font-family: $fontHand;
 }
 input[type=text]{
+  font-style:normal;
   td &:only-child{
     width:100%;
   }
@@ -229,6 +234,11 @@ span.line{
       }
     }
   }
+}
+
+.title{
+  display:block;
+  width:100%;
 }
 
 @media screen{
