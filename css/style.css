@@ -48,6 +48,14 @@ html, body, .page {
   margin-bottom: 12px;
 }
 
+@media screen {
+  .page .pageDesc {
+    color: #aaa;
+    border-color: #aaa;
+    text-shadow: none;
+  }
+}
+
 .page .pageDesc h1 a {
   display: block;
   text-align: center;
@@ -281,11 +289,24 @@ blockquote {
 
 b, input[type=text] {
   display: inline-block;
-  border-bottom: 1px dotted #000;
+  border-bottom: 1px solid #000;
+  background-color: #fff;
   white-space: nowrap;
   width: 6em;
   vertical-align: base-text;
   font-family: "Comic Sans MS", cursive;
+}
+
+@media screen {
+  b, input[type=text] {
+    border-color: #ccc;
+  }
+}
+
+@media print {
+  b, input[type=text] {
+    color: transparent;
+  }
 }
 
 input[type=text] {

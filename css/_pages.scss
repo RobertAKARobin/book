@@ -29,6 +29,12 @@ html, body, .page{
     border-bottom:1px solid #000;
     margin-bottom:12px;
 
+    @media screen{
+      color:#aaa;
+      border-color:#aaa;
+      text-shadow:none;
+    }
+
     h1 a{
       display:block;
       text-align:center;

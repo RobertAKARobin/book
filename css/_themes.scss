@@ -154,11 +154,18 @@ blockquote{
 
 b, input[type=text]{
   display:inline-block;
-  border-bottom:1px dotted #000;
+  border-bottom:1px solid #000;
+  background-color:#fff;
   white-space:nowrap;
   width:6em;
   vertical-align:base-text;
   font-family: $fontHand;
+  @media screen{
+    border-color:#ccc;
+  }
+  @media print{
+    color:transparent;
+  }
 }
 input[type=text]{
   font-style:normal;
