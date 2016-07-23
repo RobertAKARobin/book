@@ -1,132 +1,102 @@
+$page-width:600px;
+$chrome-margin:0.39in;
+
 html, body{
   position:relative;
   height:100%;
   width:100%;
-  font-size:15px;
-  font-weight:lighter;
+}
+html, body, .page{
+  font-size:18px;
+  line-height:30px;
 }
 
-$page-x: 55;
-$page-y: 85;
-$aspect: ($page-x / $page-y);
-$min-width: 321px;
-$min-height: ($min-width / $aspect);
-$font-ratio: 0.023;
-
-#main{
-  font-size:0;
-  height:100%;
-  white-space:nowrap;
-}
-.sheet{
-  display:inline-block;
-  height:100%;
+#background{
+  position:fixed;
+  top:0;
+  left:0;
   width:100%;
-  vertical-align:top;
-}
-.page{
-  display:inline-block;
   height:100%;
-  width:50%;
-  min-width:$min-width;
-  min-height:$min-height;
-  box-sizing:border-box;
-  padding:1em;
-  font-size:1rem;
-  line-height:1.6em;
-  background-color:#fff;
-  text-align:left;
-  vertical-align:top;
-  position:relative;
-  white-space:normal;
+  z-index:-1;
+  background-image:url("bg_wood.jpg");
+  background-color:#706050;
+}
 
-  .footer{
-    box-sizing:border-box;
-    position:absolute;
-    bottom:0;
-    left:0;
-    width:100%;
-    padding:0 1em;
-    p{
+.page{
+  .pageDesc{
+    font-size:12px;
+    position:relative;
+    border-bottom:1px solid #000;
+    margin-bottom:12px;
+
+    h1 a{
+      display:block;
       text-align:center;
-      font-style:italic;
     }
-    .aside{
-      float:left;
+    .pageNum{
+      position:absolute;
+      top:0;
+      left:0;
     }
   }
-  &:nth-of-type(even){
-    .aside{
-      float:right;
-    }
+}
+
+.page{
+  color:#000;
+  text-shadow:1px 1px 0px #eee;
+
+  position:relative;
+  box-sizing:border-box;
+  padding:10px 20px;
+  text-align:left;
+  border-radius:10px;
+  background-color:#fff;
+  background-image:url("bg_paper.jpg");
+  overflow:auto;
+
+  max-width:$page-width;
+  margin:30px auto;
+  box-shadow:0 0 20px 0 #221;
+}
+
+@media (max-width: $page-width){
+  .page{
+    border-radius:0;
+  }
+  .page:nth-child(1){
+    margin-top:0;
   }
 }
 
 @media print{
-  html, body{
-    font-size:24px;
+  #background{
+    display:none;
   }
   #main{
-    white-space:normal;
-  }
-  .sheet{
-    display:inline;
+    font-size:0;
   }
   .page{
-    display:block;
-    width:100%;
+    display:inline-block;
+    vertical-align:top;
+    width:50%;
     height:100%;
-    page-break-inside:avoid;
-    margin:0;
-    border:0;
+    background-image:none;
     padding:0;
-    .footer{
-      padding:0;
-    }
-  }
-}
-@media screen{
-  .page{
+    margin:0;
+    max-width:none;
+    box-shadow:none;
+    text-shadow:none;
+
+    padding-right:$chrome-margin;
     &:nth-child(even){
-      box-shadow:5px 0px 5px 0px #565;
-      border-left:1px dotted #ddd;
-    }
-    &:nth-child(odd){
-      box-shadow:-15px 0px 15px 0px #454;
-    }
-  }
-  // Fits at least 2 pages across
-  @media (min-aspect-ratio: ($page-x * 2) "/" $page-y){
-    .page{
-      height:100%;
-      width:100vh * $aspect;
-    }
-    html, body{
-      // font-size: $font-ratio * (100vh);
-    }
-  }
-  // Fits less than 2 pages across
-  @media (max-aspect-ratio: ($page-x * 2) "/" $page-y){
-    .sheet{
-      margin-right:25vw;
-    }
-    .page{
-      height:50vw / $aspect;
-      width:50vw;
-    }
-    html, body{
-      // font-size: $font-ratio * (50vw / $aspect);
-    }
-  }
-  // Less than the minimum width of 2 pages, or
-  // Less than the minimum height of 1 page
-  @media (max-width: $min-width * 2), (max-height: $min-height){
-    .page{
-      width: $min-width;
-      height: $min-height;
-    }
-    html, body{
-      // font-size: $font-ratio * ($min-height);
+      padding-right:0;
+      padding-left:$chrome-margin;
+      .pageDesc{
+        .pageNum{
+          left:auto;
+          right:0;
+        }
+      }
     }
   }
 }

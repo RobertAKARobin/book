@@ -4,9 +4,9 @@ $(document).ready(function(){
 
   (function addAnswerChecker(){
     var $score   = $("#score");
-    var $correct = $("#correct");
-    var $total   = $("#total");
-    var $clear   = $("#clear");
+    var $correct = $("#scoreCorrect");
+    var $total   = $("#scoreTotal");
+    var $clear   = $("#scoreClear");
     var $inputs  = $("input");
     var guesses  = JSON.parse(localStorage.getItem("guesses") || "{}");
 

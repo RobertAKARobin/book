@@ -13,6 +13,9 @@
 *:focus{
   outline:none;
 }
+div{
+  position:relative;
+}
 
 @import "pages";
 @import "themes";

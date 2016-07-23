@@ -37,11 +37,6 @@ code, .code{
   font-size:1rem;
 }
 
-
-h1{
-  text-transform:uppercase;
-  font-weight:lighter;
-}
 h2{
   font-style:italic;
   &:before{
@@ -82,7 +77,6 @@ blockquote{
   font-weight:lighter;
 }
 
-
 .HTMLCodeBlock{
   code, .code{
     font-weight:normal;
@@ -109,14 +103,9 @@ blockquote{
 }
 
 .page{
-  .main{
-    h1, h2, p, table, ol, ul, .aside, fieldset, blockquote,
-    & > pre{
-      margin-bottom:1.6em;
-    }
-    :last-child{
-      margin-bottom:0;
-    }
+  h2, p, table, ol, ul, .aside, fieldset, blockquote,
+  & > pre{
+    margin-bottom:1.6em;
   }
   li{
     padding-left:0.5em;
@@ -162,8 +151,8 @@ blockquote{
     }
   }
 }
-input[type=text],
-b{
+
+b, input[type=text]{
   display:inline-block;
   border-bottom:1px dotted #000;
   white-space:nowrap;
@@ -214,6 +203,7 @@ span.line{
   display:inline-flex;
   width:100%;
 }
+
 .wordbank{
   text-align:center;
   ul, ol{
@@ -232,37 +222,6 @@ span.line{
       &:before{
         content: counter(count-num) ". ";
       }
-    }
-  }
-}
-
-.title{
-  display:block;
-  width:100%;
-}
-
-@media screen{
-  #background{
-    position:fixed;
-    top:0;
-    left:0;
-    height:100vh;
-    width:100%;
-    z-index:-1;
-    background-color:#666;
-    background-image:linear-gradient(#598, #265);
-
-    &:after{
-      content:" ";
-      display:block;
-      position:absolute;
-      top:calc(50vh - 50px);
-      right:20px;
-      height:1px;
-      width:1px;
-      border-top:50px solid transparent;
-      border-bottom:50px solid transparent;
-      border-left:50px solid rgba(255, 255, 255, 0.2);
     }
   }
 }

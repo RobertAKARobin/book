@@ -1,12 +1,10 @@
 #score{
+  display:none;
   position:fixed;
-  top:0;
+  bottom:0;
   right:0;
   background-color:#dfd;
-  border-bottom-left-radius:10px;
   overflow:hidden;
-  box-shadow: 5px -5px 10px 0px #cec inset,
-              0px 0px 10px 0px #000;
   transition:opacity 0.3s;
   z-index:9999;
   opacity:0.95;
@@ -34,8 +32,8 @@
     display:block;
     width:100%;
     background-color:transparent;
-    font-size:18px;
-    line-height:18px;
+    font-size:1rem;
+    line-height:1rem;
     padding:5px 10px;
     border-bottom:1px solid rgba(100, 155, 100, 0.3);
     box-sizing:border-box;

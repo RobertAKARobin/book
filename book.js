@@ -5,6 +5,8 @@ var beaut     = require("js-beautify");
 var sass      = require("node-sass");
 var matchers  = require("./js/markymarkdown.js");
 
+var title     = "Learn Some Code in About 2 Hours Without a Computer";
+
 (function compileSASS(){
   write("css/style.css", sass.renderSync({
     file:         "css/style.scss",
@@ -21,21 +23,29 @@ var matchers  = require("./js/markymarkdown.js");
   }
   var viewVars  = {
     pageNum:      0,
-    sectionName:  null
+    sectionName:  null,
+    title:        null
   }
 
   require("./sections/_index").forEach(function(section){
     viewVars.sectionName = section;
     read("./sections/" + section + ".html").split(/\s*={5}\s*/).forEach(function(page){
       viewVars.pageNum += 1;
-      if(viewVars.pageNum % 2 !== 0) book += "<div class=\"sheet\">";
+      if(viewVars.pageNum % 2 !== 0){
+        // book += "<div class=\"sheet\">";
+        viewVars.title = title;
+      }else{
+        viewVars.title = section;
+      }
       page = markyMark(page);
       page = layout.page.replace("{{body}}", page);
       page = page.replace(/\{\{(.*?)}}/g, function(nil, varName){
         return viewVars[varName];
       });
       book += page;
-      if(viewVars.pageNum %2 === 0) book += "</div>";
+      if(viewVars.pageNum % 2 === 0){
+        // book += "</div>";
+      }
     });
   });
 
