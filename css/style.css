@@ -9,6 +9,7 @@
   border-collapse: collapse;
   text-decoration: inherit;
   color: inherit;
+  background-color: transparent;
 }
 
 *:focus {
@@ -86,9 +87,6 @@ html, body, .page {
 @media (max-width: 600px) {
   .page {
     border-radius: 0;
-  }
-  .page:nth-child(1) {
-    margin-top: 0;
   }
 }
 
@@ -388,63 +386,44 @@ span.line {
   content: counter(count-num) ". ";
 }
 
-#score {
-  display: none;
+#nav {
+  display: block;
   position: fixed;
   bottom: 0;
-  right: 0;
+  top: 0;
+  width: 100%;
+  height: 30px;
+  opacity: 0.3;
+  text-align: left;
+  background-color: #000;
+  transition: opacity 0.5s;
+}
+
+#nav #score {
+  display: inline-block;
+  width: 0px;
+  overflow: visible;
+  white-space: nowrap;
+  color: #888;
   background-color: #dfd;
-  overflow: hidden;
-  transition: opacity 0.3s;
-  z-index: 9999;
-  opacity: 0.95;
 }
 
-@media print {
-  #score {
-    display: none;
-  }
-}
-
-#score:hover, #score:active, #score:focus {
-  opacity: 1;
-}
-
-#score #correct {
+#nav #score #scoreCorrect {
   position: relative;
   display: inline-block;
   transition: color 0.3s;
 }
 
-#score.active #correct {
-  color: #000;
+#nav:hover {
+  opacity: 1;
+}
+
+#nav.active {
+  opacity: 1;
+}
+
+#nav.active #scoreCorrect {
   animation: flip 0.5s forwards;
-}
-
-#score > * {
-  display: block;
-  width: 100%;
-  background-color: transparent;
-  font-size: 1rem;
-  line-height: 1rem;
-  padding: 5px 10px;
-  border-bottom: 1px solid rgba(100, 155, 100, 0.3);
-  box-sizing: border-box;
-  color: #8a8;
-}
-
-#score label, #score button {
-  transition: background-color 0.2s;
-}
-
-#score label:hover, #score button:hover {
-  background-color: rgba(255, 255, 255, 0.4);
-}
-
-#score label:active,
-#score button:active,
-#score input:checked + label {
-  background-color: rgba(0, 100, 0, 0.2);
 }
 
 @media screen {

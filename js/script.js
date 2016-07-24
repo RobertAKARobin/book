@@ -3,12 +3,15 @@
 $(document).ready(function(){
 
   (function addAnswerChecker(){
+    var $nav     = $("#nav");
     var $score   = $("#score");
     var $correct = $("#scoreCorrect");
     var $total   = $("#scoreTotal");
     var $clear   = $("#scoreClear");
     var $inputs  = $("input");
     var guesses  = JSON.parse(localStorage.getItem("guesses") || "{}");
+    var correct  = 0;
+    var total    = $("input[data-answer]").length;
 
     $inputs.each(function(index, input){
       var $input = $(input);
@@ -19,7 +22,7 @@ $(document).ready(function(){
       checkAnswer.call($input);
     });
     countNumberCorrect();
-    $total.html($("input[data-answer]").length);
+    $total.html(total);
     $clear.on("click", clearAnswers);
 
     function toggleCheckbox(event){
@@ -47,9 +50,9 @@ $(document).ready(function(){
     }
 
     function scoreVisualFeedback(){
-      $score.addClass("active");
+      $nav.addClass("active");
       setTimeout(function(){
-        $score.removeClass("active");
+        $nav.removeClass("active");
       }, 500);
     }
 
@@ -64,7 +67,9 @@ $(document).ready(function(){
     }
 
     function countNumberCorrect(){
-      $correct.html($(".correct").length);
+      correct = $(".correct").length;
+      $correct.html(correct);
+      $score.width((correct / total * 100) + "%");
     }
 
     function saveProgress(){
