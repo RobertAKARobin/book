@@ -11,7 +11,7 @@ module.exports= (function(){
   var matchers  = {
     inline: [
       ["`{1}",,,      function inlineCode(nil, output){
-        return h.tag("code", h.replaceEntities(output));
+        return h.tag("code", h.replaceEntities(output.trim()));
       }],
       [,,/^(.*)_{3}(.*)_{3}(.*)$/, function blankFlex(nil, openText, blankText, closeText){
         var output = "";
@@ -85,12 +85,12 @@ module.exports= (function(){
       ["```(#?)",,,   function newCodeBlock(nil, isNumbered){
         flag.insideCodeBlock = true;
         if(isNumbered) flag.lineNumber = 1;
-        return "<pre><code>";
+        return "<pre>";
       }],
       ["``\\/",,,     function endCodeBlock(){
         flag.insideCodeBlock = false;
         flag.lineNumber = 0;
-        return "</code></pre>";
+        return "</pre>";
       }],
       [">><<",,,      function newHTMLCodeBlock(nil, output){
         flag.insideHTMLCodeBlock = true;
@@ -99,6 +99,12 @@ module.exports= (function(){
       [">><\/",,,     function endHTMLCodeBlock(nil, output){
         flag.insideHTMLCodeBlock = false;
         return "</div>";
+      }],
+      [,,/^\?{3}/,    function newFieldset(){
+        return "<fieldset>";
+      }],
+      [,,/^\?{2}\//,  function endFieldset(){
+        return "</fieldset>";
       }],
       [">",,,         function noFormatting(nil, output){
         return output;

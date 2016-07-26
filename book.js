@@ -6,6 +6,7 @@ var sass      = require("node-sass");
 var matchers  = require("./js/markymarkdown.js");
 
 var title     = "Learn Some Code in About 2 Hours Without a Computer";
+var wordbank  = "Complete this using the word bank:";
 
 (function compileSASS(){
   write("css/style.css", sass.renderSync({
@@ -24,7 +25,8 @@ var title     = "Learn Some Code in About 2 Hours Without a Computer";
   var viewVars  = {
     pageNum:      0,
     sectionName:  null,
-    title:        null
+    title:        null,
+    wordbank:     wordbank
   }
 
   require("./sections/_index").forEach(function(section){

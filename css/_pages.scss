@@ -20,6 +20,7 @@ html, body, .page{
   z-index:-1;
   background-image:url("bg_pixel.png");
   background-color:#49485C;
+  background-size:300px;
 }
 
 .page{
@@ -50,7 +51,7 @@ html, body, .page{
 .page{
   color:#000;
   @media screen{
-    color:#444;
+    color:#555;
     text-shadow:1px 1px 0px #fff;
   }
 

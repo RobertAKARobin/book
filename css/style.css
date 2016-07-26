@@ -40,6 +40,7 @@ html, body, .page {
   z-index: -1;
   background-image: url("bg_pixel.png");
   background-color: #49485C;
+  background-size: 300px;
 }
 
 .page .pageDesc {
@@ -85,7 +86,7 @@ html, body, .page {
 
 @media screen {
   .page {
-    color: #444;
+    color: #555;
     text-shadow: 1px 1px 0px #fff;
   }
 }
@@ -163,22 +164,12 @@ dfn {
   }
 }
 
-code, .code {
+pre, code, .code {
   text-align: left;
   white-space: pre-wrap;
-  font-family: "Consolas", "Andale Mono", monospace;
+  font-family: "Courier New", "Andale Mono", monospace;
   font-style: normal;
   font-size: 1rem;
-}
-
-h2 {
-  font-style: italic;
-}
-
-h2:before {
-  content: "\25b8";
-  padding-right: 0.5em;
-  font-style: normal;
 }
 
 .fig {
@@ -187,6 +178,11 @@ h2:before {
 
 label {
   display: block;
+  clear: both;
+}
+
+label:hover {
+  background-color: #ffa;
 }
 
 ul, ol {
@@ -214,6 +210,10 @@ blockquote {
   font-weight: lighter;
 }
 
+.HTMLCodeBlock > * {
+  margin-bottom: 1.6em;
+}
+
 .HTMLCodeBlock code, .HTMLCodeBlock .code {
   font-weight: normal;
   text-transform: none;
@@ -239,8 +239,7 @@ blockquote {
   border-bottom: 1px dotted #000;
 }
 
-.page h2, .page p, .page table, .page ol, .page ul, .page .aside, .page fieldset, .page blockquote,
-.page > pre {
+.page .main > * {
   margin-bottom: 1.6em;
 }
 
@@ -253,14 +252,14 @@ blockquote {
 }
 
 .page table {
-  counter-reset: count-num count-alpha;
   width: 100%;
+  counter-reset: count-num count-alpha;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .page table.inline {
   width: auto;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .page table .tdr {
@@ -294,56 +293,93 @@ blockquote {
 
 .page table td {
   position: relative;
-  padding: 0 0.5em;
+  padding-left: 1em;
   white-space: nowrap;
 }
 
-b, input[type=text] {
-  display: inline-block;
-  border-bottom: 1px solid #000;
+fieldset {
   background-color: #fff;
-  white-space: nowrap;
-  width: 6em;
-  vertical-align: base-text;
-  font-family: "Comic Sans MS", cursive;
 }
 
 @media screen {
-  b, input[type=text] {
-    border-color: #ccc;
+  fieldset {
+    border-color: #aaa;
   }
 }
 
 @media print {
-  b, input[type=text] {
-    color: transparent;
+  fieldset {
+    border-left: 1px solid #000;
   }
 }
 
+fieldset > * {
+  padding-left: 1em;
+}
+
+fieldset h2 {
+  color: #000;
+  text-align: justify;
+  line-height: 1.4em;
+  margin-left: 0;
+}
+
+@media screen {
+  fieldset h2 {
+    background-color: #eeeef3;
+    text-shadow: none;
+    padding-right: 1em;
+  }
+}
+
+b, input[type=text] {
+  display: inline-block;
+  white-space: nowrap;
+  vertical-align: baseline;
+  font-family: "Comic Sans MS", cursive;
+}
+
+b {
+  width: 4em;
+}
+
 input[type=text] {
+  width: 6em;
+  border-bottom: 1px solid #000;
   font-style: normal;
+}
+
+@media screen {
+  input[type=text] {
+    border-color: #ccc;
+    background-color: #ffc;
+  }
+}
+
+@media print {
+  input[type=text] {
+    color: transparent;
+  }
 }
 
 td input[type=text]:only-child {
   width: 100%;
 }
 
-input[type=text]:focus {
-  background-color: #ffa;
-}
-
 input[type=text].checkbox {
-  float: left;
-  border: 1px solid #000;
-  width: 1em;
-  height: 1em;
+  display: inline-block;
+  background-color: #fff;
+  border: 1px solid #999;
+  width: 0.6em;
+  height: 0.6em;
   text-align: center;
   cursor: pointer;
 }
 
 input[type=text].checkbox + span {
-  display: block;
-  padding-left: 2em;
+  display: inline;
+  padding-left: 1em;
+  vertical-align: bottom;
 }
 
 input[type=text].line {

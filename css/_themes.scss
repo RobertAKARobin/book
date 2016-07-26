@@ -1,5 +1,5 @@
 $fontText: "Arial", serif;
-$fontCode: "Consolas", "Andale Mono", monospace;
+$fontCode: "Courier New", "Andale Mono", monospace;
 $fontHand: "Comic Sans MS", cursive;
 
 html, body{
@@ -33,7 +33,7 @@ dfn{
     background-color:#ff0;
   }
 }
-code, .code{
+pre, code, .code{
   text-align:left;
   white-space:pre-wrap;
   font-family: $fontCode;
@@ -41,21 +41,15 @@ code, .code{
   font-size:1rem;
 }
 
-h2{
-  font-style:italic;
-  &:before{
-    content: "\25b8";
-    padding-right:0.5em;
-    font-style:normal;
-  }
-}
-
-
 .fig{
   text-align:center;
 }
 label{
   display:block;
+  clear:both;
+  &:hover{
+    background-color:#ffa;
+  }
 }
 ul, ol{
   padding-left:20px;
@@ -82,6 +76,9 @@ blockquote{
 }
 
 .HTMLCodeBlock{
+  & > *{
+    margin-bottom:1.6em;
+  }
   code, .code{
     font-weight:normal;
     text-transform:none;
@@ -107,8 +104,7 @@ blockquote{
 }
 
 .page{
-  h2, p, table, ol, ul, .aside, fieldset, blockquote,
-  & > pre{
+  .main > *{
     margin-bottom:1.6em;
   }
   li{
@@ -118,13 +114,13 @@ blockquote{
     position:relative;
   }
   table{
-    counter-reset: count-num count-alpha;
     width:100%;
+    counter-reset: count-num count-alpha;
+    margin-left:auto;
+    margin-right:auto;
 
     &.inline{
       width:auto;
-      margin-left:auto;
-      margin-right:auto;
     }
     .tdr{
       text-align:right;
@@ -150,45 +146,71 @@ blockquote{
     }
     td{
       position:relative;
-      padding:0 0.5em;
+      padding-left:1em;
       white-space:nowrap;
+    }
+  }
+}
+
+fieldset{
+  background-color:#fff;
+  @media screen{
+    border-color:#aaa;
+  }
+  @media print{
+    border-left:1px solid #000;
+  }
+  & > * {
+    padding-left:1em;
+  }
+  h2{
+    color:#000;
+    text-align:justify;
+    line-height:1.4em;
+    margin-left:0;
+    @media screen{
+      background-color:#eeeef3;
+      text-shadow:none;
+      padding-right:1em;
     }
   }
 }
 
 b, input[type=text]{
   display:inline-block;
-  border-bottom:1px solid #000;
-  background-color:#fff;
   white-space:nowrap;
-  width:6em;
-  vertical-align:base-text;
+  vertical-align:baseline;
   font-family: $fontHand;
+}
+b{
+  width:4em;
+}
+input[type=text]{
+  width:6em;
+  border-bottom:1px solid #000;
+  font-style:normal;
   @media screen{
     border-color:#ccc;
+    background-color:#ffc;
   }
   @media print{
     color:transparent;
   }
-}
-input[type=text]{
-  font-style:normal;
   td &:only-child{
     width:100%;
   }
-  &:focus{
-    background-color:#ffa;
-  }
   &.checkbox{
-    float:left;
-    border:1px solid #000;
-    width:1em;
-    height:1em;
+    display:inline-block;
+    background-color:#fff;
+    border:1px solid #999;
+    width:0.6em;
+    height:0.6em;
     text-align:center;
     cursor:pointer;
     & + span{
-      display:block;
-      padding-left:2em;
+      display:inline;
+      padding-left:1em;
+      vertical-align:bottom;
     }
   }
   &.line{

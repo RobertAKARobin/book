@@ -2,6 +2,7 @@
 
 <p style="border:2px dotted black; padding:0.5em 1em; text-align:center; font-style:italic;">This paragraph has been //styled// to look different from the other paragraphs in this book. The code for styling is called //CSS//. The CSS for this paragraph's is below.</p>
 
+???
 ## Fill in the blanks to complete the CSS.
 
 -#
@@ -15,6 +16,7 @@
 -
 >`border:` ___2px dotted #000000;___
 -#/
+??/
 
 <div class="wordbank">
 -=`#000000;`
@@ -31,12 +33,21 @@
 Bob says, ''This house is worth a million dollars!'' Then Bob writes some CSS that says, ''This background color is red!''
 </blockquote>
 
+???
 ## ''house'' and ''background color'' are both called a...
 
 [x] property: something you have
 [ ] asdf
+??/
 
-## So, everything in the left column below is a _property_, and everything in the right column is a _value_.<br />Match them up!
+???
+## This means:
+
+Everything in the left column below is a _property_, and everything in the right column is a _value_.
+??/
+
+???
+## Match them up!
 
 <table>
 |\code tdr|code|count alpha divide|code|
@@ -48,6 +59,7 @@ Bob says, ''This house is worth a million dollars!'' Then Bob writes some CSS th
 |font-weight:      |_a_| |bold;
 |/
 </table>
+??/
 
 <!-- You change how the website looks by changing a CSS //property//. There are over 500 CSS properties. Each has a //value//. A property and its value together are a //declaration//.
 
@@ -56,23 +68,26 @@ Match the properties and values to make declarations:
 
 =====
 
-Fill in the blanks:
+???
+## Fill in the blanks:
 
 <table>
 |\count num||
-||Every _property_ has a ~~:~~ after it.    |property
-||Every _declaration_ ends with a ~~;~~.    |pixel
-||''px'' stands for _pixel_.                |delcaration
-||The ~~:~~ symbol is called a _colon_.     |colon
-||The ~~;~~ symbol is called a _semicolon_. |semicolon
+||Every _property_ has a `:` after it.    |property
+||Every _declaration_ ends with a `;`.    |pixel
+||''px'' stands for _pixel_.              |delcaration
+||The `:` symbol is called a _colon_.     |colon
+||The `;` symbol is called a _semicolon_. |semicolon
 |/
 </table>
+??/
 
 =====
 
-# Fonts
+There are 5 //families// of fonts. Every font is in one of those families.
 
-There are 5 //families// of fonts. Every font is in one of those families. Match each clue to its family.
+???
+## Match each clue to its font family.
 
 <table>
 |\count num||count alpha|
@@ -83,6 +98,7 @@ There are 5 //families// of fonts. Every font is in one of those families. Match
 ||<a style="font-family: Papyrus">Used mostly for logos and graphics</a>      ||fantasy
 |/
 </table>
+??/
 
 =====
 
@@ -98,53 +114,57 @@ In CSS, you pick a font using the `font-family` property. `font-family`'s value 
 
 If a font in `font-family` isn't installed on your computer, your computer tries the next one in the list. If instead of a font it's a family, like `cursive`, your computer uses any font in that family.
 
+???
+## A font name that contains a <b>&nbsp;</b> must be inside "quotes".
 
-<div class="wordbank">
-A font name that contains a _space_ must be inside "quotes".
-
--=space
-- semicolon
-- number
--=/
-</div>
+[x] space
+[ ] semicolon
+[ ] number
+??/
 
 =====
 
-# Selectors
-
 Every CSS rule starts with a //selector//. It tells the computer which parts of a website it should ''select'' to use with that CSS rule.
 
-<div class="aside">
 ```
 p, code, img{
   width: 400px;
 }
 ``/
-</div>
 
 This CSS rule says, ''Every paragraph, every code snippet, and every image should be 400 pixels wide.''
 
-<div class="aside">
 ```
 p code img{
   width: 400px;
 }
 ``/
-</div>
 
 This CSS rule -- without commas -- says, ''Every image that's in a code snippet that's in a paragraph should be 400 pixels wide.''
 
 =====
 
--#Fill in the selector for, ''Every button that's in a form.''
->___form button___
-- Every button in every paragraph in every form.
->___form p button___
-- Every button, every paragraph, and every form.
->___form, p, button___
-- Every button and every form.
->___form, button___
--#/
+Fill in the selectors for...
+
+???
+## Every button that's in a form.
+__form button__
+??/
+
+???
+## Every button in every paragraph in every form.
+__form p button__
+??/
+
+???
+## Every button, every paragraph, and every form.
+__form, p, button__
+??/
+
+???
+## Every button and every form.
+__form, button__
+??/
 
 <div class="wordbank">
 -=`form button`
@@ -173,17 +193,16 @@ code{
 }
 ``/
 
-Each of the chunks in `{braces}` is a //rule//. The ''`p`'' rule changes all the paragraphs on the website. The ''`p, code`'' rule changes all the paragraphs *and* code snippets. Rules add on to each other.
+Each of the chunks in `{braces}` is a //rule//. The ''`p`'' rule changes all the paragraphs on the website. The ''`p, code`'' rule changes all the paragraphs *and* code snippets.
 
-=====
+???
+## The font of every code snippet will be:
 
-The font of every code snippet will be: __black, 18 pixels tall, and monospaced__
-
--#black, 18 pixels tall, and monospaced
-- black, 18 pixels tall, and sans-serif
-- monospaced
-- sans-serif
--#/
+[x] black, 18 pixels tall, and monospaced
+[ ] black, 18 pixels tall, and sans-serif
+[ ] monospaced
+[ ] sans-serif
+??/
 
 =====
 
@@ -210,7 +229,11 @@ code{
 }
 ``/
 
+???
+## {{wordbank}}
+
 This code means paragraphs will have _green_ backgrounds, and code snippets will have _blue_ backgrounds.
+??/
 
 <div class="wordbank">
 
