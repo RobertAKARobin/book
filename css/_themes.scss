@@ -13,6 +13,7 @@ a, label, button{
 
 
 strong{
+  color:#000;
   border-bottom:1px solid #000;
 }
 em{
@@ -26,8 +27,11 @@ mark{
   margin:0 2px;
 }
 dfn{
-  font-weight:lighter;
-  border-bottom:1px dotted #000;
+  color:#000;
+  font-weight:bold;
+  @media screen{
+    background-color:#ff0;
+  }
 }
 code, .code{
   text-align:left;
@@ -173,7 +177,7 @@ input[type=text]{
     width:100%;
   }
   &:focus{
-    background-color:#ffb;
+    background-color:#ffa;
   }
   &.checkbox{
     float:left;

@@ -17,8 +17,11 @@ $(document).ready(function(){
       var $input = $(input);
       var guess  = (guesses[index] || "");
       $input.val(guess);
-      if($input.hasClass("checkbox")) $input.on("click", toggleCheckbox);
-      else $input.on("keyup", checkAnswer);
+      if($input.hasClass("checkbox")){
+        $input.on("click", toggleCheckbox);
+      }else{
+        $input.on("input", checkAnswer);
+      }
       checkAnswer.call($input);
     });
     countNumberCorrect();

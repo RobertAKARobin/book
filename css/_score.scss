@@ -1,4 +1,4 @@
-$color-correct:#dfd;
+$color-correct:#afa;
 
 #nav{
   display:block;
@@ -11,6 +11,10 @@ $color-correct:#dfd;
   text-align:left;
   background-color:#000;
   transition:opacity 0.5s;
+
+  @media print{
+    display:none;
+  }
 
   #score{
     display:inline-block;
@@ -52,7 +56,7 @@ $color-correct:#dfd;
     color:#fff;
   }
   to{
-    background-color:#dfd;
+    background-color:$color-correct;
     color:#000;
   }
 }
