@@ -14,37 +14,67 @@
         <h1><a href="#1"><span class="pageNum">1</span>Learn Some Code in About 2 Hours Without a Computer</a></h1>
       </div>
       <div class="main">
-        <p>A computer screen is made of <dfn>pixels</dfn>. A pixel is a tiny square made of three <em>really</em> tiny lights: one red, one blue, and one green.</p>
+        <p>A computer screen is made of <dfn>pixels</dfn>. A pixel is a tiny square made of three <em>really tiny</em> lights: one red, one green, and one blue.</p>
 
-        <p>These are the three <q>primary colors</q> for computer and TV screens. You probably learned the primary colors are red, blue, and <em>yellow</em>, but screen light is different from normal light.</p>
+        <p>Red, green, and blue are the three <q>primary colors</q> for computer and TV screens.</p>
+
+        <p>You probably learned the primary colors are red, blue, and <em>yellow</em>:</p>
 
         <fieldset>
-          <h2>How might you make these colors using only red, green, and blue?</h2>
+          <h2>Fill in the blanks with <strong>red</strong>, <strong>blue</strong>, and <strong>yellow</strong>:</h2>
 
           <table>
-
             <tr>
-              <td>purple</td>
-              <td>=</td>
               <td>red</td>
               <td>+</td>
               <td><input data-answer="blue" type="text" value="" /></td>
+              <td>=</td>
+              <td>purple</td>
             </tr>
             <tr>
-              <td>teal</td>
-              <td>=</td>
               <td>blue</td>
               <td>+</td>
-              <td><input data-answer="green" type="text" value="" /></td>
+              <td><input data-answer="yellow" type="text" value="" /></td>
+              <td>=</td>
+              <td>green</td>
             </tr>
             <tr>
               <td>yellow</td>
+              <td>+</td>
+              <td><input data-answer="red" type="text" value="" /></td>
               <td>=</td>
+              <td>orange</td>
+            </tr>
+          </table>
+        </fieldset>
+
+        <p>But screen light is different from normal light.</p>
+
+        <fieldset>
+          <h2>Fill in the blanks with <strong>red</strong>, <strong>blue</strong>, and <strong>green</strong>. Use the process of elimination!</h2>
+
+          <table>
+            <tr>
+              <td>red</td>
+              <td>+</td>
+              <td><input data-answer="blue" type="text" value="" /></td>
+              <td>=</td>
+              <td>purple</td>
+            </tr>
+            <tr>
+              <td>blue</td>
+              <td>+</td>
+              <td><input data-answer="green" type="text" value="" /></td>
+              <td>=</td>
+              <td>turquoise</td>
+            </tr>
+            <tr>
               <td>green</td>
               <td>+</td>
               <td><input data-answer="red" type="text" value="" /></td>
+              <td>=</td>
+              <td>yellow</td>
             </tr>
-
           </table>
         </fieldset>
 
@@ -55,52 +85,31 @@
         <h1><a href="#2"><span class="pageNum">2</span>Colors</a></h1>
       </div>
       <div class="main">
-        <p>Each pixel has an <dfn>RGB</dfn> code that says what color it should make. RGB codes are made of 3 numbers. Here are some RGB codes:</p>
+        <p>Each pixel has an <dfn>RGB code</dfn> that says what color it should make.</p>
 
-        <table class="inline">
+        <div class="fig"><code>R G B</code></div>
 
-          <tr>
-            <td>red</td>
-            <td class="code">255</td>
-            <td class="code">000</td>
-            <td class="code">000</td>
-          </tr>
-          <tr>
-            <td>purple</td>
-            <td class="code">255</td>
-            <td class="code">000</td>
-            <td class="code">255</td>
-          </tr>
-          <tr>
-            <td>white</td>
-            <td class="code">255</td>
-            <td class="code">255</td>
-            <td class="code">255</td>
-          </tr>
-          <tr>
-            <td>dark green</td>
-            <td class="code">000</td>
-            <td class="code">170</td>
-            <td class="code">000</td>
-          </tr>
+        <p>To make the color purple, a pixel needs its red and blue lights to be turned on, and its green light to be turned off:</p>
 
-        </table>
+        <div class="fig"><code>R _ B</code></div>
+
+        <p>The RGB code for a purple pixel is:</p>
+
+        <div class="fig"><code>255 0 255</code></div>
 
         <fieldset>
-          <h2>What do you think <q>RGB</q> stands for?</h2>
+          <h2>What does <q>RGB</q> stand for?</h2>
 
-          <label><input class="checkbox" type="text" value="" /><span>Riemannian Gradient Base</span></label>
-          <label><input class="checkbox" type="text" value="" /><span>The initials of the computer screen's inventor</span></label>
+          <label><input class="checkbox" type="text" value="" /><span>The initials of the company that makes screens</span></label>
           <label><input class="checkbox" data-answer="x" type="text" value="" /><span>Red, Green, Blue</span></label>
           <label><input class="checkbox" type="text" value="" /><span>Really Good Bacon</span></label>
         </fieldset>
 
         <fieldset>
-          <h2>What might the code's 3 numbers represent?</h2>
+          <h2>The 3 numbers in a purple pixel's RGB code show:</h2>
 
-          <label><input class="checkbox" data-answer="x" type="text" value="" /><span>The brightness of each of the pixel's 3 lights</span></label>
-          <label><input class="checkbox" type="text" value="" /><span>The memory it takes to make the color</span></label>
-          <label><input class="checkbox" type="text" value="" /><span>The temperature of the pixel</span></label>
+          <label><input class="checkbox" data-answer="x" type="text" value="" /><span>If its red, green, and blue lights are on or off</span></label>
+          <label><input class="checkbox" type="text" value="" /><span>How hot the pixel is</span></label>
           <label><input class="checkbox" type="text" value="" /><span>The letters of the alphabet in the color's name</span></label>
         </fieldset>
 
@@ -111,28 +120,36 @@
         <h1><a href="#3"><span class="pageNum">3</span>Learn Some Code in About 2 Hours Without a Computer</a></h1>
       </div>
       <div class="main">
-        <fieldset>
-          <h2>If the first number in a pixel's RGB code is <code>255</code>, it means the pixel's red light is...</h2>
+        <p>A yellow pixel has an RGB code of:</p>
 
-          <label><input class="checkbox" data-answer="x" type="text" value="" /><span>All the way on</span></label>
-          <label><input class="checkbox" type="text" value="" /><span>A little dim</span></label>
-          <label><input class="checkbox" type="text" value="" /><span>All the way off</span></label>
+        <div class="fig"><code>255 255 0</code></div>
+
+        <fieldset>
+          <h2>A <strong>first</strong> number of <code>255</code> means&hellip;</h2>
+
+          <label><input class="checkbox" data-answer="x" type="text" value="" /><span>The pixel's red light is all the way on</span></label>
+          <label><input class="checkbox" type="text" value="" /><span>The pixel's red light is all the way off</span></label>
+          <label><input class="checkbox" type="text" value="" /><span>The pixel's red light is on, but not all the way</span></label>
         </fieldset>
 
         <fieldset>
-          <h2>If the second number in a pixel's RGB code is <code>000</code>, it means the pixel's green light is...</h2>
+          <h2>A <strong>third</strong> number of <code>0</code> means&hellip;</h2>
 
-          <label><input class="checkbox" type="text" value="" /><span>All the way on</span></label>
-          <label><input class="checkbox" type="text" value="" /><span>A little dim</span></label>
-          <label><input class="checkbox" data-answer="x" type="text" value="" /><span>All the way off</span></label>
+          <label><input class="checkbox" type="text" value="" /><span>The pixel's blue light is all the way on</span></label>
+          <label><input class="checkbox" data-answer="x" type="text" value="" /><span>The pixel's blue light is all the way off</span></label>
+          <label><input class="checkbox" type="text" value="" /><span>The pixel's blue light is on, but not all the way</span></label>
         </fieldset>
 
-        <fieldset>
-          <h2>If the last number in a pixel's RGB code is <code>170</code>, it means the pixel's blue light is...</h2>
+        <p>An orange pixel has an RGB code of:</p>
 
-          <label><input class="checkbox" type="text" value="" /><span>All the way on</span></label>
-          <label><input class="checkbox" data-answer="x" type="text" value="" /><span>A little dim</span></label>
-          <label><input class="checkbox" type="text" value="" /><span>All the way off</span></label>
+        <div class="fig"><code>255 170 0</code></div>
+
+        <fieldset>
+          <h2>A <strong>second</strong> number of <code>170</code> means&hellip;</h2>
+
+          <label><input class="checkbox" type="text" value="" /><span>The pixel's green light is all the way on</span></label>
+          <label><input class="checkbox" type="text" value="" /><span>The pixel's green light is all the way off</span></label>
+          <label><input class="checkbox" data-answer="x" type="text" value="" /><span>The pixel's green light is on, but not all the way</span></label>
         </fieldset>
 
       </div>
@@ -146,66 +163,57 @@
           <h2>Fill in the blanks to complete all the RGB codes:</h2>
 
           <table>
-
             <tr>
-              <td class="count num"></td>
-              <td>black</td>
-              <td class="code"><input data-answer="000" type="text" value="" /></td>
-              <td class="code"><input data-answer="000" type="text" value="" /></td>
-              <td class="code"><input data-answer="000" type="text" value="" /></td>
-            </tr>
-            <tr>
-              <td class="count num"></td>
-              <td>green</td>
-              <td class="code">000</td>
+              <td>white</td>
+              <td class="code">255</td>
               <td class="code"><input data-answer="255" type="text" value="" /></td>
-              <td class="code">000</td>
-            </tr>
-            <tr>
-              <td class="count num"></td>
-              <td>blue</td>
-              <td class="code"><input data-answer="000" type="text" value="" /></td>
-              <td class="code"><input data-answer="000" type="text" value="" /></td>
               <td class="code">255</td>
             </tr>
             <tr>
-              <td class="count num"></td>
+              <td>black</td>
+              <td class="code"><input data-answer="0" type="text" value="" /></td>
+              <td class="code">0</td>
+              <td class="code"><input data-answer="0" type="text" value="" /></td>
+            </tr>
+            <tr>
+              <td>green</td>
+              <td class="code">0</td>
+              <td class="code"><input data-answer="255" type="text" value="" /></td>
+              <td class="code">0</td>
+            </tr>
+            <tr>
+              <td>blue</td>
+              <td class="code"><input data-answer="0" type="text" value="" /></td>
+              <td class="code"><input data-answer="0" type="text" value="" /></td>
+              <td class="code">255</td>
+            </tr>
+            <tr>
               <td>teal</td>
-              <td class="code">000</td>
+              <td class="code">0</td>
               <td class="code"><input data-answer="255" type="text" value="" /></td>
               <td class="code"><input data-answer="255" type="text" value="" /></td>
             </tr>
             <tr>
-              <td class="count num"></td>
               <td>yellow</td>
               <td class="code"><input data-answer="255" type="text" value="" /></td>
               <td class="code">255</td>
-              <td class="code">000</td>
+              <td class="code">0</td>
             </tr>
             <tr>
-              <td class="count num"></td>
               <td>orange</td>
               <td class="code"><input data-answer="255" type="text" value="" /></td>
               <td class="code">170</td>
-              <td class="code">000</td>
+              <td class="code">0</td>
             </tr>
             <tr>
-              <td class="count num"></td>
               <td>grey</td>
               <td class="code">170</td>
               <td class="code"><input data-answer="170" type="text" value="" /></td>
               <td class="code"><input data-answer="170" type="text" value="" /></td>
             </tr>
-            <tr>
-              <td class="count num"></td>
-              <td>pink</td>
-              <td class="code">255</td>
-              <td class="code">000</td>
-              <td class="code"><input data-answer="170" type="text" value="" /></td>
-            </tr>
-
           </table>
         </fieldset>
+
 
       </div>
     </div>
@@ -214,7 +222,7 @@
         <h1><a href="#5"><span class="pageNum">5</span>Learn Some Code in About 2 Hours Without a Computer</a></h1>
       </div>
       <div class="main">
-        <p>RGB codes are made of <dfn>decimal</dfn> numbers. To make colors, programmers often use <dfn>hexadecimal</dfn> numbers instead.</p>
+        <p>We've been using <dfn>decimal</dfn> numbers. But programmers often use <dfn>hexadecimal</dfn> numbers &mdash; or <q>hex</q> &mdash; instead.</p>
 
         <fieldset>
           <h2>The <q>dec</q> in <q>decimal</q> means <q>ten</q>. The <q>hex</q> in <q>hexadecimal</q> and the <q>hex</q> in <q>hexagon</q> both mean:</h2>
@@ -238,42 +246,55 @@
     </div>
     <div class="page" id="6">
       <div class="pageDesc">
-        <h1><a href="#6"><span class="pageNum">6</span>Colors</a></h1>
+        <h1><a href="#6"><span class="pageNum">6</span>Hex</a></h1>
       </div>
       <div class="main">
-        <p>Here are some more RGB codes and their matching hex codes:</p>
+        <p>Here are some RGB codes in decimal and hex:</p>
 
-        <table>
-
-          <tr>
-            <td></td>
-            <td>RGB</td>
-            <td>Hex</td>
-          </tr>
-          <tr>
-            <td>red</td>
-            <td><code>255 000 000</code></td>
-            <td><code>FF 00 00</code></td>
-          </tr>
-          <tr>
-            <td>white</td>
-            <td><code>255 255 255</code></td>
-            <td><code>FF FF FF</code></td>
-          </tr>
-          <tr>
-            <td>dark green</td>
-            <td><code>000 170 000</code></td>
-            <td><code>00 AA 00</code></td>
-          </tr>
-
-        </table>
+        <div class="fig">
+          <table>
+            <tr>
+              <td></td>
+              <td>decimal</td>
+              <td>hex</td>
+            </tr>
+            <tr>
+              <td>red</td>
+              <td><code>255 0 0</code></td>
+              <td><code>FF 00 00</code></td>
+            </tr>
+            <tr>
+              <td>white</td>
+              <td><code>255 255 255</code></td>
+              <td><code>FF FF FF</code></td>
+            </tr>
+            <tr>
+              <td>dark green</td>
+              <td><code>0 170 0</code></td>
+              <td><code>00 AA 00</code></td>
+            </tr>
+          </table>
+        </div>
 
         <fieldset>
-          <h2>Computer programmers may like to use hex codes instead of RGB codes because...</h2>
+          <h2>Fill in the blanks:</h2>
+
+          <ul>
+            <li><code>255</code> in decimal is the same as <code><input data-answer="FF" type="text" value="" /></code> in hex.
+            </li>
+            <li><code>170</code> in decimal is the same as <code><input data-answer="AA" type="text" value="" /></code> in hex.
+            </li>
+            <li><code>0</code> in decimal is the same as <code><input data-answer="00" type="text" value="" /></code> in hex.
+            </li>
+          </ul>
+        </fieldset>
+
+        <fieldset>
+          <h2>Computer programmers may like to write RGB codes in hex instead of decimal because&hellip;</h2>
 
           <label><input class="checkbox" type="text" value="" /><span>Programmers are weird</span></label>
           <label><input class="checkbox" type="text" value="" /><span>Old keyboards didn't have number keys</span></label>
-          <label><input class="checkbox" data-answer="x" type="text" value="" /><span>Hex codes are always 6 letters long</span></label>
+          <label><input class="checkbox" data-answer="x" type="text" value="" /><span>Hex RGB codes are always exactly 6 letters long</span></label>
           <label><input class="checkbox" type="text" value="" /><span>Some languages don't have numbers</span></label>
         </fieldset>
 
@@ -284,92 +305,148 @@
         <h1><a href="#7"><span class="pageNum">7</span>Learn Some Code in About 2 Hours Without a Computer</a></h1>
       </div>
       <div class="main">
+        <fieldset>
+          <h2>Fill in the blanks to complete all the hex codes:</h2>
+
+          <table>
+            <tr>
+              <td>black</td>
+              <td class="code"><input data-answer="00" type="text" value="" /></td>
+              <td class="code"><input data-answer="00" type="text" value="" /></td>
+              <td class="code"><input data-answer="00" type="text" value="" /></td>
+            </tr>
+            <tr>
+              <td>green</td>
+              <td class="code">00</td>
+              <td class="code"><input data-answer="FF" type="text" value="" /></td>
+              <td class="code"><input data-answer="00" type="text" value="" /></td>
+            </tr>
+            <tr>
+              <td>blue</td>
+              <td class="code"><input data-answer="00" type="text" value="" /></td>
+              <td class="code"><input data-answer="00" type="text" value="" /></td>
+              <td class="code">FF</td>
+            </tr>
+            <tr>
+              <td>teal</td>
+              <td class="code">00</td>
+              <td class="code"><input data-answer="FF" type="text" value="" /></td>
+              <td class="code"><input data-answer="FF" type="text" value="" /></td>
+            </tr>
+            <tr>
+              <td>yellow</td>
+              <td class="code"><input data-answer="FF" type="text" value="" /></td>
+              <td class="code">FF</td>
+              <td class="code">00</td>
+            </tr>
+            <tr>
+              <td>orange</td>
+              <td class="code"><input data-answer="FF" type="text" value="" /></td>
+              <td class="code">AA</td>
+              <td class="code">00</td>
+            </tr>
+            <tr>
+              <td>grey</td>
+              <td class="code">AA</td>
+              <td class="code"><input data-answer="AA" type="text" value="" /></td>
+              <td class="code"><input data-answer="AA" type="text" value="" /></td>
+            </tr>
+          </table>
+        </fieldset>
+
+      </div>
+    </div>
+    <div class="page" id="8">
+      <div class="pageDesc">
+        <h1><a href="#8"><span class="pageNum">8</span>Hex</a></h1>
+      </div>
+      <div class="main">
         <p>Here are a bunch of decimal numbers and their matching hex numbers:</p>
 
-        <table>
-
-          <tr>
-            <td>0</td>
-            <td class="code">00</td>
-            <td>10</td>
-            <td class="code">0A</td>
-            <td>26</td>
-            <td class="code">1A</td>
-          </tr>
-          <tr>
-            <td>1</td>
-            <td class="code">01</td>
-            <td>11</td>
-            <td class="code">0B</td>
-            <td>31</td>
-            <td class="code">1F</td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td class="code">02</td>
-            <td>12</td>
-            <td class="code">0C</td>
-            <td>32</td>
-            <td class="code">20</td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td class="code">03</td>
-            <td>13</td>
-            <td class="code">0D</td>
-            <td>33</td>
-            <td class="code">21</td>
-          </tr>
-          <tr>
-            <td>4</td>
-            <td class="code">04</td>
-            <td>14</td>
-            <td class="code">0E</td>
-            <td>160</td>
-            <td class="code">A0</td>
-          </tr>
-          <tr>
-            <td>5</td>
-            <td class="code">05</td>
-            <td>15</td>
-            <td class="code">0F</td>
-            <td>161</td>
-            <td class="code">A1</td>
-          </tr>
-          <tr>
-            <td>6</td>
-            <td class="code">06</td>
-            <td>16</td>
-            <td class="code">10</td>
-            <td>175</td>
-            <td class="code">AF</td>
-          </tr>
-          <tr>
-            <td>7</td>
-            <td class="code">07</td>
-            <td>17</td>
-            <td class="code">11</td>
-            <td>176</td>
-            <td class="code">B0</td>
-          </tr>
-          <tr>
-            <td>8</td>
-            <td class="code">08</td>
-            <td>18</td>
-            <td class="code">12</td>
-            <td>240</td>
-            <td class="code">F0</td>
-          </tr>
-          <tr>
-            <td>9</td>
-            <td class="code">09</td>
-            <td>25</td>
-            <td class="code">19</td>
-            <td>255</td>
-            <td class="code">FF</td>
-          </tr>
-
-        </table>
+        <div class="fig">
+          <table>
+            <tr>
+              <td>0</td>
+              <td class="code">00</td>
+              <td>10</td>
+              <td class="code">0A</td>
+              <td>26</td>
+              <td class="code">1A</td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td class="code">01</td>
+              <td>11</td>
+              <td class="code">0B</td>
+              <td>31</td>
+              <td class="code">1F</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td class="code">02</td>
+              <td>12</td>
+              <td class="code">0C</td>
+              <td>32</td>
+              <td class="code">20</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td class="code">03</td>
+              <td>13</td>
+              <td class="code">0D</td>
+              <td>33</td>
+              <td class="code">21</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td class="code">04</td>
+              <td>14</td>
+              <td class="code">0E</td>
+              <td>160</td>
+              <td class="code">A0</td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td class="code">05</td>
+              <td>15</td>
+              <td class="code">0F</td>
+              <td>161</td>
+              <td class="code">A1</td>
+            </tr>
+            <tr>
+              <td>6</td>
+              <td class="code">06</td>
+              <td>16</td>
+              <td class="code">10</td>
+              <td>175</td>
+              <td class="code">AF</td>
+            </tr>
+            <tr>
+              <td>7</td>
+              <td class="code">07</td>
+              <td>17</td>
+              <td class="code">11</td>
+              <td>176</td>
+              <td class="code">B0</td>
+            </tr>
+            <tr>
+              <td>8</td>
+              <td class="code">08</td>
+              <td>18</td>
+              <td class="code">12</td>
+              <td>240</td>
+              <td class="code">F0</td>
+            </tr>
+            <tr>
+              <td>9</td>
+              <td class="code">09</td>
+              <td>25</td>
+              <td class="code">19</td>
+              <td>255</td>
+              <td class="code">FF</td>
+            </tr>
+          </table>
+        </div>
 
         <fieldset>
           <h2>Which <strong>one</strong> of the following is <strong>not</strong> true?</h2>
@@ -378,78 +455,6 @@
           <label><input class="checkbox" type="text" value="" /><span>The hexadecimal system has 16 digits: 0 to F</span></label>
           <label><input class="checkbox" type="text" value="" /><span><code>20</code> in hex is the same as <code>(16 x 2)</code></span></label>
           <label><input class="checkbox" data-answer="x" type="text" value="" /><span>Hex numbers are easier for humans to calculate</span></label>
-        </fieldset>
-
-      </div>
-    </div>
-    <div class="page" id="8">
-      <div class="pageDesc">
-        <h1><a href="#8"><span class="pageNum">8</span>Colors</a></h1>
-      </div>
-      <div class="main">
-        <fieldset>
-          <h2>Fill in the blanks to complete all the hex codes:</h2>
-
-          <table>
-
-            <tr>
-              <td class="count num"></td>
-              <td>black</td>
-              <td class="code"><input data-answer="00" type="text" value="" /></td>
-              <td class="code"><input data-answer="00" type="text" value="" /></td>
-              <td class="code"><input data-answer="00" type="text" value="" /></td>
-            </tr>
-            <tr>
-              <td class="count num"></td>
-              <td>green</td>
-              <td class="code">00</td>
-              <td class="code"><input data-answer="FF" type="text" value="" /></td>
-              <td class="code"><input data-answer="00" type="text" value="" /></td>
-            </tr>
-            <tr>
-              <td class="count num"></td>
-              <td>blue</td>
-              <td class="code"><input data-answer="00" type="text" value="" /></td>
-              <td class="code"><input data-answer="00" type="text" value="" /></td>
-              <td class="code">FF</td>
-            </tr>
-            <tr>
-              <td class="count num"></td>
-              <td>teal</td>
-              <td class="code">00</td>
-              <td class="code"><input data-answer="FF" type="text" value="" /></td>
-              <td class="code"><input data-answer="FF" type="text" value="" /></td>
-            </tr>
-            <tr>
-              <td class="count num"></td>
-              <td>yellow</td>
-              <td class="code"><input data-answer="FF" type="text" value="" /></td>
-              <td class="code">FF</td>
-              <td class="code">00</td>
-            </tr>
-            <tr>
-              <td class="count num"></td>
-              <td>orange</td>
-              <td class="code"><input data-answer="FF" type="text" value="" /></td>
-              <td class="code">AA</td>
-              <td class="code">00</td>
-            </tr>
-            <tr>
-              <td class="count num"></td>
-              <td>grey</td>
-              <td class="code">AA</td>
-              <td class="code"><input data-answer="AA" type="text" value="" /></td>
-              <td class="code"><input data-answer="AA" type="text" value="" /></td>
-            </tr>
-            <tr>
-              <td class="count num"></td>
-              <td>pink</td>
-              <td class="code">FF</td>
-              <td class="code">00</td>
-              <td class="code"><input data-answer="AA" type="text" value="" /></td>
-            </tr>
-
-          </table>
         </fieldset>
 
       </div>
@@ -463,113 +468,74 @@
 
         <p>If you want yellow, but <code>FFFF00</code> is <em>too</em> yellow, you can give it one level more blue with <code>FFFF01</code>.</p>
 
-        <table class="inline">
-
-          <tr>
-            <td class="code">FFFF00</td>
-            <td>+</td>
-            <td>1</td>
-            <td>blue</td>
-            <td>=</td>
-            <td class="code">FFFF01</td>
-          </tr>
-          <tr>
-            <td class="code">FFFF00</td>
-            <td>&ndash;</td>
-            <td>1</td>
-            <td>green</td>
-            <td>=</td>
-            <td class="code">FFFE00</td>
-          </tr>
-          <tr>
-            <td class="code">FFFF00</td>
-            <td>&ndash;</td>
-            <td>16</td>
-            <td>green</td>
-            <td>=</td>
-            <td class="code">FFEF00</td>
-          </tr>
-
-        </table>
-
         <fieldset>
           <h2>Complete the equations below:</h2>
 
           <table>
-
             <tr>
-              <td class="count num"></td>
-              <td class="code">BBA900</td>
+              <td class="code">FFFF01</td>
               <td>=</td>
-              <td class="code">BBAA00</td>
+              <td class="code">FFFF00</td>
+              <td>+</td>
+              <td>1</td>
+              <td>blue</td>
+            </tr>
+            <tr>
+              <td class="code">FFFE00</td>
+              <td>=</td>
+              <td class="code">FFFF00</td>
               <td>&ndash;</td>
-              <td><input class="line" data-answer="1" type="text" value="" /></td>
+              <td>1</td>
               <td>green</td>
             </tr>
             <tr>
-              <td class="count num"></td>
-              <td class="code"><input data-answer="BB9A00" type="text" value="" /></td>
+              <td class="code">FFEF00</td>
               <td>=</td>
-              <td class="code">BBAA00</td>
+              <td class="code">FFFF00</td>
               <td>&ndash;</td>
               <td>16</td>
               <td>green</td>
             </tr>
             <tr>
-              <td class="count num"></td>
-              <td class="code">BB9900</td>
-              <td>=</td>
-              <td class="code">BBAA00</td>
-              <td>&ndash;</td>
-              <td><input class="line" data-answer="17" type="text" value="" /></td>
-              <td>green</td>
-            </tr>
-            <tr>
-              <td class="count num"></td>
-              <td class="code"><input data-answer="ABCEEF" type="text" value="" /></td>
-              <td>=</td>
-              <td class="code">ABCDEF</td>
-              <td>+</td>
-              <td>1</td>
-              <td>green</td>
-            </tr>
-            <tr>
-              <td class="count num"></td>
-              <td class="code">9BCDEF</td>
-              <td>=</td>
-              <td class="code">ABCDEF</td>
-              <td>&ndash;</td>
-              <td><input class="line" data-answer="16" type="text" value="" /></td>
-              <td><input class="line" data-answer="red" type="text" value="" /></td>
-            </tr>
-            <tr>
-              <td class="count num"></td>
               <td class="code">ABCDEF</td>
               <td>=</td>
-              <td class="code"><input data-answer="CBCDEF" type="text" value="" /></td>
+              <td class="code">CBCDEF</td>
               <td>&ndash;</td>
               <td>32</td>
-              <td>red</td>
+              <td><input data-answer="red" type="text" value="" /></td>
             </tr>
             <tr>
-              <td class="count num"></td>
-              <td class="code"><input data-answer="B39F00" type="text" value="" /></td>
+              <td class="code">B39F00</td>
               <td>=</td>
               <td class="code">B3A000</td>
               <td>&ndash;</td>
               <td>1</td>
+              <td><input data-answer="green" type="text" value="" /></td>
+            </tr>
+            <tr>
+              <td class="code">BBA900</td>
+              <td>=</td>
+              <td class="code">BBAA00</td>
+              <td>&ndash;</td>
+              <td><input data-answer="1" type="text" value="" /></td>
               <td>green</td>
             </tr>
             <tr>
-              <td class="count num"></td>
-              <td class="code"><input data-answer="299FFA" type="text" value="" /></td>
+              <td class="code">BBCDEF</td>
               <td>=</td>
-              <td class="code">299FF9</td>
+              <td class="code">ABCDEF</td>
+              <td>+</td>
+              <td><input data-answer="16" type="text" value="" /></td>
+              <td>red</td>
+            </tr>
+            <tr>
+              <td class="code">299FFA</td>
+              <td>=</td>
+              <td class="code"><input data-answer="299FF9" type="text" value="" /></td>
               <td>+</td>
               <td>1</td>
               <td>blue</td>
             </tr>
-
           </table>
         </fieldset>
 
@@ -577,7 +543,7 @@
     </div>
     <div class="page" id="10">
       <div class="pageDesc">
-        <h1><a href="#10"><span class="pageNum">10</span>Colors</a></h1>
+        <h1><a href="#10"><span class="pageNum">10</span>Hex</a></h1>
       </div>
       <div class="main">
         <p>Color codes are <dfn>case-insensitive</dfn>: the computer treats them the same if they're UPPERCASE or lowercase.</p>
@@ -588,7 +554,6 @@
           <h2>Fill in the blanks:</h2>
 
           <table>
-
             <tr>
               <td class="count num"></td>
               <td>Decode</td>
@@ -643,7 +608,6 @@
               <td class="code"><input data-answer="b1ebe2" type="text" value="" /></td>
               <td><input class="line" data-answer="Blue-green" type="text" value="" /></td>
             </tr>
-
           </table>
         </fieldset>
 
@@ -729,7 +693,7 @@
         </blockquote>
 
         <fieldset>
-          <h2><q>house</q> and <q>background color</q> are both called a...</h2>
+          <h2><q>house</q> and <q>background color</q> are both called a&hellip;</h2>
 
           <label><input class="checkbox" data-answer="x" type="text" value="" /><span>property: something you have</span></label>
           <label><input class="checkbox" type="text" value="" /><span>asdf</span></label>
@@ -745,44 +709,42 @@
           <h2>Match them up!</h2>
 
           <table>
-
             <tr>
               <td class="code tdr">background-image:</td>
-              <td class="code"><input data-answer="a" class="inline" type="text" value="" /></td>
+              <td class="code"><input data-answer="a" type="text" value="" /></td>
               <td class="count alpha divide"></td>
               <td class="code">url(stars.jpg);</td>
             </tr>
             <tr>
               <td class="code tdr">height:</td>
-              <td class="code"><input data-answer="a" class="inline" type="text" value="" /></td>
+              <td class="code"><input data-answer="a" type="text" value="" /></td>
               <td class="count alpha divide"></td>
               <td class="code">400px;</td>
             </tr>
             <tr>
               <td class="code tdr">border-color:</td>
-              <td class="code"><input data-answer="a" class="inline" type="text" value="" /></td>
+              <td class="code"><input data-answer="a" type="text" value="" /></td>
               <td class="count alpha divide"></td>
               <td class="code">#FF9900;</td>
             </tr>
             <tr>
               <td class="code tdr">transform:</td>
-              <td class="code"><input data-answer="a" class="inline" type="text" value="" /></td>
+              <td class="code"><input data-answer="a" type="text" value="" /></td>
               <td class="count alpha divide"></td>
               <td class="code">rotate(30deg);</td>
             </tr>
             <tr>
               <td class="code tdr">visibility:</td>
-              <td class="code"><input data-answer="a" class="inline" type="text" value="" /></td>
+              <td class="code"><input data-answer="a" type="text" value="" /></td>
               <td class="count alpha divide"></td>
               <td class="code">hidden;</td>
             </tr>
             <tr>
               <td class="code tdr">font-weight:</td>
-              <td class="code"><input data-answer="a" class="inline" type="text" value="" /></td>
+              <td class="code"><input data-answer="a" type="text" value="" /></td>
               <td class="count alpha divide"></td>
               <td class="code">bold;</td>
             </tr>
-
           </table>
         </fieldset>
 
@@ -802,7 +764,6 @@
           <h2>Fill in the blanks:</h2>
 
           <table>
-
             <tr>
               <td class="count num"></td>
               <td>Every <input data-answer="property" type="text" value="" /> has a <code>:</code> after it.</td>
@@ -828,7 +789,6 @@
               <td>The <code>;</code> symbol is called a <input data-answer="semicolon" type="text" value="" />.</td>
               <td>semicolon</td>
             </tr>
-
           </table>
         </fieldset>
 
@@ -845,7 +805,6 @@
           <h2>Match each clue to its font family.</h2>
 
           <table>
-
             <tr>
               <td class="count num"></td>
               <td><a style="font-family: 'Courier New'">All letters are one space wide</a></td>
@@ -876,7 +835,6 @@
               <td class="count alpha"></td>
               <td>fantasy</td>
             </tr>
-
           </table>
         </fieldset>
 
@@ -890,7 +848,6 @@
         <p>In CSS, you pick a font using the <code>font-family</code> property. <code>font-family</code>'s value is a list of fonts. For example:</p>
 
         <table>
-
           <tr>
             <td class="count num"></td>
             <td class="code">font-family: "Times New Roman", Times, serif;</td>
@@ -903,7 +860,6 @@
             <td class="count num"></td>
             <td class="code">font-family: "Courier New", monospace;</td>
           </tr>
-
         </table>
 
         <p>If a font in <code>font-family</code> isn't installed on your computer, your computer tries the next one in the list. If instead of a font it's a family, like <code>cursive</code>, your computer uses any font in that family.</p>
@@ -948,7 +904,7 @@ p code img{
         <h1><a href="#17"><span class="pageNum">17</span>Learn Some Code in About 2 Hours Without a Computer</a></h1>
       </div>
       <div class="main">
-        <p>Fill in the selectors for...</p>
+        <p>Fill in the selectors for&hellip;</p>
 
         <fieldset>
           <h2>Every button that's in a form.</h2>
@@ -1032,7 +988,7 @@ p code img{
           </li>
           <li>If a website has two CSS rules for paragraphs, it uses both rules.
           </li>
-          <li>...<strong>but</strong> if both rules have a <code>font-family</code>, the website will ignore the first <code>font-family</code> and use the second one instead.
+          <li>&hellip;<strong>but</strong> if both rules have a <code>font-family</code>, the website will ignore the first <code>font-family</code> and use the second one instead.
           </li>
         </ol>
 
@@ -1173,7 +1129,7 @@ p code img{
       </div>
       <div class="main">
         <fieldset>
-          <h2><code>&lt;p&gt;&lt;/p&gt;</code> and <code>&lt;em&gt;&lt;/em&gt;</code> are called...</h2>
+          <h2><code>&lt;p&gt;&lt;/p&gt;</code> and <code>&lt;em&gt;&lt;/em&gt;</code> are called&hellip;</h2>
 
           <label><input class="checkbox" data-answer="x" type="text" value="" /><span>Elements: they make up every webpage on the Internet, just as elements like hydrogen and carbon make up everything in the real world.</span></label>
           <label><input class="checkbox" type="text" value="" /><span>Cookies: there are two pieces with something in the middle, and the inventors of the Internet really liked Oreos.</span></label>
@@ -1181,7 +1137,7 @@ p code img{
         </fieldset>
 
         <fieldset>
-          <h2><code>&lt;p&gt;</code> and <code>&lt;/p&gt;</code> are called <dfn>tags</dfn> because...</h2>
+          <h2><code>&lt;p&gt;</code> and <code>&lt;/p&gt;</code> are called <dfn>tags</dfn> because&hellip;</h2>
 
           <label><input class="checkbox" data-answer="x" type="text" value="" /><span>They're little labels</span></label>
           <label><input class="checkbox" type="text" value="" /><span>They chase each other around, like in a game of Tag</span></label>
@@ -1212,12 +1168,12 @@ p code img{
       </div>
       <div class="main">
         <fieldset>
-          <h2>Servers and clients in <strong>restaurants</strong> are like servers and clients in computing because... (pick one)</h2>
+          <h2>Servers and clients in <strong>restaurants</strong> are like servers and clients in computing because&hellip; (pick one)</h2>
 
-          <label><input class="checkbox" type="text" value="" /><span>...servers work from 9 to 5 and clients tip them.</span></label>
-          <label><input class="checkbox" type="text" value="" /><span>...servers make things out of the ingredients that clients bring them.</span></label>
-          <label><input class="checkbox" data-answer="x" type="text" value="" /><span>...servers take requests from clients and respond to them.</span></label>
-          <label><input class="checkbox" type="text" value="" /><span>...servers tell clients what to do.</span></label>
+          <label><input class="checkbox" type="text" value="" /><span>&hellip;servers work from 9 to 5 and clients tip them.</span></label>
+          <label><input class="checkbox" type="text" value="" /><span>&hellip;servers make things out of the ingredients that clients bring them.</span></label>
+          <label><input class="checkbox" data-answer="x" type="text" value="" /><span>&hellip;servers take requests from clients and respond to them.</span></label>
+          <label><input class="checkbox" type="text" value="" /><span>&hellip;servers tell clients what to do.</span></label>
         </fieldset>
 
         <fieldset>

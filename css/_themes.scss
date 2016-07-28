@@ -43,6 +43,11 @@ pre, code, .code{
 
 .fig{
   text-align:center;
+
+  & > *{
+    margin-left:auto;
+    margin-right:auto;
+  }
 }
 label{
   display:block;
@@ -52,9 +57,10 @@ label{
   }
 }
 ul, ol{
-  padding-left:20px;
+  margin-left:20px;
 }
 li{
+  // list-style-position:inside;
   ul > &{
     list-style-type:disc;
   }
@@ -107,21 +113,13 @@ blockquote{
   .main > *{
     margin-bottom:1.6em;
   }
-  li{
-    padding-left:0.5em;
-  }
   table, tr, td{
     position:relative;
   }
   table{
-    width:100%;
     counter-reset: count-num count-alpha;
-    margin-left:auto;
-    margin-right:auto;
+    text-align:left;
 
-    &.inline{
-      width:auto;
-    }
     .tdr{
       text-align:right;
     }
@@ -169,7 +167,7 @@ fieldset{
     line-height:1.4em;
     margin-left:0;
     @media screen{
-      background-color:#eeeef3;
+      background-color:#e9e9ff;
       text-shadow:none;
       padding-right:1em;
     }
@@ -189,15 +187,14 @@ input[type=text]{
   width:6em;
   border-bottom:1px solid #000;
   font-style:normal;
+  text-align:left;
+
   @media screen{
     border-color:#ccc;
     background-color:#ffc;
   }
   @media print{
     color:transparent;
-  }
-  td &:only-child{
-    width:100%;
   }
   &.checkbox{
     display:inline-block;
@@ -216,10 +213,6 @@ input[type=text]{
   &.line{
     display:block;
     width:100%;
-  }
-  &.inline{
-    text-align:center;
-    width:3em;
   }
   &.flex{
     flex-grow:1;

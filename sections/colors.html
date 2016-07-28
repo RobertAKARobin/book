@@ -1,74 +1,93 @@
-A computer screen is made of //pixels//. A pixel is a tiny square made of three *really* tiny lights: one red, one blue, and one green.
+A computer screen is made of //pixels//. A pixel is a tiny square made of three *really tiny* lights: one red, one green, and one blue.
 
-These are the three ''primary colors'' for computer and TV screens. You probably learned the primary colors are red, blue, and *yellow*, but screen light is different from normal light.
+Red, green, and blue are the three ''primary colors'' for computer and TV screens.
+
+You probably learned the primary colors are red, blue, and *yellow*:
 
 ???
-## How might you make these colors using only red, green, and blue?
+## Fill in the blanks with **red**, **blue**, and **yellow**:
 
-<table>
 |\
-|purple|=|red  |+|_blue_
-|teal  |=|blue |+|_green_
-|yellow|=|green|+|_red_
+|red   |+|_blue_  |=|purple
+|blue  |+|_yellow_|=|green
+|yellow|+|_red_   |=|orange
 |/
-</table>
+??/
+
+But screen light is different from normal light.
+
+???
+## Fill in the blanks with **red**, **blue**, and **green**. Use the process of elimination!
+
+|\
+|red  |+|_blue_  |=|purple
+|blue |+|_green_ |=|turquoise
+|green|+|_red_   |=|yellow
+|/
 ??/
 
 =====
 
-Each pixel has an //RGB// code that says what color it should make. RGB codes are made of 3 numbers. Here are some RGB codes:
+Each pixel has an //RGB code// that says what color it should make.
 
-<table class="inline">
-|\         |code    |code    |code
-|red       |255     |000     |000
-|purple    |255     |000     |255
-|white     |255     |255     |255
-|dark green|000     |170     |000
-|/
-</table>
+<div class="fig">`R G B`</div>
+
+To make the color purple, a pixel needs its red and blue lights to be turned on, and its green light to be turned off:
+
+<div class="fig">`R _ B`</div>
+
+The RGB code for a purple pixel is:
+
+<div class="fig">`255 0 255`</div>
 
 ???
-## What do you think ''RGB'' stands for?
+## What does ''RGB'' stand for?
 
-[ ] Riemannian Gradient Base
-[ ] The initials of the computer screen's inventor
+[ ] The initials of the company that makes screens
 [x] Red, Green, Blue
 [ ] Really Good Bacon
 ??/
 
 ???
-## What might the code's 3 numbers represent?
+## The 3 numbers in a purple pixel's RGB code show:
 
-[x] The brightness of each of the pixel's 3 lights
-[ ] The memory it takes to make the color
-[ ] The temperature of the pixel
+[x] If its red, green, and blue lights are on or off
+[ ] How hot the pixel is
 [ ] The letters of the alphabet in the color's name
 ??/
 
 =====
 
-???
-## If the first number in a pixel's RGB code is `255`, it means the pixel's red light is...
+A yellow pixel has an RGB code of:
 
-[x] All the way on
-[ ] A little dim
-[ ] All the way off
+<div class="fig">`255 255 0`</div>
+
+???
+## A **first** number of `255` means...
+
+[x] The pixel's red light is all the way on
+[ ] The pixel's red light is all the way off
+[ ] The pixel's red light is on, but not all the way
 ??/
 
 ???
-## If the second number in a pixel's RGB code is `000`, it means the pixel's green light is...
+## A **third** number of `0` means...
 
-[ ] All the way on
-[ ] A little dim
-[x] All the way off
+[ ] The pixel's blue light is all the way on
+[x] The pixel's blue light is all the way off
+[ ] The pixel's blue light is on, but not all the way
 ??/
 
-???
-## If the last number in a pixel's RGB code is `170`, it means the pixel's blue light is...
+An orange pixel has an RGB code of:
 
-[ ] All the way on
-[s] A little dim
-[ ] All the way off
+<div class="fig">`255 170 0`</div>
+
+???
+## A **second** number of `170` means...
+
+[ ] The pixel's green light is all the way on
+[ ] The pixel's green light is all the way off
+[s] The pixel's green light is on, but not all the way
 ??/
 
 =====
@@ -76,174 +95,14 @@ Each pixel has an //RGB// code that says what color it should make. RGB codes ar
 ???
 ## Fill in the blanks to complete all the RGB codes:
 
-<table>
-|\count num|  |code    |code    |code
-||black       |_000_   |_000_   |_000_
-||green       |000     |_255_   |000
-||blue        |_000_   |_000_   |255
-||teal        |000     |_255_   |_255_
-||yellow      |_255_   |255     |000
-||orange      |_255_   |170     |000
-||grey        |170     |_170_   |_170_
-||pink        |255     |000     |_170_
+|\           |code    |code    |code
+|white       |255     |_255_   |255
+|black       |_0_     |0       |_0_
+|green       |0       |_255_   |0
+|blue        |_0_     |_0_     |255
+|teal        |0       |_255_   |_255_
+|yellow      |_255_   |255     |0
+|orange      |_255_   |170     |0
+|grey        |170     |_170_   |_170_
 |/
-</table>
 ??/
-
-=====
-
-RGB codes are made of //decimal// numbers. To make colors, programmers often use //hexadecimal// numbers instead.
-
-???
-## The ''dec'' in ''decimal'' means ''ten''. The ''hex'' in ''hexadecimal'' and the ''hex'' in ''hexagon'' both mean:
-
-[x] six
-[ ] circle
-[ ] eight
-[ ] blue
-??/
-
-???
-## Since ''hexadecimal'' contains ''hex'' plus ''dec'', ''hexadecimal'' probably means:
-
-[ ] seven
-[x] sixteen
-[ ] sixty-one
-[ ] blue
-??/
-
-=====
-
-Here are some more RGB codes and their matching hex codes:
-
-<table>
-|\
-|          |RGB          |Hex
-|red       |`255 000 000`|`FF 00 00`
-|white     |`255 255 255`|`FF FF FF`
-|dark green|`000 170 000`|`00 AA 00`
-|/
-</table>
-
-???
-## Computer programmers may like to use hex codes instead of RGB codes because...
-
-[ ] Programmers are weird
-[ ] Old keyboards didn't have number keys
-[x] Hex codes are always 6 letters long
-[ ] Some languages don't have numbers
-??/
-
-=====
-
-Here are a bunch of decimal numbers and their matching hex numbers:
-
-<table>
-|\  | code |    | code |     | code
-| 0 | 00   | 10 | 0A   | 26  | 1A
-| 1 | 01   | 11 | 0B   | 31  | 1F
-| 2 | 02   | 12 | 0C   | 32  | 20
-| 3 | 03   | 13 | 0D   | 33  | 21
-| 4 | 04   | 14 | 0E   | 160 | A0
-| 5 | 05   | 15 | 0F   | 161 | A1
-| 6 | 06   | 16 | 10   | 175 | AF
-| 7 | 07   | 17 | 11   | 176 | B0
-| 8 | 08   | 18 | 12   | 240 | F0
-| 9 | 09   | 25 | 19   | 255 | FF
-|/
-</table>
-
-???
-## Which **one** of the following is **not** true?
-
-[ ] The decimal system has 10 digits: 0 to 9
-[ ] The hexadecimal system has 16 digits: 0 to F
-[ ] `20` in hex is the same as `(16 x 2)`
-[x] Hex numbers are easier for humans to calculate
-??/
-
-=====
-
-???
-## Fill in the blanks to complete all the hex codes:
-
-<table>
-|\count num|  |code     |code     |code
-||black       |_00_     |_00_     |_00_
-||green       | 00      |_FF_     |_00_
-||blue        |_00_     |_00_     | FF
-||teal        | 00      |_FF_     |_FF_
-||yellow      |_FF_     | FF      | 00
-||orange      |_FF_     | AA      | 00
-||grey        | AA      |_AA_     |_AA_
-||pink        | FF      | 00      |_AA_
-|/
-</table>
-??/
-
-=====
-
-Knowing how hex works makes it easier to find the perfect color for your website or app.
-
-If you want yellow, but `FFFF00` is *too* yellow, you can give it one level more blue with `FFFF01`.
-
-<table class="inline">
-|\code |       |  |     | |code
-|FFFF00|+      |1 |blue |=|FFFF01
-|FFFF00|&ndash;|1 |green|=|FFFE00
-|FFFF00|&ndash;|16|green|=|FFEF00
-|/
-</table>
-
-???
-## Complete the equations below:
-
-<table>
-|\count num|code||code|         |      |
-||BBA900  |=|BBAA00   | &ndash; |__1__ | green
-||_BB9A00_|=|BBAA00   | &ndash; | 16   | green
-||BB9900  |=|BBAA00   | &ndash; |__17__| green
-||_ABCEEF_|=|ABCDEF   | +       | 1    | green
-||9BCDEF  |=|ABCDEF   | &ndash; |__16__|__red__
-||ABCDEF  |=|_CBCDEF_ | &ndash; | 32   | red
-||_B39F00_|=|B3A000   | &ndash; | 1    | green
-||_299FFA_|=|299FF9   | +       | 1    | blue
-|/
-</table>
-??/
-
-=====
-
-Color codes are //case-insensitive//: the computer treats them the same if they're UPPERCASE or lowercase.
-
-One neat thing about knowing hex is you can make colors from words!
-
-???
-## Fill in the blanks:
-
-<table>
-|\count num||code|
-||Decode     |dec0de   |Pastel pink
-||_Office_   |0ff1ce   |Blue-green
-||Old dad    |_01ddad_ |Green-blue
-||Coffee     |_c0ffee_ |__Pale blue__
-||Doodle     |_d00d1e_ |__Red__
-||Fedora     |fed02a   |__Yellow__
-||Bad cat    |badca7   |__Pastel green__
-||__Ballet__ |ba11e7   |__Purple__
-||Bieber     |_b1ebe2_ |__Blue-green__
-|/
-</table>
-??/
-
-<div class="wordbank">
--=Pastel green
-- Purple
-- Blue-green
-- Yellow
-- Red
-- Pastel pink
-- Pale blue
-- Pastel green
--=/
-</div>

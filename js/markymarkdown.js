@@ -25,19 +25,17 @@ module.exports= (function(){
       }],
       ["_{1}",,,      function blankInline(nil, output){
         var attributes = {"data-answer": output};
-        if(output.length < 2){
-          attributes.class = "inline";
-        }
         return h.tag(["input", attributes]);
       }],
       [,,    / -- /g, " &mdash; "],
       [,,    /''\\/g, "&ldquo;"],
       [,,    /''\//g, "&rdquo;"],
+      [,,    /\.{3}/g,"&hellip;"],
       ["\\/{2}","dfn"],
       ["\\*{2}","strong"],
       ["\\*{1}","em"],
       ["'{2}",  "q"],
-      ["~{2}",  "mark"]
+      ["~{2}",  "mark"],
     ],
     singleline: [
       ["#{4}",  "h4"],
@@ -65,11 +63,11 @@ module.exports= (function(){
       }],
       ["\\|\\\\",,,   function newTable(nil, cols){
         flag.cols = cols.split("|");
-        return "";
+        return "<table>";
       }],
       ["\\|\\/",,,    function endTable(){
         flag.cols = null;
-        return "";
+        return "</table>";
       }],
       ["\\|",,,       function tableRow(nil, row){
         var line = "";

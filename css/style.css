@@ -176,6 +176,11 @@ pre, code, .code {
   text-align: center;
 }
 
+.fig > * {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 label {
   display: block;
   clear: both;
@@ -186,7 +191,7 @@ label:hover {
 }
 
 ul, ol {
-  padding-left: 20px;
+  margin-left: 20px;
 }
 
 ul > li {
@@ -243,23 +248,13 @@ blockquote {
   margin-bottom: 1.6em;
 }
 
-.page li {
-  padding-left: 0.5em;
-}
-
 .page table, .page tr, .page td {
   position: relative;
 }
 
 .page table {
-  width: 100%;
   counter-reset: count-num count-alpha;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.page table.inline {
-  width: auto;
+  text-align: left;
 }
 
 .page table .tdr {
@@ -326,7 +321,7 @@ fieldset h2 {
 
 @media screen {
   fieldset h2 {
-    background-color: #eeeef3;
+    background-color: #e9e9ff;
     text-shadow: none;
     padding-right: 1em;
   }
@@ -347,6 +342,7 @@ input[type=text] {
   width: 6em;
   border-bottom: 1px solid #000;
   font-style: normal;
+  text-align: left;
 }
 
 @media screen {
@@ -360,10 +356,6 @@ input[type=text] {
   input[type=text] {
     color: transparent;
   }
-}
-
-td input[type=text]:only-child {
-  width: 100%;
 }
 
 input[type=text].checkbox {
@@ -385,11 +377,6 @@ input[type=text].checkbox + span {
 input[type=text].line {
   display: block;
   width: 100%;
-}
-
-input[type=text].inline {
-  text-align: center;
-  width: 3em;
 }
 
 input[type=text].flex {
