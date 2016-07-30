@@ -1,138 +1,216 @@
-# CSS
-
-<p style="border:2px dotted black; padding:0.5em 1em; text-align:center; font-style:italic;">This paragraph has been //styled// to look different from the other paragraphs in this book. The code for styling is called //CSS//. The CSS for this paragraph's is below.</p>
+<p style="border:5px dotted #fff; padding:0.5em 1em; text-align:center; font-style:italic; background-color:#000; color:#fff; text-shadow:none;">This paragraph has been //styled// to look different from the other paragraphs in this book. The code for styling is called //CSS//. The CSS for this paragraph is below.</p>
 
 ???
-## Fill in the blanks to complete the CSS.
+## Try to fill in the blanks to complete the CSS by reading the code like English. Remember what you know about colors!
 
--#
->`color:` ___#000000;___
--
->`font-style:` ___italic;___
--
->`text-align:` ___center;___
--
->`font-size:` ___12px;___
--
->`border:` ___2px dotted #000000;___
--#/
+```
+background-color: ___#000000;___
+color: ___#FFFFFF;___
+font-style: ___italic;___
+text-align: ___center;___
+font-size: ___12px;___
+border: ___5px dotted #FFFFFF;___
+``/
 ??/
 
 <div class="wordbank">
 -=`#000000;`
+- `#FFFFFF;`
 - `italic;`
 - `center;`
 - `12px;`
-- `2px dotted #000000;`
+- `5px dotted #FFFFFF;`
 -=/
 </div>
 
 =====
 
+A //property// is something you have. A //value// is an amount, a measurement, or a ''setting'' -- like how you can ''set'' your phone's ringtone.
+
+???
+## Look at these 2 sentences, then fill in the blanks with **property** or **value**:
+
 <blockquote>
-Bob says, ''This house is worth a million dollars!'' Then Bob writes some CSS that says, ''This background color is red!''
+''This house is worth a million dollars!''
+''This background color is red!''
 </blockquote>
 
-???
-## ''house'' and ''background color'' are both called a...
+''House'' and ''background color'' are both a _property_.
 
-[x] property: something you have
-[ ] asdf
+''A million dollars'' and ''red'' are both a _value_.
+
+So in the list below everything on the left is a _property_, and everything on the right is a _value_.
 ??/
 
 ???
-## This means:
+## Fill in the properties and values!
 
-Everything in the left column below is a _property_, and everything in the right column is a _value_.
-??/
-
-???
-## Match them up!
-
-|\code tdr|code|count alpha divide|code|
-|background-image: |_a_| |url(stars.jpg);
-|height:           |_a_| |400px;
-|border-color:     |_a_| |#FF9900;
-|transform:        |_a_| |rotate(30deg);
-|visibility:       |_a_| |hidden;
-|font-weight:      |_a_| |bold;
+<div class="ex">
+|\code tdr         |code              |div|code
+|background-image: |_url(stars.jpg);_ |   |url(stars.jpg);
+|height:           |_400px;_          |   |400px;
+|border-color:     |_#FF9900;_        |   |#FF9900;
+|transform:        |_rotate(30deg);_  |   |rotate(30deg);
+|visibility:       |_hidden;_         |   |hidden;
+|font-weight:      |_bold;_           |   |bold;
 |/
+</div>
 ??/
-
-<!-- You change how the website looks by changing a CSS //property//. There are over 500 CSS properties. Each has a //value//. A property and its value together are a //declaration//.
-
-Match the properties and values to make declarations:
-<-->
 
 =====
 
-???
-## Fill in the blanks:
+There are over 500 CSS properties.
 
-|\count num||
-||Every _property_ has a `:` after it.    |property
-||Every _declaration_ ends with a `;`.    |pixel
-||''px'' stands for _pixel_.              |delcaration
-||The `:` symbol is called a _colon_.     |colon
-||The `;` symbol is called a _semicolon_. |semicolon
+This means each image, button, or piece of text you see on a webpage has 500 different ''settings'' you can change to make it look different.
+
+When you pick a property and change its value, you make a //declaration//.
+
+???
+## Look back at the CSS you have written so far and fill in the blanks:
+
+|\                                |div|
+|Every property has _:_ after it  |   |a colon, ~~`:`~~
+|Every declaration ends with _;_  |   |a semicolon, ~~`;`~~
+|Every RGB code begins with _#_   |   |a hash, ~~`#`~~
+|''px'' stands for ''_pixels_''   |   |pixels
 |/
 ??/
 
 =====
 
-There are 5 //families// of fonts. Every font is in one of those families.
-
-???
-## Match each clue to its font family.
-
-|\count num||count alpha|
-||<a style="font-family: 'Courier New'">All letters are one space wide</a>    ||monospace
-||<a style="font-family: 'Times New Roman'">Dutch for ''a short line''</a>      ||serif
-||<a style="font-family: Helvetica">Begins with French word for ''without''</a>    ||sans-serif
-||<a style="font-family: 'Comic Sans MS'">Looks like handwriting</a>||cursive
-||<a style="font-family: Papyrus">Used mostly for logos and graphics</a>      ||fantasy
-|/
-??/
-
-=====
-
-In CSS, you pick a font using the `font-family` property. `font-family`'s value is a list of fonts. For example:
-
-|\count num|code
-||font-family: "Times New Roman", Times, serif;
-||font-family: cursive;
-||font-family: "Courier New", monospace;
-|/
-
-If a font in `font-family` isn't installed on your computer, your computer tries the next one in the list. If instead of a font it's a family, like `cursive`, your computer uses any font in that family.
-
-???
-## A font name that contains a <b>&nbsp;</b> must be inside "quotes".
-
-[x] space
-[ ] semicolon
-[ ] number
-??/
-
-=====
-
-Every CSS rule starts with a //selector//. It tells the computer which parts of a website it should ''select'' to use with that CSS rule.
+Each CSS declaration needs a //selector//. It tells your computer which part of a webpage it should ''select'' to use with that declaration. For example:
 
 ```
 p, code, img{
   width: 400px;
+  height: 200px;
 }
 ``/
 
-This CSS rule says, ''Every paragraph, every code snippet, and every image should be 400 pixels wide.''
+This tells your computer that it should *select* something and make it 400 pixels wide and 200 pixels high.
+
+???
+
+## Which part do you think is the ''selector''?
+
+[x] `p, code, img`
+[ ] `width: 400px;`
+[ ] `width: 400px;` **and** `height: 200px;`
+
+??/
+
+???
+
+## What part of the webpage do you think this rule is *selecting*?
+
+[x] Every paragraph, code snippet, and image
+[ ] The letter 'p', the word 'code', and the letters 'img'
+[ ] Any code that starts with 'p' and ends with 'img'
+
+??/
+
+=====
+
+A selector and its declarations are called a CSS //rule//.
+
+???
+
+## Why is it called a ''rule''?
+
+[x] Because CSS tells your computer how to behave
+[ ] Because you need a **rule**r to measure things
+[ ] Because CSS rules!
+
+??/
+
+A rule can be written on one line, or many lines. But the punctuation is always the same.
+
+???
+
+## Which of these do you think is most likely to make a *rule* for every abbreviation and definition on a webpage?
+
+[x] `abbr, dfn{ font-style: italic; }`
+[ ] `abbreviation and definition{ font-style: italic; }`
+[ ] `abbr dfn{ font-style: italic; }`
+[ ] `abbr, dfn{ font-style italic }`
+
+??/
+
+=====
+
+???
+
+## What's wrong with this CSS rule?
 
 ```
-p code img{
-  width: 400px;
-}
+p, code
+  color: #F00;
+  text-align: center;
+
 ``/
 
-This CSS rule -- without commas -- says, ''Every image that's in a code snippet that's in a paragraph should be 400 pixels wide.''
+[ ] A selector has to have 3 things
+[x] It's missing {curly brackets}
+[ ] Nothing
+
+??/
+
+???
+## What's wrong with this CSS rule?
+
+```
+q{ background-color:#CCC color: #0F0; }
+
+``/
+
+[x] It's missing a semicolon ~~;~~
+[ ] Each declaration must be on a separate line
+[ ] That color green looks really bad on that color grey
+??/
+
+???
+## What do you think `q` will select?
+
+[x] Quotes
+[ ] Just the letter `q`
+[ ] The letter `p` when you look at the webpage in a mirror
+??/
+
+=====
+
+This selects every quote and every piece of code:
+
+<div class="fig">
+`q, code`
+</div>
+
+This selects every piece of code *inside* a quote:
+
+<div class="fig">
+`q code`
+</div>
+
+???
+## `p img` will select:
+
+[ ] Every paragraph and every image
+[x] Every image that's inside a paragraph
+??/
+
+???
+## `p, img` will select:
+
+[x] Every paragraph and every image
+[ ] Every image that's inside a paragraph
+??/
+
+???
+## Which **one** of the following do you think is true?
+
+[x] Punctuation is really important in CSS
+[ ] If you make mistakes in your code, your computer will figure it out for you
+[ ] Most programmers never make mistakes
+??/
 
 =====
 
@@ -168,8 +246,6 @@ __form, button__
 
 =====
 
-# Stylesheets
-
 All of a website's CSS is usually kept in a file called a //stylesheet//:
 
 ```#
@@ -178,22 +254,29 @@ p, code{
   font-size: 18px;
 }
 p{
-  font-family: sans-serif;
+  color: #FF0000;
 }
 code{
-  font-family: monospace;
+  color: #0000FF;
 }
 ``/
 
-Each of the chunks in `{braces}` is a //rule//. The ''`p`'' rule changes all the paragraphs on the website. The ''`p, code`'' rule changes all the paragraphs *and* code snippets.
+It's a *sheet* of *style* rules.
+
+???
+## The CSS above changes the `color` for paragraphs 2 times. Which `color` do you think the computer will use?
+
+[ ] The first one, `#000000`
+[x] The second one, `#FF0000`
+[ ] Neither; the computer will crash
+??/
 
 ???
 ## The font of every code snippet will be:
 
-[x] black, 18 pixels tall, and monospaced
-[ ] black, 18 pixels tall, and sans-serif
-[ ] monospaced
-[ ] sans-serif
+[x] blue and 18 pixels tall
+[ ] red and 18 pixels tall
+[ ] blue
 ??/
 
 =====
@@ -202,10 +285,8 @@ The ''C'' in ''CSS'' stands for ''cascading''. This means three things:
 
 -#If a website has two stylesheets, it uses both of them.
 - If a website has two CSS rules for paragraphs, it uses both rules.
-- ...**but** if both rules have a `font-family`, the website will ignore the first `font-family` and use the second one instead.
+- ...**but** if both rules have a `color`, the website will ignore the first `color` and use the second one instead.
 -#/
-
-=====
 
 ```#
 p{
@@ -222,16 +303,15 @@ code{
 ``/
 
 ???
-## {{wordbank}}
-
-This code means paragraphs will have _green_ backgrounds, and code snippets will have _blue_ backgrounds.
-??/
+## Fill in the blanks with two of these words:
 
 <div class="wordbank">
-
 -=red
 - blue
 - yellow
 - green
 -=/
 </div>
+
+This code means paragraphs will have _green_ backgrounds, and code snippets will have _blue_ backgrounds.
+??/

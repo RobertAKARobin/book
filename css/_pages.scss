@@ -24,6 +24,10 @@ html, body, .page{
 }
 
 .page{
+  .main > *{
+    margin-bottom:1.6em;
+  }
+  
   .pageDesc{
     font-size:12px;
     position:relative;
@@ -81,6 +85,10 @@ html, body, .page{
   }
   #main{
     font-size:0;
+  }
+  .sheet{
+    position:relative;
+    page-break-inside:avoid;
   }
   .page{
     display:inline-block;

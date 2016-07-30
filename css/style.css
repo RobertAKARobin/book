@@ -43,6 +43,10 @@ html, body, .page {
   background-size: 300px;
 }
 
+.page .main > * {
+  margin-bottom: 1.6em;
+}
+
 .page .pageDesc {
   font-size: 12px;
   position: relative;
@@ -104,6 +108,10 @@ html, body, .page {
   #main {
     font-size: 0;
   }
+  .sheet {
+    position: relative;
+    page-break-inside: avoid;
+  }
   .page {
     display: inline-block;
     vertical-align: top;
@@ -128,7 +136,7 @@ html, body, .page {
 }
 
 html, body {
-  font-family: "Arial", serif;
+  font-family: "Arial", sans-serif;
   text-align: center;
 }
 
@@ -164,12 +172,25 @@ dfn {
   }
 }
 
+q:before {
+  content: "\0201c";
+}
+
+q:after {
+  content: "\0201d";
+}
+
 pre, code, .code {
   text-align: left;
   white-space: pre-wrap;
   font-family: "Courier New", "Andale Mono", monospace;
   font-style: normal;
   font-size: 1rem;
+  letter-spacing: -1px;
+}
+
+pre {
+  line-height: 1em;
 }
 
 .fig {
@@ -179,6 +200,19 @@ pre, code, .code {
 .fig > * {
   margin-left: auto;
   margin-right: auto;
+}
+
+.ex {
+  padding-left: 0;
+}
+
+.ex table {
+  width: 100%;
+}
+
+blockquote {
+  font-style: italic;
+  font-weight: lighter;
 }
 
 label {
@@ -202,17 +236,30 @@ ol > li {
   list-style-type: decimal;
 }
 
-q:before {
-  content: "\0201c";
+.wordbank {
+  text-align: center;
 }
 
-q:after {
-  content: "\0201d";
+.wordbank ul, .wordbank ol {
+  padding-left: 0;
 }
 
-blockquote {
-  font-style: italic;
-  font-weight: lighter;
+.wordbank li {
+  display: inline-block;
+  margin: 0 0.5em;
+  border-bottom: 1px dotted #000;
+}
+
+.wordbank ol {
+  counter-reset: count-num;
+}
+
+.wordbank ol li {
+  counter-increment: count-num;
+}
+
+.wordbank ol li:before {
+  content: counter(count-num) ". ";
 }
 
 .HTMLCodeBlock > * {
@@ -244,52 +291,49 @@ blockquote {
   border-bottom: 1px dotted #000;
 }
 
-.page .main > * {
-  margin-bottom: 1.6em;
-}
-
-.page table, .page tr, .page td {
+table, tr, td {
   position: relative;
 }
 
-.page table {
+table {
   counter-reset: count-num count-alpha;
   text-align: left;
 }
 
-.page table .tdr {
+table td {
+  position: relative;
+  padding-left: 1em;
+  white-space: nowrap;
+}
+
+table td.tdr {
   text-align: right;
 }
 
-.page table .divide {
+table td.div {
   border-left: 1px solid black;
+  padding-left: 0em;
 }
 
-.page table .count {
+table td.count {
   padding: 0 0.5em;
   text-align: left;
 }
 
-.page table .count.num {
+table td.count.num {
   counter-increment: count-num;
 }
 
-.page table .count.num:before {
+table td.count.num:before {
   content: counter(count-num) ".";
 }
 
-.page table .count.alpha {
+table td.count.alpha {
   counter-increment: count-alpha;
 }
 
-.page table .count.alpha:before {
+table td.count.alpha:before {
   content: counter(count-alpha, lower-alpha) ".";
-}
-
-.page table td {
-  position: relative;
-  padding-left: 1em;
-  white-space: nowrap;
 }
 
 fieldset {
@@ -331,7 +375,7 @@ b, input[type=text] {
   display: inline-block;
   white-space: nowrap;
   vertical-align: baseline;
-  font-family: "Comic Sans MS", cursive;
+  font-family: "Arial", sans-serif;
 }
 
 b {
@@ -343,6 +387,10 @@ input[type=text] {
   border-bottom: 1px solid #000;
   font-style: normal;
   text-align: left;
+}
+
+table input[type=text] {
+  width: 4em;
 }
 
 @media screen {
@@ -393,33 +441,6 @@ input[type=text].flex:only-child {
 span.line {
   display: inline-flex;
   width: 100%;
-}
-
-.wordbank {
-  text-align: center;
-}
-
-.wordbank ul, .wordbank ol {
-  padding-left: 0;
-}
-
-.wordbank li {
-  display: inline-block;
-  margin: 0 0.5em;
-  border-bottom: 1px dotted #000;
-  padding-right: 0.5em;
-}
-
-.wordbank ol {
-  counter-reset: count-num;
-}
-
-.wordbank ol li {
-  counter-increment: count-num;
-}
-
-.wordbank ol li:before {
-  content: counter(count-num) ". ";
 }
 
 #nav {

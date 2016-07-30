@@ -34,7 +34,7 @@ var wordbank  = "Complete this using the word bank:";
     read("./sections/" + section + ".html").split(/\s*={5}\s*/).forEach(function(page){
       viewVars.pageNum += 1;
       if(viewVars.pageNum % 2 !== 0){
-        // book += "<div class=\"sheet\">";
+        book += "<div class=\"sheet\">";
         viewVars.title = title;
       }else{
         viewVars.title = section;
@@ -46,7 +46,7 @@ var wordbank  = "Complete this using the word bank:";
       });
       book += page;
       if(viewVars.pageNum % 2 === 0){
-        // book += "</div>";
+        book += "</div>";
       }
     });
   });

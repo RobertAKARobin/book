@@ -111,7 +111,7 @@ module.exports= (function(){
         if(flag.insideCodeBlock){
           output = h.replaceEntities(output);
           if(flag.lineNumber){
-            output = h.pad(flag.lineNumber, 3, ".") + "  " + output;
+            output = h.pad(flag.lineNumber, 2, " ") + "|  " + output;
             flag.lineNumber += 1;
           }
         }else if(flag.insideHTMLCodeBlock){

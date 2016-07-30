@@ -1,6 +1,6 @@
-$fontText: "Arial", serif;
+$fontText: "Arial", sans-serif;
 $fontCode: "Courier New", "Andale Mono", monospace;
-$fontHand: "Comic Sans MS", cursive;
+$fontHand: "Arial", sans-serif;
 
 html, body{
   font-family:$fontText;
@@ -33,14 +33,26 @@ dfn{
     background-color:#ff0;
   }
 }
+q{
+  &:before{
+    content:"\0201c";
+  }
+  &:after{
+    content:"\0201d";
+  }
+}
+
 pre, code, .code{
   text-align:left;
   white-space:pre-wrap;
   font-family: $fontCode;
   font-style:normal;
   font-size:1rem;
+  letter-spacing:-1px;
 }
-
+pre{
+  line-height:1em;
+}
 .fig{
   text-align:center;
 
@@ -48,6 +60,17 @@ pre, code, .code{
     margin-left:auto;
     margin-right:auto;
   }
+}
+.ex{
+  padding-left:0;
+
+  table{
+    width:100%;
+  }
+}
+blockquote{
+  font-style:italic;
+  font-weight:lighter;
 }
 label{
   display:block;
@@ -60,7 +83,6 @@ ul, ol{
   margin-left:20px;
 }
 li{
-  // list-style-position:inside;
   ul > &{
     list-style-type:disc;
   }
@@ -68,17 +90,26 @@ li{
     list-style-type:decimal;
   }
 }
-q{
-  &:before{
-    content:"\0201c";
+
+.wordbank{
+  text-align:center;
+  ul, ol{
+    padding-left:0;
   }
-  &:after{
-    content:"\0201d";
+  li{
+    display:inline-block;
+    margin:0 0.5em;
+    border-bottom:1px dotted #000;
   }
-}
-blockquote{
-  font-style:italic;
-  font-weight:lighter;
+  ol{
+    counter-reset: count-num;
+    li{
+      counter-increment: count-num;
+      &:before{
+        content: counter(count-num) ". ";
+      }
+    }
+  }
 }
 
 .HTMLCodeBlock{
@@ -109,24 +140,26 @@ blockquote{
   }
 }
 
-.page{
-  .main > *{
-    margin-bottom:1.6em;
-  }
-  table, tr, td{
-    position:relative;
-  }
-  table{
-    counter-reset: count-num count-alpha;
-    text-align:left;
+table, tr, td{
+  position:relative;
+}
+table{
+  counter-reset: count-num count-alpha;
+  text-align:left;
 
-    .tdr{
+  td{
+    position:relative;
+    padding-left:1em;
+    white-space:nowrap;
+
+    &.tdr{
       text-align:right;
     }
-    .divide{
+    &.div{
       border-left:1px solid black;
+      padding-left:0em;
     }
-    .count{
+    &.count{
       padding:0 0.5em;
       text-align:left;
       &.num{
@@ -142,13 +175,9 @@ blockquote{
         }
       }
     }
-    td{
-      position:relative;
-      padding-left:1em;
-      white-space:nowrap;
-    }
   }
 }
+
 
 fieldset{
   background-color:#fff;
@@ -173,7 +202,6 @@ fieldset{
     }
   }
 }
-
 b, input[type=text]{
   display:inline-block;
   white-space:nowrap;
@@ -188,6 +216,10 @@ input[type=text]{
   border-bottom:1px solid #000;
   font-style:normal;
   text-align:left;
+
+  table &{
+    width:4em;
+  }
 
   @media screen{
     border-color:#ccc;
@@ -228,26 +260,4 @@ input[type=text]{
 span.line{
   display:inline-flex;
   width:100%;
-}
-
-.wordbank{
-  text-align:center;
-  ul, ol{
-    padding-left:0;
-  }
-  li{
-    display:inline-block;
-    margin:0 0.5em;
-    border-bottom:1px dotted #000;
-    padding-right:0.5em;
-  }
-  ol{
-    counter-reset: count-num;
-    li{
-      counter-increment: count-num;
-      &:before{
-        content: counter(count-num) ". ";
-      }
-    }
-  }
 }
