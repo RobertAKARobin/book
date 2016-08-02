@@ -20,22 +20,71 @@ We've been using //decimal// numbers. But programmers often use //hexadecimal// 
 
 =====
 
+In decimal, there are **10** digits. In hexadecimal, there are **16** digits:
+
+|\
+|Decimal:|`0 1 2 3 4 5 6 7 8 9`
+|Hex:    |`0 1 2 3 4 5 6 7 8 9 A B C D E F`
+|/
+
+In hex, we use the letters `A` to `F` for the numbers 10 to 15. This lets us write bigger numbers in fewer spaces: `10` is two spaces long, but `A` is only one.
+
+???
+## Fill in the blanks to count in decimal and hex:
+
+|\   |code|div|    |code|div|    |code
+|Dec |Hex |   |_10_| A  |   | 40 | 28
+|1   | 1  |   | 11 |_B_ |   |_41_| 29
+|2   |_2_ |   | 12 |_C_ |   |_42_| 2A
+|3   |_3_ |   | 13 |_D_ |   | 43 |_2B_
+|4   |_4_ |   | 14 |_E_ |   | 44 |_2C_
+|5   |_5_ |   |_15_| F  |   | 45 |_2D_
+|_6_ | 6  |   |_16_| 10 |   | 46 |_2E_
+|_7_ | 7  |   |_17_| 11 |   |_47_| 2F
+|_8_ | 8  |   |_18_| 12 |   |_48_| 30
+|_9_ | 9  |   | 19 |_13_|   |_49_| 31
+|/
+
+??/
+
+=====
+
+???
+## Fill in the blanks to convert `3D` from hex into decimal:
+
+The decimal system has 10 digits,
+and 30 equals (3 &times; _10_)
+In the same way, hex has _16_ digits,
+and `30` in hex equals (3 &times; _16_)
+So, `30` in hex is actually the number _48_.
+`D` in hex is the number _13_. (Hint: Look at the chart at the last page.)
+`3D` equals `30` &plus; `D`, or (_48_ &plus; _13_)
+So, `3D` is actually the number _61_.
+??/
+
+???
+## Which **one** of the following is **NOT** true?
+
+[ ] The decimal system has 10 digits: 0 to 9
+[ ] The hexadecimal system has 16 digits: `0` to `F`
+[ ] `30` in hex is the same as (16 x 3)
+[x] It's always easier to do math in hex than in decimal
+??/
+
+=====
+
 Here are some RGB codes in decimal and hex:
 
 <div class="fig">
 |\
-|          |decimal      |hex
-|red       |`255 0 0`    |`FF0000`
-|white     |`255 255 255`|`FFFFFF`
-|dark green|`0 170 0`    |`00AA00`
+|          |decimal    |hex
+|red       |255 0 0    |`FF0000`
+|white     |255 255 255|`FFFFFF`
+|dark green|0 170 0    |`00AA00`
 |/
 </div>
 
-Hex RGB codes are also 3 numbers, like decimal RGB codes. `FF0000` for the color red is actually:
-
-<div class="fig">
-(R) `FF`, (G) `00`, (B) `00`
-</div>
+Hex RGB codes are also 3 numbers, like decimal RGB codes. `FF0000` for the color red is actually `FF` for red, `00` for green, and `00` for blue.
 
 ???
 ## Fill in the blanks:
@@ -58,7 +107,7 @@ Hex RGB codes are also 3 numbers, like decimal RGB codes. `FF0000` for the color
 =====
 
 ???
-## Fill in the blanks to complete all the hex codes:
+## Complete all the hex codes using **`FF`**, **`AA`**, or **`00`**:
 
 |\           |code     |code     |code
 |black       |_00_     |_00_     |_00_
@@ -71,53 +120,21 @@ Hex RGB codes are also 3 numbers, like decimal RGB codes. `FF0000` for the color
 |/
 ??/
 
-=====
+Knowing how hex works makes it easier to find the perfect color for your website or app. You don't need to do any math. Just remember:
 
-Here are a bunch of decimal numbers and their matching hex numbers:
-
-<div class="fig">
-|\  | code |    | code |     | code
-| 0 | 00   | 10 | 0A   | 26  | 1A
-| 1 | 01   | 11 | 0B   | 31  | 1F
-| 2 | 02   | 12 | 0C   | 32  | 20
-| 3 | 03   | 13 | 0D   | 33  | 21
-| 4 | 04   | 14 | 0E   | 160 | A0
-| 5 | 05   | 15 | 0F   | 161 | A1
-| 6 | 06   | 16 | 10   | 175 | AF
-| 7 | 07   | 17 | 11   | 176 | B0
-| 8 | 08   | 18 | 12   | 240 | F0
-| 9 | 09   | 25 | 19   | 255 | FF
-|/
-</div>
+-#When you see `ABCDEF`, you're seeing *three* numbers: `AB` for red, `CD` for green, and `EF` for blue.
+- `FF` is the biggest possible number, and `00` is the smallest.
+-#/
 
 ???
-## Which **one** of the following is **not** true?
+## Fill in the blanks:
 
-[ ] The decimal system has 10 digits: 0 to 9
-[ ] The hexadecimal system has 16 digits: 0 to F
-[ ] `20` in hex is the same as `(16 x 2)`
-[x] Hex numbers are easier for humans to calculate
-??/
-
-=====
-
-Knowing how hex works makes it easier to find the perfect color for your website or app.
-
-If you want yellow, but `FFFF00` is *too* yellow, you can give it one level more blue with `FFFF01`.
-
-???
-## Complete the equations below:
-
-|\code    | |code     |         |    |
-| FFFF01  |=|  FFFF00 | +       |1   | blue
-| FFFE00  |=|  FFFF00 | &ndash; |1   | green
-| FFEF00  |=|  FFFF00 | &ndash; |16  | green
-| ABCDEF  |=|  CBCDEF | &ndash; | 32 | _red_
-| B39F00  |=|  B3A000 | &ndash; | 1  | _green_
-| BBA900  |=|  BBAA00 | &ndash; |_1_ | green
-| BBCDEF  |=|  ABCDEF | +       |_16_| red
-| 299FFA  |=| _299FF9_| +       | 1  | blue
+|\code   |                        | | code
+|_FFFF00_|+ 1 level of blue       |=| FFFF01
+| ABCDEF |+ 32 levels of _red_    |=| CBCDEF
+| DEFFC8 |&ndash; 1 level of green|=|_DEFEC8_
 |/
+
 ??/
 
 =====
@@ -127,27 +144,20 @@ Color codes are //case-insensitive//: the computer treats them the same if they'
 One neat thing about knowing hex is you can make colors from words!
 
 ???
-## Fill in the blanks:
+## How can you translate English words into RGB codes? What colors do they make?<br />Fill in the blanks. The missing colors are **purple**, **red**, and **yellow**.
 
 <div class="ex">
 |\          |code     |
-|Decode     |dec0de   |Pastel pink
-|_Office_   |0ff1ce   |Blue-green
-|Old dad    |_01ddad_ |Turquoise
-|Coffee     |_c0ffee_ |Sea green
-|Doodle     |_d00d1e_ |_Red_
-|Fedora     |fed02a   |_Yellow_
-|_Ballet_   |ba11e7   |_Purple_
-|Bieber     |_b1ebe2_ |Pale blue-green
+|decode     |dec0de   |pastel pink
+|_Office_   |0ff1ce   |blue-green
+|old dad    |_01ddad_ |turquoise
+|coffee     |_c0ffee_ |sea green
+|doodle     |_d00d1e_ |_red_
+|fedora     |fed02a   |_yellow_
+|_ballet_   |ba11e7   |_purple_
+|Bieber     |_b1ebe2_ |pale blue-green
 |/
 </div>
 ??/
-
-<div class="wordbank">
--=Purple
-- Yellow
-- Red
--=/
-</div>
 
 Can you make a color from your name?

@@ -44,7 +44,7 @@ html, body, .page {
 }
 
 .page .main > * {
-  margin-bottom: 1.6em;
+  margin-bottom: 1em;
 }
 
 .page .pageDesc {
@@ -190,7 +190,7 @@ pre, code, .code {
 }
 
 pre {
-  line-height: 1em;
+  line-height: 1.4em;
 }
 
 .fig {
@@ -361,6 +361,7 @@ fieldset h2 {
   text-align: justify;
   line-height: 1.4em;
   margin-left: 0;
+  margin-bottom: 0.5em;
 }
 
 @media screen {
@@ -390,7 +391,7 @@ input[type=text] {
 }
 
 table input[type=text] {
-  width: 4em;
+  width: 3em;
 }
 
 @media screen {

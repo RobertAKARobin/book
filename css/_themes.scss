@@ -51,7 +51,7 @@ pre, code, .code{
   letter-spacing:-1px;
 }
 pre{
-  line-height:1em;
+  line-height:1.4em;
 }
 .fig{
   text-align:center;
@@ -195,6 +195,7 @@ fieldset{
     text-align:justify;
     line-height:1.4em;
     margin-left:0;
+    margin-bottom:0.5em;
     @media screen{
       background-color:#e9e9ff;
       text-shadow:none;
@@ -218,7 +219,7 @@ input[type=text]{
   text-align:left;
 
   table &{
-    width:4em;
+    width:3em;
   }
 
   @media screen{
