@@ -389,13 +389,16 @@
           <fieldset>
             <h2>Fill in the blanks to convert <code>3D</code> from hex into decimal:</h2>
 
-            <p>The decimal system has 10 digits,</p>
-            <p>and 30 equals (3 &times; <input data-answer="10" type="text" value="" />)</p>
-            <p>In the same way, hex has <input data-answer="16" type="text" value="" /> digits,</p>
-            <p>and <code>30</code> in hex equals (3 &times; <input data-answer="16" type="text" value="" />)</p>
+            <p>The decimal system has 10 digits,<br />and 30 equals (3 &times; <input data-answer="10" type="text" value="" />)</p>
+
+            <p>In the same way, hex has <input data-answer="16" type="text" value="" /> digits,<br />and <code>30</code> in hex equals (3 &times; <input data-answer="16" type="text" value="" />)</p>
+
             <p>So, <code>30</code> in hex is actually the number <input data-answer="48" type="text" value="" />.</p>
+
             <p><code>D</code> in hex is the number <input data-answer="13" type="text" value="" />. (Hint: Look at the chart at the last page.)</p>
+
             <p><code>3D</code> equals <code>30</code> &plus; <code>D</code>, or (<input data-answer="48" type="text" value="" /> &plus; <input data-answer="13" type="text" value="" />)</p>
+
             <p>So, <code>3D</code> is actually the number <input data-answer="61" type="text" value="" />.</p>
           </fieldset>
 
@@ -571,7 +574,9 @@
           <p>One neat thing about knowing hex is you can make colors from words!</p>
 
           <fieldset>
-            <h2>How can you translate English words into RGB codes? What colors do they make?<br />Fill in the blanks. The missing colors are <strong>purple</strong>, <strong>red</strong>, and <strong>yellow</strong>.</h2>
+            <h2>How can you translate English words into RGB codes? What colors do they make?</h2>
+
+            <p>Fill in the blanks. The missing colors are <strong>purple</strong>, <strong>red</strong>, and <strong>yellow</strong>.</p>
 
             <div class="ex">
               <table>
@@ -636,7 +641,7 @@
           <fieldset>
             <h2>Try to fill in the blanks to complete the CSS by reading the code like English. Remember what you know about colors!</h2>
 
-            <pre>
+            <pre class="code">
 <span class="line"><span>background-color: </span><input class="flex" data-answer="#000000;" type="text" value="" /></span>
 <span class="line"><span>color: </span><input class="flex" data-answer="#FFFFFF;" type="text" value="" /></span>
 <span class="line"><span>font-style: </span><input class="flex" data-answer="italic;" type="text" value="" /></span>
@@ -783,7 +788,7 @@
         <div class="main">
           <p>Each CSS declaration needs a <dfn>selector</dfn>. It tells your computer which part of a webpage it should <q>select</q> to use with that declaration. For example:</p>
 
-          <pre>
+          <pre class="code">
 p, code, img{
   width: 400px;
   height: 200px;
@@ -857,7 +862,7 @@ p, code, img{
 
             <h2>What's wrong with this CSS rule?</h2>
 
-            <pre>
+            <pre class="code">
 p, code
   color: #F00;
   text-align: center;
@@ -873,7 +878,7 @@ p, code
           <fieldset>
             <h2>What's wrong with this CSS rule?</h2>
 
-            <pre>
+            <pre class="code">
 q{ background-color:#CCC color: #0F0; }
 
 </pre>
@@ -987,7 +992,7 @@ q{ background-color:#CCC color: #0F0; }
         <div class="main">
           <p>All of a website's CSS is usually kept in a file called a <dfn>stylesheet</dfn>:</p>
 
-          <pre>
+          <pre class="code">
 1 |  p, code{
 2 |    color: #000000;
 3 |    font-size: 18px;
@@ -1036,7 +1041,7 @@ q{ background-color:#CCC color: #0F0; }
             </li>
           </ol>
 
-          <pre>
+          <pre class="code">
 1 |  p{
 2 |    background-color: #000000;
 3 |    color: #FFFF00;
@@ -1074,7 +1079,6 @@ q{ background-color:#CCC color: #0F0; }
       </div>
     </div>
   </div>
-  <div id="background"></div>
   <div id="nav">
     <div id="score">
       &nbsp;<span id="scoreCorrect">0</span> / <span id="scoreTotal">0</span>

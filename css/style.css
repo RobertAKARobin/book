@@ -28,110 +28,132 @@ html, body {
 
 html, body, .page {
   font-size: 18px;
-  line-height: 30px;
-}
-
-#background {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  background-image: url("bg_pixel.png");
-  background-color: #49485C;
-  background-size: 300px;
-}
-
-.page .main > * {
-  margin-bottom: 1em;
-}
-
-.page .pageDesc {
-  font-size: 12px;
-  position: relative;
-  border-bottom: 1px solid #000;
-  margin-bottom: 12px;
+  line-height: 1.5em;
 }
 
 @media screen {
-  .page .pageDesc {
-    color: #aaa;
-    border-color: #aaa;
-    text-shadow: none;
+  body {
+    background-color: #E4BB7A;
+    background-image: url(bg_wood_l.jpg);
   }
-}
-
-.page .pageDesc h1 a {
-  display: block;
-  text-align: center;
-}
-
-.page .pageDesc .pageNum {
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-.page {
-  color: #000;
-  position: relative;
-  box-sizing: border-box;
-  padding: 10px 20px;
-  text-align: left;
-  border-radius: 5px;
-  background-color: #fff;
-  background-image: url("bg_white.png");
-  overflow: auto;
-  max-width: 600px;
-  margin: 30px auto;
-  box-shadow: 0 0 20px 0 #222;
+  #main {
+    box-shadow: 0 0 100px 0 #555;
+  }
+  .sheet {
+    background-color: #fff;
+  }
+  .page {
+    background-image: url(paper_shadow.png);
+    background-position: center right;
+    background-repeat: no-repeat;
+  }
 }
 
 @media screen {
-  .page {
-    color: #555;
-    text-shadow: 1px 1px 0px #fff;
+  #main {
+    display: table;
+    table-layout: fixed;
+    margin: 0 auto;
+    border-collapse: separate;
+    width: 55em;
   }
-}
-
-@media (max-width: 600px) {
-  .page {
-    border-radius: 0;
+  #main .sheet {
+    display: table-row;
+  }
+  #main .sheet .page {
+    display: table-cell;
+    vertical-align: top;
+    height: 42.5em;
+    border-bottom: 1px solid #dadada;
+    border-top: 1px solid #f0f0f0;
   }
 }
 
 @media print {
-  #background {
-    display: none;
-  }
   #main {
     font-size: 0;
   }
   .sheet {
-    position: relative;
     page-break-inside: avoid;
   }
   .page {
     display: inline-block;
-    vertical-align: top;
     width: 50%;
-    height: 100%;
-    background-image: none;
-    padding: 0;
-    margin: 0;
-    max-width: none;
-    box-shadow: none;
-    text-shadow: none;
-    padding-right: 0.39in;
+    vertical-align: top;
   }
+}
+
+.page {
+  box-sizing: border-box;
+  text-align: left;
+}
+
+.page:nth-child(odd) .pageNum {
+  left: 0;
+  right: auto;
+}
+
+.page:nth-child(even) .pageNum {
+  left: auto;
+  right: 0;
+}
+
+@media screen {
+  .page {
+    padding: 0 1em;
+    text-shadow: 1px 1px 0px #eee;
+  }
+}
+
+@media print {
   .page:nth-child(even) {
-    padding-right: 0;
     padding-left: 0.39in;
   }
-  .page:nth-child(even) .pageDesc .pageNum {
-    left: auto;
-    right: 0;
+  .page:nth-child(odd) {
+    padding-right: 0.39in;
+  }
+}
+
+.pageDesc {
+  font-size: 0.75em;
+  line-height: 3em;
+  position: relative;
+  margin-bottom: 1em;
+  border-bottom: 1px solid #000;
+}
+
+.pageDesc h1 a {
+  display: block;
+  text-align: center;
+}
+
+.pageDesc .pageNum {
+  position: absolute;
+  top: 0;
+}
+
+@media screen and (max-width: 800px) {
+  #main {
+    display: block;
+    width: auto;
+  }
+  #main .sheet {
+    display: inline-block;
+  }
+  #main .sheet .page {
+    display: block;
+    width: 27.5em;
+    height: auto;
+    padding-bottom: 3em;
+    margin: auto;
+    border-bottom: 1px solid #ddd;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  html, body, .page {
+    font-size: 12px;
+    font-size: 3.44828vw;
   }
 }
 
@@ -145,7 +167,6 @@ a, label, button {
 }
 
 strong {
-  color: #000;
   border-bottom: 1px solid #000;
 }
 
@@ -162,14 +183,7 @@ mark {
 }
 
 dfn {
-  color: #000;
   font-weight: bold;
-}
-
-@media screen {
-  dfn {
-    background-color: #ff0;
-  }
 }
 
 q:before {
@@ -180,17 +194,28 @@ q:after {
   content: "\0201d";
 }
 
+p, .fig, h2, ol, ul, pre {
+  margin-bottom: 0.75em;
+}
+
+p ~ p, .fig ~ p, h2 ~ p, ol ~ p, ul ~ p, pre ~ p, p ~ .fig, .fig ~ .fig, h2 ~ .fig, ol ~ .fig, ul ~ .fig, pre ~ .fig, p ~ h2, .fig ~ h2, h2 ~ h2, ol ~ h2, ul ~ h2, pre ~ h2, p ~ ol, .fig ~ ol, h2 ~ ol, ol ~ ol, ul ~ ol, pre ~ ol, p ~ ul, .fig ~ ul, h2 ~ ul, ol ~ ul, ul ~ ul, pre ~ ul, p ~ pre, .fig ~ pre, h2 ~ pre, ol ~ pre, ul ~ pre, pre ~ pre {
+  margin-top: 0.75em;
+}
+
 pre, code, .code {
   text-align: left;
   white-space: pre-wrap;
-  font-family: "Courier New", "Andale Mono", monospace;
   font-style: normal;
   font-size: 1rem;
+}
+
+code, .code {
+  font-family: "Courier New", "Andale Mono", monospace;
   letter-spacing: -1px;
 }
 
-pre {
-  line-height: 1.4em;
+pre.code {
+  line-height: 1em;
 }
 
 .fig {
@@ -221,11 +246,11 @@ label {
 }
 
 label:hover {
-  background-color: #ffa;
+  background-color: #cdf;
 }
 
 ul, ol {
-  margin-left: 20px;
+  margin-left: 1em;
 }
 
 ul > li {
@@ -337,19 +362,12 @@ table td.count.alpha:before {
 }
 
 fieldset {
-  background-color: #fff;
+  border-left: 1px solid #000;
+  margin-top: 0.75em;
 }
 
-@media screen {
-  fieldset {
-    border-color: #aaa;
-  }
-}
-
-@media print {
-  fieldset {
-    border-left: 1px solid #000;
-  }
+fieldset + * {
+  margin-top: 0.75em;
 }
 
 fieldset > * {
@@ -357,19 +375,7 @@ fieldset > * {
 }
 
 fieldset h2 {
-  color: #000;
   text-align: justify;
-  line-height: 1.4em;
-  margin-left: 0;
-  margin-bottom: 0.5em;
-}
-
-@media screen {
-  fieldset h2 {
-    background-color: #e9e9ff;
-    text-shadow: none;
-    padding-right: 1em;
-  }
 }
 
 b, input[type=text] {
@@ -395,9 +401,13 @@ table input[type=text] {
 }
 
 @media screen {
-  input[type=text] {
-    border-color: #ccc;
-    background-color: #ffc;
+  input[type=text]:hover {
+    background-color: #cdf;
+    cursor: pointer;
+  }
+  input[type=text]:focus {
+    background-color: #cdf;
+    cursor: text;
   }
 }
 
@@ -448,12 +458,13 @@ span.line {
   display: block;
   position: fixed;
   bottom: 0;
-  top: 0;
+  left: 0;
   width: 100%;
-  height: 30px;
-  opacity: 0.3;
+  height: 2em;
+  line-height: 2em;
+  opacity: 0.2;
   text-align: left;
-  background-color: #000;
+  background-color: #eee;
   transition: opacity 0.5s;
 }
 
@@ -468,8 +479,9 @@ span.line {
   width: 0px;
   overflow: visible;
   white-space: nowrap;
-  color: #888;
+  color: #000;
   background-color: #afa;
+  border-right: 1px solid #ddd;
 }
 
 #nav #score #scoreCorrect {

@@ -1,6 +1,8 @@
 $fontText: "Arial", sans-serif;
 $fontCode: "Courier New", "Andale Mono", monospace;
 $fontHand: "Arial", sans-serif;
+$mgn: 0.75em;
+$cFocus: #cdf;
 
 html, body{
   font-family:$fontText;
@@ -13,7 +15,6 @@ a, label, button{
 
 
 strong{
-  color:#000;
   border-bottom:1px solid #000;
 }
 em{
@@ -27,11 +28,7 @@ mark{
   margin:0 2px;
 }
 dfn{
-  color:#000;
   font-weight:bold;
-  @media screen{
-    background-color:#ff0;
-  }
 }
 q{
   &:before{
@@ -42,16 +39,24 @@ q{
   }
 }
 
+p, .fig, h2, ol, ul, pre{
+  margin-bottom:$mgn;
+  & ~ &{
+    margin-top:$mgn;
+  }
+}
 pre, code, .code{
   text-align:left;
   white-space:pre-wrap;
-  font-family: $fontCode;
   font-style:normal;
   font-size:1rem;
+}
+code, .code{
+  font-family: $fontCode;
   letter-spacing:-1px;
 }
-pre{
-  line-height:1.4em;
+pre.code{
+  line-height:1em;
 }
 .fig{
   text-align:center;
@@ -76,11 +81,11 @@ label{
   display:block;
   clear:both;
   &:hover{
-    background-color:#ffa;
+    background-color:$cFocus;
   }
 }
 ul, ol{
-  margin-left:20px;
+  margin-left:1em;
 }
 li{
   ul > &{
@@ -180,27 +185,16 @@ table{
 
 
 fieldset{
-  background-color:#fff;
-  @media screen{
-    border-color:#aaa;
-  }
-  @media print{
-    border-left:1px solid #000;
+  border-left:1px solid #000;
+  margin-top:$mgn;
+  & + *{
+    margin-top:$mgn;
   }
   & > * {
     padding-left:1em;
   }
   h2{
-    color:#000;
     text-align:justify;
-    line-height:1.4em;
-    margin-left:0;
-    margin-bottom:0.5em;
-    @media screen{
-      background-color:#e9e9ff;
-      text-shadow:none;
-      padding-right:1em;
-    }
   }
 }
 b, input[type=text]{
@@ -223,8 +217,14 @@ input[type=text]{
   }
 
   @media screen{
-    border-color:#ccc;
-    background-color:#ffc;
+    &:hover{
+      background-color:$cFocus;
+      cursor:pointer;
+    }
+    &:focus{
+      background-color:$cFocus;
+      cursor:text;
+    }
   }
   @media print{
     color:transparent;

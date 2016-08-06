@@ -83,7 +83,7 @@ module.exports= (function(){
       ["```(#?)",,,   function newCodeBlock(nil, isNumbered){
         flag.insideCodeBlock = true;
         if(isNumbered) flag.lineNumber = 1;
-        return "<pre>";
+        return "<pre class=\"code\">";
       }],
       ["``\\/",,,     function endCodeBlock(){
         flag.insideCodeBlock = false;
