@@ -83,6 +83,23 @@ label{
   &:hover{
     background-color:$cFocus;
   }
+  &.flex{
+    width:100%;
+    float:left;
+    border-bottom:1px solid #000;
+    &:hover{
+      background-color:transparent;
+    }
+    span{
+      border-bottom:2px solid #fff;
+    }
+    input{
+      border-bottom:0;
+    }
+    &:hover input{
+      background-color:$cFocus;
+    }
+  }
 }
 ul, ol{
   margin-left:1em;
@@ -260,17 +277,5 @@ input[type=text]{
   &.line{
     display:block;
     width:100%;
-  }
-}
-label.flex{
-  display:block;
-  width:100%;
-  float:left;
-  border-bottom:1px solid #000;
-  span{
-    border-bottom:2px solid #fff;
-  }
-  input{
-    border-bottom:0;
   }
 }

@@ -249,6 +249,28 @@ label:hover {
   background-color: #cdf;
 }
 
+label.flex {
+  width: 100%;
+  float: left;
+  border-bottom: 1px solid #000;
+}
+
+label.flex:hover {
+  background-color: transparent;
+}
+
+label.flex span {
+  border-bottom: 2px solid #fff;
+}
+
+label.flex input {
+  border-bottom: 0;
+}
+
+label.flex:hover input {
+  background-color: #cdf;
+}
+
 ul, ol {
   margin-left: 1em;
 }
@@ -452,21 +474,6 @@ input[type=text].checkbox + span {
 input[type=text].line {
   display: block;
   width: 100%;
-}
-
-label.flex {
-  display: block;
-  width: 100%;
-  float: left;
-  border-bottom: 1px solid #000;
-}
-
-label.flex span {
-  border-bottom: 2px solid #fff;
-}
-
-label.flex input {
-  border-bottom: 0;
 }
 
 #nav {
