@@ -12,22 +12,33 @@ We've been using //decimal// numbers. But programmers often use //hexadecimal// 
 ???
 ## Since ''hexadecimal'' contains ''hex'' plus ''dec'', ''hexadecimal'' probably means:
 
-[ ] seven
+[ ] ten
 [x] sixteen
 [ ] sixty-one
 [ ] blue
 ??/
 
+???
+## The decimal system is also called ''base ten''. So hex is probably also called:
+
+[ ] base ten
+[x] base sixteen
+[ ] base sixty-one
+[ ] base blue
+??/
+
 =====
 
-In decimal, there are **10** digits. In hexadecimal, there are **16** digits:
+In decimal, there are **ten** digits. In hexadecimal, there are **sixteen** digits:
 
 |\
 |Decimal:|`0 1 2 3 4 5 6 7 8 9`
 |Hex:    |`0 1 2 3 4 5 6 7 8 9 A B C D E F`
 |/
 
-In hex, we use the letters `A` to `F` for the numbers 10 to 15. This lets us write bigger numbers in fewer spaces: `10` is two spaces long, but `A` is only one.
+In hex, we use the letters `A` to `F` for the numbers 10 to 15.
+
+This lets us write bigger numbers in fewer spaces: 10 in decimal and `A` in hex both mean the same thing, but 10 is two spaces long, and `A` is only one.
 
 ???
 ## Fill in the blanks to count in decimal and hex:
@@ -52,15 +63,15 @@ In hex, we use the letters `A` to `F` for the numbers 10 to 15. This lets us wri
 ???
 ## Fill in the blanks to convert `3D` from hex into decimal:
 
-The decimal system has 10 digits,<br />and 30 equals (3 &times; _10_)
+30 equals 3 multiplied by the number of digits in the system you are using.
 
-In the same way, hex has _16_ digits,<br />and `30` in hex equals (3 &times; _16_)
+The decimal system has _10_ digits,<br />so 30 in decimal = (3 &times; _10_).
 
-So, `30` in hex is actually the number _48_.
+The hex system has _16_ digits,<br />so `30` in hex = (3 &times; _16_),<br />which works out to the number _48_.
 
-`D` in hex is the number _13_. (Hint: Look at the chart at the last page.)
+`D` in hex is the number _13_ in decimal.<br />(Hint: Look at the chart on the last page.)
 
-`3D` equals `30` &plus; `D`, or (_48_ &plus; _13_)
+`3D` = `30` &plus; `D`. So, using what you did just now,<br />`3D` = _48_ &plus; _13_
 
 So, `3D` is actually the number _61_.
 ??/
@@ -87,10 +98,10 @@ Here are some RGB codes in decimal and hex:
 |/
 </div>
 
-Hex RGB codes are also 3 numbers, like decimal RGB codes. `FF0000` for the color red is actually `FF` for red, `00` for green, and `00` for blue.
+Hex RGB codes are also 3 numbers, like decimal RGB codes. `FFAA00` for the color orange is actually `FF` for red, `AA` for green, and `00` for blue.
 
 ???
-## Fill in the blanks:
+## Fill in the blanks using `**00**`, `**FF**`, and `**AA**`:
 
 -=`255` in decimal is the same as `_FF_` in hex.
 - `170` in decimal is the same as `_AA_` in hex.
@@ -126,13 +137,14 @@ Hex RGB codes are also 3 numbers, like decimal RGB codes. `FF0000` for the color
 Knowing how hex works makes it easier to find the perfect color for your website or app. You don't need to do any math. Just remember:
 
 -#When you see `ABCDEF`, you're seeing *three* numbers: `AB` for red, `CD` for green, and `EF` for blue.
-- `FF` is the biggest possible number, and `00` is the smallest.
+- `FF` is the biggest number, and `00` is the smallest.
 -#/
 
 ???
 ## Fill in the blanks:
 
 |\code   |                        | | code
+| FF00AA |+ 1 level of green      |=| FF01AA
 |_FFFF00_|+ 1 level of blue       |=| FFFF01
 | ABCDEF |+ 32 levels of _red_    |=| CBCDEF
 | DEFFC8 |&ndash; 1 level of green|=|_DEFEC8_
@@ -147,9 +159,9 @@ Color codes are //case-insensitive//: the computer treats them the same if they'
 One neat thing about knowing hex is you can make colors from words!
 
 ???
-## How can you translate English words into RGB codes? What colors do they make?
+## Fill in the blanks to translate English words into RGB codes and figure out what colors they make.
 
-Fill in the blanks. The missing colors are **purple**, **red**, and **yellow**.
+The missing colors for column 3 are **purple**, **red**, and **yellow**.
 
 <div class="ex">
 |\          |code     |

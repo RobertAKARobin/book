@@ -45,7 +45,7 @@ p, .fig, h2, ol, ul, pre{
     margin-top:$mgn;
   }
 }
-pre, code, .code{
+pre, code{
   text-align:left;
   white-space:pre-wrap;
   font-style:normal;
@@ -138,6 +138,8 @@ li{
     content:"Word Bank";
     display:block;
     font-size:0.75em;
+    font-family:$fontText;
+    letter-spacing:0px;
     border-bottom:1px dashed #000;
   }
 }
@@ -222,6 +224,7 @@ fieldset{
   }
   h2{
     text-align:justify;
+    padding-right:1em;
   }
   table{
     position:relative;
@@ -233,6 +236,10 @@ b, input[type=text]{
   white-space:nowrap;
   vertical-align:baseline;
   font-family: $fontHand;
+
+  .smblank &{
+    width:1em;
+  }
 }
 b{
   width:4em;

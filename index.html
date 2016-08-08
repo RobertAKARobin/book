@@ -241,10 +241,19 @@
           <fieldset>
             <h2>Since <q>hexadecimal</q> contains <q>hex</q> plus <q>dec</q>, <q>hexadecimal</q> probably means:</h2>
 
-            <label><input class="checkbox" type="text" value="" /><span>seven</span></label>
+            <label><input class="checkbox" type="text" value="" /><span>ten</span></label>
             <label><input class="checkbox" data-answer="x" type="text" value="" /><span>sixteen</span></label>
             <label><input class="checkbox" type="text" value="" /><span>sixty-one</span></label>
             <label><input class="checkbox" type="text" value="" /><span>blue</span></label>
+          </fieldset>
+
+          <fieldset>
+            <h2>The decimal system is also called <q>base ten</q>. So hex is probably also called:</h2>
+
+            <label><input class="checkbox" type="text" value="" /><span>base ten</span></label>
+            <label><input class="checkbox" data-answer="x" type="text" value="" /><span>base sixteen</span></label>
+            <label><input class="checkbox" type="text" value="" /><span>base sixty-one</span></label>
+            <label><input class="checkbox" type="text" value="" /><span>base blue</span></label>
           </fieldset>
 
         </div>
@@ -254,7 +263,7 @@
           <h1><a href="#6"><span class="pageNum">6</span>Hex</a></h1>
         </div>
         <div class="main">
-          <p>In decimal, there are <strong>10</strong> digits. In hexadecimal, there are <strong>16</strong> digits:</p>
+          <p>In decimal, there are <strong>ten</strong> digits. In hexadecimal, there are <strong>sixteen</strong> digits:</p>
 
           <table>
             <tr>
@@ -267,7 +276,9 @@
             </tr>
           </table>
 
-          <p>In hex, we use the letters <code>A</code> to <code>F</code> for the numbers 10 to 15. This lets us write bigger numbers in fewer spaces: <code>10</code> is two spaces long, but <code>A</code> is only one.</p>
+          <p>In hex, we use the letters <code>A</code> to <code>F</code> for the numbers 10 to 15.</p>
+
+          <p>This lets us write bigger numbers in fewer spaces: 10 in decimal and <code>A</code> in hex both mean the same thing, but 10 is two spaces long, and <code>A</code> is only one.</p>
 
           <fieldset>
             <h2>Fill in the blanks to count in decimal and hex:</h2>
@@ -389,15 +400,16 @@
           <fieldset>
             <h2>Fill in the blanks to convert <code>3D</code> from hex into decimal:</h2>
 
-            <p>The decimal system has 10 digits,<br />and 30 equals (3 &times; <input data-answer="10" type="text" value="" />)</p>
+            <p>30 equals 3 multiplied by the number of digits in the system you are using.</p>
 
-            <p>In the same way, hex has <input data-answer="16" type="text" value="" /> digits,<br />and <code>30</code> in hex equals (3 &times; <input data-answer="16" type="text" value="" />)</p>
+            <p>The decimal system has <input data-answer="10" type="text" value="" /> digits,<br />so 30 in decimal = (3 &times; <input data-answer="10" type="text" value="" />).</p>
 
-            <p>So, <code>30</code> in hex is actually the number <input data-answer="48" type="text" value="" />.</p>
+            <p>The hex system has <input data-answer="16" type="text" value="" /> digits,<br />so <code>30</code> in hex = (3 &times; <input data-answer="16" type="text" value="" />),<br />which works out to the number <input data-answer="48" type="text"
+                value="" />.</p>
 
-            <p><code>D</code> in hex is the number <input data-answer="13" type="text" value="" />. (Hint: Look at the chart at the last page.)</p>
+            <p><code>D</code> in hex is the number <input data-answer="13" type="text" value="" /> in decimal.<br />(Hint: Look at the chart on the last page.)</p>
 
-            <p><code>3D</code> equals <code>30</code> &plus; <code>D</code>, or (<input data-answer="48" type="text" value="" /> &plus; <input data-answer="13" type="text" value="" />)</p>
+            <p><code>3D</code> = <code>30</code> &plus; <code>D</code>. So, using what you did just now,<br /><code>3D</code> = <input data-answer="48" type="text" value="" /> &plus; <input data-answer="13" type="text" value="" /></p>
 
             <p>So, <code>3D</code> is actually the number <input data-answer="61" type="text" value="" />.</p>
           </fieldset>
@@ -445,10 +457,10 @@
             </table>
           </div>
 
-          <p>Hex RGB codes are also 3 numbers, like decimal RGB codes. <code>FF0000</code> for the color red is actually <code>FF</code> for red, <code>00</code> for green, and <code>00</code> for blue.</p>
+          <p>Hex RGB codes are also 3 numbers, like decimal RGB codes. <code>FFAA00</code> for the color orange is actually <code>FF</code> for red, <code>AA</code> for green, and <code>00</code> for blue.</p>
 
           <fieldset>
-            <h2>Fill in the blanks:</h2>
+            <h2>Fill in the blanks using <code><strong>00</strong></code>, <code><strong>FF</strong></code>, and <code><strong>AA</strong></code>:</h2>
 
             <ul>
               <li><code>255</code> in decimal is the same as <code><input data-answer="FF" type="text" value="" /></code> in hex.
@@ -532,7 +544,7 @@
           <ol>
             <li>When you see <code>ABCDEF</code>, you're seeing <em>three</em> numbers: <code>AB</code> for red, <code>CD</code> for green, and <code>EF</code> for blue.
             </li>
-            <li><code>FF</code> is the biggest possible number, and <code>00</code> is the smallest.
+            <li><code>FF</code> is the biggest number, and <code>00</code> is the smallest.
             </li>
           </ol>
 
@@ -540,6 +552,12 @@
             <h2>Fill in the blanks:</h2>
 
             <table>
+              <tr>
+                <td class="code">FF00AA</td>
+                <td>+ 1 level of green</td>
+                <td>=</td>
+                <td class="code">FF01AA</td>
+              </tr>
               <tr>
                 <td class="code"><input data-answer="FFFF00" type="text" value="" /></td>
                 <td>+ 1 level of blue</td>
@@ -574,9 +592,9 @@
           <p>One neat thing about knowing hex is you can make colors from words!</p>
 
           <fieldset>
-            <h2>How can you translate English words into RGB codes? What colors do they make?</h2>
+            <h2>Fill in the blanks to translate English words into RGB codes and figure out what colors they make.</h2>
 
-            <p>Fill in the blanks. The missing colors are <strong>purple</strong>, <strong>red</strong>, and <strong>yellow</strong>.</p>
+            <p>The missing colors for column 3 are <strong>purple</strong>, <strong>red</strong>, and <strong>yellow</strong>.</p>
 
             <div class="ex">
               <table>
@@ -639,21 +657,32 @@
           <p style="border:5px dotted #fff; padding:0.5em 1em; text-align:center; font-style:italic; background-color:#000; color:#fff; text-shadow:none;">This paragraph has been <dfn>styled</dfn> to look different from the other paragraphs in this book. The code for styling is called <dfn>CSS</dfn>. The CSS for this paragraph is below.</p>
 
           <fieldset>
-            <h2>Try to fill in the blanks to complete the CSS by reading the code like English. Remember what you know about colors!</h2>
+            <h2>Fill in the blanks to complete the CSS for the paragraph above.</h2>
 
-            <div class="wordbank">
+            <p>Some hints:</p>
+
+            <ul>
+              <li>Try reading the code like English.
+              </li>
+              <li>Remember what you know about colors!
+              </li>
+              <li>CSS is <strong>very picky</strong> about punctuation.
+              </li>
+            </ul>
+
+            <div class="wordbank code">
               <ul>
-                <li><code>#000000;</code>
+                <li>#000000;
                 </li>
-                <li><code>#FFFFFF;</code>
+                <li>#FFFFFF;
                 </li>
-                <li><code>italic;</code>
+                <li>italic;
                 </li>
-                <li><code>center;</code>
+                <li>center;
                 </li>
-                <li><code>12px;</code>
+                <li>12px;
                 </li>
-                <li><code>5px dotted #FFFFFF;</code>
+                <li>5px dotted #FFFFFF;
                 </li>
               </ul>
             </div>
@@ -678,7 +707,7 @@
           <p>A <dfn>property</dfn> is something you have. A <dfn>value</dfn> is an amount, a measurement, or a <q>setting</q> &mdash; like how you can <q>set</q> your phone's ringtone.</p>
 
           <fieldset>
-            <h2>Look at these 2 sentences, then fill in the blanks with <strong>property</strong> or <strong>value</strong>:</h2>
+            <h2>Look at the two sentences below. Then, fill in the blanks with <strong>property</strong> or <strong>value</strong>:</h2>
 
             <blockquote>
               <p><q>This house is worth a million dollars!</q></p>
@@ -689,52 +718,16 @@
 
             <p><q>A million dollars</q> and <q>red</q> are both a <input data-answer="value" type="text" value="" />.</p>
 
-            <p>So in the list below everything on the left is a <input data-answer="property" type="text" value="" />, and everything on the right is a <input data-answer="value" type="text" value="" />.</p>
+            <p>So on the page before this one,<br />anything <em>in front</em> of a blank was a <input data-answer="property" type="text" value="" />,<br />and anything <em>inside</em> a blank was a <input data-answer="value" type="text" value="" />.</p>
           </fieldset>
 
           <fieldset>
-            <h2>Fill in the properties and values!</h2>
+            <h2>If someone says <q>This house is worth a million dollars</q> or <q>This background color is red,</q> you could say that they are <q>making a&hellip;</q></h2>
 
-            <div class="ex">
-              <table>
-                <tr>
-                  <td class="code tdr">background-image:</td>
-                  <td class="code"><input data-answer="url(stars.jpg);" type="text" value="" /></td>
-                  <td class="div"></td>
-                  <td class="code">url(stars.jpg);</td>
-                </tr>
-                <tr>
-                  <td class="code tdr">height:</td>
-                  <td class="code"><input data-answer="400px;" type="text" value="" /></td>
-                  <td class="div"></td>
-                  <td class="code">400px;</td>
-                </tr>
-                <tr>
-                  <td class="code tdr">border-color:</td>
-                  <td class="code"><input data-answer="#FF9900;" type="text" value="" /></td>
-                  <td class="div"></td>
-                  <td class="code">#FF9900;</td>
-                </tr>
-                <tr>
-                  <td class="code tdr">transform:</td>
-                  <td class="code"><input data-answer="rotate(30deg);" type="text" value="" /></td>
-                  <td class="div"></td>
-                  <td class="code">rotate(30deg);</td>
-                </tr>
-                <tr>
-                  <td class="code tdr">visibility:</td>
-                  <td class="code"><input data-answer="hidden;" type="text" value="" /></td>
-                  <td class="div"></td>
-                  <td class="code">hidden;</td>
-                </tr>
-                <tr>
-                  <td class="code tdr">font-weight:</td>
-                  <td class="code"><input data-answer="bold;" type="text" value="" /></td>
-                  <td class="div"></td>
-                  <td class="code">bold;</td>
-                </tr>
-              </table>
-            </div>
+            <label><input class="checkbox" type="text" value="" /><span>code snippet</span></label>
+            <label><input class="checkbox" type="text" value="" /><span>question</span></label>
+            <label><input class="checkbox" data-answer="x" type="text" value="" /><span>declaration</span></label>
+
           </fieldset>
 
         </div>
@@ -746,37 +739,55 @@
           <h1><a href="#13"><span class="pageNum">13</span>Learn Some Code in About 2 Hours Without a Computer</a></h1>
         </div>
         <div class="main">
-          <p>There are over 500 CSS properties.</p>
+          <p>When you pick a property and give it a value, you make a <dfn>declaration</dfn>.</p>
 
-          <p>This means each image, button, or piece of text you see on a webpage has 500 different <q>settings</q> you can change to make it look different.</p>
+          <p>Looking at the declarations so far, you can see that we have used 3 punctuation marks in CSS so far. They are:</p>
 
-          <p>When you pick a property and change its value, you make a <dfn>declaration</dfn>.</p>
+          <table>
+            <tr>
+              <td class="code"><mark>:</mark></td>
+              <td><em>colon</em></td>
+            </tr>
+            <tr>
+              <td class="code"><mark>;</mark></td>
+              <td><em>semicolon</em></td>
+            </tr>
+            <tr>
+              <td class="code"><mark>#</mark></td>
+              <td><em>pound</em>, or <em>hash</em></td>
+            </tr>
+          </table>
 
           <fieldset>
-            <h2>Look back at the CSS you have written so far and fill in the blanks:</h2>
+            <h2>Fill in the blanks with the right punctuation mark:</h2>
 
-            <table>
-              <tr>
-                <td>Every property has <input data-answer=":" type="text" value="" /> after it</td>
-                <td class="div"></td>
-                <td>a colon, <mark><code>:</code></mark></td>
-              </tr>
-              <tr>
-                <td>Every declaration ends with <input data-answer=";" type="text" value="" /></td>
-                <td class="div"></td>
-                <td>a semicolon, <mark><code>;</code></mark></td>
-              </tr>
-              <tr>
-                <td>Every RGB code begins with <input data-answer="#" type="text" value="" /></td>
-                <td class="div"></td>
-                <td>a hash, <mark><code>#</code></mark></td>
-              </tr>
-              <tr>
-                <td><q>px</q> stands for <q><input data-answer="pixels" type="text" value="" /></q></td>
-                <td class="div"></td>
-                <td>pixels</td>
-              </tr>
-            </table>
+            <div class="smblank">
+              <ul>
+                <li>Every property has <input data-answer=":" type="text" value="" /> after it.
+                </li>
+                <li>Every declaration ends with <input data-answer=";" type="text" value="" />.
+                </li>
+                <li>Every RGB code begins with <input data-answer="#" type="text" value="" />.
+                </li>
+              </ul>
+            </div>
+          </fieldset>
+
+          <p>Computers are very picky about punctuation in CSS. If the punctuation is wrong, the CSS won't work.</p>
+
+          <fieldset>
+            <h2>Give each declaration the correct punctuation:</h2>
+
+            <div class="smblank">
+              <pre class="code">
+background-color<input data-answer=":" type="text" value="" /> <input data-answer="#" type="text" value="" />000000<input data-answer=";" type="text" value="" />
+color<input data-answer=":" type="text" value="" /> <input data-answer="#" type="text" value="" />FFFFFF<input data-answer=";" type="text" value="" />
+font-style<input data-answer=":" type="text" value="" /> italic<input data-answer=";" type="text" value="" />
+text-align<input data-answer=":" type="text" value="" /> center<input data-answer=";" type="text" value="" />
+font-size<input data-answer=":" type="text" value="" /> 12px<input data-answer=";" type="text" value="" />
+border<input data-answer=":" type="text" value="" /> 5px dotted <input data-answer="#" type="text" value="" />FFFFFF<input data-answer=";" type="text" value="" />
+</pre>
+            </div>
           </fieldset>
 
         </div>
@@ -784,6 +795,89 @@
       <div class="page" id="14">
         <div class="pageDesc">
           <h1><a href="#14"><span class="pageNum">14</span>CSS</a></h1>
+        </div>
+        <div class="main">
+          <p>There are over 500 CSS properties.</p>
+
+          <p>This means each image, button, or piece of text you see on a webpage has 500 different <q>settings</q> you can change to make it look different. That's a lot!</p>
+
+          <fieldset>
+            <h2>How do you think most web designers memorize the CSS properties?</h2>
+
+            <label><input class="checkbox" type="text" value="" /><span>Flash cards</span></label>
+            <label><input class="checkbox" type="text" value="" /><span>They are born with <q>photographic</q> memories.</span></label>
+            <label><input class="checkbox" data-answer="x" type="text" value="" /><span>They don't memorize them at all; they just use Google to look them up as they go.</span></label>
+          </fieldset>
+
+          <fieldset>
+            <h2>The world's best programmers use Google&hellip;</h2>
+
+            <label><input class="checkbox" type="text" value="" /><span>once a month.</span></label>
+            <label><input class="checkbox" data-answer="x" type="text" value="" /><span>once every 5 or 10 minutes.</span></label>
+            <label><input class="checkbox" type="text" value="" /><span>never.</span></label>
+          </fieldset>
+
+          <fieldset>
+            <h2>If a programmer has to use Google, it is likely that&hellip;</h2>
+
+            <label><input class="checkbox" type="text" value="" /><span>they will get fired right away.</span></label>
+            <label><input class="checkbox" type="text" value="" /><span>all the other programmers will point and laugh.</span></label>
+            <label><input class="checkbox" data-answer="x" type="text" value="" /><span>nobody will even notice, because every single programmer uses it all the time.</span></label>
+          </fieldset>
+
+        </div>
+      </div>
+    </div>
+    <div class="sheet">
+      <div class="page" id="15">
+        <div class="pageDesc">
+          <h1><a href="#15"><span class="pageNum">15</span>Learn Some Code in About 2 Hours Without a Computer</a></h1>
+        </div>
+        <div class="main">
+          <fieldset>
+            <h2>Complete the CSS declarations. Include the correct punctuation.</h2>
+
+            <p>Remember: colons <mark>:</mark>, semicolons <mark>;</mark>, and <q>hashes</q> or <q>pounds</q> <mark>#</mark>.</p>
+
+            <div class="wordbank code">
+              <ul>
+                <li>url(stars.jpg)
+                </li>
+                <li>400px
+                </li>
+                <li>FF9900
+                </li>
+                <li>rotate(30deg)
+                </li>
+                <li>hidden
+                </li>
+                <li>bold
+                </li>
+              </ul>
+            </div>
+
+            <pre class="code">
+<label class="flex"><span>background-image </span><input data-answer=":url(stars.jpg);" type="text" value="" /></label>
+<label class="flex"><span>height </span><input data-answer=":400px;" type="text" value="" /></label>
+<label class="flex"><span>border-color </span><input data-answer=":#FF9900;" type="text" value="" /></label>
+<label class="flex"><span>transform </span><input data-answer=":rotate(30deg);" type="text" value="" /></label>
+<label class="flex"><span>visibility </span><input data-answer=":hidden;" type="text" value="" /></label>
+<label class="flex"><span>font-weight </span><input data-answer=":bold;" type="text" value="" /></label>
+</pre>
+          </fieldset>
+
+          <fieldset>
+            <h2><q>px</q> stands for:</h2>
+            <label><input class="checkbox" type="text" value="" /><span>pictures</span></label>
+            <label><input class="checkbox" type="text" value="" /><span>pixies</span></label>
+            <label><input class="checkbox" data-answer="x" type="text" value="" /><span>pixels</span></label>
+          </fieldset>
+
+        </div>
+      </div>
+      <div class="page" id="16">
+        <div class="pageDesc">
+          <h1><a href="#16"><span class="pageNum">16</span>CSS</a></h1>
         </div>
         <div class="main">
           <p>Each CSS declaration needs a <dfn>selector</dfn>. It tells your computer which part of a webpage it should <q>select</q> to use with that declaration. For example:</p>
@@ -821,9 +915,9 @@ p, code, img{
       </div>
     </div>
     <div class="sheet">
-      <div class="page" id="15">
+      <div class="page" id="17">
         <div class="pageDesc">
-          <h1><a href="#15"><span class="pageNum">15</span>Learn Some Code in About 2 Hours Without a Computer</a></h1>
+          <h1><a href="#17"><span class="pageNum">17</span>Learn Some Code in About 2 Hours Without a Computer</a></h1>
         </div>
         <div class="main">
           <p>A selector and its declarations are called a CSS <dfn>rule</dfn>.</p>
@@ -853,9 +947,9 @@ p, code, img{
 
         </div>
       </div>
-      <div class="page" id="16">
+      <div class="page" id="18">
         <div class="pageDesc">
-          <h1><a href="#16"><span class="pageNum">16</span>CSS</a></h1>
+          <h1><a href="#18"><span class="pageNum">18</span>CSS</a></h1>
         </div>
         <div class="main">
           <fieldset>
@@ -900,9 +994,9 @@ q{ background-color:#CCC color: #0F0; }
       </div>
     </div>
     <div class="sheet">
-      <div class="page" id="17">
+      <div class="page" id="19">
         <div class="pageDesc">
-          <h1><a href="#17"><span class="pageNum">17</span>Learn Some Code in About 2 Hours Without a Computer</a></h1>
+          <h1><a href="#19"><span class="pageNum">19</span>Learn Some Code in About 2 Hours Without a Computer</a></h1>
         </div>
         <div class="main">
           <p>This selects every quote and every piece of code:</p>
@@ -941,9 +1035,9 @@ q{ background-color:#CCC color: #0F0; }
 
         </div>
       </div>
-      <div class="page" id="18">
+      <div class="page" id="20">
         <div class="pageDesc">
-          <h1><a href="#18"><span class="pageNum">18</span>CSS</a></h1>
+          <h1><a href="#20"><span class="pageNum">20</span>CSS</a></h1>
         </div>
         <div class="main">
           <p>Fill in the selectors for&hellip;</p>
@@ -985,12 +1079,12 @@ q{ background-color:#CCC color: #0F0; }
       </div>
     </div>
     <div class="sheet">
-      <div class="page" id="19">
+      <div class="page" id="21">
         <div class="pageDesc">
-          <h1><a href="#19"><span class="pageNum">19</span>Learn Some Code in About 2 Hours Without a Computer</a></h1>
+          <h1><a href="#21"><span class="pageNum">21</span>Learn Some Code in About 2 Hours Without a Computer</a></h1>
         </div>
         <div class="main">
-          <p>All of a website's CSS is usually kept in a file called a <dfn>stylesheet</dfn>:</p>
+          <p>All of a website's CSS is usually kept in a <dfn>stylesheet</dfn>:</p>
 
           <pre class="code">
 1 |  p, code{
@@ -1025,9 +1119,9 @@ q{ background-color:#CCC color: #0F0; }
 
         </div>
       </div>
-      <div class="page" id="20">
+      <div class="page" id="22">
         <div class="pageDesc">
-          <h1><a href="#20"><span class="pageNum">20</span>CSS</a></h1>
+          <h1><a href="#22"><span class="pageNum">22</span>CSS</a></h1>
         </div>
         <div class="main">
           <p>The <q>C</q> in <q>CSS</q> stands for <q>cascading</q>. This means three things:</p>
@@ -1056,7 +1150,7 @@ q{ background-color:#CCC color: #0F0; }
 </pre>
 
           <fieldset>
-            <h2>Fill in the blanks with two of these words:</h2>
+            <h2>Fill in the blanks with the right 2 colors:</h2>
 
             <div class="wordbank">
               <ul>

@@ -1,15 +1,22 @@
 <p style="border:5px dotted #fff; padding:0.5em 1em; text-align:center; font-style:italic; background-color:#000; color:#fff; text-shadow:none;">This paragraph has been //styled// to look different from the other paragraphs in this book. The code for styling is called //CSS//. The CSS for this paragraph is below.</p>
 
 ???
-## Try to fill in the blanks to complete the CSS by reading the code like English. Remember what you know about colors!
+## Fill in the blanks to complete the CSS for the paragraph above.
 
-<div class="wordbank">
--=`#000000;`
-- `#FFFFFF;`
-- `italic;`
-- `center;`
-- `12px;`
-- `5px dotted #FFFFFF;`
+Some hints:
+
+-=Try reading the code like English.
+- Remember what you know about colors!
+- CSS is **very picky** about punctuation.
+-=/
+
+<div class="wordbank code">
+-=#000000;
+- #FFFFFF;
+- italic;
+- center;
+- 12px;
+- 5px dotted #FFFFFF;
 -=/
 </div>
 
@@ -28,7 +35,7 @@ border: ___5px dotted #FFFFFF;___
 A //property// is something you have. A //value// is an amount, a measurement, or a ''setting'' -- like how you can ''set'' your phone's ringtone.
 
 ???
-## Look at these 2 sentences, then fill in the blanks with **property** or **value**:
+## Look at the two sentences below. Then, fill in the blanks with **property** or **value**:
 
 <blockquote>
 ''This house is worth a million dollars!''
@@ -39,21 +46,55 @@ A //property// is something you have. A //value// is an amount, a measurement, o
 
 ''A million dollars'' and ''red'' are both a _value_.
 
-So in the list below everything on the left is a _property_, and everything on the right is a _value_.
+So on the page before this one,<br />anything *in front* of a blank was a _property_,<br />and anything *inside* a blank was a _value_.
 ??/
 
 ???
-## Fill in the properties and values!
+## If someone says ''This house is worth a million dollars'' or ''This background color is red,'' you could say that they are ''making a...''
 
-<div class="ex">
-|\code tdr         |code              |div|code
-|background-image: |_url(stars.jpg);_ |   |url(stars.jpg);
-|height:           |_400px;_          |   |400px;
-|border-color:     |_#FF9900;_        |   |#FF9900;
-|transform:        |_rotate(30deg);_  |   |rotate(30deg);
-|visibility:       |_hidden;_         |   |hidden;
-|font-weight:      |_bold;_           |   |bold;
+[ ] code snippet
+[ ] question
+[x] declaration
+
+??/
+
+=====
+
+When you pick a property and give it a value, you make a //declaration//.
+
+Looking at the declarations so far, you can see that we have used 3 punctuation marks in CSS so far. They are:
+
+|\code|
+|~~:~~|*colon*
+|~~;~~|*semicolon*
+|~~#~~|*pound*, or *hash*
 |/
+
+???
+## Fill in the blanks with the right punctuation mark:
+
+<div class="smblank">
+-=Every property has _:_ after it.
+- Every declaration ends with _;_.
+- Every RGB code begins with _#_.
+-=/
+</div>
+??/
+
+Computers are very picky about punctuation in CSS. If the punctuation is wrong, the CSS won't work.
+
+???
+## Give each declaration the correct punctuation:
+
+<div class="smblank">
+```
+background-color_:_ _#_000000_;_
+color_:_ _#_FFFFFF_;_
+font-style_:_ italic_;_
+text-align_:_ center_;_
+font-size_:_ 12px_;_
+border_:_ 5px dotted _#_FFFFFF_;_
+``/
 </div>
 ??/
 
@@ -61,19 +102,64 @@ So in the list below everything on the left is a _property_, and everything on t
 
 There are over 500 CSS properties.
 
-This means each image, button, or piece of text you see on a webpage has 500 different ''settings'' you can change to make it look different.
-
-When you pick a property and change its value, you make a //declaration//.
+This means each image, button, or piece of text you see on a webpage has 500 different ''settings'' you can change to make it look different. That's a lot!
 
 ???
-## Look back at the CSS you have written so far and fill in the blanks:
+## How do you think most web designers memorize the CSS properties?
 
-|\                                |div|
-|Every property has _:_ after it  |   |a colon, ~~`:`~~
-|Every declaration ends with _;_  |   |a semicolon, ~~`;`~~
-|Every RGB code begins with _#_   |   |a hash, ~~`#`~~
-|''px'' stands for ''_pixels_''   |   |pixels
-|/
+[ ] Flash cards
+[ ] They are born with ''photographic'' memories.
+[x] They don't memorize them at all; they just use Google to look them up as they go.
+??/
+
+???
+## The world's best programmers use Google...
+
+[ ] once a month.
+[x] once every 5 or 10 minutes.
+[ ] never.
+??/
+
+???
+## If a programmer has to use Google, it is likely that...
+
+[ ] they will get fired right away.
+[ ] all the other programmers will point and laugh.
+[x] nobody will even notice, because every single programmer uses it all the time.
+??/
+
+=====
+
+???
+## Complete the CSS declarations. Include the correct punctuation.
+
+Remember: colons ~~:~~, semicolons ~~;~~, and ''hashes'' or ''pounds'' ~~#~~.
+
+<div class="wordbank code">
+-=url(stars.jpg)
+- 400px
+- FF9900
+- rotate(30deg)
+- hidden
+- bold
+-=/
+</div>
+
+```
+background-image ___:url(stars.jpg);___
+height ___:400px;___
+border-color ___:#FF9900;___
+transform ___:rotate(30deg);___
+visibility ___:hidden;___
+font-weight ___:bold;___
+``/
+??/
+
+???
+## ''px'' stands for:
+[ ] pictures
+[ ] pixies
+[x] pixels
 ??/
 
 =====
@@ -246,7 +332,7 @@ __form, button__
 
 =====
 
-All of a website's CSS is usually kept in a file called a //stylesheet//:
+All of a website's CSS is usually kept in a //stylesheet//:
 
 ```#
 p, code{
@@ -303,7 +389,7 @@ code{
 ``/
 
 ???
-## Fill in the blanks with two of these words:
+## Fill in the blanks with the right 2 colors:
 
 <div class="wordbank">
 -=red
