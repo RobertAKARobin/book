@@ -97,14 +97,16 @@ li{
 }
 
 .wordbank{
+  border:1px solid #000;
+  border-radius:5px;
   text-align:center;
   ul, ol{
-    padding-left:0;
+    padding:0;
+    margin:0;
   }
   li{
     display:inline-block;
     margin:0 0.5em;
-    border-bottom:1px dotted #000;
   }
   ol{
     counter-reset: count-num;
@@ -114,6 +116,12 @@ li{
         content: counter(count-num) ". ";
       }
     }
+  }
+  &:before{
+    content:"Word Bank";
+    display:block;
+    font-size:0.75em;
+    border-bottom:1px dashed #000;
   }
 }
 
@@ -161,8 +169,11 @@ table{
       text-align:right;
     }
     &.div{
-      border-left:1px solid black;
-      padding-left:0em;
+      border-right:1px solid #000;
+      padding-left:0.5em;
+      & + td{
+        padding-left:0.5em;
+      }
     }
     &.count{
       padding:0 0.5em;
@@ -185,16 +196,19 @@ table{
 
 
 fieldset{
+  border-radius:5px;
   border-left:1px solid #000;
+  padding-left:1em;
   margin-top:$mgn;
   & + *{
     margin-top:$mgn;
   }
-  & > * {
-    padding-left:1em;
-  }
   h2{
     text-align:justify;
+  }
+  table{
+    position:relative;
+    left:-1em;
   }
 }
 b, input[type=text]{

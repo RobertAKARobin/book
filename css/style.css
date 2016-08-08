@@ -262,17 +262,19 @@ ol > li {
 }
 
 .wordbank {
+  border: 1px solid #000;
+  border-radius: 5px;
   text-align: center;
 }
 
 .wordbank ul, .wordbank ol {
-  padding-left: 0;
+  padding: 0;
+  margin: 0;
 }
 
 .wordbank li {
   display: inline-block;
   margin: 0 0.5em;
-  border-bottom: 1px dotted #000;
 }
 
 .wordbank ol {
@@ -285,6 +287,13 @@ ol > li {
 
 .wordbank ol li:before {
   content: counter(count-num) ". ";
+}
+
+.wordbank:before {
+  content: "Word Bank";
+  display: block;
+  font-size: 0.75em;
+  border-bottom: 1px dashed #000;
 }
 
 .HTMLCodeBlock > * {
@@ -336,8 +345,12 @@ table td.tdr {
 }
 
 table td.div {
-  border-left: 1px solid black;
-  padding-left: 0em;
+  border-right: 1px solid #000;
+  padding-left: 0.5em;
+}
+
+table td.div + td {
+  padding-left: 0.5em;
 }
 
 table td.count {
@@ -362,7 +375,9 @@ table td.count.alpha:before {
 }
 
 fieldset {
+  border-radius: 5px;
   border-left: 1px solid #000;
+  padding-left: 1em;
   margin-top: 0.75em;
 }
 
@@ -370,12 +385,13 @@ fieldset + * {
   margin-top: 0.75em;
 }
 
-fieldset > * {
-  padding-left: 1em;
-}
-
 fieldset h2 {
   text-align: justify;
+}
+
+fieldset table {
+  position: relative;
+  left: -1em;
 }
 
 b, input[type=text] {
