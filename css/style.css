@@ -454,20 +454,19 @@ input[type=text].line {
   width: 100%;
 }
 
-input[type=text].flex {
-  flex-grow: 1;
-  margin-left: 0.5em;
-  border-width: 0 0 1px 0;
-  border-radius: 0;
-}
-
-input[type=text].flex:only-child {
-  margin-left: 0;
-}
-
-span.line {
-  display: inline-flex;
+label.flex {
+  display: block;
   width: 100%;
+  float: left;
+  border-bottom: 1px solid #000;
+}
+
+label.flex span {
+  border-bottom: 2px solid #fff;
+}
+
+label.flex input {
+  border-bottom: 0;
 }
 
 #nav {

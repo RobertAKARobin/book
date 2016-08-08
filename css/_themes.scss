@@ -261,18 +261,16 @@ input[type=text]{
     display:block;
     width:100%;
   }
-  &.flex{
-    flex-grow:1;
-    margin-left:0.5em;
-    border-width:0 0 1px 0;
-    border-radius:0;
-
-    &:only-child{
-      margin-left:0;
-    }
-  }
 }
-span.line{
-  display:inline-flex;
+label.flex{
+  display:block;
   width:100%;
+  float:left;
+  border-bottom:1px solid #000;
+  span{
+    border-bottom:2px solid #fff;
+  }
+  input{
+    border-bottom:0;
+  }
 }

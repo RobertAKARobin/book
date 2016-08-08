@@ -16,9 +16,9 @@ module.exports= (function(){
       [,,/^(.*)_{3}(.*)_{3}(.*)$/, function blankFlex(nil, openText, blankText, closeText){
         var output = "";
         if(openText.trim())  output += h.tag("span", openText);
-        output += h.tag(["input", {class: "flex", "data-answer": blankText}]);
+        output += h.tag(["input", {"data-answer": blankText}]);
         if(closeText.trim()) output += h.tag("span", closeText);
-        return h.tag(["span", {class: "line"}], output);
+        return h.tag(["label", {class: "flex"}], output);
       }],
       ["_{2}",,,      function blankBlock(nil, output){
         return h.tag(["input", {class: "line", "data-answer": output}]);
