@@ -52,14 +52,8 @@ module.exports= (function(){
         out += "</label>";
         return out;
       }],
-      [" *-(=|#)\/",,,function endList(nil, listType){
-        return "</li></" + listTypes[listType] + ">";
-      }],
-      [" *-(=|#)",,,  function newList(nil, listType, output){
-        return "<" + listTypes[listType] + "><li>" + output;
-      }],
-      [" *-",,,       function listItem(nil, output){
-        return "</li><li>" + output;
+      [" *- ",,,       function listItem(nil, output){
+        return h.tag("li", output);
       }],
       ["\\|\\\\",,,   function newTable(nil, cols){
         flag.cols = cols.split("|");
