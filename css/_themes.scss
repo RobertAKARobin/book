@@ -1,6 +1,6 @@
 $fontText: "Arial", sans-serif;
 $fontCode: "Courier New", "Andale Mono", monospace;
-$fontHand: "Arial", sans-serif;
+$fontHand: $fontText;
 $mgn: 0.75em;
 $cFocus: #cdf;
 
@@ -53,7 +53,6 @@ pre, code{
 }
 code, .code{
   font-family: $fontCode;
-  letter-spacing:-1px;
 }
 pre.code{
   line-height:1em;
@@ -184,7 +183,9 @@ table{
     position:relative;
     padding-left:1em;
     white-space:nowrap;
-
+    &:first-child{
+      padding-left:0;
+    }
     &.tdr{
       text-align:right;
     }
@@ -226,10 +227,6 @@ fieldset{
   h2{
     text-align:justify;
     padding-right:1em;
-  }
-  table{
-    position:relative;
-    left:-1em;
   }
 }
 b, input[type=text]{

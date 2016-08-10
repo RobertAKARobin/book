@@ -5,7 +5,7 @@ var beaut     = require("js-beautify");
 var sass      = require("node-sass");
 var matchers  = require("./js/markymarkdown.js");
 
-var title     = "Learn Some Code in About 2 Hours Without a Computer";
+var title     = "Learn some code in about two hours without a computer";
 var wordbank  = "Complete this using the word bank:";
 
 (function compileSASS(){

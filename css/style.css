@@ -211,7 +211,6 @@ pre, code {
 
 code, .code {
   font-family: "Courier New", "Andale Mono", monospace;
-  letter-spacing: -1px;
 }
 
 pre.code {
@@ -365,6 +364,10 @@ table td {
   white-space: nowrap;
 }
 
+table td:first-child {
+  padding-left: 0;
+}
+
 table td.tdr {
   text-align: right;
 }
@@ -413,11 +416,6 @@ fieldset + * {
 fieldset h2 {
   text-align: justify;
   padding-right: 1em;
-}
-
-fieldset table {
-  position: relative;
-  left: -1em;
 }
 
 b, input[type=text] {
