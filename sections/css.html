@@ -7,7 +7,7 @@ Some hints:
 
 <ul>
 - Try reading the code like English.
-- Remember what you know about colors!
+- Remember what you know about RGB codes! This is a book, so the only colors are black and white.
 - CSS is **very picky** about punctuation.
 </ul>
 
@@ -35,22 +35,23 @@ border: ___5px dotted #FFFFFF;___
 A //property// is something you have. A //value// is an amount, a measurement, or a ''setting'' -- like how you can ''set'' your phone's ringtone.
 
 ???
-## Look at the two sentences below. Then, fill in the blanks with **property** or **value**:
+## Fill in the blanks with **property** or **value**:
 
-<blockquote>
-''This house is worth a million dollars!''
-''This background color is red!''
-</blockquote>
+<blockquote><q>This house is worth a million dollars!</q><br /><q>This background color is red!</q></blockquote>
 
 ''House'' and ''background color'' are both a _property_.
 
 ''A million dollars'' and ''red'' are both a _value_.
 
-So on the page before this one,<br />anything *in front* of a blank was a _property_,<br />and anything *inside* a blank was a _value_.
+So in this CSS:
+
+<div class="fig">`text-align: center;`</div>
+
+`text-align` is a _property_, and<br />`center` is a _value_.
 ??/
 
 ???
-## If someone says ''This house is worth a million dollars'' or ''This background color is red,'' you could say that they are ''making a...''
+## If I announce <q>*This* property has *that* value!</q> -- like <q>My favorite food is pizza!</q> -- you could say that I am <q>making a...</q>
 
 [ ] code snippet
 [ ] question
@@ -60,7 +61,7 @@ So on the page before this one,<br />anything *in front* of a blank was a _prope
 
 =====
 
-When you pick a property and give it a value, you make a //declaration//.
+When you pick a CSS property and give it a value, you make a //declaration//.
 
 Looking at the declarations so far, you can see that we have used 3 punctuation marks in CSS so far. They are:
 
@@ -106,21 +107,21 @@ This means each image, button, or piece of text you see on a webpage has 500 dif
 ???
 ## How do you think most web designers memorize the CSS properties?
 
-[ ] Flash cards
+[ ] Lots of studying with flash cards
 [ ] They are born with ''photographic'' memories.
-[x] They don't memorize them at all; they just use Google to look them up as they go.
+[x] Trick question: They don't memorize them. They just use Google to look them up as they go.
 ??/
 
 ???
 ## The world's best programmers use Google...
 
 [ ] once a month.
-[x] once every 5 or 10 minutes.
+[x] once every few minutes.
 [ ] never.
 ??/
 
 ???
-## If a programmer has to use Google, it is likely that...
+## If a professional programmer has to use Google, it is likely that...
 
 [ ] they will get fired right away.
 [ ] all the other programmers will point and laugh.
@@ -187,9 +188,11 @@ This tells your computer that it should *select* something and make it 400 pixel
 
 ## What part of the webpage do you think this rule is *selecting*?
 
-[x] Every paragraph, code snippet, and image
 [ ] The letter 'p', the word 'code', and the letters 'img'
+[x] Every paragraph, code snippet, and image
 [ ] Any code that starts with 'p' and ends with 'img'
+
+(If you're not sure, think: what would be the most useful?)
 
 ??/
 
@@ -201,8 +204,8 @@ A selector and its declarations are called a CSS //rule//.
 
 ## Why is it called a ''rule''?
 
-[x] Because CSS tells your computer how to behave
 [ ] Because you need a **rule**r to measure things
+[x] Because CSS tells your computer how to behave
 [ ] Because CSS rules!
 
 ??/
@@ -214,9 +217,9 @@ A rule can be written on one line, or many lines. But the punctuation is always 
 ## Which of these do you think is most likely to make a *rule* for every abbreviation and definition on a webpage?
 
 [x] `abbr, dfn{ font-style: italic; }`
-[ ] `abbreviation and definition{ font-style: italic; }`
-[ ] `abbr dfn{ font-style: italic; }`
 [ ] `abbr, dfn{ font-style italic }`
+[ ] `abbr dfn{ font-style: italic; }`
+[ ] `abbreviation and definition{ font-style: italic; }`
 
 ??/
 
@@ -227,10 +230,7 @@ A rule can be written on one line, or many lines. But the punctuation is always 
 ## What's wrong with this CSS rule?
 
 ```
-p, code
-  color: #F00;
-  text-align: center;
-
+p, code color: #F00; text-align: center;
 ``/
 
 [ ] A selector has to have 3 things
@@ -255,9 +255,9 @@ q{ background-color:#CCC color: #0F0; }
 ???
 ## What do you think `q` will select?
 
-[x] Quotes
 [ ] Just the letter `q`
-[ ] The letter `p` when you look at the webpage in a mirror
+[ ] The letter `p` when you look at it in a mirror
+[x] Quotes
 ??/
 
 =====
@@ -274,15 +274,17 @@ This selects every piece of code *inside* a quote:
 `q code`
 </div>
 
+What changes between them?
+
 ???
-## `p img` will select:
+## So, `p img` will select:
 
 [ ] Every paragraph and every image
 [x] Every image that's inside a paragraph
 ??/
 
 ???
-## `p, img` will select:
+## ...and `p, img` will select:
 
 [x] Every paragraph and every image
 [ ] Every image that's inside a paragraph
@@ -292,11 +294,18 @@ This selects every piece of code *inside* a quote:
 ## Which **one** of the following do you think is true?
 
 [x] Punctuation is really important in CSS
-[ ] If you make mistakes in your code, your computer will figure it out for you
-[ ] Most programmers never make mistakes
+[ ] If you make mistakes in your code, your computer will fix it out for you
+[ ] ''Real'' programmers never make mistakes
 ??/
 
 =====
+
+<ul class="wordbank code">
+- form button
+- form p button
+- form, p, button
+- form, button
+</ul>
 
 Fill in the selectors for...
 
@@ -319,13 +328,6 @@ __form, p, button__
 ## Every button and every form.
 __form, button__
 ??/
-
-<ul class="wordbank code">
-- form button
-- form p button
-- form, p, button
-- form, button
-</ul>
 
 =====
 
@@ -355,7 +357,7 @@ It's a *sheet* of *style* rules.
 ??/
 
 ???
-## The font of every code snippet will be:
+## The font of every **code snippet** will be:
 
 [x] blue and 18 pixels tall
 [ ] red and 18 pixels tall
@@ -364,11 +366,11 @@ It's a *sheet* of *style* rules.
 
 =====
 
-The ''C'' in ''CSS'' stands for ''cascading''. This means three things:
+The ''C'' in ''CSS'' stands for ''cascading'', like a waterfall. This means three things:
 
 <ol>
 - If a website has two stylesheets, it uses both of them.
-- If a website has two CSS rules for paragraphs, it uses both rules.
+- If a website has two CSS rules for paragraphs, it uses both rules...
 - ...**but** if both rules have a `color`, the website will ignore the first `color` and use the second one instead.
 </ol>
 
@@ -396,5 +398,5 @@ code{
 - green
 </ul>
 
-This code means paragraphs will have _green_ backgrounds, and code snippets will have _blue_ backgrounds.
+This CSS means paragraphs will have _green_ backgrounds, and code snippets will have _blue_ backgrounds.
 ??/

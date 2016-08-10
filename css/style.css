@@ -226,14 +226,6 @@ pre.code {
   margin-right: auto;
 }
 
-.ex {
-  padding-left: 0;
-}
-
-.ex table {
-  width: 100%;
-}
-
 blockquote {
   font-style: italic;
   font-weight: lighter;
@@ -358,6 +350,10 @@ table {
   text-align: left;
 }
 
+.sm table td {
+  padding-left: 0.5em;
+}
+
 table td {
   position: relative;
   padding-left: 1em;
@@ -422,7 +418,6 @@ b, input[type=text] {
   display: inline-block;
   white-space: nowrap;
   vertical-align: baseline;
-  font-family: "Arial", sans-serif;
 }
 
 .smblank b, .smblank input[type=text] {
@@ -452,6 +447,11 @@ table input[type=text] {
   input[type=text]:focus {
     background-color: #cdf;
     cursor: text;
+  }
+  input[type=text].correct {
+    border-bottom-color: #ccc;
+    background-color: #efe;
+    animation: flash-correct 0.7s forwards;
   }
 }
 
@@ -508,7 +508,7 @@ input[type=text].line {
   overflow: visible;
   white-space: nowrap;
   color: #000;
-  background-color: #afa;
+  background-color: #9f9;
   border-right: 1px solid #ddd;
 }
 
@@ -530,20 +530,13 @@ input[type=text].line {
   animation: flip 0.5s forwards;
 }
 
-@media screen {
-  .correct {
-    background-color: #afa;
-    animation: flash-correct 0.7s forwards;
-  }
-}
-
 @keyframes flash-correct {
   from {
     background-color: #fff;
     color: #fff;
   }
   to {
-    background-color: #afa;
+    background-color: #efe;
     color: #000;
   }
 }
