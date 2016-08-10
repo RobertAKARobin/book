@@ -1,4 +1,9 @@
 [
+  {
+    "name": "Cover",
+    "hasPageNumbers": false,
+    "layout": "otherPage"
+  },
   "Colors",
   "Hex",
   "CSS"

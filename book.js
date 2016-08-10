@@ -5,9 +5,6 @@ var beaut     = require("js-beautify");
 var sass      = require("node-sass");
 var matchers  = require("./js/markymarkdown.js");
 
-var title     = "Learn some code in about two hours without a computer";
-var wordbank  = "Complete this using the word bank:";
-
 (function compileSASS(){
   write("css/style.css", sass.renderSync({
     file:         "css/style.scss",
@@ -18,40 +15,54 @@ var wordbank  = "Complete this using the word bank:";
 
 (function compileHTML(){
   var book      = "";
+  var leafNum   = 0;
   var layout    = {
-    main: read("./layouts/main.html"),
-    page: read("./layouts/page.html")
+    base: read("./layouts/base.html"),
+    defaultPage: read("./layouts/defaultPage.html"),
+    otherPage: read("./layouts/otherPage.html")
   }
   var viewVars  = {
     pageNum:      0,
     sectionName:  null,
-    title:        null,
-    wordbank:     wordbank
+    bookTitle:    "Learn some code in about two hours without a computer",
+    pageTitle:    null
   }
 
-  require("./sections/_index").forEach(function(section){
-    viewVars.sectionName = section;
-    read("./sections/" + section + ".html").split(/\s*={5}\s*/).forEach(function(page){
-      viewVars.pageNum += 1;
-      if(viewVars.pageNum % 2 !== 0){
-        book += "<div class=\"sheet\">";
-        viewVars.title = title;
+  require("./sections/_index").forEach(function(sectionData){
+    var section = {
+      name: (sectionData.name || sectionData),
+      hasPageNumbers: (sectionData.hasPageNumbers !== false),
+      layout: layout[sectionData.layout || "defaultPage"]
+    }
+    viewVars.sectionName = section.name;
+    read("./sections/" + section.name + ".html").split(/\s*={5}\s*/).forEach(function(page){
+      leafNum += 1;
+      if(section.hasPageNumbers) viewVars.pageNum += 1;
+      if(leafNum % 2 === 0 && section.hasPageNumbers){
+        viewVars.pageTitle = viewVars.sectionName;
       }else{
-        viewVars.title = section;
+        viewVars.pageTitle = viewVars.bookTitle;
       }
       page = markyMark(page);
-      page = layout.page.replace("{{body}}", page);
-      page = page.replace(/\{\{(.*?)}}/g, function(nil, varName){
-        return viewVars[varName];
-      });
-      book += page;
-      if(viewVars.pageNum % 2 === 0){
-        book += "</div>";
-      }
+      page = section.layout.replace("{{body}}", page);
+      page = insertVars(page);
+      if(leafNum % 2 !== 0) book += "<div class=\"sheet\">" + page;
+      else book += page + "</div>";
     });
   });
 
-  writePage("index.html", layout.main.replace("{{body}}", book));
+  if(leafNum % 2 !== 0) book += "<div class=\"page\"></div></div>";
+
+  book = layout.base.replace("{{body}}", book);
+  book = insertVars(book);
+
+  writePage("index.html", book);
+
+  function insertVars(input){
+    return input.replace(/\{\{(.*?)}}/g, function(nil, varName){
+      return viewVars[varName];
+    });
+  }
 })();
 
 function read(filename){
