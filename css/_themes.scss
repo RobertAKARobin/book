@@ -1,7 +1,7 @@
-$fontText: "Arial", sans-serif;
+$fontText: "Helvetica Neue", "Helvetica", sans-serif;
 $fontCode: "Courier New", "Andale Mono", monospace;
 $fontHand: $fontText;
-$mgn: 0.75em;
+$mgn: 1em;
 $cFocus: #cdf;
 $cCorrect: #efe;
 $cScore: #9f9;
@@ -41,11 +41,16 @@ q{
   }
 }
 
-p, .fig, h2, ol, ul, pre{
+h1{
+  font-weight:bold;
+}
+
+h1, h3,
+p, .fig,
+ol, ul, pre,
+blockquote,
+table{
   margin-bottom:$mgn;
-  & ~ &{
-    margin-top:$mgn;
-  }
 }
 pre, code{
   text-align:left;
@@ -69,7 +74,8 @@ pre.code{
 }
 blockquote{
   font-style:italic;
-  font-weight:lighter;
+  border-left:1px solid #000;
+  padding-left:1em;
 }
 label{
   display:block;
@@ -140,9 +146,6 @@ li{
 }
 
 .HTMLCodeBlock{
-  & > *{
-    margin-bottom:1.6em;
-  }
   code, .code{
     font-weight:normal;
     text-transform:none;
@@ -223,7 +226,7 @@ fieldset{
   & + *{
     margin-top:$mgn;
   }
-  h2{
+  h3{
     text-align:justify;
     padding-right:1em;
   }

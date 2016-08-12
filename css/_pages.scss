@@ -1,12 +1,21 @@
 $chrome-margin:0.39in;
 
+$font-size: 18px;
+$desired-width: 1000px;
+$ratio: (8.5 / 11);
+$sheet-width: floor($desired-width / $font-size);
+// Rounding to 1 decimal place
+$sheet-height: round(10 * $sheet-width * $ratio) / 10;
+$sheet-width-em: 1em * $sheet-width;
+$sheet-height-em: 1em * $sheet-height;
+
 html, body{
   position:relative;
   height:100%;
   width:100%;
 }
 html, body, .page{
-  font-size:18px;
+  font-size:$font-size;
   line-height:1.5em;
 }
 
@@ -34,7 +43,7 @@ html, body, .page{
     table-layout:fixed;
     margin:0 auto;
     border-collapse: separate;
-    width:55em;
+    width:$sheet-width-em;
 
     .sheet{
       display:table-row;
@@ -42,7 +51,7 @@ html, body, .page{
       .page{
         display:table-cell;
         vertical-align:top;
-        height:42.5em;
+        height:$sheet-height-em;
         border-bottom:1px solid #dadada;
         border-top:1px solid #f0f0f0;
       }
@@ -97,12 +106,19 @@ html, body, .page{
 
 .pageDesc{
   font-size:0.75em;
-  line-height:3em;
+  line-height:1.5em;
   position:relative;
+  padding-bottom:1em;
   margin-bottom:1em;
   border-bottom:1px solid #000;
 
-  h1 a{
+  @media screen{
+    padding-top:1em;
+  }
+  h2{
+    position:relative;
+  }
+  a{
     display:block;
     text-align:center;
   }
@@ -122,7 +138,7 @@ html, body, .page{
 
         .page{
           display:block;
-          width:27.5em;
+          width:$sheet-width-em / 2;
           height:auto;
           padding-bottom:3em;
           margin:auto;
@@ -134,7 +150,7 @@ html, body, .page{
   @media (max-width:500px){
     html, body, .page{
       font-size:12px;
-      font-size:(100vw / 29);
+      font-size:(95vw / ($sheet-width / 2));
     }
   }
 }

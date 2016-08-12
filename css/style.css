@@ -116,13 +116,24 @@ html, body, .page {
 
 .pageDesc {
   font-size: 0.75em;
-  line-height: 3em;
+  line-height: 1.5em;
   position: relative;
+  padding-bottom: 1em;
   margin-bottom: 1em;
   border-bottom: 1px solid #000;
 }
 
-.pageDesc h1 a {
+@media screen {
+  .pageDesc {
+    padding-top: 1em;
+  }
+}
+
+.pageDesc h2 {
+  position: relative;
+}
+
+.pageDesc a {
   display: block;
   text-align: center;
 }
@@ -153,12 +164,12 @@ html, body, .page {
 @media screen and (max-width: 500px) {
   html, body, .page {
     font-size: 12px;
-    font-size: 3.44828vw;
+    font-size: 3.45455vw;
   }
 }
 
 html, body {
-  font-family: "Arial", sans-serif;
+  font-family: "Helvetica Neue", "Helvetica", sans-serif;
   text-align: center;
 }
 
@@ -194,12 +205,16 @@ q:after {
   content: "\0201d";
 }
 
-p, .fig, h2, ol, ul, pre {
-  margin-bottom: 0.75em;
+h1 {
+  font-weight: bold;
 }
 
-p ~ p, .fig ~ p, h2 ~ p, ol ~ p, ul ~ p, pre ~ p, p ~ .fig, .fig ~ .fig, h2 ~ .fig, ol ~ .fig, ul ~ .fig, pre ~ .fig, p ~ h2, .fig ~ h2, h2 ~ h2, ol ~ h2, ul ~ h2, pre ~ h2, p ~ ol, .fig ~ ol, h2 ~ ol, ol ~ ol, ul ~ ol, pre ~ ol, p ~ ul, .fig ~ ul, h2 ~ ul, ol ~ ul, ul ~ ul, pre ~ ul, p ~ pre, .fig ~ pre, h2 ~ pre, ol ~ pre, ul ~ pre, pre ~ pre {
-  margin-top: 0.75em;
+h1, h3,
+p, .fig,
+ol, ul, pre,
+blockquote,
+table {
+  margin-bottom: 1em;
 }
 
 pre, code {
@@ -228,7 +243,8 @@ pre.code {
 
 blockquote {
   font-style: italic;
-  font-weight: lighter;
+  border-left: 1px solid #000;
+  padding-left: 1em;
 }
 
 label {
@@ -307,13 +323,9 @@ ol > li {
   content: "Word Bank";
   display: block;
   font-size: 0.75em;
-  font-family: "Arial", sans-serif;
+  font-family: "Helvetica Neue", "Helvetica", sans-serif;
   letter-spacing: 0px;
   border-bottom: 1px dashed #000;
-}
-
-.HTMLCodeBlock > * {
-  margin-bottom: 1.6em;
 }
 
 .HTMLCodeBlock code, .HTMLCodeBlock .code {
@@ -402,14 +414,14 @@ fieldset {
   border-radius: 5px;
   border-left: 1px solid #000;
   padding-left: 1em;
-  margin-top: 0.75em;
+  margin-top: 1em;
 }
 
 fieldset + * {
-  margin-top: 0.75em;
+  margin-top: 1em;
 }
 
-fieldset h2 {
+fieldset h3 {
   text-align: justify;
   padding-right: 1em;
 }

@@ -38,10 +38,7 @@ module.exports= (function(){
       ["~{2}",  "mark"],
     ],
     singleline: [
-      ["#{4}",  "h4"],
-      ["#{3}",  "h3"],
-      ["#{2}",  "h2"],
-      ["#{1}",  "h1"],
+      ["#{2}",  "h3"],
       [,,/\[(.)\](.*)/,function checkbox(nil, isAnswer, label){
         var out = "";
         var inputAttr = {class: "checkbox"};
