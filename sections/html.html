@@ -1,16 +1,35 @@
-
 >><<
-<h1>HTML</h1>
+<h1>Introducing HTML</h1>
 
 <p>Every webpage is written in HTML. The <em>M</em> stands for <dfn>markup</dfn>.</p>
 
-<p>A school teacher will <em>mark up</em> your homework. They use a red pen to mark notes on what you wrote, like <q>This part is really good,</q> or <q>This part should be longer</q>.</p>
+<p>My teacher <em>marks up</em> my homework with a red pen: she takes my paper, circles groups of words, and writes notes next to them like, <q>Great point here</q> or <q>Fix your spelling!</q></p>
 
-<p>Writing HTML is also marking notes on something you write. The notes tell computers the purpose of each piece of text.</p>
+<p>Writing HTML is also grouping your words and writing clues to help the computer understand their <dfn>semantic value</dfn> -- what your words are <em>doing</em> on the page.</p>
 >></
 
 ???
-## What seems to be true about `< >` and `</ >`?
+<ul class="wordbank">
+- headline
+- paragraph
+- quote
+- definition
+- emphasized
+</ul>
+
+<ul>
+- `<p>` says, <q>This is a _paragraph_.</q>
+- `<em>` says, <q>This is _emphasized_.</q>
+- `<dfn>` says, <q>This is a _definition_.</q>
+- `<q>` says, <q>This is a _quote_.</q>
+- The ''h'' in `<h1>` says, <q>This is a _headline_.</q>
+</ul>
+??/
+
+=====
+
+???
+## What seems to be true about `< >`?
 
 [ ] They group words together
 [ ] They contain an abbreviation
@@ -18,30 +37,10 @@
 [x] All of the above
 ??/
 
-=====
-
 ???
-## Fill in the blanks
+## **Two** things are wrong with this piece of HTML:
 
-<ul>
-- `<p>` says, ''\This is a ___paragraph___.''/
-- `<em>` says, ''\This is ___emphasized___.''/
-- `<dfn>` says, ''\This is a ___definition___.''/
-- `<q>` says, ''\This is a ___quote___.''/
-- The ''h'' in `<h1>` means, ''\This is a ___headline___.''/
-</ul>
-??/
-
-<ul class="wordbank">
-- paragraph
-- emphasized
-- definition
-- quote
-- headline
-</ul>
-
-???
-## `<em>``<p>`Two`</em>` things are wrong with this piece of code.`</p>``<p>`What are they?
+`<em>``<p>`Two`</em>` things are wrong with this piece of HTML.`</p>``<p>`What are they?
 
 [x] The `<em>` starts outside the `<p>` and ends inside it
 [ ] You can only have one `<p>` on a webpage
@@ -49,30 +48,30 @@
 [x] The second `<p>` is missing a `</p>`
 ??/
 
-=====
-
 ???
-## `<p></p>` and `<em></em>` are called...
-
-[x] Elements: they make up every webpage on the Internet, just as elements like hydrogen and carbon make up everything in the real world.
-[ ] Cookies: there are two pieces with something in the middle, and the inventors of the Internet really liked Oreos.
-[ ] Bytes: `< >` looks like two mouths that are about to take a **bite** out of something.
-??/
-
-???
-## `<p>` and `</p>` are called //tags// because...
+## `< >` and `</ >` are called //tags// because...
 
 [x] They're little labels
-[ ] They chase each other around, like in a game of Tag
+[ ] They chase each other, like in a game of Tag
 [ ] ''TAG'' stands for ''Textually-Appropriate Glyph''
 ??/
 
 =====
 
 ???
+## What do you think is the name that goes with this definition?
+
+<blockquote>`<p>`A group of words -- like this one -- beginning with an //open tag// and ending with a //close tag//.`</p>`</blockquote>
+
+[ ] Cookie: the two tags are like two halves of an Oreo, with something in the middle.
+[ ] Byte: `< >` looks like two mouths that are about to take a **bite** out of something.
+[x] Element: it's one building block of a webpage, just like hydrogen and oxygen are building blocks of water.
+??/
+
+???
 ## A rule of HTML is that elements have to ''nest''. What does this mean?
 
-[ ] Like bird nests, elements have to be woven together very carefully.
+[ ] Like bird nests, elements have to be woven together into a circle very carefully.
 [ ] ''Nest'' is actually just a misspelling of ''west'', which is where Silicon Valley is located in the US.
-[x] Each element has to be inside another element:<br />`<A><B></A></B>` is wrong. `<A><B></B></A>` is right.
+[x] Every element has to be inside another element.<br />`<a><B></a></B>` is wrong.<br />`<a><B></B></a>` is right.
 ??/
