@@ -457,7 +457,7 @@
             <label><input class="checkbox" type="text" value="" /><span>The decimal system has 10 digits: 0 to 9</span></label>
             <label><input class="checkbox" type="text" value="" /><span>The hexadecimal system has 16 digits: <code>0</code> to <code>F</code></span></label>
             <label><input class="checkbox" type="text" value="" /><span><code>30</code> in hex is the same as (16 x 3)</span></label>
-            <label><input class="checkbox" data-answer="x" type="text" value="" /><span>It's always easier to do math in hex than in decimal</span></label>
+            <label><input class="checkbox" data-answer="x" type="text" value="" /><span>Math is totally easier in hex than in decimal</span></label>
           </fieldset>
 
         </div>
@@ -511,10 +511,9 @@
           <fieldset>
             <h3>Computer programmers may like to write RGB codes in hex instead of decimal because&hellip;</h3>
 
-            <label><input class="checkbox" type="text" value="" /><span>Programmers are weird</span></label>
             <label><input class="checkbox" type="text" value="" /><span>Old keyboards didn't have number keys</span></label>
             <label><input class="checkbox" data-answer="x" type="text" value="" /><span>Hex RGB codes are always exactly 6 letters long</span></label>
-            <label><input class="checkbox" type="text" value="" /><span>Some languages don't have numbers</span></label>
+            <label><input class="checkbox" type="text" value="" /><span>Some world languages don't have numbers</span></label>
           </fieldset>
 
         </div>
@@ -732,13 +731,9 @@
           <fieldset>
             <h3>Fill in the blanks with <strong>property</strong> or <strong>value</strong>:</h3>
 
-            <blockquote><q>This house is worth a million dollars!</q><br /><q>This background color is red!</q></blockquote>
+            <blockquote><q>This house is worth a million dollars!</q><br /><q>This background is red!</q></blockquote>
 
-            <p><q>House</q> and <q>background color</q> are both a <input data-answer="property" type="text" value="" />.</p>
-
-            <p><q>A million dollars</q> and <q>red</q> are both a <input data-answer="value" type="text" value="" />.</p>
-
-            <p>So in this CSS:</p>
+            <p><q>House</q> and <q>background</q> are both a <input data-answer="property" type="text" value="" />.<br /><q>A million dollars</q> and <q>red</q> are both a <input data-answer="value" type="text" value="" />.</p>
 
             <div class="fig"><code>text-align: center;</code></div>
 
@@ -763,7 +758,7 @@
         <div class="main">
           <p>When you pick a CSS property and give it a value, you make a <dfn>declaration</dfn>.</p>
 
-          <p>Looking at the declarations so far, you can see that we have used 3 punctuation marks in CSS so far. They are:</p>
+          <p>Looking at the declarations so far, you can see that we have used 3 punctuation marks:</p>
 
           <table>
             <tr>
@@ -1019,10 +1014,8 @@ q{ background-color:#CCC color: #0F0; }
             <p><code>q code</code></p>
           </div>
 
-          <p>What changes between them?</p>
-
           <fieldset>
-            <h3>So, <code>p img</code> will select:</h3>
+            <h3>So, <code>p img</code> (with no comma) will select:</h3>
 
             <label><input class="checkbox" type="text" value="" /><span>Every paragraph and every image</span></label>
             <label><input class="checkbox" data-answer="x" type="text" value="" /><span>Every image that's inside a paragraph</span></label>
@@ -1135,7 +1128,7 @@ q{ background-color:#CCC color: #0F0; }
           <ol>
             <li>If a website has two stylesheets, it uses both of them.</li>
             <li>If a website has two CSS rules for paragraphs, it uses both rules&hellip;</li>
-            <li>&hellip;<strong>but</strong> if both rules have a <code>color</code>, the website will ignore the first <code>color</code> and use the second one instead.</li>
+            <li>&hellip;<strong>but</strong> if both rules have a <code>color</code>, the website will ignore the first <code>color</code> and use the second one.</li>
           </ol>
 
           <pre class="code">
@@ -1168,7 +1161,105 @@ q{ background-color:#CCC color: #0F0; }
 
         </div>
       </div>
-      <div class="page"></div>
+      <div class="page" id="23">
+        <div class="pageDesc">
+          <h2><a href="#23"><span class="pageNum">23</span>HTML</a></h2>
+        </div>
+        <div class="main">
+          <div class="HTMLCodeBlock">
+            <h1><code>&lt;h1&gt;</code><span>Introducing HTML</span><code>&lt;/h1&gt;</code></h1>
+
+            <p><code>&lt;p&gt;</code><span>Every webpage is written in HTML. The <em><code>&lt;em&gt;</code><span>M</span><code>&lt;/em&gt;</code></em> stands for <dfn><code>&lt;dfn&gt;</code><span>markup</span><code>&lt;/dfn&gt;</code></dfn>.</span><code>&lt;/p&gt;</code></p>
+
+            <p><code>&lt;p&gt;</code><span>My teacher <em><code>&lt;em&gt;</code><span>marks up</span><code>&lt;/em&gt;</code></em> my homework with a red pen: she takes my paper, circles groups of words, and writes notes next to them like, <q><code>&lt;q&gt;</code><span>Great point here</span><code>&lt;/q&gt;</code></q>              or <q><code>&lt;q&gt;</code><span>Fix your spelling!</span><code>&lt;/q&gt;</code></q></span><code>&lt;/p&gt;</code></p>
+
+            <p><code>&lt;p&gt;</code><span>Writing HTML is also grouping your words and writing clues to help the computer understand their <dfn><code>&lt;dfn&gt;</code><span>semantic value</span><code>&lt;/dfn&gt;</code></dfn> &mdash; what your words are
+              <em><code>&lt;em&gt;</code><span>doing</span><code>&lt;/em&gt;</code></em> on the page.</span><code>&lt;/p&gt;</code></p>
+          </div>
+
+          <fieldset>
+            <ul class="wordbank">
+              <li>headline</li>
+              <li>paragraph</li>
+              <li>quote</li>
+              <li>definition</li>
+              <li>emphasized</li>
+            </ul>
+
+            <ul>
+              <li><code>&lt;p&gt;</code> says, <q>This is a <input data-answer="paragraph" type="text" value="" />.</q></li>
+              <li><code>&lt;em&gt;</code> says, <q>This is <input data-answer="emphasized" type="text" value="" />.</q></li>
+              <li><code>&lt;dfn&gt;</code> says, <q>This is a <input data-answer="definition" type="text" value="" />.</q></li>
+              <li><code>&lt;q&gt;</code> says, <q>This is a <input data-answer="quote" type="text" value="" />.</q></li>
+              <li>The <q>h</q> in <code>&lt;h1&gt;</code> says, <q>This is a <input data-answer="headline" type="text" value="" />.</q></li>
+            </ul>
+          </fieldset>
+
+        </div>
+      </div>
+    </div>
+    <div class="sheet">
+      <div class="page" id="24">
+        <div class="pageDesc">
+          <h2><a href="#24"><span class="pageNum">24</span>Learn some code in about two hours without a computer</a></h2>
+        </div>
+        <div class="main">
+          <fieldset>
+            <h3>What seems to be true about <code>&lt; &gt;</code>?</h3>
+
+            <label><input class="checkbox" type="text" value="" /><span>They group words together</span></label>
+            <label><input class="checkbox" type="text" value="" /><span>They contain an abbreviation</span></label>
+            <label><input class="checkbox" type="text" value="" /><span>Every <code>&lt; &gt;</code> has a matching <code>&lt;/ &gt;</code></span></label>
+            <label><input class="checkbox" data-answer="x" type="text" value="" /><span>All of the above</span></label>
+          </fieldset>
+
+          <fieldset>
+            <h3><strong>Two</strong> things are wrong with this piece of HTML:</h3>
+
+            <p><code>&lt;em&gt;</code><code>&lt;p&gt;</code>Two<code>&lt;/em&gt;</code> things are wrong with this piece of HTML.<code>&lt;/p&gt;</code><code>&lt;p&gt;</code>What are they?</p>
+
+            <label><input class="checkbox" data-answer="x" type="text" value="" /><span>The <code>&lt;em&gt;</code> starts outside the <code>&lt;p&gt;</code> and ends inside it</span></label>
+            <label><input class="checkbox" type="text" value="" /><span>You can only have one <code>&lt;p&gt;</code> on a webpage</span></label>
+            <label><input class="checkbox" type="text" value="" /><span>Every webpage must have a <code>&lt;h1&gt;&lt;/h1&gt;</code></span></label>
+            <label><input class="checkbox" data-answer="x" type="text" value="" /><span>The second <code>&lt;p&gt;</code> is missing a <code>&lt;/p&gt;</code></span></label>
+          </fieldset>
+
+          <fieldset>
+            <h3><code>&lt; &gt;</code> and <code>&lt;/ &gt;</code> are called <dfn>tags</dfn> because&hellip;</h3>
+
+            <label><input class="checkbox" data-answer="x" type="text" value="" /><span>They're little labels</span></label>
+            <label><input class="checkbox" type="text" value="" /><span>They chase each other, like in a game of Tag</span></label>
+            <label><input class="checkbox" type="text" value="" /><span><q>TAG</q> stands for <q>Textually-Appropriate Glyph</q></span></label>
+          </fieldset>
+
+        </div>
+      </div>
+      <div class="page" id="25">
+        <div class="pageDesc">
+          <h2><a href="#25"><span class="pageNum">25</span>HTML</a></h2>
+        </div>
+        <div class="main">
+          <fieldset>
+            <h3>What do you think is the name that goes with this definition?</h3>
+
+            <blockquote><code>&lt;p&gt;</code>A group of words &mdash; like this one &mdash; beginning with an <dfn>open tag</dfn> and ending with a <dfn>close tag</dfn>.<code>&lt;/p&gt;</code></blockquote>
+
+            <label><input class="checkbox" type="text" value="" /><span>Cookie: the two tags are like two halves of an Oreo, with something in the middle.</span></label>
+            <label><input class="checkbox" type="text" value="" /><span>Byte: <code>&lt; &gt;</code> looks like two mouths that are about to take a <strong>bite</strong> out of something.</span></label>
+            <label><input class="checkbox" data-answer="x" type="text" value="" /><span>Element: it's one building block of a webpage, just like hydrogen and oxygen are building blocks of water.</span></label>
+          </fieldset>
+
+          <fieldset>
+            <h3>A rule of HTML is that elements have to <q>nest</q>. What does this mean?</h3>
+
+            <label><input class="checkbox" type="text" value="" /><span>Like bird nests, elements have to be woven together into a circle very carefully.</span></label>
+            <label><input class="checkbox" type="text" value="" /><span><q>Nest</q> is actually just a misspelling of <q>west</q>, which is where Silicon Valley is located in the US.</span></label>
+            <label><input class="checkbox" data-answer="x" type="text" value="" /><span>Every element has to be inside another element.<br /><code>&lt;a&gt;&lt;B&gt;&lt;/a&gt;&lt;/B&gt;</code> is wrong.<br /><code>&lt;a&gt;&lt;B&gt;&lt;/B&gt;&lt;/a&gt;</code> is right.</span></label>
+          </fieldset>
+
+
+        </div>
+      </div>
     </div>
   </div>
   <div id="nav">
