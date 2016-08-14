@@ -26,7 +26,11 @@ $(document).ready(function(){
     });
     countNumberCorrect();
     $total.html(total);
-    $clear.on("click", clearAnswers);
+    $clear.on("click", function(){
+      if(confirm("Do you want to clear all your answers?")){
+        clearAnswers();
+      }
+    });
 
     function toggleCheckbox(event){
       var $input = $(this);
