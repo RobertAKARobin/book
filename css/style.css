@@ -221,11 +221,14 @@ pre, code {
   text-align: left;
   white-space: pre-wrap;
   font-style: normal;
-  font-size: 1rem;
 }
 
 code, .code {
   font-family: "Courier New", "Andale Mono", monospace;
+  font-size: 0.9em;
+  position: relative;
+  top: 0.18em;
+  vertical-align: bottom;
 }
 
 pre.code {
@@ -252,14 +255,20 @@ label {
   clear: both;
 }
 
-label:hover {
-  background-color: #cdf;
+@media screen {
+  label:last-child {
+    border-radius: 0 0 5px 5px;
+  }
+  label:hover {
+    background-color: #cdf;
+  }
 }
 
 label.flex {
   width: 100%;
   float: left;
   border-bottom: 1px solid #000;
+  border-radius: 0px !important;
 }
 
 label.flex:hover {
@@ -288,44 +297,6 @@ ul > li {
 
 ol > li {
   list-style-type: decimal;
-}
-
-.wordbank {
-  border: 1px solid #000;
-  border-radius: 5px;
-  margin-left: 0;
-  text-align: center;
-}
-
-.wordbank ul, .wordbank ol {
-  padding: 0;
-  margin: 0;
-}
-
-.wordbank li {
-  display: inline-block;
-  margin: 0 0.5em;
-}
-
-.wordbank ol {
-  counter-reset: count-num;
-}
-
-.wordbank ol li {
-  counter-increment: count-num;
-}
-
-.wordbank ol li:before {
-  content: counter(count-num) ". ";
-}
-
-.wordbank:before {
-  content: "Word Bank";
-  display: block;
-  font-size: 0.75em;
-  font-family: "Helvetica Neue", "Helvetica", sans-serif;
-  letter-spacing: 0px;
-  border-bottom: 1px dashed #000;
 }
 
 .HTMLCodeBlock code, .HTMLCodeBlock .code {
@@ -413,7 +384,6 @@ table td.count.alpha:before {
 fieldset {
   border-radius: 5px;
   border-left: 1px solid #000;
-  padding-left: 1em;
   margin-top: 1em;
 }
 
@@ -421,30 +391,84 @@ fieldset + * {
   margin-top: 1em;
 }
 
+fieldset > * {
+  padding-left: 1em;
+}
+
+fieldset > *:last-child {
+  margin-bottom: 0;
+}
+
+fieldset > blockquote,
+fieldset > .wordbank,
+fieldset > table {
+  padding-left: 0;
+  margin-left: 1em;
+}
+
+fieldset > blockquote {
+  padding-left: 1em;
+}
+
 fieldset h3 {
   text-align: justify;
-  padding-right: 1em;
+  font-weight: 500;
 }
 
-b, input[type=text] {
+fieldset h3 b {
+  font-weight: normal;
+}
+
+.wordbank {
+  margin-left: 0;
+  border: 1px solid #000;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.wordbank ul, .wordbank ol {
+  padding: 0;
+  margin: 0;
+}
+
+.wordbank li {
   display: inline-block;
-  white-space: nowrap;
-  vertical-align: baseline;
+  margin: 0 0.5em;
 }
 
-.smblank b, .smblank input[type=text] {
-  width: 1em;
+.wordbank ol {
+  counter-reset: count-num;
 }
 
-b {
-  width: 4em;
+.wordbank ol li {
+  counter-increment: count-num;
+}
+
+.wordbank ol li:before {
+  content: counter(count-num) ". ";
+}
+
+.wordbank:before {
+  content: "Word Bank";
+  display: block;
+  font-size: 0.75em;
+  font-family: "Helvetica Neue", "Helvetica", sans-serif;
+  letter-spacing: 0px;
+  border-bottom: 1px dashed #000;
 }
 
 input[type=text] {
+  display: inline-block;
+  white-space: nowrap;
+  vertical-align: baseline;
   width: 6em;
   border-bottom: 1px solid #000;
   font-style: normal;
   text-align: left;
+}
+
+.smblank input[type=text] {
+  width: 1em;
 }
 
 table input[type=text] {
@@ -462,7 +486,7 @@ table input[type=text] {
   }
   input[type=text].correct {
     border-bottom-color: #ccc;
-    background-color: #efe;
+    background-color: #dfd;
     animation: flash-correct 0.7s forwards;
   }
 }
@@ -548,7 +572,7 @@ input[type=text].line {
     color: #fff;
   }
   to {
-    background-color: #efe;
+    background-color: #dfd;
     color: #000;
   }
 }
