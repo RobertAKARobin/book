@@ -2,6 +2,17 @@
 
 $(document).ready(function(){
 
+  (function focusOnFirstInput(){
+    var $searchInside;
+    var hash = window.location.hash;
+    if(hash) $searchInside = $(hash);
+    else $searchInside = $("body");
+    // Timer necessary b/c otherwise executes too fast. Wat.
+    setTimeout(function(){
+      $searchInside.find("input").eq(0).focus();
+    },1);
+  })();
+
   (function addAnswerChecker(){
     var $nav     = $("#nav");
     var $score   = $("#score");
