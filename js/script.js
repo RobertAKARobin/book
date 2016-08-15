@@ -17,7 +17,6 @@ $(document).ready(function(){
     var $nav     = $("#nav");
     var $score   = $("#score");
     var $correct = $("#scoreCorrect");
-    var $total   = $("#scoreTotal");
     var $clear   = $("#scoreClear");
     var $inputs  = $("input");
     var guesses  = JSON.parse(localStorage.getItem("guesses") || "{}");
@@ -36,7 +35,6 @@ $(document).ready(function(){
       checkAnswer.call($input);
     });
     countNumberCorrect();
-    $total.html(total);
     $clear.on("click", function(){
       if(confirm("Do you want to clear all your answers?")){
         clearAnswers();
