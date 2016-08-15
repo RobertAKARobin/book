@@ -3,14 +3,13 @@
 $(document).ready(function(){
 
   (function focusOnFirstInput(){
-    var $searchInside;
-    var hash = window.location.hash;
-    if(hash) $searchInside = $(hash);
-    else $searchInside = $("body");
+    var $searchInside = $(window.location.hash || "body");
+    var scrollTop = $(window).scrollTop();
     // Timer necessary b/c otherwise executes too fast. Wat.
     setTimeout(function(){
       $searchInside.find("input").eq(0).focus();
-    },1);
+      window.scrollTo(0,scrollTop);
+    },2);
   })();
 
   (function addAnswerChecker(){
