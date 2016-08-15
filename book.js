@@ -32,16 +32,25 @@ var matchers  = require("./js/markymarkdown.js");
     var section = {
       name: (sectionData.name || sectionData),
       hasPageNumbers: (sectionData.hasPageNumbers !== false),
-      layout: layout[sectionData.layout || "defaultPage"]
+      layout: layout[sectionData.layout || "defaultPage"],
+      pageNumOfSection: -1
     }
     viewVars.sectionName = section.name;
     read("./sections/" + section.name + ".html").split(/\s*={5}\s*/).forEach(function(page){
       leafNum += 1;
-      if(section.hasPageNumbers) viewVars.pageNum += 1;
+      section.pageNumOfSection += 1;
+      if(section.hasPageNumbers){
+        viewVars.pageNum += 1;
+      }
       if(leafNum % 2 === 0 && section.hasPageNumbers){
         viewVars.pageTitle = viewVars.sectionName;
       }else{
         viewVars.pageTitle = viewVars.bookTitle;
+      }
+      if(section.pageNumOfSection === 0){
+        viewVars.pageID = section.name.toLowerCase();
+      }else{
+        viewVars.pageID = viewVars.pageNum;
       }
       page = markyMark(page);
       page = section.layout.replace("{{body}}", page);
@@ -83,16 +92,20 @@ function writePage(filename, content){
 function markyMark(input){
   var output = "";
   input.split(/[\n\r]/g).forEach(function(line){
-    try{
-      matchers.singleline.forEach(function(matcher){
-        var raw = line;
+    if(line.charAt(0) === "!"){
+      line = line.substring(1);
+    }else{
+      try{
+        matchers.singleline.forEach(function(matcher){
+          var raw = line;
+          line = matcher(line);
+          if(line !== raw) throw "break";
+        });
+      }catch(e){ /*This is a cheat to let me 'break' the loop.*/ }
+      matchers.inline.forEach(function(matcher){
         line = matcher(line);
-        if(line !== raw) throw "break";
       });
-    }catch(e){ /*This is a cheat to let me 'break' the loop.*/ }
-    matchers.inline.forEach(function(matcher){
-      line = matcher(line);
-    });
+    }
     output += line + "\n";
   });
   return output;

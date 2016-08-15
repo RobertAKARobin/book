@@ -15,7 +15,6 @@ a, label, button{
   cursor:pointer;
 }
 
-
 strong{
   border-bottom:1px solid #000;
 }
@@ -42,6 +41,9 @@ q{
 }
 
 h1{
+  font-weight:bold;
+}
+h3{
   font-weight:bold;
 }
 
@@ -308,6 +310,16 @@ input[type=text]{
   &.line{
     display:block;
     width:100%;
+  }
+}
+
+.main{
+  a{
+    @media screen{
+      color:#369;
+      text-decoration:underline;
+      text-shadow:none;
+    }
   }
 }
 

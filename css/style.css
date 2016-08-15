@@ -209,6 +209,10 @@ h1 {
   font-weight: bold;
 }
 
+h3 {
+  font-weight: bold;
+}
+
 h1, h3,
 p, .fig,
 ol, ul, pre,
@@ -516,6 +520,14 @@ input[type=text].checkbox + span {
 input[type=text].line {
   display: block;
   width: 100%;
+}
+
+@media screen {
+  .main a {
+    color: #369;
+    text-decoration: underline;
+    text-shadow: none;
+  }
 }
 
 #nav {
