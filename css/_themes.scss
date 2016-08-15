@@ -62,6 +62,8 @@ pre, code{
 code, .code{
   font-family: $fontCode;
   font-size:0.9em;
+}
+code{
   position:relative;
   top:0.18em;
   vertical-align:bottom;
@@ -134,11 +136,13 @@ li{
     &:after{
       content:"";
     }
-    span:before{
-      content:"\0201c";
-    }
-    span:after{
-      content:"\0201d";
+    & > span{
+      &:before{
+        content:"\0201c";
+      }
+      &:after{
+        content:"\0201d";
+      }
     }
   }
   dfn{
@@ -163,7 +167,7 @@ table{
   td{
     position:relative;
     padding-left:1em;
-    white-space:nowrap;
+    vertical-align:top;
     &:first-child{
       padding-left:0;
     }

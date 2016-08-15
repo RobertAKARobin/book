@@ -1169,13 +1169,19 @@ q{ background-color:#CCC color: #0F0; }
           <div class="HTMLCodeBlock">
             <h1><code>&lt;h1&gt;</code><span>Introducing HTML</span><code>&lt;/h1&gt;</code></h1>
 
-            <p><code>&lt;p&gt;</code><span>Every webpage is written in HTML. The <em><code>&lt;em&gt;</code><span>M</span><code>&lt;/em&gt;</code></em> stands for <dfn><code>&lt;dfn&gt;</code><span>markup</span><code>&lt;/dfn&gt;</code></dfn>.</span><code>&lt;/p&gt;</code></p>
+            <p><code>&lt;p&gt;</code><span>If you look at the code for any webpage on the Internet, the first thing you see is <dfn><code>&lt;dfn&gt;</code><span>HTML</span><code>&lt;/dfn&gt;</code></dfn>. You <em><code>&lt;em&gt;</code><span>always</span><code>&lt;/em&gt;</code></em>              start coding a webpage by writing HTML.</span><code>&lt;/p&gt;</code></p>
 
-            <p><code>&lt;p&gt;</code><span>My teacher <em><code>&lt;em&gt;</code><span>marks up</span><code>&lt;/em&gt;</code></em> my homework with a red pen: she takes my paper, circles groups of words, and writes notes next to them like, <q><code>&lt;q&gt;</code><span>Great point here</span><code>&lt;/q&gt;</code></q>              or <q><code>&lt;q&gt;</code><span>Fix your spelling!</span><code>&lt;/q&gt;</code></q></span><code>&lt;/p&gt;</code></p>
-
-            <p><code>&lt;p&gt;</code><span>Writing HTML is also grouping your words and writing clues to help the computer understand their <dfn><code>&lt;dfn&gt;</code><span>semantic value</span><code>&lt;/dfn&gt;</code></dfn> &mdash; what your words are
-              <em><code>&lt;em&gt;</code><span>doing</span><code>&lt;/em&gt;</code></em> on the page.</span><code>&lt;/p&gt;</code></p>
+            <p><code>&lt;p&gt;</code><span>HTML is a way of grouping words together. It lets you say to your computer, <q><code>&lt;q&gt;</code><span>Hey, <em><code>&lt;em&gt;</code><span>this</span><code>&lt;/em&gt;</code></em> group of words has <em><code>&lt;em&gt;</code><span>that</span><code>&lt;/em&gt;</code></em>              job.</span><code>&lt;/q&gt;</code></q>
+              </span><code>&lt;/p&gt;</code></p>
           </div>
+
+          <fieldset>
+            <h3>What seems to be true about <code>&lt; &gt;</code> and <code>&lt;/ &gt;</code>?</h3>
+
+            <label><input class="checkbox" type="text" value="" /><span>They contain an abbreviation</span></label>
+            <label><input class="checkbox" type="text" value="" /><span>Every <code>&lt; &gt;</code> has a matching <code>&lt;/ &gt;</code></span></label>
+            <label><input class="checkbox" data-answer="x" type="text" value="" /><span>Both of the above</span></label>
+          </fieldset>
 
           <fieldset>
             <ul class="wordbank">
@@ -1205,29 +1211,21 @@ q{ background-color:#CCC color: #0F0; }
         </div>
         <div class="main">
           <fieldset>
-            <h3>What seems to be true about <code>&lt; &gt;</code>?</h3>
-
-            <label><input class="checkbox" type="text" value="" /><span>They group words together</span></label>
-            <label><input class="checkbox" type="text" value="" /><span>They contain an abbreviation</span></label>
-            <label><input class="checkbox" type="text" value="" /><span>Every <code>&lt; &gt;</code> has a matching <code>&lt;/ &gt;</code></span></label>
-            <label><input class="checkbox" data-answer="x" type="text" value="" /><span>All of the above</span></label>
-          </fieldset>
-
-          <fieldset>
-            <h3><code>&lt;em&gt;</code><code>&lt;p&gt;</code>Two<code>&lt;/em&gt;</code> things are wrong with this piece of HTML.<code>&lt;/p&gt;</code><code>&lt;p&gt;</code>What are they?</h3>
-
-            <label><input class="checkbox" data-answer="x" type="text" value="" /><span>The <code>&lt;em&gt;</code> starts outside the <code>&lt;p&gt;</code> and ends inside it</span></label>
-            <label><input class="checkbox" type="text" value="" /><span>You can only have one <code>&lt;p&gt;</code> on a webpage</span></label>
-            <label><input class="checkbox" type="text" value="" /><span>Every webpage must have a <code>&lt;h1&gt;&lt;/h1&gt;</code></span></label>
-            <label><input class="checkbox" data-answer="x" type="text" value="" /><span>The second <code>&lt;p&gt;</code> is missing a <code>&lt;/p&gt;</code></span></label>
-          </fieldset>
-
-          <fieldset>
             <h3><code>&lt; &gt;</code> and <code>&lt;/ &gt;</code> are called <q><dfn>tags</dfn></q> because&hellip;</h3>
 
             <label><input class="checkbox" type="text" value="" /><span>They chase each other, like in a game of Tag</span></label>
             <label><input class="checkbox" data-answer="x" type="text" value="" /><span>They're little labels that tell you what's inside, like tags on a suitcase</span></label>
             <label><input class="checkbox" type="text" value="" /><span><q>TAG</q> stands for <q>Textually-Appropriate Glyph</q></span></label>
+          </fieldset>
+
+          <p>A webpage can have as many tags as you want. They are (almost) always used to group words together.</p>
+
+          <fieldset>
+            <h3>A group of words beginning with an <dfn>open tag</dfn> and ending with a <dfn>close tag</dfn>, <b><code>&lt;em&gt;</code><em>like this one</em><code>&lt;/em&gt;</code>,</b> is called a&hellip;</h3>
+
+            <label><input class="checkbox" type="text" value="" /><span><q>Cookie</q>, because the two tags are like two halves of an Oreo, with something in the middle.</span></label>
+            <label><input class="checkbox" type="text" value="" /><span><q>Byte</q>, because <code>&lt; &gt;</code> looks like two mouths that are about to take a <em>bite</em> out of something.</span></label>
+            <label><input class="checkbox" data-answer="x" type="text" value="" /><span><q>Element</q>, because it's one building block of a webpage, just like the elements hydrogen and oxygen are building blocks of water.</span></label>
           </fieldset>
 
         </div>
@@ -1237,32 +1235,150 @@ q{ background-color:#CCC color: #0F0; }
           <h2><a href="#25"><span class="pageNum">25</span>HTML</a></h2>
         </div>
         <div class="main">
-          <fieldset>
-            <h3><b>A rule of HTML is that these <dfn>tag</dfn> groups have to <q>nest</q>.</b> What does <q>nest</q> mean here?</h3>
+          <p>HTML has simple rules:</p>
 
-            <label><input class="checkbox" type="text" value="" /><span>Like bird nests, the groups have to be woven together into a circle very carefully.</span></label>
+          <ol>
+            <li>Elements need an open tag and a close tag.</li>
+            <li>Elements have to <dfn>nest</dfn>.</li>
+          </ol>
+
+          <fieldset>
+            <h3>What do you think <q>nest</q> means in HTML?</h3>
+
+            <label><input class="checkbox" type="text" value="" /><span>Like bird nests, elements are circles that are woven together very carefully.</span></label>
             <label><input class="checkbox" type="text" value="" /><span><q>Nest</q> is actually just a misspelling of <q>west</q>, which is where Silicon Valley is located in the US.</span></label>
-            <label><input class="checkbox" data-answer="x" type="text" value="" /><span>Like Russian nesting dolls, every group has to be inside another group: <code>&lt;a&gt;&lt;B&gt;&lt;/a&gt;&lt;/B&gt;</code> is wrong.<br /><code>&lt;a&gt;&lt;B&gt;&lt;/B&gt;&lt;/a&gt;</code> is right.</span></label>
+            <label><input class="checkbox" data-answer="x" type="text" value="" /><span>Like Russian nesting dolls or nesting boxes, every element has to be inside another element:<br /><code>&lt;a&gt;&lt;B&gt;&lt;/a&gt;&lt;/B&gt;</code> is wrong. <code>&lt;a&gt;&lt;B&gt;&lt;/B&gt;&lt;/a&gt;</code> is right.</span></label>
           </fieldset>
 
           <fieldset>
-            <h3>What name do you think goes with this definition?</h3>
+            <h3><code>&lt;em&gt;</code><code>&lt;p&gt;</code>Two<code>&lt;/em&gt;</code> things are wrong with this piece of HTML.<code>&lt;/p&gt;</code><code>&lt;p&gt;</code>What are they?</h3>
 
-            <blockquote><code>&lt;p&gt;</code>A group of words &mdash; like this one &mdash; beginning with an <dfn>open tag</dfn> and ending with a <dfn>close tag</dfn>.<code>&lt;/p&gt;</code></blockquote>
-
-            <label><input class="checkbox" type="text" value="" /><span><q>Cookie</q>, because the two tags are like two halves of an Oreo, with something in the middle.</span></label>
-            <label><input class="checkbox" type="text" value="" /><span><q>Byte</q>, because <code>&lt; &gt;</code> looks like two mouths that are about to take a <em>bite</em> out of something.</span></label>
-            <label><input class="checkbox" data-answer="x" type="text" value="" /><span><q>Element</q>, because it's one building block of a webpage, just like the elements hydrogen and oxygen are building blocks of water.</span></label>
+            <label><input class="checkbox" data-answer="x" type="text" value="" /><span>The elements don't nest: the <code>em</code> starts outside the <code>p</code> and ends inside it</span></label>
+            <label><input class="checkbox" type="text" value="" /><span>You can only have one <code>p</code> element on a webpage</span></label>
+            <label><input class="checkbox" type="text" value="" /><span>Every webpage must have an <code>h1</code> element</span></label>
+            <label><input class="checkbox" data-answer="x" type="text" value="" /><span>The second <code>&lt;p&gt;</code> is missing a <code>&lt;/p&gt;</code></span></label>
           </fieldset>
-
 
         </div>
       </div>
     </div>
     <div class="sheet">
+      <div class="page" id="26">
+        <div class="pageDesc">
+          <h2><a href="#26"><span class="pageNum">26</span>Learn some code in about two hours without a computer</a></h2>
+        </div>
+        <div class="main">
+          <p>There are about 100 HTML elements. But you use only about 15 of them for most things.</p>
+
+          <fieldset>
+            <h3><b>Use the wordbank to</b> match common elements to their definitions.<br /><b><em>Include the correct punctuation!</em></b></h3>
+
+            <ul class="wordbank code">
+              <li><code>&lt;h1&gt;</code></li>
+              <li><code>&lt;p&gt;</code></li>
+              <li><code>&lt;blockquote&gt;</code></li>
+              <li><code>&lt;em&gt;</code></li>
+              <li><code>&lt;q&gt;</code></li>
+              <li><code>&lt;ol&gt;</code></li>
+              <li><code>&lt;strong&gt;</code></li>
+              <li><code>&lt;ul&gt;</code></li>
+              <li><code>&lt;h2&gt;</code></li>
+              <li><code>&lt;li&gt;</code></li>
+            </ul>
+
+            <table>
+              <tr>
+                <td class="code"><input data-answer="<h1>" type="text" value="" /></td>
+                <td>Headline for the most important content on the page</td>
+              </tr>
+              <tr>
+                <td class="code"><input data-answer="<h2>" type="text" value="" /></td>
+                <td>Headline for the second-most important content on the page</td>
+              </tr>
+              <tr>
+                <td class="code"><input data-answer="<p>" type="text" value="" /></td>
+                <td>Paragraph</td>
+              </tr>
+              <tr>
+                <td class="code"><input data-answer="<q>" type="text" value="" /></td>
+                <td>Quote</td>
+              </tr>
+              <tr>
+                <td class="code"><input data-answer="<blockquote>" type="text" value="" /></td>
+                <td><em>Long</em> quote</td>
+              </tr>
+              <tr>
+                <td class="code"><input data-answer="<em>" type="text" value="" /></td>
+                <td>Emphasized</td>
+              </tr>
+              <tr>
+                <td class="code"><input data-answer="<strong>" type="text" value="" /></td>
+                <td><em>Really</em> emphasized</td>
+              </tr>
+              <tr>
+                <td class="code"><input data-answer="<ul>" type="text" value="" /></td>
+                <td>Unordered list (bullet points)</td>
+              </tr>
+              <tr>
+                <td class="code"><input data-answer="<ol>" type="text" value="" /></td>
+                <td>Ordered list (1 2 3&hellip; A B C&hellip;)</td>
+              </tr>
+              <tr>
+                <td class="code"><input data-answer="<li>" type="text" value="" /></td>
+                <td>Item in a list (a <em>list item</em>)</td>
+              </tr>
+            </table>
+
+          </fieldset>
+
+        </div>
+      </div>
+      <div class="page" id="27">
+        <div class="pageDesc">
+          <h2><a href="#27"><span class="pageNum">27</span>HTML</a></h2>
+        </div>
+        <div class="main">
+          <p>The people who invented HTML liked abbreviations.</p>
+
+          <p>They could have invented a <code>&lt;paragraph&gt;</code> tag. Instead, they invented a <code>&lt;p&gt;</code> tag.</p>
+
+          <p>If you don't know HTML, <code>&lt;paragraph&gt;</code> is much easier to understand than <code>&lt;p&gt;</code>! So&hellip;</p>
+
+          <fieldset>
+            <h3>Why did the people who invented HTML choose <code>&lt;p&gt;</code> instead of <code>&lt;paragraph&gt;</code>?</h3>
+
+            <label><input class="checkbox" type="text" value="" /><span>They wanted to make HTML hard to learn so no-one would copy their code.</span></label>
+            <label><input class="checkbox" data-answer="x" type="text" value="" /><span><code>&lt;p&gt;</code> is a lot shorter and faster to write.</span></label>
+            <label><input class="checkbox" type="text" value="" /><span>No reason. It just sort-of happened.</span></label>
+          </fieldset>
+
+          <p>Things that are easy to read often take a long time to write. Things you write really fast are often hard to read.</p>
+
+          <p>Whenever you're making a coding language, you want your language to be both easy to write and easy to read, as much as possible.</p>
+
+        </div>
+      </div>
+    </div>
+    <div class="sheet">
+      <div class="page" id="28">
+        <div class="pageDesc">
+          <h2><a href="#28"><span class="pageNum">28</span>Learn some code in about two hours without a computer</a></h2>
+        </div>
+        <div class="main">
+          <p>The <em>M</em> in <em>HTML</em> stands for <dfn>markup</dfn>.</p>
+
+          <p>My teacher <q>marks up</q> my homework with a red pen: she takes what I wrote, circles groups of words, and writes notes next to them like, <q>Great point here</q> or <q>Fix this spelling!</q></p>
+
+          <p>Writing HTML is also taking what you wrote, splitting it into groups of words, and writing notes to help the computer understand each group's <dfn>semantic value</dfn> &mdash; what the group is <em>doing</em> on the page.
+
+            <p>&hellip;</p>
+
+
+        </div>
+      </div>
       <div class="page" id="about">
         <div class="pageDesc">
-          <h2><a href="#about"><span class="pageNum">26</span>Learn some code in about two hours without a computer</a></h2>
+          <h2><a href="#about"><span class="pageNum">29</span>About</a></h2>
         </div>
         <div class="main">
           <h3>What is this?</h3>
@@ -1294,7 +1410,6 @@ q{ background-color:#CCC color: #0F0; }
 
         </div>
       </div>
-      <div class="page"></div>
     </div>
   </div>
   <div id="nav">

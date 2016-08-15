@@ -101,7 +101,7 @@ html, body, .page {
 @media screen {
   .page {
     padding: 0 1em;
-    text-shadow: 1px 1px 0px #eee;
+    text-shadow: 1px 1px 0px #f9f9f9;
   }
 }
 
@@ -230,6 +230,9 @@ pre, code {
 code, .code {
   font-family: "Courier New", "Andale Mono", monospace;
   font-size: 0.9em;
+}
+
+code {
   position: relative;
   top: 0.18em;
   vertical-align: bottom;
@@ -312,11 +315,11 @@ ol > li {
   content: "";
 }
 
-.HTMLCodeBlock q span:before {
+.HTMLCodeBlock q > span:before {
   content: "\0201c";
 }
 
-.HTMLCodeBlock q span:after {
+.HTMLCodeBlock q > span:after {
   content: "\0201d";
 }
 
@@ -344,7 +347,7 @@ table {
 table td {
   position: relative;
   padding-left: 1em;
-  white-space: nowrap;
+  vertical-align: top;
 }
 
 table td:first-child {
