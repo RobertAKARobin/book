@@ -64,9 +64,8 @@ code, .code{
   font-size:0.9em;
 }
 code{
-  position:relative;
-  top:0.18em;
-  vertical-align:bottom;
+  vertical-align:baseline;
+  line-height:1em;
 }
 pre.code{
   line-height:1em;
@@ -88,9 +87,6 @@ label{
   display:block;
   clear:both;
   @media screen{
-    &:last-child{
-      border-radius:0 0 5px 5px;
-    }
     &:hover{
       background-color:$cFocus;
     }
@@ -205,6 +201,7 @@ fieldset{
   border-radius:5px;
   border-left:1px solid #000;
   margin-top:$mgn;
+  overflow:hidden;
   & + *{
     margin-top:$mgn;
   }

@@ -1,8 +1,9 @@
 $chrome-margin:0.39in;
 
-$font-size: 18px;
-$desired-width: 1000px;
+$font-size: 16px;
+$desired-height: 680px;
 $ratio: (8.5 / 11);
+$desired-width: round($desired-height / $ratio);
 $sheet-width: floor($desired-width / $font-size);
 // Rounding to 1 decimal place
 $sheet-height: round(10 * $sheet-width * $ratio) / 10;
@@ -17,6 +18,9 @@ html, body{
 html, body, .page{
   font-size:$font-size;
   line-height:1.5em;
+  @media print{
+    font-size:17.76px; //'Merica
+  }
 }
 
 @media screen{

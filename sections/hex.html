@@ -64,13 +64,13 @@ This lets us write bigger numbers in fewer spaces: 10 in decimal and `A` in hex 
 
 The decimal system has _10_ digits,<br />so 30 in decimal = (3 &times; _10_).
 
-The hex system has _16_ digits,<br />so `30` in hex = (3 &times; _16_) in decimal,<br />which works out to the number _48_.
+The hex system has _16_ digits,<br />so `30` in hex = (3 &times; _16_),<br />which works out to the number _48_.
 
-`D` in hex is the number _13_ in decimal.<br />(Hint: Look at the chart on the last page.)
+`D` in hex is the number _13_.<br />(Hint: Look at the chart on the last page.)
 
-`3D` = `30` &plus; `D`. Converting `30` and `D` into decimal,<br />`3D` = _48_ &plus; _13_
+`3D` = `30` &plus; `D`. Converting `30` and `D` into numbers,<br />`3D` = _48_ &plus; _13_
 
-So, `3D` equals the decimal number _61_.
+So, `3D` equals the number _61_.
 ??/
 
 ???
@@ -131,20 +131,17 @@ Hex RGB codes are also 3 numbers, like decimal RGB codes. `FFAA00` for the color
 |/
 ??/
 
-Knowing how hex works makes it easier to find the perfect color for your website or app. You don't need to do any math. Just remember:
+Knowing how hex works makes it easier to find the perfect color for your website or app.
 
-<ol>
-- When you see `ABCDEF`, you're seeing *three* numbers: `AB` for red, `CD` for green, and `EF` for blue.
-- `FF` is the biggest number, and `00` is the smallest.
-</ol>
+Just remember: When you see `ABCDEF`, you're seeing *three* numbers: `AB` for red, `CD` for green, and `EF` for blue.
 
 ???
 ## Let's try adjusting some colors in hex:
 
 |\code   |                        | | code
-| FF00AA |+ 1 level of green      |=| FF01AA
+| 000000 |+ 1 level of red        |=| 010000
+| FF00AA |+ 1 level of _green_    |=| FF01AA
 |_FFFF00_|+ 1 level of blue       |=| FFFF01
-| ABCDEF |+ 32 levels of _red_    |=| CBCDEF
 | DEFFC8 |&ndash; 1 level of green|=|_DEFEC8_
 |/
 
@@ -152,9 +149,50 @@ Knowing how hex works makes it easier to find the perfect color for your website
 
 =====
 
+???
+## Fill in the blanks with `>` or `<` <b>to show which hex code in each pair is bigger.</b>
+
+<ul>
+- Remember letters are bigger than numbers
+- The code that starts with the bigger digit is the bigger code
+</ul>
+
+<div class="fig smblank">
+|\count num|code|   |code
+|          |00  | < |FF
+|          |00  |_<_|01
+|          |D3  |_>_|A3
+|          |22  |_<_|D2
+|          |0F  |_<_|10
+|          |1A  |_>_|19
+|/
+</div>
+??/
+
+???
+## Rank the brightness of red, green, and blue in each hex code. <b>**1** is least, **3** is most, **2** is in the middle.</b>
+
+<div class="fig">
+|\code |
+|      |Red   |Green|Blue
+|332211|3     |2    |1
+|FFAA00|_3_   |_2_  |_1_
+|AA99BB|_2_   |_1_  |_3_
+|80A00D|_2_   |_3_  |_1_
+|2B5A77|_1_   |_2_  |_3_
+|/
+</div>
+??/
+
+
+
+=====
+
 Color codes are //case-insensitive//: the computer treats them the same if they're UPPERCASE or lowercase.
 
 One neat thing about knowing hex is you can make colors from words!
+
+You can cheat and use some numbers in place of letters, like `5` for ''S''.
 
 ???
 ## Fill in the blanks to translate English words into RGB codes and figure out what colors they make.
@@ -165,7 +203,7 @@ The missing colors for column 3 are **purple**, **red**, and **yellow**.
 |\          |code     |
 |decode     |dec0de   |pastel pink
 |_Office_   |0ff1ce   |blue-green
-|old dad    |_01ddad_ |turquoise
+|old dad    |_01ddad_ |turquoise/cyan
 |coffee     |_c0ffee_ |sea green
 |doodle     |_d00d1e_ |_red_
 |fedora     |fed02a   |_yellow_
@@ -175,4 +213,4 @@ The missing colors for column 3 are **purple**, **red**, and **yellow**.
 </div>
 ??/
 
-Can you make a color from your name?
+What other words can you turn into colors?
