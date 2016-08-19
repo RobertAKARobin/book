@@ -31,12 +31,14 @@ var matchers  = require("./js/markymarkdown.js");
   require("./sections/_index").forEach(function(sectionData){
     var section = {
       name: (sectionData.name || sectionData),
+      id: null,
       hasPageNumbers: (sectionData.hasPageNumbers !== false),
       layout: layout[sectionData.layout || "defaultPage"],
       pageNumOfSection: -1
     }
+    section.id = section.name.replace(/ /g, "_").toLowerCase();
     viewVars.sectionName = section.name;
-    read("./sections/" + section.name + ".html").split(/\s*={5}\s*/).forEach(function(page){
+    read("./sections/" + section.id + ".html").split(/\s*={5}\s*/).forEach(function(page){
       leafNum += 1;
       section.pageNumOfSection += 1;
       if(section.hasPageNumbers){
@@ -48,7 +50,7 @@ var matchers  = require("./js/markymarkdown.js");
         viewVars.pageTitle = viewVars.bookTitle;
       }
       if(section.pageNumOfSection === 0){
-        viewVars.pageID = section.name.toLowerCase();
+        viewVars.pageID = section.id;
       }else{
         viewVars.pageID = viewVars.pageNum;
       }

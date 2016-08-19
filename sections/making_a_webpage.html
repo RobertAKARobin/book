@@ -1,0 +1,72 @@
+
+You usually create *two* files to make *one* webpage:
+
+<ol>
+- An HTML document, maybe named `index.html`
+- A CSS stylesheet, maybe named `styles.css`
+</ol>
+
+These files can be named anything you want, but should end with `.html` and `.css`.
+
+A stylesheet can be long or short. Your webpage will work fine with no stylesheet at all (but it may not look very good).
+
+???
+## You can put CSS *and* your HTML in one file instead of two, but this is considered ''bad''. Why?
+
+[ ] HTML is hard to read with CSS mixed up in it.
+[ ] HTML is concerned with what your words *do*, and CSS is concerned with how your words *look*. ''Separating concerns'' keeps things organized.
+[ ] Stylesheets get long, which means you'll have to scroll up and down all the time while you're coding.
+[x] All of the above.
+
+??/
+
+=====
+
+Every webpage on the Internet begins the same way:
+
+```#
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Webpage</title>
+  </head>
+  <body>
+    <h1>Hello, world!</h1>
+  </body>
+</html>
+``/
+
+You should always...
+
+<ul>
+- ...begin with `<!DOCTYPE html>`
+- ...have exactly one `html` element
+- ...have exactly one `head` and `body` inside the `html`
+- ...have exactly one `title` inside the `head`
+</ul>
+
+???
+## What might **`head`**, **`title`**, and **`body`** do?
+<ul>
+- _body_ Where you put //content//. What you see when you look at a webpage.
+- _title_ A label you see in your browser history, your <q>bookmarks</q>, and listed on Google -- but **not** on the webpage itself.
+- _head_ Where you put <dfn>metadata</dfn> -- information that humans don't usually need to read, or that shouldn't show up on the webpage itself.
+</ul>
+
+??/
+
+=====
+
+Your HTML's //body// is where all the interesting stuff on a webpage happens. All of the word-grouping elements we've seen so far -- `<p>`, `<code>`, `<h1>`, and so on -- go here.
+
+Usually there isn't much in the //head// except for the `title` element,
+
+=====
+
+The *M* in *HTML* stands for <dfn>markup</dfn>.
+
+My teacher <q>marks up</q> my homework with a red pen: she takes what I wrote, circles groups of words, and writes notes next to them like, <q>Great point here</q> or <q>Fix this spelling!</q>
+
+<p>Writing HTML is also taking what you wrote, splitting it into groups of words, and writing notes to help the computer understand each group's <dfn>semantic value</dfn> -- what the group is <em>doing</em> on the page.
+
+...

@@ -632,9 +632,8 @@
                 <tr>
                   <td class="count num"></td>
                   <td class="code">00</td>
-                  <td>
-                    <</td>
-                      <td class="code">FF</td>
+                  <td><code>&lt;</code></td>
+                  <td class="code">FF</td>
                 </tr>
                 <tr>
                   <td class="count num"></td>
@@ -1469,6 +1468,130 @@ q{ background-color:#CCC color: #0F0; }
           <h2><a href="#29"><span class="pageNum">29</span>HTML</a></h2>
         </div>
         <div class="main">
+          <p>Think back to CSS.</p>
+
+          <p>On a webpage, to change the background colors for all paragraphs and quotes to red, and all headlines to blue, you would create a <em>stylesheet</em> like this:</p>
+
+          <pre class="code">
+1 |  p, q{
+2 |    background-color: #FF0000;
+3 |  }
+4 |  h1{
+5 |    background-color: #0000FF;
+6 |  }
+</pre>
+
+          <fieldset>
+            <h3><b>Quick review:</b> What do you call the part before the {curly braces} <b> &mdash; <code>h1</code> or <code>p, q</code> in this case?</b></h3>
+
+            <label><input class="checkbox" type="text" value="" /><span>The stylesheet</span></label>
+            <label><input class="checkbox" data-answer="x" type="text" value="" /><span>The selector</span></label>
+            <label><input class="checkbox" type="text" value="" /><span>The declaration</span></label>
+
+          </fieldset>
+
+          <fieldset>
+            <h3>Which <strong>one</strong> of the following seems to be true?</h3>
+
+            <label><input class="checkbox" data-answer="x" type="text" value="" /><span>CSS selectors match HTML elements.</span></label>
+            <label><input class="checkbox" type="text" value="" /><span>CSS stylesheets are written in HTML.</span></label>
+            <label><input class="checkbox" type="text" value="" /><span>CSS has nothing to do with HTML.</span></label>
+
+          </fieldset>
+
+
+        </div>
+      </div>
+    </div>
+    <div class="sheet">
+      <div class="page" id="making_a_webpage">
+        <div class="pageDesc">
+          <h2><a href="#making_a_webpage"><span class="pageNum">30</span>Learn some code in about two hours without a computer</a></h2>
+        </div>
+        <div class="main">
+
+          <p>You usually create <em>two</em> files to make <em>one</em> webpage:</p>
+
+          <ol>
+            <li>An HTML document, maybe named <code>index.html</code></li>
+            <li>A CSS stylesheet, maybe named <code>styles.css</code></li>
+          </ol>
+
+          <p>These files can be named anything you want, but should end with <code>.html</code> and <code>.css</code>.</p>
+
+          <p>A stylesheet can be long or short. Your webpage will work fine with no stylesheet at all (but it may not look very good).</p>
+
+          <fieldset>
+            <h3>You can put CSS <em>and</em> your HTML in one file instead of two, but this is considered <q>bad</q>. Why?</h3>
+
+            <label><input class="checkbox" type="text" value="" /><span>HTML is hard to read with CSS mixed up in it.</span></label>
+            <label><input class="checkbox" type="text" value="" /><span>HTML is concerned with what your words <em>do</em>, and CSS is concerned with how your words <em>look</em>. <q>Separating concerns</q> keeps things organized.</span></label>
+            <label><input class="checkbox" type="text" value="" /><span>Stylesheets get long, which means you'll have to scroll up and down all the time while you're coding.</span></label>
+            <label><input class="checkbox" data-answer="x" type="text" value="" /><span>All of the above.</span></label>
+
+          </fieldset>
+
+        </div>
+      </div>
+      <div class="page" id="31">
+        <div class="pageDesc">
+          <h2><a href="#31"><span class="pageNum">31</span>Making a Webpage</a></h2>
+        </div>
+        <div class="main">
+          <p>Every webpage on the Internet begins the same way:</p>
+
+          <pre class="code">
+1 |  &lt;!DOCTYPE html&gt;
+2 |  &lt;html&gt;
+3 |    &lt;head&gt;
+4 |      &lt;title&gt;My Webpage&lt;/title&gt;
+5 |    &lt;/head&gt;
+6 |    &lt;body&gt;
+7 |      &lt;h1&gt;Hello, world!&lt;/h1&gt;
+8 |    &lt;/body&gt;
+9 |  &lt;/html&gt;
+</pre>
+
+          <p>You should always&hellip;</p>
+
+          <ul>
+            <li>&hellip;begin with <code>&lt;!DOCTYPE html&gt;</code></li>
+            <li>&hellip;have exactly one <code>html</code> element</li>
+            <li>&hellip;have exactly one <code>head</code> and <code>body</code> inside the <code>html</code></li>
+            <li>&hellip;have exactly one <code>title</code> inside the <code>head</code></li>
+          </ul>
+
+          <fieldset>
+            <h3>What might <strong><code>head</code></strong>, <strong><code>title</code></strong>, and <strong><code>body</code></strong> do?</h3>
+            <ul>
+              <li><input data-answer="body" type="text" value="" /> Where you put <dfn>content</dfn>. What you see when you look at a webpage.</li>
+              <li><input data-answer="title" type="text" value="" /> A label you see in your browser history, your <q>bookmarks</q>, and listed on Google &mdash; but <strong>not</strong> on the webpage itself.</li>
+              <li><input data-answer="head" type="text" value="" /> Where you put <dfn>metadata</dfn> &mdash; information that humans don't usually need to read, or that shouldn't show up on the webpage itself.</li>
+            </ul>
+
+          </fieldset>
+
+        </div>
+      </div>
+    </div>
+    <div class="sheet">
+      <div class="page" id="32">
+        <div class="pageDesc">
+          <h2><a href="#32"><span class="pageNum">32</span>Learn some code in about two hours without a computer</a></h2>
+        </div>
+        <div class="main">
+          <p>Your HTML's <dfn>body</dfn> is where all the interesting stuff on a webpage happens. All of the word-grouping elements we've seen so far &mdash; <code>&lt;p&gt;</code>, <code>&lt;code&gt;</code>, <code>&lt;h1&gt;</code>, and so on &mdash; go
+            here.</p>
+
+          <p>Usually there isn't much in the <dfn>head</dfn> except for the <code>title</code> element,</p>
+
+        </div>
+      </div>
+      <div class="page" id="33">
+        <div class="pageDesc">
+          <h2><a href="#33"><span class="pageNum">33</span>Making a Webpage</a></h2>
+        </div>
+        <div class="main">
           <p>The <em>M</em> in <em>HTML</em> stands for <dfn>markup</dfn>.</p>
 
           <p>My teacher <q>marks up</q> my homework with a red pen: she takes what I wrote, circles groups of words, and writes notes next to them like, <q>Great point here</q> or <q>Fix this spelling!</q></p>
@@ -1484,7 +1607,7 @@ q{ background-color:#CCC color: #0F0; }
     <div class="sheet">
       <div class="page" id="about">
         <div class="pageDesc">
-          <h2><a href="#about"><span class="pageNum">30</span>Learn some code in about two hours without a computer</a></h2>
+          <h2><a href="#about"><span class="pageNum">34</span>Learn some code in about two hours without a computer</a></h2>
         </div>
         <div class="main">
           <h3>What is this?</h3>

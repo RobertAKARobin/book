@@ -115,7 +115,6 @@ There are about 100 HTML elements. But you use only about 15 of them for most th
 
 =====
 
-
 The people who invented HTML liked abbreviations.
 
 They could have invented a `<paragraph>` tag. Instead, they invented a `<p>` tag.
@@ -136,10 +135,33 @@ Whenever you're making a coding language, you want your language to balance bein
 
 =====
 
-The *M* in *HTML* stands for <dfn>markup</dfn>.
+Think back to CSS.
 
-My teacher <q>marks up</q> my homework with a red pen: she takes what I wrote, circles groups of words, and writes notes next to them like, <q>Great point here</q> or <q>Fix this spelling!</q>
+On a webpage, to change the background colors for all paragraphs and quotes to red, and all headlines to blue, you would create a *stylesheet* like this:
 
-<p>Writing HTML is also taking what you wrote, splitting it into groups of words, and writing notes to help the computer understand each group's <dfn>semantic value</dfn> -- what the group is <em>doing</em> on the page.
+```#
+p, q{
+  background-color: #FF0000;
+}
+h1{
+  background-color: #0000FF;
+}
+``/
 
-...
+???
+## <b>Quick review:</b> What do you call the part before the {curly braces} <b> -- `h1` or `p, q` in this case?</b>
+
+[ ] The stylesheet
+[x] The selector
+[ ] The declaration
+
+??/
+
+???
+## Which **one** of the following seems to be true?
+
+[x] CSS selectors match HTML elements.
+[ ] CSS stylesheets are written in HTML.
+[ ] CSS has nothing to do with HTML.
+
+??/
