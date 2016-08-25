@@ -24,7 +24,7 @@ var matchers  = require("./js/markymarkdown.js");
   var viewVars  = {
     pageNum:      0,
     sectionName:  null,
-    bookTitle:    "Learn some code in about two hours without a computer",
+    bookTitle:    "Learn some code in about two hours without a computer!",
     pageTitle:    null
   }
 
