@@ -24,20 +24,16 @@ html, body, .page{
 }
 
 @media screen{
-  body{
-    background-color:#E4BB7A;
-    background-image:url(bg_wood_l.jpg);
-  }
-  #main{
-    box-shadow:0 0 100px 0 #555;
-  }
   .sheet{
     background-color:#fff;
   }
   .page{
-    background-image:url(paper_shadow.png);
-    background-position:center right;
-    background-repeat:no-repeat;
+    border-top:1px solid #f0f0f0;
+    &:nth-child(odd){
+      background-image:url(paper_shadow.png);
+      background-position:center right;
+      background-repeat:no-repeat;
+    }
   }
 }
 
@@ -56,8 +52,6 @@ html, body, .page{
         display:table-cell;
         vertical-align:top;
         height:$sheet-height-em;
-        border-bottom:1px solid #dadada;
-        border-top:1px solid #f0f0f0;
       }
     }
   }

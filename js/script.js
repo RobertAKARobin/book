@@ -68,7 +68,7 @@ $(document).ready(function(){
       $nav.addClass("active");
       setTimeout(function(){
         $nav.removeClass("active");
-      }, 500);
+      }, 1000);
     }
 
     function clearAnswers(){
