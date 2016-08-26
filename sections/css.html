@@ -21,12 +21,12 @@ Some hints:
 </ul>
 
 ```
-background-color: ___#000000;___
-color: ___#FFFFFF;___
-font-style: ___italic;___
-text-align: ___center;___
-font-size: ___12px;___
-border: ___5px dotted #FFFFFF;___
+background-color:___#000000;___
+color:___#FFFFFF;___
+font-style:___italic;___
+text-align:___center;___
+font-size:___12px;___
+border:___5px dotted #FFFFFF;___
 ``/
 ??/
 
@@ -41,13 +41,13 @@ A //property// is something you have. A //value// is an amount, a measurement, o
 
 ''House'' and ''background'' are both a _property_.<br />''A million dollars'' and ''red'' are both a _value_.
 
-<div class="fig">`text-align: center;`</div>
+<div class="fig">`font-style:italic;`</div>
 
-`text-align` is a _property_, and<br />`center` is a _value_.
+`font-style` is a _property_, and<br />`italic` is a _value_.
 ??/
 
 ???
-## If I announce <q>*This* property has *that* value!</q> -- like <q>My favorite food is pizza!</q> -- you could say that I am <q>making a...</q>
+## <b>If I announce <q>*This* property has *that* value!</q> -- like <q>My favorite food is pizza!</q> -- </b> I am making a...
 
 [ ] code snippet
 [ ] question
@@ -57,9 +57,11 @@ A //property// is something you have. A //value// is an amount, a measurement, o
 
 =====
 
-When you pick a CSS property and give it a value, you make a //declaration//.
+When you pick a CSS property and give it a value, you make a //declaration//, like this:
 
-Looking at the declarations so far, you can see that we have used 3 punctuation marks:
+<div class="fig">`background-color:#FF0000;`</div>
+
+This declaration has 3 punctuation marks:
 
 |\code|
 |~~:~~|*colon*
@@ -71,8 +73,8 @@ Looking at the declarations so far, you can see that we have used 3 punctuation 
 ## Fill in the blanks with the right punctuation mark:
 
 <ul class="smblank">
-- Every property has _:_ after it.
-- Every declaration ends with _;_.
+- Every CSS property has _:_ after it.
+- Every CSS declaration ends with _;_.
 - Every RGB code begins with _#_.
 </ul>
 ??/
@@ -104,15 +106,15 @@ This means each image, button, or piece of text you see on a webpage has 500 dif
 ## How do you think most web designers memorize the CSS properties?
 
 [ ] Lots of studying with flash cards
-[ ] They are born with ''photographic'' memories.
-[x] Trick question: They don't memorize them. They just use Google to look them up as they go.
+[ ] They are born with really good memories.
+[x] They don't memorize them. They just use Google to look them up as they go.
 ??/
 
 ???
 ## The world's best programmers use Google...
 
-[ ] once a month.
 [x] once every few minutes.
+[ ] once a month.
 [ ] never.
 ??/
 
@@ -127,9 +129,9 @@ This means each image, button, or piece of text you see on a webpage has 500 dif
 =====
 
 ???
-## Complete the CSS declarations. Include the correct punctuation.
+## Complete the CSS declarations.
 
-Remember: colons ~~:~~, semicolons ~~;~~, and ''hashes'' or ''pounds'' ~~#~~.
+Remember to use colons ~~:~~, semicolons ~~;~~, and ''hashes'' or ''pounds'' ~~#~~.
 
 <ul class="wordbank code">
 - url(stars.jpg)
@@ -157,14 +159,21 @@ font-weight ___:bold;___
 [x] pixels
 ??/
 
+???
+## ''deg'' stands for:
+[x] degrees
+[ ] dimensional entity grouping
+[ ] degenerate
+??/
+
 =====
 
 Each CSS declaration needs a //selector//. It tells your computer which part of a webpage it should ''select'' to use with that declaration. For example:
 
 ```
 p, code, img{
-  width: 400px;
-  height: 200px;
+  width:400px;
+  height:200px;
 }
 ``/
 
@@ -175,20 +184,18 @@ This tells your computer that it should *select* something and make it 400 pixel
 ## Which part do you think is the ''selector''?
 
 [x] `p, code, img`
-[ ] `width: 400px;`
-[ ] `width: 400px;` **and** `height: 200px;`
+[ ] `width:400px;`
+[ ] `width:400px;` **and** `height:200px;`
 
 ??/
 
 ???
 
-## What part of the webpage do you think this rule is *selecting*?
+## What do you think this rule is *selecting*? <b>(What would be the most useful?)</b>
 
 [ ] The letter 'p', the word 'code', and the letters 'img'
 [x] Every paragraph, code snippet, and image
 [ ] Any code that starts with 'p' and ends with 'img'
-
-(If you're not sure, think: what would be the most useful?)
 
 ??/
 
@@ -212,10 +219,10 @@ A rule can be written on one line, or many lines. But the punctuation is always 
 
 ## Which of these do you think is most likely to make a *rule* for every abbreviation and definition on a webpage?
 
-[x] `abbr, dfn{ font-style: italic; }`
+[x] `abbr, dfn{ font-style:italic; }`
 [ ] `abbr, dfn{ font-style italic }`
-[ ] `abbr dfn{ font-style: italic; }`
-[ ] `abbreviation and definition{ font-style: italic; }`
+[ ] `abbr dfn{ font-style:italic; }`
+[ ] `abbreviation and definition{ font-style:italic; }`
 
 ??/
 
@@ -226,7 +233,7 @@ A rule can be written on one line, or many lines. But the punctuation is always 
 ## What's wrong with this CSS rule?
 
 ```
-p, code color: #F00; text-align: center;
+p, code color:#F00; text-align:center;
 ``/
 
 [ ] A selector has to have 3 things
@@ -239,7 +246,7 @@ p, code color: #F00; text-align: center;
 ## What's wrong with this CSS rule?
 
 ```
-q{ background-color:#CCC color: #0F0; }
+q{ background-color:#CCC color:#0F0; }
 
 ``/
 
@@ -329,21 +336,21 @@ All of a website's CSS is usually kept in a //stylesheet//:
 
 ```#
 p, code{
-  color: #000000;
-  font-size: 18px;
+  color:#000000;
+  font-size:18px;
 }
 p{
-  color: #FF0000;
+  color:#FF0000;
 }
 code{
-  color: #0000FF;
+  color:#0000FF;
 }
 ``/
 
 It's a *sheet* of *style* rules.
 
 ???
-## <b>The CSS above changes the `color` for paragraphs 2 times.</b> Which `color` do you think the computer will use?
+## <b>This CSS changes the `color` for paragraphs 2 times.</b> Which `color` do you think the computer will use?
 
 [ ] The first one, `#000000`
 [x] The second one, `#FF0000`
@@ -370,15 +377,15 @@ The ''C'' in ''CSS'' stands for ''cascading'', like a waterfall. This means thre
 
 ```#
 p{
-  background-color: #000000;
-  color: #FFFF00;
+  background-color:#000000;
+  color:#FFFF00;
 }
 code, p{
-  background-color: #00FF00;
+  background-color:#00FF00;
 }
 code{
-  background-color: #000000;
-  background-color: #0000FF;
+  background-color:#000000;
+  background-color:#0000FF;
 }
 ``/
 
